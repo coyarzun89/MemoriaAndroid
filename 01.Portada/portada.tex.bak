@@ -1,0 +1,43 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Definición de la portada%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+    \begin{center}
+	    \includegraphics[width=8cm]{Imagenes/logoutfsm.png}
+	
+	   \begin{center}
+		\Large{\sc{Departamento de Informática}}\\
+		\large{\sc{Valparaíso - Chile}}\\	
+	    \end{center}
+\begin{center}
+\line(1,0){100}
+\end{center}
+\vspace{1cm}
+	\begin{center}
+		\textbf{\huge{Simulador para la comparación de heurísticas aplicadas al problema de motion planning}}
+	\end{center}
+
+	\vspace{1cm}
+	\begin{center}
+		\large{\sc{Cristopher Nicolás Oyarzún Altamirano}}
+	\end{center}
+    \vspace{2cm}
+	\begin{center}
+         	\normalsize{Memoria de titulación para optar al Título de:}
+            \normalsize{\sc{\\INGENIERO CIVIL INFORMÁTICO}}
+	\end{center}
+ \vspace{1cm}
+ \begin{center}
+		\large{Profesora Guía: María Cristina Riff\\}
+		\large{Profesor Correferente: Carlos Castro\\}
+	\end{center}
+	
+\end{center}
+
+\vspace{1cm}
+\begin{center}
+ \normalsize{\sc{Enero del 2013.}}\\
+\end{center}
+
+	
+\end{titlepage} 
