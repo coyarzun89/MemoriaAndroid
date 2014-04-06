@@ -1,4 +1,4 @@
-En este capítulo se dará a conocer una breve descripción del sistema operativo Android. Se comenzará con una introducción y se hablará de sus inicios, su arquitectura y la evolución que ha tenido con el tiempo. Además se hablará sobre los problemas más comunes al momento de comenzar a desarrollar una aplicación para Android
+En este capítulo se dará a conocer una breve descripción del sistema operativo Android. Se comenzará con una introducción y se hablará de sus inicios, su arquitectura y la evolución que ha tenido con el tiempo. Además se hablará sobre los problemas más comunes al momento de comenzar a desarrollar una aplicación para Android.
 \section{Introducción a Android}
 Android es un sistema operativo basado en Linux, diseñado principalmente para dispositivos móviles táctiles, tales como smartphones y tablets. A continuación se darán a conocer algunos detalles sobre sus inicios, arquitectura y evolución con el tiempo.
 \subsection{Inicios de Android}
@@ -54,9 +54,7 @@ El entorno de ejecución de Android también está compuesto por bibliotecas, por l
 \end{itemize}
 
 \item \textbf{Aplicaciones:} En esta capa se encuentran todas las aplicaciones del dispositivo, tanto las preinstaladas, como aquellas instaladas por el usuario. También está la aplicación principal del sistema, el Inicio o launcher, desde donde se inician todas las aplicaciones.
-
 \end{itemize}
-
 
 \subsection{¿Cómo las aplicaciones son compiladas?}
 Al momento de desarrollar una aplicación de Android, generalmente se crea un proyecto usando un IDE (\textit{Integrated Development Environment}) como Eclipse o Android Studio. El proyecto contendrá código fuente en Java y recursos. Cuando se compila el proyecto lo que ocurre es que se generan los Bytecode Java (archivos .class) en base a nuestro código fuente Java (archivos .java). Luego se compilan estos archivos .class a archivos ejecutables Dalvik (archivos .dex), los cuales pueden ser ejectuados por la máquina virtual Dalvik que está disponible en todos los dispositivos Android.\\
@@ -69,9 +67,57 @@ Por razones de seguridad todas las aplicaciones de Android deben ser firmadas di
 \par
 Finalmente el \textit{Android debug bridge (ADB)} permiten que el IDE se comunique con un dispositivo físico de Android o un emulador.
 
+\subsection{Tipos de dispositivos}
+En el sitio web de Android \cite{1}, se pueden apreciar los dos tipos de dispositivos más populares de la plataforma, los smartphones y las tablets (Figura \ref{fig:Fig2}). Sin embargo, debido a que el código de Android es de código abierto, este puede ser personalizado para que funcione con otros tipos de dispositivos electrónicos.
+
+\begin{figure}[h!]
+\centering
+	    \includegraphics[width=12cm]{Imagenes/dispositivos_android}
+\caption{Últimos smartphones y tablets destacadas en el sitio de Android.}
+\label{fig:Fig2}
+\end{figure}
+
+A continuación se listan los otros dispositivos que cuentan con Android:
+\begin{itemize}
+\item Lectores de libros.
+
+\item Cámaras.
+
+\item Sistemas en vehículos.
+
+\item Casas inteligentes.
+
+\item Consolas de videojuegos.
+
+\item Televisores inteligentes.
+
+\item Relojes inteligentes.
+\end{itemize}
+
+\subsection{Versiones}
+En la figura \ref{fig:Fig3} se detallan las distintas versiones que ha tenido Android. La primera versión comercial fue lanzada en Septiembre del 2008. Android está bajo constante desarrollo por parte de Google y de la Open Handset Alliance, contando con un gran número de actualizaciones desde su lanzamiento.\\
+\par
+Desde Abril del 2009, los nombres de las versiones de Android han estado relacionados con postres y dulces, y además han seguido un orden alfabático. El oreden es Cupcake (1.5), Donut (1.6), Eclair (2.0-2.1), Froyo (2.2-2.2.3), Gingerbread (2.3-2.3.7), Honeycomb (3.0-3.2.5), Ice Cream Sandwich (4.0-4.0.4), Jelly Bean (4.1-4.3), y KitKat(4.4). El 3 de Septiembre del 2013, Google anunció que existían un billón de dispositivos activos usando el sistema operativo Android en todo el mundo. La actualización más reciente de android fue KitKat 4.4, el cual fue lanzado para dispositivos comerciales el 22 de Noviembre del 2013.
+\begin{figure}[h!]
+\centering
+	    \includegraphics[width=12cm]{Imagenes/versiones_android}
+\caption{Versiones de Android.}
+\label{fig:Fig3}
+\end{figure}
+
+Al comenzar el desarrollo de una aplicación Android, se debe decidir cual va a ser la API mínima a la cuál se dará soporte. Esto tendrá repercusiones al momento de que un usuario desee instalar la aplicación, ya que si su dispositivo cuenta con una versión como Froyo o Eclair, lo más probable es que no pueda instalar prácticamente ningúna de las aplicaciones disponibles en Google Play, la tienda en que se encuentran todas las aplicaciones que suben los desarrolladores.\\
+\par
+Android actualiza mes a mes las estadísticas relativas al número de dispositivos que tienen cada versión del sistema operativo \cite{2}. Esto ayuda a tener una guía sobre cuál va a ser la API mínima soportada. En la figura \ref{fig:Fig4} se muestran las estadísticas correspondientes al mes de Abril. Esta información es recolectada durante los últimos 7 días de cada mes, terminando el 1 de Abril del 2014. Además se ignoran las versiones que tienen menos de un 0.1\%. Se puede apreciar que el sistema operativo que hoy en día es dominante corresponde a Jelly Bean con más de un 60\%. El nuevo sistema operativo KitKat tiene sólo un 5.3\% debido principalmente a que los operadores y fabricantes aún no tienen listas sus versiones personalizadas de KitKat, en las que pueden incluir nuevas funcionalidades o quitar lo que estimen conveniente.
+\begin{figure}[h!]
+\centering
+	    \includegraphics[width=12cm]{Imagenes/dashboard_android}
+\caption{Estadísticas relativas al número de dispositivos que tiene cada versión de Android en Abril del 2014.}
+\label{fig:Fig4}
+\end{figure}
+
+
 \subsection{Problemas al desarrollar en Android}
 Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
-
 
 \subsubsection{Fragmentación a nivel de software}
 Aquí se habla de que existen muchos sistemas operativos de Android activos hoy en día.
