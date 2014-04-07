@@ -1,3 +1,24 @@
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
 En este capítulo se dará a conocer una breve descripción del sistema operativo Android. Se comenzará con una introducción y se hablará de sus inicios, su arquitectura y la evolución que ha tenido con el tiempo. Además se hablará sobre los problemas más comunes al momento de comenzar a desarrollar una aplicación para Android.
 \section{Introducción a Android}
 Android es un sistema operativo basado en Linux, diseñado principalmente para dispositivos móviles táctiles, tales como smartphones y tablets. A continuación se darán a conocer algunos detalles sobre sus inicios, arquitectura y evolución con el tiempo.
@@ -116,19 +137,34 @@ Android actualiza mes a mes las estadísticas relativas al número de dispositivos
 \end{figure}
 
 
-\subsection{Problemas al desarrollar en Android}
-Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+\section{Problemas al desarrollar en Android}
+Ahora que ya se han dado a conocer aspectos básicos sobre Android, se puede profundizar en los problemas más comúnes que se enfrentan al desarrollar aplicaciones.
 
-\subsubsection{Fragmentación a nivel de software}
-Aquí se habla de que existen muchos sistemas operativos de Android activos hoy en día.
-Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+\subsection{Fragmentación a nivel de software}
+Como ya se mencionó anteriormente, existen muchos sistemas operativos de Android vigentes hoy en día. Esto priva al desarrollador de muchos funciones útiles al momento de programar su aplicación, ya que se debe establecer una API mínima. En base a las estadísticas que provee Android, la mayoría de los desarrolladores decide dar soporte desde Gingerbread en adelante. Si el desarrollador desea utilizar métodos de una API superior a la de Gingerbread, debe especificar en el código fuente que esa parte sólo tiene que ser ejecutada si el dispositivo del usuario es mayor o igual a la API 11. La siguiente porción de código es un ejemplo de lo que los desarrolladores deben hacer: \\
+\begin{lstlisting}
+if (Build.VERSION.SDK_INT > Build.VERSION_CODES.GINGERBREAD_MR1) {
+    // Aquí va código superior a la API 10 de Gingerbread
+}
+\end{lstlisting}
+Esto provoca que muchas veces el desarrollador deba programar una funcionalidad más de una vez. Actualmente muchos desarrolladores están optando por dar soporte a sus aplicaciones desde Ice Cream Sandwich en adelante, debido principalmente a la gran recepción que ha tenido Jelly Bean y a la caída constante que está teniendo Gingerbread. Si se toma en cuenta que este último sistema operativo fue lanzado el año 2010 y aún cuenta con cerca de un 20\%, se puede apreciar claramente el nivel de fragmentación que existe, principalmente por la rápidez con la que Android ha estado mejorando su sistema operativo, lanzando aproximadamente una nueva versión cada año. \\
+\par
+A continuación, en el gráfico de la figura \ref{fig:Fig5} se puede ver la distribución histórica de versiones que ha tenido Android con el pasar de los años. Si bien se puede ver que aún existe una gran fragmentación, esto ha ido disminuyendo y Android cada vez se está convirtiendo en un sistema operativo más estable y maduro. Por ejemplo, si se compara el porcentaje que tenía Gingerbread en el año 2013 (39.8\%) con el de este año (17.8\%) se ve que hay una diferencia sustancial, y gran parte de este porcentaje se ha trasladado a Jelly Bean, que el año pasado contaba con un 25\% del mercado y hoy en día cuenta con más del 60\%. \\
+\begin{figure}[h!]
+\centering
+	    \includegraphics[width=12cm]{Imagenes/historical_progress_android}
+\caption{Distribución historica de versiones de Android}
+\label{fig:Fig5}
+\end{figure}
+\par
+Muchas veces los crashes y errores en los que la aplicación deja de funcionar correctamente, ocurren en un sistema operativo más antiguo y ya fueron arreglados en los sistemas operativos más nuevos. Esto ocasiona que al probar la aplicación en un smartphone como un Nexus 4 o como un Samsung S3 no ocurran problemas que si podrían verse en dispositivos más antiguos.  Además, debido a que a veces los operadores o fabricantes no ofrecen actualizaciones al sistema actual, el dispositivo no es actualizado, por lo que estos errores persistirán.
 
-\subsubsection{Fragmentación a nivel de hardware}
+\subsection{Fragmentación a nivel de hardware}
 Aquí existe fragmentación en muchos sentidos, por un lado tenemos los tamaños de pantalla distintos, las resoluciones de pantalla distintas. Por otro lado hay que considerar que cada dispositivo tiene una cantidad de espacio y memoria distintos, como también que algunos pueden tener un teclado físico, puede que no tengan cámara, etc. Por último, muchas veces los fabricantes como Samsung, hacen cambios en el sistema operativo, cambiando cosas nativas, lo cuál produce diferentes experiencias en cada dispositivo, y muchas veces genera errores que no son culpa del desarrollador.
 
 Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
 
-\subsubsection{Otros problemas}
+\subsection{Otros problemas}
 Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
 
 
