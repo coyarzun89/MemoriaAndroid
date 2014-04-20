@@ -78,7 +78,7 @@ El entorno de ejecución de Android también está compuesto por bibliotecas, por l
 \end{itemize}
 
 \subsection{¿Cómo las aplicaciones son compiladas?}
-Al momento de desarrollar una aplicación de Android, generalmente se crea un proyecto usando un IDE (\textit{Integrated Development Environment}) como Eclipse o Android Studio. El proyecto contendrá código fuente en Java y recursos. Cuando se compila el proyecto lo que ocurre es que se generan los Bytecode Java (archivos .class) en base a nuestro código fuente Java (archivos .java). Luego se compilan estos archivos .class a archivos ejecutables Dalvik (archivos .dex), los cuales pueden ser ejectuados por la máquina virtual Dalvik que está disponible en todos los dispositivos Android.\\
+Al comenzar a desarrollar una aplicación de Android, generalmente se crea un proyecto usando un IDE (\textit{Integrated Development Environment}) como Eclipse o Android Studio. El proyecto contendrá código fuente en Java y recursos. Cuando se compila el proyecto lo que ocurre es que se generan los Bytecode Java (archivos .class) en base a nuestro código fuente Java (archivos .java). Luego se compilan estos archivos .class a archivos ejecutables Dalvik (archivos .dex), los cuales pueden ser ejectuados por la máquina virtual Dalvik que está disponible en todos los dispositivos Android.\\
 \par
 Al compilar un proyecto se colocan los archivos .dex y el resto de los archivos del proyecto en un archivo llamadado APK (\textit{Android Package}). Este contiene todos los archivos necesarios para ejecutar la aplicación, incluyendo los archivos .dex, recursos compilados, recursos sin compilar, y una versión binaria del Android manifest.\\
 \par
@@ -160,7 +160,51 @@ A continuación, en el gráfico de la figura \ref{fig:Fig5} se puede ver la distri
 Muchas veces los crashes y errores en los que la aplicación deja de funcionar correctamente, ocurren en un sistema operativo más antiguo y ya fueron arreglados en los sistemas operativos más nuevos. Esto ocasiona que al probar la aplicación en un smartphone como un Nexus 4 o como un Samsung S3 no ocurran problemas que si podrían verse en dispositivos más antiguos.  Además, debido a que a veces los operadores o fabricantes no ofrecen actualizaciones al sistema actual, el dispositivo no es actualizado, por lo que estos errores persistirán.
 
 \subsection{Fragmentación a nivel de hardware}
-Aquí existe fragmentación en muchos sentidos, por un lado tenemos los tamaños de pantalla distintos, las resoluciones de pantalla distintas. Por otro lado hay que considerar que cada dispositivo tiene una cantidad de espacio y memoria distintos, como también que algunos pueden tener un teclado físico, puede que no tengan cámara, etc. Por último, muchas veces los fabricantes como Samsung, hacen cambios en el sistema operativo, cambiando cosas nativas, lo cuál produce diferentes experiencias en cada dispositivo, y muchas veces genera errores que no son culpa del desarrollador.
+Este tipo de fragmentación es la que más afecta a los desarrolladores. Por un lado, la gran cantidad de dispositivos es la que ha permitido la rápida evolución de Android, ya que cualquier fabricante puede adaptar el sistema operativo a sus necesidades e incluirlo en su hardware. Para los desarrolladores, este tipo de fragmentación es la que genera más pesadillas ya que cada dispositivo con Android cuenta con diferentes características.
+\subsubsection{Fragmentación en los tamaños de pantalla}
+Existen cuatro tamaños generales de pantallas: pequeña (small), normal, grande (large) y extra grande (xlarge). Para optimizar la experiencia del usuario, muchas veces se debe implementar una interfaz distinta para un tipo específico de pantalla. Esto se lleva a cabo a través de un archivo llamado layout, escrito en XML que definirá los elementos presentes en la interfaz. \\
+\par
+Si se desea usar el mismo layout para todas las pantallas simplemente se deben ir guardando estos archivos en la carpeta de recursos del proyecto, \textit{res/layout}. En caso que se quiera agregar un layout distinto para un tipo de pantalla, además de tener un archivo en la ruta antes mencionada, se debe crear una nueva carpeta de layouts, añadiendo el sufijo que corresponda a cada tamaño de pantalla.\\ 
+\par
+\begin{figure}[h!]
+\centering
+      \includegraphics[width=7cm]{Imagenes/chart_screen_sizes}
+\caption{Gráfico con la distribución de tamaños de pantalla.}
+\label{fig:Fig6}
+\end{figure}
+Por ejemplo, si se quisiera agregar un layout distinto para pantallas grandes (large), se debe añadir un archivo de layout a la carpeta \textit{res/layout-large}, por lo que existirán dos versiones de este archivo, uno en la carpeta antes señalada, mientras que el otro estará en la carpeta general de layouts, \textit{res/layout}.\\
+\par
+En el sitio web de Android \cite{1}, se entregan estadísticas mensuales sobre el porcentaje de dispositivos que tiene cada tamaño de pantalla. En el gráfico de la figura \ref{fig:Fig6} se muestra la distribución de tamaños de pantalla durante el mes de Abril del 2014.
+
+
+\subsubsection{Fragmentación en las resoluciones de pantalla}
+Android categoriza las resoluciones de cada pantalla en base a la densidad de pixeles que poseen. Existen cinco tipos de densidades: baja (ldpi), media (mdpi), alta (hdpi), extra-alta (xhdpi) y extra-extra-alta (xxhdpi). Además existe otro tipo de densidad, la cual es usada principalmente para televisores (tvdpi).\\
+\par
+Muchas veces es necesario agregar diferentes versiones del mismo recurso gráfico. Por ejemplo, si sólo se agrega un recurso gráfico en la resolución más alta (xxhdpi), este probablemente se verá bien en resoluciones altas como xxhdpi y xhdpi, pero para las más bajas, como hdpi o mdpi, la imagén será redimensionada y se perderá mucha calidad.\\
+\par
+Al agregar elementos de UI como botones, textos, tablas, entre otros, también se debe considerar la densidad de pixeles, ya que si el ancho y alto se asignan en pixeles, va a ocurrir lo que se muestra en la figura \ref{fig:Fig7}. Por ello, es muy importante asignar valores que esten en la escala de densidad de pixeles. 
+
+\par
+\begin{figure}[h!]
+\centering
+      \includegraphics[width=12cm]{Imagenes/density_test_bad}
+\caption{Consecuencias de asignar alto y ancho en pixeles en vez de en densidad de pixeles.}
+\label{fig:Fig7}
+\end{figure}
+
+Aún con estas precauciones, es muy dificil saber cuales son los valores de alto y ancho adecuados que deben ser asignados. Esto se debe a que existe una gran diferencia entre cada tipo de resolución, ya que si por ejemplo se asignara a un elemento un ancho de 350dp, no existirán problemas en una pantalla con una resolución alta como un Nexus 4 (xhdpi), ya que el elemento tomaría un espacio de 700px, pero para un dispositivo con resolución más baja como un Samsung Galaxy Young (ldpi) si existirían, ya que el elemento tomaría 262.5px y el ancho de la pantalla de este dispositivo es de 240px. A través del siguiente sitio \cite{3}, se puede saber cúal es la densidad de pixeles de prácticamente todos los dispositivos más populares de Android. \\
+\par
+En el gráfico de la figura \ref{fig:Fig8} se puede apreciar la información que entrega Google sobre la distribución de densidad existente durante el mes de Abril del 2014 \cite{1}.
+\par
+\begin{figure}[h!]
+\centering
+      \includegraphics[width=7cm]{Imagenes/chart_density_pixels}
+\caption{Gráfico con la distribución de densidades de pantalla.}
+\label{fig:Fig8}
+\end{figure}
+\subsubsection{Fragmentación en otras características}
+Además de los tamaños de pantalla y sus resoluciones, existen otras características muy importantes que los desarrolladores deben tener en cuenta. Una de las más importantes es la RAM con la que cuenta el dispositivo, ya que es allí donde se cargan las instrucciones que ejecuta el procesador. También es muy importante el procesador y la cantidad de núcleos con los que cuenta. 
+%  que influyen mucho durante el desarrollo de una aplicación. Por otro lado hay que considerar que cada dispositivo tiene una cantidad de espacio y memoria distintos, como también que algunos pueden tener un teclado físico, puede que no tengan cámara, etc. Por último, muchas veces los fabricantes como Samsung, hacen cambios en el sistema operativo, cambiando cosas nativas, lo cuál produce diferentes experiencias en cada dispositivo, y muchas veces genera errores que no son culpa del desarrollador.
 
 Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
 

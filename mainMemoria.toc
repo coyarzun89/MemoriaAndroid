@@ -15,23 +15,26 @@
 \contentsline {section}{\numberline {2.2}Problemas al desarrollar en Android}{14}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Fragmentaci\'on a nivel de software}{14}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Fragmentaci\'on a nivel de hardware}{16}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Otros problemas}{16}{subsection.2.2.3}
-\contentsline {chapter}{\numberline {3}Herramientas Actuales}{17}{chapter.3}
-\contentsline {section}{\numberline {3.1}Herramientas de Testing}{17}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}JUnit}{17}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}EasyMock}{17}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}PowerMock}{18}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Mockito}{18}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}Espresso}{18}{subsection.3.1.5}
-\contentsline {subsection}{\numberline {3.1.6}Robotium}{18}{subsection.3.1.6}
-\contentsline {subsection}{\numberline {3.1.7}Robolectric}{18}{subsection.3.1.7}
-\contentsline {subsection}{\numberline {3.1.8}Spoon}{19}{subsection.3.1.8}
-\contentsline {section}{\numberline {3.2}Herramientas de Crashes}{19}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Crittercism}{19}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Bugsense}{19}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Crashlytics}{19}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}ACRA}{20}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Google Analytics}{20}{subsection.3.2.5}
-\contentsline {chapter}{\numberline {4}An\'alisis Comparativo}{21}{chapter.4}
-\contentsline {chapter}{\numberline {5}Implementaci\'on en entorno real}{22}{chapter.5}
-\contentsline {chapter}{\numberline {6}Conclusi\'on}{23}{chapter.6}
+\contentsline {subsubsection}{Fragmentaci\'on en los tama\~nos de pantalla}{16}{section*.5}
+\contentsline {subsubsection}{Fragmentaci\'on en las resoluciones de pantalla}{17}{section*.6}
+\contentsline {subsubsection}{Fragmentaci\'on en otras caracter\IeC {\'\i }sticas}{18}{section*.7}
+\contentsline {subsection}{\numberline {2.2.3}Otros problemas}{18}{subsection.2.2.3}
+\contentsline {chapter}{\numberline {3}Herramientas Actuales}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}Herramientas de Testing}{19}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}JUnit}{19}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}EasyMock}{19}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}PowerMock}{20}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Mockito}{20}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}Espresso}{20}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}Robotium}{20}{subsection.3.1.6}
+\contentsline {subsection}{\numberline {3.1.7}Robolectric}{20}{subsection.3.1.7}
+\contentsline {subsection}{\numberline {3.1.8}Spoon}{21}{subsection.3.1.8}
+\contentsline {section}{\numberline {3.2}Herramientas de Crashes}{21}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Crittercism}{21}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Bugsense}{21}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Crashlytics}{21}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}ACRA}{22}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Google Analytics}{22}{subsection.3.2.5}
+\contentsline {chapter}{\numberline {4}An\'alisis Comparativo}{23}{chapter.4}
+\contentsline {chapter}{\numberline {5}Implementaci\'on en entorno real}{24}{chapter.5}
+\contentsline {chapter}{\numberline {6}Conclusi\'on}{25}{chapter.6}
