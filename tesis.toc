@@ -1,0 +1,67 @@
+\select@language {spanish}
+\contentsline {chapter}{Agradecimientos}{\es@scroman {iv}}{chapter*.1}
+\contentsline {chapter}{Resumen}{\es@scroman {v}}{chapter*.2}
+\contentsline {chapter}{Abstract}{\es@scroman {vi}}{chapter*.3}
+\contentsline {chapter}{\'Indice de Contenidos}{\es@scroman {vii}}{chapter*.4}
+\contentsline {chapter}{\'Indice de Tablas}{\es@scroman {ix}}{chapter*.4}
+\contentsline {chapter}{\'Indice de Figuras}{\es@scroman {x}}{chapter*.5}
+\contentsline {chapter}{\numberline {1}Introducci\'on}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Definici\'on del problema}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Objetivos}{2}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Objetivo principal}{2}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Objetivos espec\IeC {\'\i }ficos}{2}{subsection.1.2.2}
+\contentsline {section}{\numberline {1.3}Estructura del documento}{3}{section.1.3}
+\contentsline {chapter}{\numberline {2}Estado del Arte}{4}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introducci\'on a Android}{4}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Inicios de Android}{4}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Arquitectura}{5}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}\IeC {\textquestiondown }C\'omo las aplicaciones son compiladas?}{8}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Tipos de dispositivos}{8}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.5}Versiones}{9}{subsection.2.1.5}
+\contentsline {section}{\numberline {2.2}Problemas al desarrollar en Android}{11}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Fragmentaci\'on a nivel de software}{11}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Fragmentaci\'on a nivel de hardware}{13}{subsection.2.2.2}
+\contentsline {subsubsection}{Fragmentaci\'on en los tama\~nos de pantalla}{13}{section*.12}
+\contentsline {subsubsection}{Fragmentaci\'on en las resoluciones de pantalla}{14}{section*.14}
+\contentsline {subsection}{\numberline {2.2.3}Fragmentaci\'on en otras caracter\IeC {\'\i }sticas}{16}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Reporte sobre Fragmentaci\'on}{16}{subsection.2.2.4}
+\contentsline {chapter}{\numberline {3}Herramientas Actuales}{20}{chapter.3}
+\contentsline {section}{\numberline {3.1}Testing}{20}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Tipos de test}{20}{subsection.3.1.1}
+\contentsline {subsubsection}{Testing unitario}{20}{section*.21}
+\contentsline {subsubsection}{Testing de UI}{21}{section*.22}
+\contentsline {subsubsection}{Testing de integraci\'on}{21}{section*.23}
+\contentsline {subsubsection}{Testing funcional o de aceptaci\'on}{22}{section*.24}
+\contentsline {subsubsection}{Testing de sistema}{22}{section*.25}
+\contentsline {subsection}{\numberline {3.1.2}\IeC {\textquestiondown }Qu\'e testear?}{22}{subsection.3.1.2}
+\contentsline {subsubsection}{Cambios de orientaci\'on}{22}{section*.26}
+\contentsline {subsubsection}{Cambios de configuraci\'on}{23}{section*.27}
+\contentsline {subsubsection}{Dependencias de fuentes externas}{23}{section*.28}
+\contentsline {subsubsection}{Cambios en segundo plano}{23}{section*.29}
+\contentsline {subsection}{\numberline {3.1.3}\IeC {\textquestiondown }Qu\'e tests requieren un sistema con Android para ejecutarse?}{23}{subsection.3.1.3}
+\contentsline {subsubsection}{Testing de clases en Java}{23}{section*.30}
+\contentsline {subsubsection}{Testing de clases en Java que usan la API de Android}{24}{section*.31}
+\contentsline {subsection}{\numberline {3.1.4}Herramientas de testing provistas por Android}{24}{subsection.3.1.4}
+\contentsline {subsubsection}{JUnit}{25}{section*.32}
+\contentsline {subsection}{\numberline {3.1.5}Instrumentation}{25}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}Simulando objetos (Mock objects)}{26}{subsection.3.1.6}
+\contentsline {section}{\numberline {3.2}Herramientas de Testing}{26}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}EasyMock}{27}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}PowerMock}{27}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Mockito}{27}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Espresso}{27}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Robotium}{28}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Robolectric}{28}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.7}Spoon}{28}{subsection.3.2.7}
+\contentsline {section}{\numberline {3.3}Herramientas de Crashes}{29}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Crittercism}{29}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Bugsense}{29}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Crashlytics}{29}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}ACRA}{30}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Google Analytics}{30}{subsection.3.3.5}
+\contentsline {chapter}{\numberline {4}An\'alisis Comparativo}{31}{chapter.4}
+\contentsline {chapter}{\numberline {5}Implementaci\'on}{32}{chapter.5}
+\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{33}{chapter.6}
+\contentsline {chapter}{\numberline {A}Ap\'endice A}{34}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Secci\'on Ap\'endice}{34}{section.Alph1.1}
+\contentsline {chapter}{Bibliograf\'ia}{35}{section.Alph1.1}

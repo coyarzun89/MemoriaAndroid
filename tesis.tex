@@ -1,0 +1,167 @@
+\documentclass[letterpaper,12pt,notitlepage,spanish,final]{report} % Imprime por un solo lado de la hoja
+%\documentclass[letterpaper,12pt,notitlepage,spanish,final,twoside]{report} % Imprime por los dos lados de la hoja
+\usepackage{algorithm}
+\usepackage[noend]{algorithmic}
+\usepackage{amsfonts}
+\usepackage[centertags]{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[spanish]{babel}
+\usepackage[margin=12pt,font=small,labelfont=bf,labelsep=endash,skip=10pt]{caption}
+\usepackage{dsfont}
+\usepackage[dvips]{epsfig}
+\usepackage[mathcal]{euscript}
+\usepackage{float}
+%\usepackage{graphics}
+%\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}	% ISO-8859-1 codificación en español (incluye acentos)
+%\usepackage[utf8]{inputenc}	% Codificación estándar en inglés
+\usepackage{newlfont}
+% Para incluir el Glosario. Notar que se debe compilar usando: "makeindex tesis.nlo -s nomencl.ist -o tesis.nls" (orden: pdflatex, makeindex y pdflatex)
+\usepackage[intoc, refpage]{nomencl}	
+\usepackage{subfig}
+\usepackage{sty/utfsm_tesis}
+\usepackage{upgreek}
+\usepackage{url}
+\usepackage[table]{xcolor}
+\usepackage{xtocinc}		% Include Table of Contents as the first entry in TOC
+\usepackage{listings}
+\lstset{ %
+  language=Java
+  }
+% ---------------------------------------------------------------------------------------------------------------
+% Fuzz
+\hfuzz 2pt
+\hoffset -1.0in		% Seteo a 0 el margen izquierdo
+%\oddsidemargin 4cm		% Margen izquierdo (pag. impar)
+\oddsidemargin 3cm	% Ancho Legal 21,59cm
+\evensidemargin 0.5cm	% Alto Legal 35,56cm
+\textwidth 15.5cm
+\topmargin -1.5cm
+%\voffset 2cm 		% Margen superior
+\textheight 22cm
+%\parindent 0em
+%\parskip 2ex
+\newlength{\defbaselineskip}
+\setlength{\defbaselineskip}{\baselineskip}
+\newcommand{\setlinespacing}[1]
+           {\setlength{\baselineskip}{#1 \defbaselineskip}}
+\newcommand{\doublespacing}{\setlength{\baselineskip}
+                           {1.3 \defbaselineskip}}
+\newcommand{\singlespacing}{\setlength{\baselineskip}{\defbaselineskip}}
+% ---------------------------------------------------------------------------------------------------------------
+% Fórmulas matemáticas utilizadas
+\newcommand{\bbbr}{\mathbb R}
+\hyphenation{de-no-mi-na-das} \hyphenation{co-rres-pon-den}
+\hyphenation{ha-bi-tual-men-te} \hyphenation{ins-tan-cias}
+\hyphenation{con-glo-me-ra-do} \hyphenation{an-te-rior-men-te}
+\hyphenation{co-rres-pon-dien-te} \hyphenation{ins-truc-cio-nes}
+\hyphenation{am-bien-tes}  \hyphenation{re-pre-sen-ta-cion}
+\hyphenation{pre-sen-cia}
+% Teoremas
+\theoremstyle{plain}
+\newtheorem{hipot}{Hipótesis}[chapter]
+\newtheorem{thm}{Teorema}[section]
+\newtheorem{cor}[thm]{Corolario}
+\newtheorem{lem}[thm]{Lema}
+\newtheorem{prop}[thm]{Proposición}
+\newtheorem{defn}{Definición}[section]
+\theoremstyle{remark}
+\newtheorem{rem}{Observación}[section]
+\numberwithin{equation}{section}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\floatname{algorithm}{Algoritmo}
+% ---------------------------------------------------------------------------------------------------------------
+\setlength{\tclineskip}{1.05\baselineskip}
+% ---------------------------------------------------------------------------------------------------------------
+\newcommand{\anc}{5.1cm}
+\newcommand{\alt}{5.1cm}
+\newcommand{\M}{{\mathcal M}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\converge}[2]{\underset{#1 \ra #2}{\ra}}
+\newcommand{\limite}[2]{\underset{#1 \ra #2}{\lim}}
+\newcommand{\deriv}[2]{\frac{\partial{#1}}{\partial{#2}} }
+\newcommand{\ve}{\varepsilon}
+\newcommand{\V}{{\mathcal V}}
+\newcommand{\E}{{\cal E}}
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\s}[1]{{\mathbf #1}}
+\newcommand{\ol}{\overline}
+\newcommand{\Real}{{\mathbb R}}
+\newcommand{\C}{{\mathcal C}}
+\newcommand{\W}{{\mathcal W}}
+\newcommand{\D}{{\mathcal D}}
+\newcommand{\minimo}[1]{\underset{#1}{\min}}
+\newcommand{\thetaM}{\hat{\s{\theta}}_n^M}
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\Hip}{\mathcal{H}}
+\newcommand{\ms}[1]{\mathbf{#1}}
+% ---------------------------------------------------------------------------------------------------------------
+%Redefinición de comandos del paquete "algorithmic"
+\renewcommand{\algorithmicwhile}{\textbf{Mientras}}
+\renewcommand{\algorithmicfor}{\textbf{Para}}
+\renewcommand{\algorithmicdo}{\textbf{hacer}}
+\renewcommand{\algorithmicend}{\textbf{fin}}
+% ---------------------------------------------------------------------------------------------------------------
+% Redefinición de comandos del paquete "nomencl".
+\renewcommand{\nomname}{Glosario}
+\renewcommand{\pagedeclaration}[1]{. Ver página~\hyperpage{#1}.} % Usar este comando en conjunto con el paquete "hyperref"
+\makenomenclature %Genera el Glosario
+% ---------------------------------------------------------------------------------------------------------------
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\graphicspath{{./img/}}
+% ---------------------------------------------------------------------------------------------------------------
+\begin{document}
+% Opciones del Documento.
+%\draft %Notar que la numeración cambia, dejando los números de página en la parte superior (a no ser que sea comienzo de capítulo).
+%\nobib
+%\nofront
+%\nolistoftables \nolistoffigures
+% ---------------------------------------------------------------------------------------------------------------
+%\magister
+\begin{center}
+\ingciv
+\mention{} %Solo para ingciv
+\copyrightyear{2014}
+\submitdate{\today}
+\convocation{Junio}{2014}
+% ---------------------------------------------------------------------------------------------------------------
+\title{Análisis de herramientas para mejorar la calidad de aplicaciones para Android}
+\author{Cristopher Nicolás Oyarzún Altamirano}
+\end{center}
+
+%\twosupervisors
+\profguia{Cecilia Reyes}
+\profcorr{Chihau Chau}
+%\profext{por definir} %Solo Magister
+
+\dedicate{``Dedicado a ..."\\-- Autor}
+\ack{tex/00.0-agradecimientos}			% Incluir Agradecimientos
+\resumenesp{tex/00.1-resumen}			% Incluir Resumen (Español)
+\resumening{tex/00.2-abstract}			% Incluir Abstract (Inglés)
+\abreviaciones{tex/00.3-glosario}		% Incluir Glosario
+
+%\WinEdt{?0000} % Don't bother with over/under-full boxes
+% ---------------------------------------------------------------------------------------------------------------
+\beforepreface
+%\WinEdt{?1111} % Process all errors from here on
+\afterpreface
+% ---------------------------------------------------------------------------------------------------------------
+\include{tex/01-introduccion}
+\include{tex/02-estado_del_arte}
+\include{tex/03-herramientas_actuales}
+\include{tex/04-analisis_comparativo}
+\include{tex/05-implementacion}
+\include{tex/06-conclusiones}
+\appendix
+\include{tex/07-apendice.a}
+% ---------------------------------------------------------------------------------------------------------------
+\singlespacing
+\bibliographystyle{plain}
+\bibliography{manual} %Use Mendeley Tool or automatic creation (http://mendeley.com)
+% ---------------------------------------------------------------------------------------------------------------
+\end{document} 

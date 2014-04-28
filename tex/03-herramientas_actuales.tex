@@ -1,0 +1,146 @@
+% Capítulo 3: Herramientas Actuales
+% ---------------------------------------------------------------------------------------------------------------
+\chapter{Herramientas Actuales}
+\label{ch:herram}
+
+En este capítulo se detallarán las herramientas más utilizadas para combatir los diversos problemas durante el proceso de desarrollo de aplicaciones Android. Para una mayor comprensión, primero se realizará una introducción sobre testing.
+
+\section{Testing}
+Con tantos dispositivos y sistemas operativos vigentes, asegurar la calidad de la aplicación a través de testing es un proceso vital y necesario, aunque también puede ser uno de los mayores dolores de cabeza para los desarrolladores. Lo que funciona perfectamente en un dispositivo, en otro puede no resultar como se espera. Es por ello que es absolutamente necesario el uso de herramientas que ayuden a reducir los riesgos inherentes de que una aplicación sea compatible con más de 10.000 dispositivos distintos. A continuación se daran a conocer los tipos de testing más conocidos.
+\subsection{Tipos de test}
+\subsubsection{Testing unitario}
+Un test unitario (unit test) es una pieza de código escrito por un desarrollador que ejecuta una funcionalidad específica en el codigo que va a ser testeado. Este tipo de test se enfoca en aislar un componente, por ejemplo un método o una clase, para ser capaces de testearlo de forma replicable. Es por esto que los test unitarios y los objetos simulados (mock objects) normalmente se usan en forma conjunta. Estos objetos simulados se usan para poder repetir el test innumerables veces. Por ejemplo, si se quisiera testear el momento en que se borra información desde una base de datos, probablemente no se quiere que los datos realmente se borren y que la próxima vez que se desee testear, estos ya no se encuentren.
+
+Los test unitarios aseguran que el código funcione como se espera. También son muy útiles para asegurar que el código sigue funcionando correctamente después de hacer cambios en otras partes del proyecto, al momento de arreglar bugs o añadir nuevas funcionalidades.
+
+\subsubsection{Testing de UI}
+Además de testear los componentes individuales que permiten el funcionamiento de la aplicación, como actividades y servicios, es muy importante testear el comportamiento de la interfaz de la aplicación cuando está en funcionamiento en un dispositivo. El testing de UI asegura que la aplicación se comportará de forma correcta en respuesta de acciones que realice el usuario en un dispositivo, tales como escribir en el teclado, presionar botones, imágenes, entre otros controles. Se debe tener consideración especial con los test que involucran elementos de UI ya que únicamente la hebra principal tiene permisos para alterar la UI en Android.
+
+Un estrategia común es testear de forma manual la UI, verificando que la aplicación se comporta como se espera al realizar una serie de acciones. Sin embargo, este enfoque puede consumir mucho tiempo y ser bastante tedioso, como también, se pueden pasar por alto algunos errores. Un método más eficiente y confiable sería automatizar el testing de la interfaz con algun framework que facilite esta tarea.
+
+\subsubsection{Testing de integración}
+Los test de integración están diseñados para testear el comportamiento que los componentes individuales tienen cuando funcionan de forma conjunta. Esto normalmente se realiza una vez que ya se han aprobado los test unitatios. Además tienden a ser más complejos y lentos que los test unitarios.
+
+\subsubsection{Testing funcional o de aceptación}
+Normalmente estos tipos de test son creados por gente de negocios y de control de calidad. Además son expresados en un lenguaje de negocios. Estos son test de alto nivel para testear el correcto funcionamiento de los requierimientos o características que debería tener la aplicación. Los testers y desarrolladores también pueden colaborar en la creación de estos. 
+
+\subsubsection{Testing de sistema}
+El sistema es testeado como un todo, y la interacción entre los componentes, software y hardware es testeada. Normalmente, los test de sistema incluyen clases de test como:
+\begin{itemize}
+
+\item Smoke test: Es un testing rápido que se lleva a cabo sobre toda la aplicación. Su objetivo no consiste en encontrar bugs, sino que es asegurar que las funcionalidades básicas se comportan de manera correcta.
+
+\item Test de desempeño: Los test de desempeño miden alguna característica de un componente en una forma replicable. Si se necesitan mejoras en el desempeño de algún componente de la aplicación, el mejor enfoque es medir el desempeño antes y después de la inclusión de un cambio. De esta forma se entiende claramente el impacto que ha tenido el cambio en el desempeño.
+\end{itemize}
+
+\subsection{¿Qué testear?}
+Tan importante como saber hacer testing, es saber que cosas son necesarias de testear. A continuación se listan algunas situaciones comúnes relacionadas con Android que se deberian tener en cuenta al momento de testear.
+\subsubsection{Cambios de orientación}
+Para dispositivos que soportan múltiples orientaciones, Android detecta los cambios de orientación cuando el usuario rota el dispositivo, dejandolo en \textit{landscape} (posición horizontal) en vez de \text{portrait} (posición vertical).
+
+Cuando ocurre esto, el comportamiento por defecto es destruir y recomenzar la Actividad. Se deberían tener en cuenta las siguientes preguntas:
+\begin{itemize}
+\item ¿Se dibuja de forma correcta la pantalla?
+
+\item ¿La aplicación mantiene el estado? La Actividad no debería perder nada que el usuaurio haya ingresado en la UI.
+\end{itemize}
+
+\subsubsection{Cambios de configuración}
+También pueden ocurrir otros cambios más generales en el sistema, como un cambio de idioma. Este tipo de cambios también desencadenan el comportamiento por defecto de destruir y recomenzar la Actividad. 
+
+\subsubsection{Dependencias de fuentes externas}
+Si la aplicación depende de acceso a internet, o usa GPS, entonces se debería testear que pasa cuando estos recursos no están disponibles.
+
+\subsubsection{Cambios en segundo plano}
+Si la aplicación esta inactiva y ya ha pasado a segundo plano, lo más probable es que el sistema destruya la o las actividades de la aplicación para dar memoria a otras aplicaciones que esten corriendo actualmente. Es por ello que testear el ciclo de vida de la actividad es necesario para corroborar si se destruye y recomienza de forma exitosa, sin pérdida del estado actual.
+
+\subsection{¿Qué tests requieren un sistema con Android para ejecutarse?}
+\subsubsection{Testing de clases en Java}
+Si las clases que se tienen no hacen llamadas a la API de Android, se puede usar el framework de JUnit sin ningúna restricción.
+
+La ventaja de este método es que se puede usar cualquier framework de testing que sea para Java y la velocidad con que se ejecutan los tests debería ser mucha más rápida comparada con los tests que requieren de un sistema con Android.
+
+\subsubsection{Testing de clases en Java que usan la API de Android}
+Si se quieren hacer tests que usen la API de Android, estos necesitan llevarse a cabo en un dispositivo con Android. Esto hace que la ejecución de los tests tome más tiempo, principalmente porque el archivo \textit{android.jar} no contiene el código del framework de Android. Este archivo es únicamente usado al momento de compilar una aplicación. Una vez que la aplicación está instalada, se utilizará el \textit{android.jar} que está en el dispositivo.
+
+\subsection{Herramientas de testing provistas por Android}
+Android provee un buen framework de testing para hacer pruebas en varios aspectos de la aplicación. Los elementos claves son:
+\begin{itemize}
+\item Los Test suites (conjuntos de prueba) de Android están basados en JUnit. Se puede usar JUnit puro para testear una clase que no hace llamadas a la API de Android, o las extensiones de JUnit para Android si se desea testear componentes de Android. 
+
+\item Las extensiones de JUnit proveen clases con tests específicos para componentes. Estas clases entregan métodos para crear \textit{mocking objects} (objetos simulados) y métodos que ayudan a controlar el ciclo de vida de los componentes.
+
+\item El SDK (Software Development Kit) de Android también provee herramientas para realizar testing a la UI, como \textit{monkeyrunner}.
+
+\end{itemize}
+
+A continuación se revisará en detalle cada una de las herramientas relacionadas a testing del SDK:
+
+\subsubsection{JUnit}
+El testing de Android se basa en JUnit. Actualmente la API de testing soporta JUnit 3. Este requiere que las clases de test hereden de la clase \textit{junit.framework.TestCase}. Además, en JUnit 3 los métodos de testing deben comenzar con el prefijo \textit{test}. También se debe llamar al método \textit{setUp()} para configurar el test y al método \textit{tearDown()} para finalizar el test.
+
+Es una buena práctica, al realizar testing en Android, tener un método llamado \textit{testPreconditions()} que se encargue de corroborar las precondiciones para cada uno de los test. Si este método falla, se sabe inmediatamente que las suposiciones para los otros test no se han cumplido.
+
+Se puede usar la clase \textit{TestCase} de JUnit para hacer testing unitario en una clase que no haga llamadas a la API de Android. \textit{TestCase} es también la clase base para \textit{AndroidTestCase}, que puede ser usada para testear objetos que dependen de Android.
+
+La clase \textit{Assert} de JUnit es usada para mostrar los resultados de los test. Los métodos \textit{assert} comparan los valores que se esperan de un test con los valores reales y se lanza una excepción si la comparación falla. Android también provee una clase para \textit{assertions} que extiende los posibles tipos de comparaciones, y otra clase de \textit{assertions} para testear la UI.
+
+\subsection{Instrumentation}
+La API de testing de Android provee interacciones entre los componentes de Android y el ciclo de vida de la aplicación. Estas interacciones son realizadas a través de la API Instrumentation, que permite a los tests controlar el ciclo de vida y los eventos de interacción del usuario.
+
+Normalmente, un componente de Android se ejecuta en un ciclo de vida determinado por el sistema. Por ejemplo, el ciclo de vida de un objeto \textit{Activity} comienza cuando este es activado por un \textit{Intent}. El método \textit{onCreate()} es llamado, seguido del método \textit{onResume()}. Cuando el usuario abre otra aplicación, el método \textit{onPause()} es llamado. Si la Actividad llama al método \textit{finish()}, entonces el método \textit{onDestroy()} también es llamado. La API de Android no provee un forma de llamar estos métodos directamente, pero se puede hacer a través de \textit{Instrumentation}.
+
+Únicamente una clase de test basada en \textit{Instrumentation} permite enviar eventos de teclado o toques de pantalla a la aplicación bajo test. Por ejemplo, se puede testear una llamada al método \textit{getActivity()}, el cuál comienza una actividad y retorna la actividad que está siendo testeada. Después se puede llamar al método \textit{finish()}, seguido por un método \textit{getActivity()} nuevamente, y así poder testear si la aplicación restaura su estado de forma correcta.
+
+El sistema ejecuta todos los componentes de una aplicación en el mismo proceso. Se puede permitir a algunos componentes, tales como \textit{Content Providers}, ejecutarse en un proceso separado, pero no se puede forzar a una aplicación a ejecutarse en el mismo proceso en el que otra aplciación esta ejecutándose.
+
+\subsection{Simulando objetos (Mock objects)}
+Android entrega clases para crear objetos llamados \textit{mock objects}, que son objetos de sistema simulados como Context, ContentProvider, ContentResolver y Service. Algunos tests también proveen objetos simulados de Intent. Se pueden usar estos \textit{mocks} para aislar los tests del resto del sistema y facilitar la inyección de dependencias. Estas clases se encuentran en los paquetes \textit{android.test} y \textit{android.test.mock}.
+
+Por ejemplo se puede usar MockContext en vez de Context. La clase \textit{RenamingDelegatingContext} entrega las llamadas a un contexto dado y ayuda a la base de datos y a las operaciones con archivos agregando un prefijo a todos los nombres de los archivos. De esta forma se pueden testear compontentes sin afectar la base de datos del sistema de archivos de un dispositivo Android.
+
+\section{Herramientas de Testing}
+Ahora que ya se conoce lo básico sobre testing y se han visto las herramientas que entrega el framework de testing de Android, se comenzaran a ver el resto de herramientas que se encuentran disponibles. 
+
+\subsection{EasyMock}
+Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+
+\subsection{PowerMock}
+Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+
+\subsection{Mockito}
+Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+
+\subsection{Espresso}
+Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+
+\subsection{Robotium}
+Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+
+\subsection{Robolectric}
+Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+
+\subsection{Spoon}
+Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+
+\section{Herramientas de Crashes}
+Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+
+\subsection{Crittercism}
+Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+
+\subsection{Bugsense}
+Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+
+\subsection{Crashlytics}
+Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+
+\subsection{ACRA}
+Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+
+\subsection{Google Analytics}
+Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+
+
+
+% ---------------------------------------------------------------------------------------------------------------
