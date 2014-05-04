@@ -5,11 +5,13 @@
 
 \section{Definición del problema}
 \label{sec:problematica}
-Android es una sistema operativo emergente de código abierto, diseñado especialmente para dispositivos móviles, el cual fue presentado el año 2007. El crecimiento que ha tenido los últimos años ha sido considerable, dominando el mercado ampliamente, existiendo más de mil millones de dispositivos activados en todo el mundo.
+Android es una sistema operativo emergente de código abierto, diseñado especialmente para dispositivos móviles, el cual fue presentado el año 2007. El crecimiento que ha tenido los últimos años ha sido considerable, dominando el mercado ampliamente, existiendo más de mil millones de dispositivos activados en todo el mundo.\\
 
-El gran problema que ha tenido que enfrentar la gente que desarrolla aplicaciones para  Android es la fragmentación generada por la inmensa cantidad y variedad de dispositivos existentes, entre los que se encuentran smartphones, notebooks, netbooks, tablets, televisores, etc. Además, existen variadas versiones del mismo sistema operativo en uso. Esto conlleva muchos problemas a la hora de diseñar y desarrollar aplicaciones ya que es casi imposible poder probar nuestra aplicación en cada uno de los dispositivos para los cuales estará disponible. Lo más probable es que existirán problemas de interfaz gráfica si no estamos listos para soportar variadas resoluciones y tamaños de pantalla. También es necesario tener un buen sistema de reporte de crashes ya que muchas veces, por más que nuestro código funcione de forma correcta en un dispositivo con Android 4.3, en el mismo dispositivo con Android 4.0.4 se puede comportar de forma distinta. Además, cada dispositivo tiene diferentes capacidades con respecto a: procesador, número de nucleos, memoria, RAM, batería, entre otras cosas. Si bien, estos son sólo algunos de los problemas que se deben enfrentar, existen otros más, tales como: la distribución de versiones alphas y betas, tracking de eventos, mejoras de performance, testing, etc.
+El gran problema que ha tenido que enfrentar la gente que desarrolla aplicaciones para Android es la fragmentación. Por un lado está la fragmentación a nivel de hardware generada por los más de 11.000 diferentes tipos de dispositivos \cite{4}, sólo considerando smartphones y tablets, ya que también existen notebooks, netbooks y televisores que tienen Android. Esto conlleva dificultades a la hora de diseñar y desarrollar aplicaciones ya que es prácticamente imposible poder testear una aplicación en cada uno de los dispositivos para los cuales estará disponible. Debido a esto, lo más probable es que existan problemas en diferentes áreas, por ejemplo, si la aplicación no está lista para soportar variadas resoluciones de pantalla, la interfaz gráfica no se verá como fue diseñada. Esto es solamente uno de los problemas que puede ocurrir debido a la diversidad de dispositivos, ya que también se debe tener en cuenta que cada uno de los teléfonos y tablets tienen especificaciones distintas de memoria, RAM, procesador, fabricante, etc. Por otro lado existe la fragmentación a nivel de software, provocada por las ocho versiones de Android que se encuentran vigentes hoy en día. Esto conlleva que, por ejemplo, sea necesario tener un buen sistema de reporte de crashes ya que muchas veces por más que el código funcione de forma correcta en un dispositivo con Android 4.3, en el mismo dispositivo con Android 4.0.4 se puede comportar de forma distinta. Si bien, estos son sólo algunos de los problemas que se deben enfrentar a causa de la fragmentación, existen muchos más.\\
 
-Hoy en día existen variadas herramientas que ayudan a afrontar muchos de estos problemas. El rápido crecimiento de Android ha estado acompañado de la aparición de una gran cantidad de librerías y proyectos opensource con diversas soluciones. Estas herramientas se dan a conocer a través de las redes sociales o comunidades de programadores. Debido a que estas librerías se encuentran dispersas es difícil saber cual de todas elegir, ya que se desconocen los pros y contras de cada una de ellas. Esto provoca que muchas veces, por desconocimiento o falta de tiempo, no se realice una decisión informada y se use la primera librería encontrada.
+Desde su lanzamiento hasta la fecha, Android ha estado acompañado por una activa comunidad de desarrolladores. Ellos son los responsables de que exista una gran cantidad de proyectos de código abierto que buscan dar solución a los problemas mencionados anteriormente. Estas herramientas generalmente se dan a conocer a través de comunidades como Github o Google+, por lo que se encuentran dispersas y normalmente sólo se conoce una parte de las posibles soluciones disponibles. Esto provoca que muchas veces, por desconocimiento o falta de tiempo, el desarrollador tome una decisión apresurada y no use la biblioteca que más beneficie a su proyecto.\\
+
+Si se revisan estadísticas del sitio AppBrain \cite{4} correspondientes al 3 de Mayo del 2014, se puede ver que de un total de 1.203.555 aplicaciones disponibles para descargar, un 41.4\% tienen una calificación promedio menor a 3 estrellas, de un total de 5. Normalmente si se desea tener una buena nota por parte del usuario, es necesario que la aplicación sea realmente de utilidad y resuelva un problema real, aunque también es muy importante que la aplicación sea robusta y estable. Además, cada mes se crean entre 10.000 y 80.000 nuevas aplicaciones \cite{4}, por lo que es fundamental diferenciarse del resto, entregando un producto de calidad.
 
 \section{Objetivos}
 \label{sec:objetivos}
@@ -17,7 +19,7 @@ A continuación se presentan la lista de objetivos que se desean abarcar en este 
 
 \subsection{Objetivo principal}
 \begin{itemize}
-\item Estudiar y comparar herramientas que ayudan a mejorar el desarrollo de aplicaciones Android de tal manera de proveer a los desarrolladores una guía práctica que les permita tomar mejores decisiones en el transcurso de un proyecto.
+\item Estudiar y comparar herramientas que ayuden a mejorar la calidad de las aplicaciones desarrolladas para Android, de tal manera de proveer a los desarrolladores una guía práctica que les permita tomar mejores decisiones en el transcurso de un proyecto.
 
 \end{itemize}
 
@@ -25,11 +27,11 @@ A continuación se presentan la lista de objetivos que se desean abarcar en este 
 \begin{itemize}
 \item Identificar los distintos problemas existentes durante el desarrollo de aplicaciones Android.
 
-\item Estudiar y clasificar las herramientas actuales en base a los distintos problemas que buscan solucionar.
+\item Estudiar las herramientas que actualmente permiten mejorar la calidad de las aplicaciones, y clasificarlas en base a los distintos problemas que buscan solucionar.
 
-\item Realizar un análisis comparativo para cada una de las categorias elegidas.
+\item En base a la clasificación realizada, llevar a cabo un análisis comparativo entre las herramientas estudiadas.
 
-\item Implementar las mejores herramientas en un entorno real de desarrollo.
+\item En base al análisis realizado, implementar las herramientas que puedan ser más útiles en un entorno real de desarrollo.
 \end{itemize}
 
 \section{Estructura del documento}

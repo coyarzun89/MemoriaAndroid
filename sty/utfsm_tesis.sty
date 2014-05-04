@@ -291,7 +291,7 @@ con el estilo de documento `report'}{Usted debería leer la documentación de UTFS
 \def\@profguia{}\def\@profcorr{}\def\@profext{}
 \def\@submitdate{\ifcase\the\month\or
   Enero\or Febrero\or Marzo\or Abril\or Mayo\or Junio\or
-  Julio\or Agosto\or Septiembre\or Octubre\or Noviembre\or Deciembre\fi
+  Julio\or Agosto\or Septiembre\or Octubre\or Noviembre\or Diciembre\fi
   \space \number\the\year}
 \def\@copyrightyear{\number\the\year}
 \def\convocation#1#2{\gdef\@convocationmonth{#1}\gdef\@convocationyear{#2}}
@@ -341,50 +341,31 @@ con el estilo de documento `report'}{Usted debería leer la documentación de UTFS
     \begin{center}
         \hyphenpenalty=10000\Large \textbf{\uppercase\expandafter{\@title}}
     \end{center}
-    \vfill
+      \vskip0.1in
     \begin{center}
-        \Large\rm Tesis presentada como requerimiento parcial\\
-        \Large\rm para optar al grado académico de\\
-        \vskip 0.15in
-        \Large \uppercase\expandafter{\@degree} \\
-        \Large\rm y al t\'itulo profesional de\\
+        \large\rm Memoria presentada como requerimiento parcial\\
+        \large\rm para optar al t\'itulo profesional de    
+        \vskip0.2in
         \Large \uppercase{Ingeniero Civil en Inform\'atica} \\
         \ifmenti@n
              \Large \uppercase{menci\'on en}
              \Large \uppercase\expandafter{\themention@text} \\
         \fi
         \Large\rm por\\
-        \Large\textbf{\uppercase\expandafter{\@author}} \\
-        \vskip 0.15in
-        \Large\uppercase\expandafter{\@convocationmonth}
-        \Large\uppercase\expandafter{\@convocationyear}
+        \Large\textbf{\expandafter{\@author}} \\
+        \vskip 0.7in
+        \large\rm Comisión Evaluadora:\\
+        \large\expandafter{\@profguia} (Guía, UTFSM)\\
+        \large\expandafter{\@profcorr} (Correferente, PUCV)\\
+        \vskip 0.5in
+        \normalsize\uppercase\expandafter{\@convocationmonth}
+        \normalsize\uppercase\expandafter{\@convocationyear}
     \end{center}
     \vfill
     % Página en blanco.
 	\newpage \thispagestyle{empty}\begin{flushright}\vfill\end{flushright}
     % Comienza el contador numérico romano.
-	\newpage \setcounter{page}{1}\begin{flushright}\vfill\end{flushright}
-    \begin{center}
-        %Como requisito para optar al grado de:\\
-        %\uppercase\expandafter{\@degree} \\
-        \vskip0.3in
-        \Large Comisión Evaluadora:\\
-	\ifph@d
-		\Large\expandafter{\@profguia} (Guía, UTFSM)\\
-		\Large\expandafter{\@profcorr} (Correferente, PUCV\\
-		\Large\expandafter{\@profext}  (Externo, Universidad)\\
-        \else % Not Ph.D. degree.
-		\Large\expandafter{\@profguia} (Guía, UTFSM)\\
-		\Large\expandafter{\@profcorr} (Correferente, PUCV)\\
-        \fi        
-	\vskip1.0in
-   	\uppercase\expandafter{\@university} \\
-	\uppercase\expandafter{\@address} \\
-	\vskip4.0in
-	\rm \copyright\ Derechos de \@author, \@copyrightyear\\
-	\rm \small ``Material de referencia, su uso no involucra responsabilidad del autor o de la Institución"
-    \end{center}
-    \newpage
+	\newpage \setcounter{page}{2}\begin{flushright}\vfill\end{flushright}
 }
 \def\signature#1#2{
 	\parbox[b]{1in}{\smash{#1}\vskip12pt}
@@ -392,7 +373,7 @@ con el estilo de documento `report'}{Usted debería leer la documentación de UTFS
 }
 
 \def\signaturepage{
-    \setcounter{page}{2}
+    \setcounter{page}{3}
     \begin{quotation}
         \begin{center}
             \textsc{\expandafter{\@university} \\
@@ -400,14 +381,13 @@ con el estilo de documento `report'}{Usted debería leer la documentación de UTFS
             Valparaíso -- Chile}
         \end{center}
         \null\vskip0.3in
-        \noindent T\'ITULO DE LA TESIS:\\
+        \noindent T\'ITULO DE LA MEMORIA:\\
         \textbf{\uppercase\expandafter{\@title}}
         \null\vskip0.3in
         \noindent AUTOR:\\
         \textbf{\uppercase\expandafter{\@author}}
         \null\vskip0.3in
-        Tesis presentada como requerimiento parcial para optar al grado académico
-        de \textbf{\@degree} y al título profesional de \textbf{Ingeniero Civil en Informática} 
+        Tesis presentada como requerimiento parcial para optar al título profesional de \textbf{Ingeniero Civil en Informática} 
         \ifmenti@n
              menci\'on en \textbf{\themention@text}
         \fi
@@ -433,33 +413,35 @@ con el estilo de documento `report'}{Usted debería leer la documentación de UTFS
         \fi
         \vskip0.2in plus 1fill minus 0.1in
         \begin{flushright}
-        \@submitdate. \\
+        \expandafter{\@convocationmonth}
+        \expandafter{\@convocationyear}. \\
         Valparaíso, Chile.
         \end{flushright}
     \end{quotation}
-    \vfill\newpage\setcounter{page}{2}
+    \vfill\newpage\setcounter{page}{3}
 }
 
 \def\beforepreface{
 \typeout{Most over/underfulls in first few pages are the fault of dalthesis.}
 \typeout{Ignore all them. If uncorrectable errors occur, notify staff.}
+
     \pagenumbering{roman}
     \pagestyle{plain}
     \titlep
     \iffront@pages\signaturepage\else\addtocounter{page}{1}\fi
         \addtocounter{page}{1}
         \iffront@pages\ifdedic@tion
-            \newpage \begin{flushright}
+            \newpage 
+            \typeout{Agradecimientos}
+            \include{\@ack}
+            \newpage
+            \begin{flushright}
             \ \vskip5in
             \Large\em\null\vskip1in
             \dedication@text
             \end{flushright}
         \fi
     \fi
-    {
-    \typeout{Agradecimientos}
-    \include{\@ack}
-    }
     {
     \typeout{Resumen}
     \include{\@resumenesp}
@@ -489,6 +471,7 @@ con el estilo de documento `report'}{Usted debería leer la documentación de UTFS
 \def\prefacesection#1{
     \chapter*{#1}
     \addcontentsline{toc}{chapter}{#1}}
+
 
 \newenvironment{dedication}{\newpage\begin{center}\Large\em\null\vskip1in}
 {\vfill\end{center}}
