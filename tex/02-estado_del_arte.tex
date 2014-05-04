@@ -24,19 +24,19 @@
 \chapter{Estado del Arte}
 \label{ch:eda}
 
-En este capítulo se dará a conocer una breve descripción del sistema operativo Android. Se comenzará con una introducción, se hablará de sus inicios, su arquitectura y la evolución que ha tenido con el tiempo. Además se hablará sobre los problemas más comunes al momento de comenzar a desarrollar una aplicación para Android.
+En este capítulo se dará a conocer una breve descripción del sistema operativo Android. Se comenzará con una introducción, hablando de sus inicios, su arquitectura y la evolución que ha tenido con el tiempo. Además se hablará sobre los problemas más comunes al momento de comenzar a desarrollar una aplicación para Android.
 \section{Introducción a Android}
 Android es un sistema operativo basado en Linux, diseñado principalmente para dispositivos móviles táctiles, tales como smartphones y tablets. A continuación se darán a conocer algunos detalles sobre sus inicios, arquitectura y evolución con el tiempo.
 \subsection{Inicios de Android}
 Android, Inc. fue fundada en Palo Alto, California en Octubre del 2003 por Andy Rubin, Rich Miner, Nick Sears and Chris White. Su objetivo era desarrollar dispositivos móviles más inteligentes, que estuvieran más enfocados en la localización del dueño y en distintas preferencias.\\
 
-Google compró a Android Inc. el 17 de Agosto del 2005. Poco se sabía sobre esta compañía para ese entonces ya que estuvo funcionando de forma secreta, sin dar a conocer muchos detalles sobre lo que desarrollaban. Muchos asumían que Google estaba planeando entrar al mercado de dispositivos móviles. De ahi en adelante los esfuerzos de Google se enfocaron en conversaciones con fabricantes y carriers, con la promesa de proveer de un sistema flexible y actualizable.\\
+Google compró a Android Inc. el 17 de Agosto del 2005 \cite{6}. Poco se sabía sobre esta compañía para ese entonces ya que estuvo funcionando de forma secreta, sin dar a conocer muchos detalles sobre lo que desarrollaban. Muchos asumían que Google estaba planeando entrar al mercado de dispositivos móviles. De ahi en adelante los esfuerzos de Google se enfocaron en conversaciones con fabricantes y carriers, con la promesa de proveer de un sistema flexible y actualizable.\\
 
-Sin embargo, la aparición del iPhone el 9 de Enero del 2007 tuvo un efecto disruptivo en el desarrollo de Android. Hasta el momento se contaba con un prototipo, el cuál se acercaba más a lo que podría ser un teléfono BlackBerry, sin pantalla táctil y con un teclado físico. Por lo que se comenzó inmediatamente un trabajo de reingeniería del sistema operativa y del prototipo para que fuese capaz de competir con el iPhone.\\
+Sin embargo, la aparición del iPhone el 9 de Enero del 2007 \cite{7} tuvo un efecto disruptivo en el desarrollo de Android. Hasta el momento se contaba con un prototipo, el cuál se acercaba más a lo que podría ser un teléfono BlackBerry, sin pantalla táctil y con un teclado físico. Por lo que se comenzó inmediatamente un trabajo de reingeniería del sistema operativa y del prototipo para que fuese capaz de competir con el iPhone.\\
 
-El 6 de Noviembre del 2007 fue fundada la Open Handset Alliance, una alianza comercial liderada por Google con compañías tecnológicas como HTC, Sony y Samsung, operadores de carriers como Nextel y T-Mobile y fabricantes de chips, con el objetivo de desarrollar estándares abiertos para dispositivos móviles. El primer smartphone disponible que funcionaba sobre Android fue el HTC Dream, lanzado el 22 de Octubre del 2008.
+El 6 de Noviembre del 2007 \cite{8} fue fundada la Open Handset Alliance, una alianza comercial liderada por Google con compañías tecnológicas como HTC, Sony y Samsung, operadores de carriers como Nextel y T-Mobile y fabricantes de chips, con el objetivo de desarrollar estándares abiertos para dispositivos móviles. El primer smartphone disponible que funcionaba sobre Android fue el HTC Dream, lanzado el 22 de Octubre del 2008.
 \subsection{Arquitectura}
-La arquitectura del sistema Android, también llamado stack, se puede apreciar en la figura ~\ref{fig:Fig1} y está compuesta por cuatro capas:
+La arquitectura del sistema Android \cite{9}, también llamado stack, se puede apreciar en la figura ~\ref{fig:Fig1} y está compuesta por cuatro capas:
 \begin{itemize}
 \item \textbf{Kernel de Linux:} La capa más profunda es su núcleo en Linux, un sistema operativo abierto, el cuál es portable y seguro. Para cada pieza de hardware, como la cámara o el bluetooth, existe un driver dentro del kernel, que permitirá a la capa superior hacer uso de ella, por lo que funciona como una capa de abstracción. El kernel además se encarga de la gestión de los diversos recursos del dispositivo, como la energía o la memoria, elementos de comunicación, procesos, etc.
 
@@ -47,7 +47,7 @@ El entorno de ejecución de Android también está compuesto por bibliotecas, por l
 \begin{figure}[h!]
 \centering
 	    \includegraphics[width=12cm]{Imagenes/arquitectura_android}
-\caption{Arquitectura de Android, compuesta por cuatro capas}
+\caption{Arquitectura de Android, compuesta por cuatro capas. \cite{15}}
 \label{fig:Fig1}
 \end{figure}
 
@@ -83,7 +83,7 @@ El entorno de ejecución de Android también está compuesto por bibliotecas, por l
 \end{itemize}
 
 \subsection{¿Cómo las aplicaciones son compiladas?}
-Al comenzar a desarrollar una aplicación de Android, generalmente se crea un proyecto usando un IDE (Integrated Development Environment) como Eclipse o Android Studio. El proyecto contendrá código fuente en Java y recursos. Cuando se compila el proyecto lo que ocurre es que se generan los Bytecode Java (archivos .class) en base a nuestro código fuente Java (archivos .java). Luego se compilan estos archivos .class a archivos ejecutables Dalvik (archivos .dex), los cuales pueden ser ejectuados por la máquina virtual Dalvik que está disponible en todos los dispositivos Android.\\
+Al comenzar a desarrollar una aplicación de Android, generalmente se crea un proyecto usando un IDE (Integrated Development Environment) como Eclipse o Android Studio. El proyecto contendrá código fuente en Java y recursos. Cuando se compila el proyecto \cite[p.~14]{10} lo que ocurre es que se generan los Bytecode Java (archivos .class) en base a nuestro código fuente Java (archivos .java). Luego se compilan estos archivos .class a archivos ejecutables Dalvik (archivos .dex), los cuales pueden ser ejectuados por la máquina virtual Dalvik que está disponible en todos los dispositivos Android.\\
 
 Al compilar un proyecto se colocan los archivos .dex y el resto de los archivos del proyecto en un archivo llamadado APK (Android Package). Este contiene todos los archivos necesarios para ejecutar la aplicación, incluyendo los archivos .dex, recursos compilados, recursos sin compilar, y una versión binaria del Android Manifest.\\
 
@@ -103,7 +103,7 @@ En el sitio web de Android \cite{1}, se pueden apreciar los dos tipos de disposi
 \label{fig:Fig2}
 \end{figure}
 
-A continuación se listan los otros dispositivos que cuentan con Android:
+A continuación se listan los otros dispositivos que cuentan con Android:\cite[p.~5]{10}
 \begin{itemize}
 \item Lectores de libros.
 
@@ -127,7 +127,7 @@ Desde Abril del 2009, los nombres de las versiones de Android han estado relacio
 \begin{figure}[h!]
 \centering
 	    \includegraphics[width=14cm]{Imagenes/versiones_android}
-\caption{Versiones de Android.}
+\caption{Versiones de Android. \cite{16}}
 \label{fig:Fig3}
 \end{figure}
 
@@ -146,19 +146,19 @@ Android actualiza mes a mes las estadísticas relativas al número de dispositivos
 Ahora que ya se han dado a conocer aspectos básicos sobre Android, se puede profundizar en los problemas más comúnes que se enfrentan al desarrollar aplicaciones.\\
 
 \subsection{Fragmentación a nivel de software}
-Como ya se mencionó anteriormente, existen muchos sistemas operativos de Android vigentes hoy en día. Esto priva al desarrollador de muchos funciones útiles al momento de programar su aplicación, ya que se debe establecer una API mínima. En base a las estadísticas que provee Android, la mayoría de los desarrolladores decide dar soporte desde Gingerbread en adelante. Si el desarrollador desea utilizar métodos de una API superior a la de Gingerbread, debe especificar en el código fuente que esa parte sólo tiene que ser ejecutada si el dispositivo del usuario es mayor o igual a la API 11. La siguiente porción de código es un ejemplo de lo que los desarrolladores deben hacer: \\
+Como ya se mencionó anteriormente, existen muchos sistemas operativos de Android vigentes hoy en día. Esto priva al desarrollador de muchos funciones útiles al momento de programar su aplicación, ya que se debe establecer una API mínima. En base a las estadísticas que provee Android, la mayoría de los desarrolladores decide dar soporte desde Gingerbread en adelante. Si el desarrollador desea utilizar métodos de una API superior a la de Gingerbread, debe especificar en el código fuente que esa parte sólo tiene que ser ejecutada si el dispositivo del usuario es mayor o igual a la API 11. La siguiente porción de código \cite{11} es un ejemplo de lo que los desarrolladores deben hacer: \\
 \begin{lstlisting}
 if (Build.VERSION.SDK_INT > Build.VERSION_CODES.GINGERBREAD_MR1) {
     // Aquí va código superior a la API 10 de Gingerbread
 }
 \end{lstlisting}
-Esto provoca que muchas veces el desarrollador deba programar una funcionalidad más de una vez. Actualmente muchos desarrolladores están optando por dar soporte a sus aplicaciones desde Ice Cream Sandwich en adelante, debido principalmente a la gran recepción que ha tenido Jelly Bean y a la caída constante que está teniendo Gingerbread. Si se toma en cuenta que este último sistema operativo fue lanzado el año 2010 y aún cuenta con cerca de un 20\%, se puede apreciar claramente el nivel de fragmentación que existe, principalmente por la rápidez con la que Android ha estado mejorando su sistema operativo, lanzando aproximadamente una nueva versión cada año.\\
+Esto provoca que muchas veces el desarrollador deba programar una funcionalidad más de una vez. Actualmente muchos desarrolladores están optando por dar soporte a sus aplicaciones desde Ice Cream Sandwich en adelante, debido principalmente a la gran recepción que ha tenido Jelly Bean y a la caída constante que está teniendo Gingerbread. Si se toma en cuenta que este último sistema operativo fue lanzado el año 2010 \cite{12} y aún cuenta con cerca de un 20\%, se puede apreciar claramente el nivel de fragmentación que existe, principalmente por la rápidez con la que Android ha estado mejorando su sistema operativo, lanzando aproximadamente una nueva versión cada año.\\
 
 A continuación, en el gráfico de la figura \ref{fig:Fig5} se puede ver la distribución histórica de versiones que ha tenido Android con el pasar de los años. Si bien se puede ver que aún existe una gran fragmentación, esto ha ido disminuyendo y Android cada vez se está convirtiendo en un sistema operativo más estable y maduro. Por ejemplo, si se compara el porcentaje que tenía Gingerbread en el año 2013 (39.8\%) con el de este año (17.8\%) se ve que hay una diferencia sustancial, y gran parte de este porcentaje se ha trasladado a Jelly Bean, que el año pasado contaba con un 25\% del mercado y hoy en día cuenta con más del 60\%.
 \begin{figure}[h!]
 \centering
 	    \includegraphics[width=14cm]{Imagenes/historical_progress_android}
-\caption{Distribución historica de versiones de Android}
+\caption{Distribución historica de versiones de Android.\cite{13}}
 \label{fig:Fig5}
 \end{figure}
 \par
@@ -167,14 +167,14 @@ Muchas veces los crashes y errores en los que la aplicación deja de funcionar co
 \subsection{Fragmentación a nivel de hardware}
 Este tipo de fragmentación es la que más afecta a los desarrolladores. Por un lado, la gran cantidad de dispositivos es la que ha permitido la rápida evolución de Android, ya que cualquier fabricante puede adaptar el sistema operativo a sus necesidades e incluirlo en su hardware. Para los desarrolladores, este tipo de fragmentación es la que genera más pesadillas ya que cada dispositivo con Android cuenta con diferentes características.
 \subsubsection{Fragmentación en los tamaños de pantalla}
-Existen cuatro tamaños generales de pantallas: pequeña (small), normal, grande (large) y extra grande (xlarge). Para optimizar la experiencia del usuario, muchas veces se debe implementar una interfaz distinta para un tipo específico de pantalla. Esto se lleva a cabo a través de un archivo llamado layout, escrito en XML que definirá los elementos presentes en la interfaz.\\
+Existen cuatro tamaños generales de pantallas \cite{2}: pequeña (small), normal, grande (large) y extra grande (xlarge). Para optimizar la experiencia del usuario, muchas veces se debe implementar una interfaz distinta para un tipo específico de pantalla. Esto se lleva a cabo a través de un archivo llamado layout, escrito en XML que definirá los elementos presentes en la interfaz.\\
 
 Si se desea usar el mismo layout para todas las pantallas simplemente se deben ir guardando estos archivos en la carpeta de recursos del proyecto, \textit{res/layout}. En caso que se quiera agregar un layout distinto para un tipo de pantalla, además de tener un archivo en la ruta antes mencionada, se debe crear una nueva carpeta de layouts, añadiendo el sufijo que corresponda a cada tamaño de pantalla. 
 
 \begin{figure}[h!]
 \centering
       \includegraphics[width=8cm]{Imagenes/chart_screen_sizes}
-\caption{Gráfico con la distribución de tamaños de pantalla.}
+\caption{Gráfico con la distribución de tamaños de pantalla. }
 \label{fig:Fig6}
 \end{figure}
 Por ejemplo, si se quisiera agregar un layout distinto para pantallas grandes (large), se debe añadir un archivo de layout a la carpeta \textit{res/layout-large}, por lo que existirán dos versiones de este archivo, uno en la carpeta antes señalada, mientras que el otro estará en la carpeta general de layouts, \textit{res/layout}.\\
@@ -182,7 +182,7 @@ Por ejemplo, si se quisiera agregar un layout distinto para pantallas grandes (l
 En el sitio web de Android \cite{1}, se entregan estadísticas mensuales sobre el porcentaje de dispositivos que tiene cada tamaño de pantalla. En el gráfico de la figura \ref{fig:Fig6} se muestra la distribución de tamaños de pantalla durante el mes de Abril del 2014.
 
 \subsubsection{Fragmentación en las resoluciones de pantalla}
-Android categoriza las resoluciones de cada pantalla en base a la densidad de pixeles que poseen. Existen cinco tipos de densidades: baja (ldpi), media (mdpi), alta (hdpi), extra-alta (xhdpi) y extra-extra-alta (xxhdpi). Además existe otro tipo de densidad, la cual es usada principalmente para televisores (tvdpi).\\
+Android categoriza las resoluciones de cada pantalla en base a la densidad de pixeles que poseen. Existen cinco tipos de densidades \cite{2}: baja (ldpi), media (mdpi), alta (hdpi), extra-alta (xhdpi) y extra-extra-alta (xxhdpi). Además existe otro tipo de densidad, la cual es usada principalmente para televisores (tvdpi).\\
 
 Muchas veces es necesario agregar diferentes versiones del mismo recurso gráfico. Por ejemplo, si sólo se agrega un recurso gráfico en la resolución más alta (xxhdpi), este probablemente se verá bien en resoluciones altas como xxhdpi y xhdpi, pero para las más bajas, como hdpi o mdpi, la imagén será redimensionada y se perderá mucha calidad.\\
 
@@ -192,7 +192,7 @@ Al agregar elementos de UI como botones, textos, tablas, entre otros, también se
 \begin{figure}[h!]
 \centering
       \includegraphics[width=14cm]{Imagenes/density_test_bad}
-\caption{Consecuencias de asignar alto y ancho en pixeles en vez de en densidad de pixeles.}
+\caption{Consecuencias de asignar alto y ancho en pixeles en vez de en densidad de pixeles.\cite{17} }
 \label{fig:Fig7}
 \end{figure}
 
@@ -203,14 +203,14 @@ En el gráfico de la figura \ref{fig:Fig8} se puede apreciar la información que e
 \begin{figure}[h!]
 \centering
       \includegraphics[width=8cm]{Imagenes/chart_density_pixels}
-\caption{Gráfico con la distribución de densidades de pantalla.}
+\caption{Gráfico con la distribución de densidades de pantalla.\cite{13}}
 \label{fig:Fig8}
 \end{figure}
 \subsection{Fragmentación en otras características}
 Además de los tamaños de pantalla y sus resoluciones, existen otras características muy importantes que los desarrolladores deben tener en cuenta. Una de las principales es la RAM con la que cuenta el dispositivo, ya que es allí donde se cargan las instrucciones que ejecuta el procesador. También es muy importante el procesador y la cantidad de núcleos con los que cuenta. Aunque la mayoría de los dispositivos tiene cámara, también se debe tener en cuenta que algunos no la tiene. Por último, muchas veces los fabricantes como Samsung, hacen cambios en el sistema operativo, cambiando cosas nativas, lo cuál produce diferentes experiencias en cada dispositivo, y muchas veces genera errores que el desarrollador no se espera.
 
 \subsection{Reporte sobre Fragmentación}
-La compañía \textit{OpenSignal} ha entregado dos reportes sobre la fragmentación en Android. 
+La compañía \textit{OpenSignal} ha entregado dos reportes sobre la fragmentación en Android en los años 2012 \cite{14} y 2013 \cite{4}. 
 En su último reporte de Julio del 2013 se entregan gráficas que ayudan a visualizar el número de dispositivos existentes. Estas gráficas se basan en 682.000 dispositivos únicos que descargaron la aplicación de OpenSignal. La razón de elegir este número de dispositivos es porque se quería hacer una comparación justa con respecto al reporte entregado el año 2012, en el que también se había tomado una muestra de 682.000 dispositivos.
 
  En la gráfica de la figura \ref{fig:Fig9} se apreciar los 11.868 dispositivos distintos que han descargado la aplicación de \textit{OpenSignal} en los últimos meses. En su reporte del año 2012 este número era de 3.997. En el sitio web \cite{4} se menciona lo siguiente:

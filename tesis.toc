@@ -24,43 +24,43 @@
 \contentsline {subsubsection}{Fragmentaci\'on en las resoluciones de pantalla}{16}{section*.14}
 \contentsline {subsection}{\numberline {2.2.3}Fragmentaci\'on en otras caracter\IeC {\'\i }sticas}{18}{subsection.2.2.3}
 \contentsline {subsection}{\numberline {2.2.4}Reporte sobre Fragmentaci\'on}{18}{subsection.2.2.4}
-\contentsline {chapter}{\numberline {3}Herramientas Actuales}{22}{chapter.3}
-\contentsline {section}{\numberline {3.1}Testing}{22}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Tipos de test}{22}{subsection.3.1.1}
-\contentsline {subsubsection}{Testing unitario}{22}{section*.21}
-\contentsline {subsubsection}{Testing de UI}{23}{section*.22}
-\contentsline {subsubsection}{Testing de integraci\'on}{24}{section*.23}
-\contentsline {subsubsection}{Testing funcional o de aceptaci\'on}{24}{section*.24}
-\contentsline {subsubsection}{Testing de sistema}{24}{section*.25}
-\contentsline {subsection}{\numberline {3.1.2}\IeC {\textquestiondown }Qu\'e testear?}{25}{subsection.3.1.2}
-\contentsline {subsubsection}{Cambios de orientaci\'on}{25}{section*.26}
-\contentsline {subsubsection}{Cambios de configuraci\'on}{25}{section*.27}
-\contentsline {subsubsection}{Dependencias de fuentes externas}{25}{section*.28}
-\contentsline {subsubsection}{Cambios en segundo plano}{25}{section*.29}
-\contentsline {subsection}{\numberline {3.1.3}\IeC {\textquestiondown }Qu\'e tests requieren un sistema con Android para ejecutarse?}{26}{subsection.3.1.3}
-\contentsline {subsubsection}{Testing de clases en Java}{26}{section*.30}
-\contentsline {subsubsection}{Testing de clases en Java que usan la API de Android}{26}{section*.31}
-\contentsline {subsection}{\numberline {3.1.4}Herramientas de testing provistas por Android}{26}{subsection.3.1.4}
-\contentsline {subsubsection}{JUnit}{27}{section*.32}
-\contentsline {subsection}{\numberline {3.1.5}Instrumentation}{28}{subsection.3.1.5}
-\contentsline {subsection}{\numberline {3.1.6}Simulando objetos (Mock objects)}{29}{subsection.3.1.6}
-\contentsline {section}{\numberline {3.2}Herramientas de Testing}{29}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}EasyMock}{29}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}PowerMock}{30}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Mockito}{30}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Espresso}{30}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Robotium}{31}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}Robolectric}{31}{subsection.3.2.6}
-\contentsline {subsection}{\numberline {3.2.7}Spoon}{31}{subsection.3.2.7}
-\contentsline {section}{\numberline {3.3}Herramientas de Crashes}{31}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Crittercism}{32}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Bugsense}{32}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Crashlytics}{32}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}ACRA}{33}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}Google Analytics}{33}{subsection.3.3.5}
-\contentsline {chapter}{\numberline {4}An\'alisis Comparativo}{34}{chapter.4}
-\contentsline {chapter}{\numberline {5}Implementaci\'on}{35}{chapter.5}
-\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{36}{chapter.6}
-\contentsline {chapter}{\numberline {A}Ap\'endice A}{37}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Secci\'on Ap\'endice}{37}{section.Alph1.1}
-\contentsline {chapter}{Bibliograf\'ia}{38}{section.Alph1.1}
+\contentsline {chapter}{\numberline {3}Herramientas Actuales}{23}{chapter.3}
+\contentsline {section}{\numberline {3.1}Testing}{23}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Tipos de test}{23}{subsection.3.1.1}
+\contentsline {subsubsection}{Testing unitario}{23}{section*.21}
+\contentsline {subsubsection}{Testing de UI}{24}{section*.22}
+\contentsline {subsubsection}{Testing de integraci\'on}{25}{section*.23}
+\contentsline {subsubsection}{Testing funcional o de aceptaci\'on}{25}{section*.24}
+\contentsline {subsubsection}{Testing de sistema}{25}{section*.25}
+\contentsline {subsection}{\numberline {3.1.2}\IeC {\textquestiondown }Qu\'e testear?}{26}{subsection.3.1.2}
+\contentsline {subsubsection}{Cambios de orientaci\'on}{26}{section*.26}
+\contentsline {subsubsection}{Cambios de configuraci\'on}{26}{section*.27}
+\contentsline {subsubsection}{Dependencias de fuentes externas}{26}{section*.28}
+\contentsline {subsubsection}{Cambios en segundo plano}{26}{section*.29}
+\contentsline {subsection}{\numberline {3.1.3}\IeC {\textquestiondown }Qu\'e tests requieren un sistema con Android para ejecutarse?}{27}{subsection.3.1.3}
+\contentsline {subsubsection}{Testing de clases en Java}{27}{section*.30}
+\contentsline {subsubsection}{Testing de clases en Java que usan la API de Android}{27}{section*.31}
+\contentsline {subsection}{\numberline {3.1.4}Herramientas de testing provistas por Android}{27}{subsection.3.1.4}
+\contentsline {subsubsection}{JUnit}{28}{section*.32}
+\contentsline {subsection}{\numberline {3.1.5}Instrumentation}{29}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}Simulando objetos (Mock objects)}{30}{subsection.3.1.6}
+\contentsline {section}{\numberline {3.2}Herramientas de Testing}{30}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}EasyMock}{30}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}PowerMock}{31}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Mockito}{31}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Espresso}{31}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Robotium}{32}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Robolectric}{32}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.7}Spoon}{32}{subsection.3.2.7}
+\contentsline {section}{\numberline {3.3}Herramientas de Crashes}{32}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Crittercism}{33}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Bugsense}{33}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Crashlytics}{33}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}ACRA}{34}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Google Analytics}{34}{subsection.3.3.5}
+\contentsline {chapter}{\numberline {4}An\'alisis Comparativo}{35}{chapter.4}
+\contentsline {chapter}{\numberline {5}Implementaci\'on}{36}{chapter.5}
+\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{37}{chapter.6}
+\contentsline {chapter}{\numberline {A}Ap\'endice A}{38}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Secci\'on Ap\'endice}{38}{section.Alph1.1}
+\contentsline {chapter}{Bibliograf\'ia}{39}{section.Alph1.1}

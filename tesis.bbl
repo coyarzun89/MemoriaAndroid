@@ -1,27 +1,116 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{8}
+Open~Handset Alliance.
+\newblock Industry leaders announce open platform for mobile devices [en
+  l\'inea].
+\newblock $<$\url{http://www.openhandsetalliance.com/press_110507.html}$>$.
+\newblock [Consulta: 4 de Mayo].
+
+\bibitem{12}
+Android.
+\newblock Android 2.3 platform and updated sdk tools [en l\'inea].
+\newblock
+  $<$\url{http://android-developers.blogspot.com/2010/12/android-23-platform-and-updated-sdk.html}$>$.
+\newblock [Consulta: 4 de Mayo.
 
 \bibitem{2}
 Android.
 \newblock Android dashboards [en l\'inea].
-\newblock $<$http://developer.android.com/about/dashboards$>$.
-\newblock [consulta: 20 de Abril].
+\newblock $<$\url{http://developer.android.com/about/dashboards}$>$.
+\newblock [Consulta: 20 de Abril].
+
+\bibitem{11}
+Android.
+\newblock Check system version at runtime [en l\'inea].
+\newblock
+  $<$\url{https://developer.android.com/training/basics/supporting-devices/platforms.html}$>$.
+\newblock [Consulta: 4 de Mayo.
 
 \bibitem{1}
 Android.
 \newblock Great devices with the best of android [en l\'inea].
-\newblock $<$http://www.android.com/phones-and-tablets$>$.
-\newblock [consulta: 20 de Abril].
+\newblock $<$\url{http://www.android.com/phones-and-tablets}$>$.
+\newblock [Consulta: 20 de Abril].
+
+\bibitem{17}
+Android.
+\newblock Supporting multiple screens [en l\'inea].
+\newblock
+  $<$\url{https://developer.android.com/guide/practices/screens_support.html/}$>$.
+\newblock [Consulta: 4 de Mayo].
+
+\bibitem{9}
+Androideity.
+\newblock Arquitectura de android [en l\'inea].
+\newblock
+  $<$\url{http://androideity.com/2011/07/04/arquitectura-de-android/}$>$.
+\newblock [Consulta: 4 de Mayo].
+
+\bibitem{5}
+AppBrain.
+\newblock Ratings of apps on google play [en l\'inea].
+\newblock $<$\url{http://www.appbrain.com/stats/android-app-ratings}$>$.
+\newblock [Consulta: 3 de Mayo.
+
+\bibitem{7}
+The Atlantic.
+\newblock The day google had to start over on android [en l\'inea].
+\newblock
+  $<$\url{http://www.theatlantic.com/technology/archive/2013/12/the-day-google-had-to-start-over-on-android/282479/}$>$.
+\newblock [Consulta: 4 de Mayo].
+
+\bibitem{6}
+Ben Elgin.
+\newblock Google buys android for its mobile arsenal. bloomberg businessweek.
+  bloomberg[en l\'inea].
+\newblock
+  $<$\url{http://www.businessweek.com/stories/2005-08-16/google-buys-android-for-its-mobile-arsenal}$>$.
+\newblock [Consulta: 4 de Mayo].
+
+\bibitem{13}
+Erikrespo.
+\newblock Historical android version distribution according to android
+  market$/$play store usage. from december 2009 to february 2014. [en l\'inea].
+\newblock
+  $<$\url{http://en.wikipedia.org/wiki/File:Android_historical_version_distribution_-_vector.svg}$>$.
+\newblock [Consulta: 4 de Mayo.
 
 \bibitem{3}
 Emir Hasanbegovic.
 \newblock Android device screen sizes [en l\'inea].
-\newblock $<$http://www.emirweb.com/ScreenDeviceStatistics.php$>$.
-\newblock [consulta: 25 de Abril].
+\newblock $<$\url{http://www.emirweb.com/ScreenDeviceStatistics.php}$>$.
+\newblock [Consulta: 25 de Abril].
+
+\bibitem{10}
+Joel Murach.
+\newblock {\em Murach's Android Programming}.
+\newblock Mike Murach \& Associates, 2013.
 
 \bibitem{4}
 OpenSignal.
 \newblock Android fragmentation visualized (july 2013) [en l\'inea].
-\newblock $<$http://opensignal.com/reports/fragmentation-2013$>$.
-\newblock [consulta: 25 de Abril].
+\newblock $<$\url{http://opensignal.com/reports/fragmentation-2013}$>$.
+\newblock [Consulta: 25 de Abril].
+
+\bibitem{14}
+OpenSignal.
+\newblock The many faces of a little green robot (august 2012) [en l\'inea].
+\newblock $<$\url{http://opensignal.com/reports/fragmentation.php}$>$.
+\newblock [Consulta: 25 de Abril].
+
+\bibitem{16}
+staffcreativa.
+\newblock Los curiosos nombres de las diferentes versiones de android [en
+  l\'inea].
+\newblock $<$\url{http://blog.staffcreativa.pe/android-google/}$>$.
+\newblock [Consulta: 4 de Mayo].
+
+\bibitem{15}
+\'Angel~J. Vico.
+\newblock Arquitectura de android [en l\'inea].
+\newblock
+  $<$\url{http://columna80.wordpress.com/2011/02/17/arquitectura-de-android/}$>$.
+\newblock [Consulta: 4 de Mayo].
 
 \end{thebibliography}

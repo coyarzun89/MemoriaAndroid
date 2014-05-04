@@ -1,18 +1,18 @@
 \select@language {spanish}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Arquitectura de Android, compuesta por cuatro capas\relax }}{8}{figure.caption.7}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Arquitectura de Android, compuesta por cuatro capas. \cite {15}\relax }}{8}{figure.caption.7}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces \'Ultimos smartphones y tablets destacadas en el sitio de Android.\relax }}{11}{figure.caption.8}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Versiones de Android.\relax }}{12}{figure.caption.9}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Versiones de Android. \cite {16}\relax }}{12}{figure.caption.9}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Estad\IeC {\'\i }sticas relativas al n\'umero de dispositivos que tiene cada versi\'on de Android en Abril del 2014.\relax }}{13}{figure.caption.10}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Distribuci\'on historica de versiones de Android\relax }}{15}{figure.caption.11}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Gr\'afico con la distribuci\'on de tama\~nos de pantalla.\relax }}{16}{figure.caption.13}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Consecuencias de asignar alto y ancho en pixeles en vez de en densidad de pixeles.\relax }}{17}{figure.caption.15}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Gr\'afico con la distribuci\'on de densidades de pantalla.\relax }}{18}{figure.caption.16}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Distribuci\'on historica de versiones de Android.\cite {13}\relax }}{15}{figure.caption.11}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Gr\'afico con la distribuci\'on de tama\~nos de pantalla. \relax }}{16}{figure.caption.13}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Consecuencias de asignar alto y ancho en pixeles en vez de en densidad de pixeles.\cite {17} \relax }}{17}{figure.caption.15}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Gr\'afico con la distribuci\'on de densidades de pantalla.\cite {13}\relax }}{18}{figure.caption.16}
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Fragmentaci\'on de dispositivos entregado por OpenSignal el 2013.\relax }}{19}{figure.caption.17}
 \contentsline {figure}{\numberline {2.10}{\ignorespaces Fragmentaci\'on a nivel de fabricantes de dispositivos Android.\relax }}{20}{figure.caption.18}
 \contentsline {figure}{\numberline {2.11}{\ignorespaces Fragmentaci\'on de pantallas en dispositivos Android entregado por OpenSignal en Julio del 2013.\relax }}{21}{figure.caption.19}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Fragmentaci\'on de pantallas en dispositivos iOS entregado por OpenSignal en Julio del 2013.\relax }}{21}{figure.caption.20}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Fragmentaci\'on de pantallas en dispositivos iOS entregado por OpenSignal en Julio del 2013.\relax }}{22}{figure.caption.20}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
