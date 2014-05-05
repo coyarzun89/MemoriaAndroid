@@ -11,7 +11,7 @@ En este capítulo se detallarán las herramientas más utilizadas para combatir los
 Ahora que ya se conoce lo básico sobre testing y se han visto las herramientas que entrega el framework de testing de Android, se comenzaran a ver el resto de herramientas que se encuentran disponibles. 
 
 \subsection{Herramientas de testing provistas por Android}
-Android provee un buen framework de testing para hacer pruebas en varios aspectos de la aplicación. Los elementos claves son:
+Android provee un buen framework de testing \cite{20} para hacer pruebas en varios aspectos de la aplicación. Los elementos claves son:
 \begin{itemize}
 \item Los Test suites (conjuntos de prueba) de Android están basados en JUnit. Se puede usar JUnit puro para testear una clase que no hace llamadas a la API de Android, o las extensiones de JUnit para Android si se desea testear componentes de Android. 
 
@@ -32,7 +32,7 @@ Se puede usar la clase \textit{TestCase} de JUnit para hacer testing unitario en
 
 La clase \textit{Assert} de JUnit es usada para mostrar los resultados de los test. Los métodos \textit{assert} comparan los valores que se esperan de un test con los valores reales y se lanza una excepción si la comparación falla. Android también provee una clase para \textit{assertions} que extiende los posibles tipos de comparaciones, y otra clase de \textit{assertions} para testear la UI.
 
-\subsection{Instrumentation}
+\subsubsection{Instrumentation}
 La API de testing de Android provee interacciones entre los componentes de Android y el ciclo de vida de la aplicación. Estas interacciones son realizadas a través de la API Instrumentation, que permite a los tests controlar el ciclo de vida y los eventos de interacción del usuario.\\
 
 Normalmente, un componente de Android se ejecuta en un ciclo de vida determinado por el sistema. Por ejemplo, el ciclo de vida de un objeto \textit{Activity} comienza cuando este es activado por un \textit{Intent}. El método \textit{onCreate()} es llamado, seguido del método \textit{onResume()}. Cuando el usuario abre otra aplicación, el método \textit{onPause()} es llamado. Si la Actividad llama al método \textit{finish()}, entonces el método \textit{onDestroy()} también es llamado. La API de Android no provee un forma de llamar estos métodos directamente, pero se puede hacer a través de \textit{Instrumentation}.\\
@@ -41,32 +41,111 @@ Normalmente, un componente de Android se ejecuta en un ciclo de vida determinado
 
 El sistema ejecuta todos los componentes de una aplicación en el mismo proceso. Se puede permitir a algunos componentes, tales como \textit{Content Providers}, ejecutarse en un proceso separado, pero no se puede forzar a una aplicación a ejecutarse en el mismo proceso en el que otra aplciación esta ejecutándose.\\
 
-\subsection{Simulando objetos (Mock objects)}
+\subsubsection{Simulando objetos (Mock objects)}
 Android entrega clases para crear objetos llamados \textit{mock objects}, que son objetos de sistema simulados como Context, ContentProvider, ContentResolver y Service. Algunos tests también proveen objetos simulados de Intent. Se pueden usar estos \textit{mocks} para aislar los tests del resto del sistema y facilitar la inyección de dependencias. Estas clases se encuentran en los paquetes \textit{android.test} y \textit{android.test.mock}.\\
 
 Por ejemplo se puede usar MockContext en vez de Context. La clase \textit{RenamingDelegatingContext} entrega las llamadas a un contexto dado y ayuda a la base de datos y a las operaciones con archivos agregando un prefijo a todos los nombres de los archivos. De esta forma se pueden testear compontentes sin afectar la base de datos del sistema de archivos de un dispositivo Android.
 
+\subsubsection{uiautomator}
+El SDK de Android contiene la libreria \textit{uiautomator} para testear y ejecutar tests a la interfaz gráfica. Esto fue implementado a partir de la API 16 \cite{19}.
 
-\subsection{EasyMock}
-Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+Los proyectos de test de \textit{uiautomator} son proyectos en Java, en donde la libreria de JUnit 3, junto con los archivos uiautomator.jar y android.jar son agregados a la compilación. 
 
-\subsection{PowerMock}
-Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+Además esta libreria provee la clase UiDevice que permite la comunicación con el dispositivo, la clase UiSelector para buscar elementos en la pantalla y la clase UiObject que presenta los elementos de la interfaz. La clase UiCollection permite seleccionar un número de elementos de la interfaz gráfica al igual que la clase UiScrollable permite hacer scroll en una vista apra encontrar un elemento.
 
-\subsection{Mockito}
-Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+\subsubsection{uiautomatorviewer}
+Android también provee la herramienta \textit{uiautomatorviewer}, que permite analizar la interfaz gráfica de una aplicación. Esta herramienta puede ser usada apra encontrar los id, texto o atributos de los elementos de la interfaz.
 
-\subsection{Espresso}
-Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+Esta herramienta permite a la gente que no programa, analizar una aplicación y desarrollar test a través de la libreria \textit{uiautomator}. 
+[AGREGAR SCREENSHOT]
 
-\subsection{Robotium}
-Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+\subsubsection{Monkey}
+\textit{Monkey} \cite{21}  es un herramienta de línea de comando que envia eventos aleatorios a un dispositivo. Se puede restringir a \textit{Monkey} para que se ejecute únicamente en ciertos paquetes, por lo que se le pueden dar instrucciones para testear únicamente una aplicación.
 
-\subsection{Robolectric}
-Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+Por ejemplo, el siguiente comando enviará 2000 eventos aleatorios a la aplicación con el nombre de paquete co.seahorse.android:\\
 
-\subsection{Spoon}
-Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+\begin{lstlisting}
+adb shell monkey -p co.seahorse.android -v 2000
+\end{lstlisting}
+
+\subsubsection{monkeyrunner}
+La herramienta monkeyrunner provee una API en Python para escribir programas que controlen un dispositivo Android o un emulador, fuera del código fuente que hayamos escrito.
+
+A través de \textit{monkeyrunner} se puede hacer un script para realizar un test. Este se ejecuta através del adb debug bridge y permite instalar programas, iniciarlos, controlar los flujos y tomar screenshots.
+
+Para usar \textit{monkeyrunner} se debe tener instalado Python en el computador.
+
+Las siguientes clases son las principales:
+\begin{itemize}
+\item MonkeyRunner: permite conectarse con los dispositivos.
+
+\item MonkeyDevice: permite instalar y desintalar aplicaciones, como también enviar eventos de teclado y toques en la pantalla a una aplicación.
+
+\item MonkeyImage: Permite crear, comparar y guardar screenshots.
+\end{itemize}
+
+\subsection{Herramientas de testing de código abierto}
+\subsubsection{EasyMock}
+EasyMock es un framework para mocking \cite{22}, es decir, para crear objeto simulados. Este puede ser usado en conjunto con JUnit. A continuación se muestra como es la instanciación de un objeto basado en una clase.\\
+
+\begin{lstlisting}
+import static org.easymock.EasyMock.createNiceMock;
+....
+
+// ICalcMethod es el objeto que es simulado
+ICalcMethod calcMethod = createNiceMock(ICalcMethod.class); 
+\end{lstlisting}
+
+El método createNiceMock() crea un mock que retorna los valores por defecto para métodos que no están sobreescritos. Además tiene varios métodos que pueden ser usados para configurar el objeto mock. El método expect() le dice a Easymock que simule un método con ciertos argumentos. El método andReturn() define lo que va a retornar este método. El método times() define que tan seguido el objeto va a ser llamado.
+
+
+\subsubsection{Mockito}
+Mockito \cite{23} es un framework bastante popular que puede ser usado en conjunto con JUnit. Este permite crear y configurar objetos simulados. Además, desde la versión 1.9.5 puede ser usado directamente con los test de Android.
+
+Mockito soporta la creación de objetos simulados con el método estático \textit{mock()}. Este también soporta la creación de objetos basados en la anotación \textit{@Mock}. Si se usan anotaciones, se debe inicializar el objeto similado con una llamada al método \textit{MockitoAnnotations.initMocks(this)}.
+
+
+\subsubsection{Robolectric}
+Robolectric \cite{24} es un framework que simula parte del framework de Android contenido en el archivo \textit{android.jar}. Esta diseñado para permitir testear aplicaciones de Android en la JVM (Java Virtual Machine). Este permite ejecutar los test de Android en un entorno de integración continua, sin necesidad de configuraciones extras. Está basado en JUnit 4.
+
+Robolectric reemplaza todas las clases de Android por los llamados shadow objects. Si un método es implementado por Robolectric, este dirige estas llamadas al shadow object, que se comporta de forma similar a los objetos del SDK de Android. Si un método no es implementado por el shadow object, este simplemente retorna un valor por defecto, como null o 0.
+
+Robolectric soporta el manejo de recursos, como inflar vistas. También puede usarse el findViewById() para buscar una vista.
+
+\subsubsection{Robotium}
+Robotium \cite{25} es una extensión del framework de test de android y fue creado para hacer más fácil los test de interfaz gráfica para las aplicaciones de Android. Robotium hereda de ActivityInstrumentationTestCase2 y permite definir casos de test a través de las actividades de Android.
+
+Los test con Robotium interactuan con la aplicación como test de caja negra, esto quiere decir que únicamente se interactua con la interfaz y no a través del código interno de la aplicación. La clase principal para testear con Robotium se llama Solo. Esta es inicializada en la primera actividad que se desea testear.
+
+\subsubsection{Espresso}
+Google lanzó el framework Espresso \cite{26} para testing en Octubre del 2013.  Esta es una API para realizar tests de interfaz gráfica, localizando elementos de la UI e interactuando con ellos. A continuación se presentan los componentes principales de Espresso:\\
+
+\begin{itemize}
+\item Espresso: Punto de entrada para interactuar con las vistas, a través de los métodos \textit{onView()} y \textit{onData()}. También permite la interacción con métodos que no necesariamente estan atados a una vista, como por ejemplo el método \textit{pressBack()}.
+
+\item ViewMatchers: Una colección de objetos que implementan la interfaz \textit{Matcher<? super View>}. Se puede pasar uno o más de estos objetos al método \textit{onView()} para localizar una vista que actualmente este dentro de la jerarquía de vistas.
+
+\item ViewActions: Una colección de \textit{ViewActions} que pueden pasarse al método \textit{ViewInteraction.perform}, por ejemplo un click.
+
+\item ViewAssertions: Una colección de ViewAssertions que pueden pasarse al método  \textit{ViewInteraction.perform}. 
+\end{itemize}
+
+
+\subsubsection{Spoon}
+Spoon es una herramienta de código abierto para test automatizados que permite ejecutar los test escritos en java en varios dispositivos al mismo tiempo. Este fue desarrollado por la compañía Square \cite{27}.
+
+La aplicación se ejecuta en base a los test que hayamos definido en las pruebas de instrumentación. Spoon genera un informe con los resultados a través de un HTML. Cada dispositivo testeado tiene una ficha con los resultados de cada uno de los test.
+
+Además, Spoon permite obtener screenshot de cada estado que se haya definido en la ejecución de los test, los cuales pueden verse en las distintas resoluciones de cada dispositivo en los que se realizaron las pruebas. En el siguiente código se obtienen dos screenshots, uno al inicio y otro después de realizar los respectivos test:
+
+\begin{lstlisting}
+Spoon.screenshot(activity, "initial_state");
+/* aqui va un codigo de test... */
+Spoon.screenshot(activity, "after_login");
+\end{lstlisting}
+
+\subsubsection{Remote Test Lab}
+Remote Test Lab \cite{28} es un servicio que Samsung ofrece a los desarrolladores para que puedan probar sus aplicaciones en un dispositivo real, pero en remoto. Gracias a él podrán acceder, vía web, a diferentes smartphones y tablets con varias versiones del sistema operativo. En estos dispositivos los desarrolladores podrán instalar y testear sus apps...
 
 \section{Herramientas de Crashes}
 Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.

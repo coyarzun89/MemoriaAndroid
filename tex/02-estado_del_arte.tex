@@ -192,12 +192,12 @@ Si la aplicación esta inactiva y ya ha pasado a segundo plano, lo más probable e
 
 \subsubsection{¿Qué tests requieren un sistema con Android para ejecutarse?}
 \paragraph{Testing de clases en Java}
-Si las clases que se tienen no hacen llamadas a la API de Android, se puede usar el framework de JUnit sin ningúna restricción.\\
+Si las clases que se tienen no hacen llamadas a la API de Android, se puede usar el framework de JUnit sin ningúna restricción \cite{19}.\\
 
 La ventaja de este método es que se puede usar cualquier framework de testing que sea para Java y la velocidad con que se ejecutan los tests debería ser mucha más rápida comparada con los tests que requieren de un sistema con Android.
 
 \paragraph{Testing de clases en Java que usan la API de Android}
-Si se quieren hacer tests que usen la API de Android, estos necesitan llevarse a cabo en un dispositivo con Android. Esto hace que la ejecución de los tests tome más tiempo, principalmente porque el archivo \textit{android.jar} no contiene el código del framework de Android. Este archivo es únicamente usado al momento de compilar una aplicación. Una vez que la aplicación está instalada, se utilizará el \textit{android.jar} que está en el dispositivo.
+Si se quieren hacer tests que usen la API de Android, estos necesitan llevarse a cabo en un dispositivo con Android. Esto hace que la ejecución de los tests tome más tiempo, principalmente porque el archivo \textit{android.jar} no contiene el código del framework de Android. Este archivo es únicamente usado al momento de compilar una aplicación. Una vez que la aplicación está instalada, se utilizará el \textit{android.jar} que está en el dispositivo.\cite{19}
 
 
 

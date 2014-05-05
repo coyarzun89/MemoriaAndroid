@@ -47,6 +47,19 @@ Android.
   $<$\url{https://developer.android.com/guide/practices/screens_support.html/}$>$.
 \newblock [Consulta: 4 de Mayo].
 
+\bibitem{20}
+Android.
+\newblock Testing fundamentals [en l\'inea].
+\newblock
+  $<$\url{http://developer.android.com/tools/testing/testing_android.html/}$>$.
+\newblock [Consulta: 4 de Mayo].
+
+\bibitem{21}
+Android.
+\newblock Ui/application exerciser monkey [en l\'inea].
+\newblock $<$\url{http://developer.android.com/tools/help/monkey.html/}$>$.
+\newblock [Consulta: 4 de Mayo].
+
 \bibitem{9}
 Androideity.
 \newblock Arquitectura de android [en l\'inea].
@@ -83,6 +96,14 @@ Erikrespo.
   $<$\url{http://en.wikipedia.org/wiki/File:Android_historical_version_distribution_-_vector.svg}$>$.
 \newblock [Consulta: 4 de Mayo.
 
+\bibitem{26}
+Google.
+\newblock Espressostartguide on android-test-kit [en l\'inea].
+\newblock
+  $<$\url{https://code.google.com/p/android-test-kit/wiki/EspressoStartGuide
+  /}$>$.
+\newblock [Consulta: 4 de Mayo].
+
 \bibitem{3}
 Emir Hasanbegovic.
 \newblock Android device screen sizes [en l\'inea].
@@ -106,6 +127,20 @@ OpenSignal.
 \newblock $<$\url{http://opensignal.com/reports/fragmentation.php}$>$.
 \newblock [Consulta: 25 de Abril].
 
+\bibitem{28}
+Samsung.
+\newblock Remote test lab: la herramienta que todo desarrollador necesita [en
+  l\'inea].
+\newblock $<$\url{http://www.europe-samsung.com/smsdev/Home/Articulo/66 /}$>$.
+\newblock [Consulta: 4 de Mayo].
+
+\bibitem{27}
+Square.
+\newblock Spoon - distributing instrumentation tests to all your androids [en
+  l\'inea].
+\newblock $<$\url{http://square.github.io/spoon/ /}$>$.
+\newblock [Consulta: 4 de Mayo].
+
 \bibitem{16}
 staffcreativa.
 \newblock Los curiosos nombres de las diferentes versiones de android [en
@@ -118,6 +153,39 @@ staffcreativa.
 \newblock Arquitectura de android [en l\'inea].
 \newblock
   $<$\url{http://columna80.wordpress.com/2011/02/17/arquitectura-de-android/}$>$.
+\newblock [Consulta: 4 de Mayo].
+
+\bibitem{19}
+Lars Vogel.
+\newblock Android application testing with the android test framework -
+  tutorial [en l\'inea].
+\newblock
+  $<$\url{http://www.vogella.com/tutorials/AndroidTesting/article.html/}$>$.
+\newblock [Consulta: 4 de Mayo].
+
+\bibitem{25}
+Lars Vogel.
+\newblock Android user interface testing with robotium - tutorial [en l\'inea].
+\newblock $<$\url{http://www.vogella.com/tutorials/Robotium/article.html /}$>$.
+\newblock [Consulta: 4 de Mayo].
+
+\bibitem{22}
+Lars Vogel.
+\newblock Testing with easymock - tutorial [en l\'inea].
+\newblock $<$\url{http://www.vogella.com/tutorials/EasyMock/article.html/}$>$.
+\newblock [Consulta: 4 de Mayo].
+
+\bibitem{23}
+Lars Vogel.
+\newblock Unit tests with mockito - tutorial [en l\'inea].
+\newblock $<$\url{http://www.vogella.com/tutorials/Mockito/article.html /}$>$.
+\newblock [Consulta: 4 de Mayo].
+
+\bibitem{24}
+Lars Vogel.
+\newblock Using robolectric for android testing - tutorial [en l\'inea].
+\newblock $<$\url{http://www.vogella.com/tutorials/Robolectric/article.html
+  /}$>$.
 \newblock [Consulta: 4 de Mayo].
 
 \end{thebibliography}
