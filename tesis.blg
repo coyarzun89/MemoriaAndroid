@@ -14,44 +14,44 @@ A level-1 auxiliary file: tex/06-conclusiones.aux
 A level-1 auxiliary file: tex/07-apendice.a.aux
 The style file: plain.bst
 Database file #1: manual.bib
-You've used 28 entries,
+You've used 34 entries,
             2118 wiz_defined-function locations,
-            608 strings with 8124 characters,
-and the built_in function-call counts, 5992 in all, are:
-= -- 586
-> -- 196
+            631 strings with 8757 characters,
+and the built_in function-call counts, 7270 in all, are:
+= -- 712
+> -- 238
 < -- 0
-+ -- 86
-- -- 56
-* -- 145
-:= -- 1021
-add.period$ -- 111
-call.type$ -- 28
-change.case$ -- 111
++ -- 104
+- -- 68
+* -- 175
+:= -- 1237
+add.period$ -- 135
+call.type$ -- 34
+change.case$ -- 135
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 201
-empty$ -- 617
-format.name$ -- 56
-if$ -- 1316
+cite$ -- 34
+duplicate$ -- 243
+empty$ -- 749
+format.name$ -- 68
+if$ -- 1598
 int.to.chr$ -- 0
-int.to.str$ -- 28
+int.to.str$ -- 34
 missing$ -- 2
-newline$ -- 170
-num.names$ -- 56
-pop$ -- 278
+newline$ -- 206
+num.names$ -- 68
+pop$ -- 338
 preamble$ -- 1
-purify$ -- 84
+purify$ -- 102
 quote$ -- 0
-skip$ -- 140
+skip$ -- 170
 stack$ -- 0
-substring$ -- 142
-swap$ -- 28
+substring$ -- 172
+swap$ -- 34
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 110
+type$ -- 134
 warning$ -- 0
-while$ -- 56
-width$ -- 30
-write$ -- 309
+while$ -- 68
+width$ -- 36
+write$ -- 375

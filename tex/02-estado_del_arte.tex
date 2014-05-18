@@ -145,23 +145,23 @@ Android actualiza mes a mes las estadísticas relativas al número de dispositivos
 Con tantos dispositivos y sistemas operativos vigentes, asegurar la calidad de la aplicación a través de testing es un proceso vital y necesario, aunque también puede ser uno de los mayores dolores de cabeza para los desarrolladores. Lo que funciona perfectamente en un dispositivo, en otro puede no resultar como se espera. Es por ello que es absolutamente necesario el uso de herramientas que ayuden a reducir los riesgos inherentes de que una aplicación sea compatible con más de 11.000 dispositivos distintos \cite{4}. A continuación se daran a conocer los tipos de testing más conocidos.
 \subsubsection{Tipos de test}
 \paragraph{Testing unitario}
-Un test unitario (unit test) es una pieza de código escrito por un desarrollador que ejecuta una funcionalidad específica en el codigo que va a ser testeado. Este tipo de test se enfoca en aislar un componente, por ejemplo un método o una clase, para ser capaces de testearlo de forma replicable. Es por esto que los test unitarios y los objetos simulados (mock objects) normalmente se usan en forma conjunta. Estos objetos simulados se usan para poder repetir el test innumerables veces. Por ejemplo, si se quisiera testear el momento en que se borra información desde una base de datos, probablemente no se quiere que los datos realmente se borren y que la próxima vez que se desee testear, estos ya no se encuentren.\\
+\par Un test unitario (unit test) es una pieza de código escrito por un desarrollador que ejecuta una funcionalidad específica en el codigo que va a ser testeado. Este tipo de test se enfoca en aislar un componente, por ejemplo un método o una clase, para ser capaces de testearlo de forma replicable. Es por esto que los test unitarios y los objetos simulados (mock objects) normalmente se usan en forma conjunta. Estos objetos simulados se usan para poder repetir el test innumerables veces. Por ejemplo, si se quisiera testear el momento en que se borra información desde una base de datos, probablemente no se quiere que los datos realmente se borren y que la próxima vez que se desee testear, estos ya no se encuentren.\\
 
 Los test unitarios aseguran que el código funcione como se espera. También son muy útiles para asegurar que el código sigue funcionando correctamente después de hacer cambios en otras partes del proyecto, al momento de arreglar bugs o añadir nuevas funcionalidades.
 
 \paragraph{Testing de UI}
-Además de testear los componentes individuales que permiten el funcionamiento de la aplicación, como actividades y servicios, es muy importante testear el comportamiento de la interfaz de la aplicación cuando está en funcionamiento en un dispositivo. El testing de UI asegura que la aplicación se comportará de forma correcta en respuesta de acciones que realice el usuario en un dispositivo, tales como escribir en el teclado, presionar botones, imágenes, entre otros controles. Se debe tener consideración especial con los test que involucran elementos de UI ya que únicamente la hebra principal tiene permisos para alterar la UI en Android.\\
+\par Además de testear los componentes individuales que permiten el funcionamiento de la aplicación, como actividades y servicios, es muy importante testear el comportamiento de la interfaz de la aplicación cuando está en funcionamiento en un dispositivo. El testing de UI asegura que la aplicación se comportará de forma correcta en respuesta de acciones que realice el usuario en un dispositivo, tales como escribir en el teclado, presionar botones, imágenes, entre otros controles. Se debe tener consideración especial con los test que involucran elementos de UI ya que únicamente la hebra principal tiene permisos para alterar la UI en Android.\\
 
 Un estrategia común es testear de forma manual la UI, verificando que la aplicación se comporta como se espera al realizar una serie de acciones. Sin embargo, este enfoque puede consumir mucho tiempo y ser bastante tedioso, como también, se pueden pasar por alto algunos errores. Un método más eficiente y confiable sería automatizar el testing de la interfaz con algun framework que facilite esta tarea.
 
 \paragraph{Testing de integración}
-Los test de integración están diseñados para testear el comportamiento que los componentes individuales tienen cuando funcionan de forma conjunta. Esto normalmente se realiza una vez que ya se han aprobado los test unitatios. Además tienden a ser más complejos y lentos que los test unitarios.
+\par Los test de integración están diseñados para testear el comportamiento que los componentes individuales tienen cuando funcionan de forma conjunta. Esto normalmente se realiza una vez que ya se han aprobado los test unitatios. Además tienden a ser más complejos y lentos que los test unitarios.
 
 \paragraph{Testing funcional o de aceptación}
-Normalmente estos tipos de test son creados por gente de negocios y de control de calidad. Además son expresados en un lenguaje de negocios. Estos son test de alto nivel para testear el correcto funcionamiento de los requierimientos o características que debería tener la aplicación. Los testers y desarrolladores también pueden colaborar en la creación de estos. 
+\par Normalmente estos tipos de test son creados por gente de negocios y de control de calidad. Además son expresados en un lenguaje de negocios. Estos son test de alto nivel para testear el correcto funcionamiento de los requierimientos o características que debería tener la aplicación. Los testers y desarrolladores también pueden colaborar en la creación de estos. 
 
 \paragraph{Testing de sistema}
-El sistema es testeado como un todo, y la interacción entre los componentes, software y hardware es testeada. Normalmente, los test de sistema incluyen clases de test como:
+\par El sistema es testeado como un todo, y la interacción entre los componentes, software y hardware es testeada. Normalmente, los test de sistema incluyen clases de test como:
 \begin{itemize}
 
 \item Smoke test: Es un testing rápido que se lleva a cabo sobre toda la aplicación. Su objetivo no consiste en encontrar bugs, sino que es asegurar que las funcionalidades básicas se comportan de manera correcta.
@@ -192,12 +192,12 @@ Si la aplicación esta inactiva y ya ha pasado a segundo plano, lo más probable e
 
 \subsubsection{¿Qué tests requieren un sistema con Android para ejecutarse?}
 \paragraph{Testing de clases en Java}
-Si las clases que se tienen no hacen llamadas a la API de Android, se puede usar el framework de JUnit sin ningúna restricción \cite{19}.\\
+\par Si las clases que se tienen no hacen llamadas a la API de Android, se puede usar el framework de JUnit sin ningúna restricción \cite{19}.\\
 
 La ventaja de este método es que se puede usar cualquier framework de testing que sea para Java y la velocidad con que se ejecutan los tests debería ser mucha más rápida comparada con los tests que requieren de un sistema con Android.
 
 \paragraph{Testing de clases en Java que usan la API de Android}
-Si se quieren hacer tests que usen la API de Android, estos necesitan llevarse a cabo en un dispositivo con Android. Esto hace que la ejecución de los tests tome más tiempo, principalmente porque el archivo \textit{android.jar} no contiene el código del framework de Android. Este archivo es únicamente usado al momento de compilar una aplicación. Una vez que la aplicación está instalada, se utilizará el \textit{android.jar} que está en el dispositivo.\cite{19}
+\par Si se quieren hacer tests que usen la API de Android, estos necesitan llevarse a cabo en un dispositivo con Android. Esto hace que la ejecución de los tests tome más tiempo, principalmente porque el archivo \textit{android.jar} no contiene el código del framework de Android. Este archivo es únicamente usado al momento de compilar una aplicación. Una vez que la aplicación está instalada, se utilizará el \textit{android.jar} que está en el dispositivo.\cite{19}
 
 
 
@@ -312,7 +312,7 @@ Durante el proceso de desarrollo de una aplicación, normalmente se compilan vers
 Generalmente, la distribución se realiza con un reducido grupo de usuarios de prueba, para corroborar que todas las características de la aplicación están funcionando correctamente antes de subir una actualización. [FALTA COMPLEMENTAR MAS]
 
 \subsection{Crashes}
-Los crashes se entienden como la condición en la que una aplicación deja de funcionar de forma esperada, en el caso de Android, cuando una aplicación se congela o deja de responder. Una vez que la aplicación ya está publicada y disponible de forma oficial, es posible ver los reportes de crashes que envían los usuarios. Esto fue implementado por parte de Google el año 2010 \cite{18}, a través de la version de Android 2.2 (Froyo). Si bien esto es bastante útil, la mayoría de las veces no es suficiente ya que los reportes que se reciban van a depender de si usuario afectado desea enviar un reporte al momento que la aplicación dejó de responderle.\\
+Los crashes se entienden como la condición en la que una aplicación deja de funcionar de forma esperada, en el caso de Android, cuando una aplicación se congela o deja de responder. Una vez que la aplicación ya está publicada y disponible de forma oficial, es posible ver los reportes de crashes que envían los usuarios. Esto fue implementado por parte de Google el año 2010 \cite{18}, a través de la version de Android 2.2 (Froyo). Si bien esto es bastante útil, la mayoría de las veces no es suficiente ya que los reportes que se reciban van a depender de si el usuario afectado desea enviar un reporte al momento que la aplicación dejó de responder correctamente.\\
 
 \begin{figure}[h!]
 \centering

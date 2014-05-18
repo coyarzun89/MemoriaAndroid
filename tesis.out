@@ -51,7 +51,7 @@
 \BOOKMARK [3][-]{section*.44}{uiautomatorviewer}{subsection.3.1.1}% 51
 \BOOKMARK [3][-]{section*.45}{Monkey}{subsection.3.1.1}% 52
 \BOOKMARK [3][-]{section*.46}{monkeyrunner}{subsection.3.1.1}% 53
-\BOOKMARK [2][-]{subsection.3.1.2}{Herramientas de testing de c\363digo abierto}{section.3.1}% 54
+\BOOKMARK [2][-]{subsection.3.1.2}{Herramientas de testing de terceros}{section.3.1}% 54
 \BOOKMARK [3][-]{section*.47}{EasyMock}{subsection.3.1.2}% 55
 \BOOKMARK [3][-]{section*.48}{Mockito}{subsection.3.1.2}% 56
 \BOOKMARK [3][-]{section*.49}{Robolectric}{subsection.3.1.2}% 57
@@ -59,15 +59,16 @@
 \BOOKMARK [3][-]{section*.51}{Espresso}{subsection.3.1.2}% 59
 \BOOKMARK [3][-]{section*.52}{Spoon}{subsection.3.1.2}% 60
 \BOOKMARK [3][-]{section*.53}{Remote Test Lab}{subsection.3.1.2}% 61
-\BOOKMARK [1][-]{section.3.2}{Herramientas de Crashes}{chapter.3}% 62
-\BOOKMARK [2][-]{subsection.3.2.1}{Crittercism}{section.3.2}% 63
-\BOOKMARK [2][-]{subsection.3.2.2}{Bugsense}{section.3.2}% 64
-\BOOKMARK [2][-]{subsection.3.2.3}{Crashlytics}{section.3.2}% 65
-\BOOKMARK [2][-]{subsection.3.2.4}{ACRA}{section.3.2}% 66
+\BOOKMARK [1][-]{section.3.2}{Herramientas de reporte de crashes}{chapter.3}% 62
+\BOOKMARK [2][-]{subsection.3.2.1}{Herramienta de reporte de crashes provista por Android}{section.3.2}% 63
+\BOOKMARK [2][-]{subsection.3.2.2}{Herramientas de reporte de crashes de terceros}{section.3.2}% 64
+\BOOKMARK [2][-]{subsection.3.2.3}{Crittercism}{section.3.2}% 65
+\BOOKMARK [2][-]{subsection.3.2.4}{Bugsense}{section.3.2}% 66
 \BOOKMARK [2][-]{subsection.3.2.5}{Google Analytics}{section.3.2}% 67
-\BOOKMARK [0][-]{chapter.4}{An\341lisis Comparativo}{}% 68
-\BOOKMARK [0][-]{chapter.5}{Implementaci\363n}{}% 69
-\BOOKMARK [0][-]{chapter.6}{Conclusiones y Trabajo Futuro}{}% 70
-\BOOKMARK [0][-]{appendix.Alph1}{Ap\351ndice A}{}% 71
-\BOOKMARK [1][-]{section.Alph1.1}{Secci\363n Ap\351ndice}{appendix.Alph1}% 72
-\BOOKMARK [0][-]{section.Alph1.1}{Bibliograf\355a}{}% 73
+\BOOKMARK [2][-]{subsection.3.2.6}{ACRA}{section.3.2}% 68
+\BOOKMARK [0][-]{chapter.4}{An\341lisis Comparativo}{}% 69
+\BOOKMARK [0][-]{chapter.5}{Implementaci\363n}{}% 70
+\BOOKMARK [0][-]{chapter.6}{Conclusiones y Trabajo Futuro}{}% 71
+\BOOKMARK [0][-]{appendix.Alph1}{Ap\351ndice A}{}% 72
+\BOOKMARK [1][-]{section.Alph1.1}{Secci\363n Ap\351ndice}{appendix.Alph1}% 73
+\BOOKMARK [0][-]{section.Alph1.1}{Bibliograf\355a}{}% 74

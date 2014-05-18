@@ -110,10 +110,15 @@
 % Redefinición de comandos del paquete "nomencl".
 \renewcommand{\nomname}{Glosario}
 \renewcommand{\pagedeclaration}[1]{. Ver página~\hyperpage{#1}.} % Usar este comando en conjunto con el paquete "hyperref"
+\makeatletter % necesario para que reconozca a '@' como carácter normal 
+\renewcommand{\paragraph}{\@startsection{paragraph}{4}{\z@}{-3.25ex \@plus 
+-1ex \@minus -.2ex}{1.5ex \@plus .2ex}{\normalfont\normalsize\bfseries}} 
+\makeatother % necesario para que restablezca '@' como carácter especial
 \makenomenclature %Genera el Glosario
 % ---------------------------------------------------------------------------------------------------------------
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 \graphicspath{{./img/}}
+
 % ---------------------------------------------------------------------------------------------------------------
 \begin{document}
 % Opciones del Documento.

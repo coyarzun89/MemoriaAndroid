@@ -1,5 +1,17 @@
 \begin{thebibliography}{10}
 
+\bibitem{35}
+ACRA.
+\newblock Acra - application crash reports for android [en l\'inea].
+\newblock $<$\url{https://github.com/ACRA/acra /}$>$.
+\newblock [Consulta: 17 de Mayo].
+
+\bibitem{34}
+ACRA.
+\newblock Acra [en l\'inea].
+\newblock $<$\url{http://acra.ch/ /}$>$.
+\newblock [Consulta: 17 de Mayo].
+
 \bibitem{8}
 Open~Handset Alliance.
 \newblock Industry leaders announce open platform for mobile devices [en
@@ -80,6 +92,18 @@ The Atlantic.
   $<$\url{http://www.theatlantic.com/technology/archive/2013/12/the-day-google-had-to-start-over-on-android/282479/}$>$.
 \newblock [Consulta: 4 de Mayo].
 
+\bibitem{32}
+Bugsense.
+\newblock Bugsense android [en l\'inea].
+\newblock $<$\url{https://www.bugsense.com/docs/android /}$>$.
+\newblock [Consulta: 11 de Mayo].
+
+\bibitem{31}
+Crittercism.
+\newblock Crittercism - android sdk documentation[en l\'inea].
+\newblock $<$\url{http://docs.crittercism.com/android/android.html /}$>$.
+\newblock [Consulta: 11 de Mayo].
+
 \bibitem{6}
 Ben Elgin.
 \newblock Google buys android for its mobile arsenal. bloomberg businessweek.
@@ -103,6 +127,20 @@ Google.
   $<$\url{https://code.google.com/p/android-test-kit/wiki/EspressoStartGuide
   /}$>$.
 \newblock [Consulta: 4 de Mayo].
+
+\bibitem{33}
+Google.
+\newblock Google analytics android [en l\'inea].
+\newblock
+  $<$\url{https://developers.google.com/analytics/devguides/collection/android/v3/
+  /}$>$.
+\newblock [Consulta: 17 de Mayo].
+
+\bibitem{29}
+Google.
+\newblock Google play developer console [en l\'inea].
+\newblock $<$\url{https://play.google.com/apps/publish/ /}$>$.
+\newblock [Consulta: 11 de Mayo].
 
 \bibitem{3}
 Emir Hasanbegovic.

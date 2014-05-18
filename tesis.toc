@@ -21,54 +21,55 @@
 \contentsline {subsubsection}{Tipos de test}{13}{section*.11}
 \contentsline {paragraph}{Testing unitario}{13}{section*.12}
 \contentsline {paragraph}{Testing de UI}{14}{section*.13}
-\contentsline {paragraph}{Testing de integraci\'on}{14}{section*.14}
+\contentsline {paragraph}{Testing de integraci\'on}{15}{section*.14}
 \contentsline {paragraph}{Testing funcional o de aceptaci\'on}{15}{section*.15}
 \contentsline {paragraph}{Testing de sistema}{15}{section*.16}
-\contentsline {subsubsection}{\IeC {\textquestiondown }Qu\'e testear?}{15}{section*.17}
+\contentsline {subsubsection}{\IeC {\textquestiondown }Qu\'e testear?}{16}{section*.17}
 \contentsline {paragraph}{Cambios de orientaci\'on}{16}{section*.18}
 \contentsline {paragraph}{Cambios de configuraci\'on}{16}{section*.19}
 \contentsline {paragraph}{Dependencias de fuentes externas}{16}{section*.20}
 \contentsline {paragraph}{Cambios en segundo plano}{16}{section*.21}
-\contentsline {subsubsection}{\IeC {\textquestiondown }Qu\'e tests requieren un sistema con Android para ejecutarse?}{16}{section*.22}
-\contentsline {paragraph}{Testing de clases en Java}{16}{section*.23}
+\contentsline {subsubsection}{\IeC {\textquestiondown }Qu\'e tests requieren un sistema con Android para ejecutarse?}{17}{section*.22}
+\contentsline {paragraph}{Testing de clases en Java}{17}{section*.23}
 \contentsline {paragraph}{Testing de clases en Java que usan la API de Android}{17}{section*.24}
 \contentsline {section}{\numberline {2.2}Problemas al desarrollar en Android}{17}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Fragmentaci\'on}{17}{subsection.2.2.1}
-\contentsline {subsubsection}{Fragmentaci\'on a nivel de software}{17}{section*.25}
+\contentsline {subsection}{\numberline {2.2.1}Fragmentaci\'on}{18}{subsection.2.2.1}
+\contentsline {subsubsection}{Fragmentaci\'on a nivel de software}{18}{section*.25}
 \contentsline {subsubsection}{Fragmentaci\'on a nivel de hardware}{19}{section*.27}
 \contentsline {paragraph}{Fragmentaci\'on en los tama\~nos de pantalla}{20}{section*.28}
 \contentsline {paragraph}{Fragmentaci\'on en las resoluciones de pantalla}{21}{section*.30}
-\contentsline {subsubsection}{Fragmentaci\'on en otras caracter\IeC {\'\i }sticas}{22}{section*.33}
+\contentsline {subsubsection}{Fragmentaci\'on en otras caracter\IeC {\'\i }sticas}{23}{section*.33}
 \contentsline {subsubsection}{Reporte sobre Fragmentaci\'on}{23}{section*.34}
-\contentsline {subsection}{\numberline {2.2.2}Distribuci\'on de versiones alpha y beta}{25}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Crashes}{26}{subsection.2.2.3}
-\contentsline {chapter}{\numberline {3}Herramientas Actuales}{28}{chapter.3}
-\contentsline {section}{\numberline {3.1}Herramientas de Testing}{28}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Herramientas de testing provistas por Android}{28}{subsection.3.1.1}
-\contentsline {subsubsection}{JUnit}{29}{section*.40}
-\contentsline {subsubsection}{Instrumentation}{30}{section*.41}
-\contentsline {subsubsection}{Simulando objetos (Mock objects)}{31}{section*.42}
-\contentsline {subsubsection}{uiautomator}{31}{section*.43}
-\contentsline {subsubsection}{uiautomatorviewer}{32}{section*.44}
-\contentsline {subsubsection}{Monkey}{32}{section*.45}
-\contentsline {subsubsection}{monkeyrunner}{32}{section*.46}
-\contentsline {subsection}{\numberline {3.1.2}Herramientas de testing de c\'odigo abierto}{33}{subsection.3.1.2}
-\contentsline {subsubsection}{EasyMock}{33}{section*.47}
-\contentsline {subsubsection}{Mockito}{33}{section*.48}
-\contentsline {subsubsection}{Robolectric}{34}{section*.49}
-\contentsline {subsubsection}{Robotium}{34}{section*.50}
-\contentsline {subsubsection}{Espresso}{35}{section*.51}
-\contentsline {subsubsection}{Spoon}{35}{section*.52}
-\contentsline {subsubsection}{Remote Test Lab}{36}{section*.53}
-\contentsline {section}{\numberline {3.2}Herramientas de Crashes}{36}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Crittercism}{36}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Bugsense}{37}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Crashlytics}{37}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}ACRA}{37}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Google Analytics}{37}{subsection.3.2.5}
-\contentsline {chapter}{\numberline {4}An\'alisis Comparativo}{39}{chapter.4}
-\contentsline {chapter}{\numberline {5}Implementaci\'on}{40}{chapter.5}
-\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{41}{chapter.6}
-\contentsline {chapter}{\numberline {A}Ap\'endice A}{42}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Secci\'on Ap\'endice}{42}{section.Alph1.1}
-\contentsline {chapter}{Bibliograf\'ia}{43}{section.Alph1.1}
+\contentsline {subsection}{\numberline {2.2.2}Distribuci\'on de versiones alpha y beta}{27}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Crashes}{27}{subsection.2.2.3}
+\contentsline {chapter}{\numberline {3}Herramientas Actuales}{29}{chapter.3}
+\contentsline {section}{\numberline {3.1}Herramientas de Testing}{29}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Herramientas de testing provistas por Android}{29}{subsection.3.1.1}
+\contentsline {subsubsection}{JUnit}{30}{section*.40}
+\contentsline {subsubsection}{Instrumentation}{31}{section*.41}
+\contentsline {subsubsection}{Simulando objetos (Mock objects)}{32}{section*.42}
+\contentsline {subsubsection}{uiautomator}{32}{section*.43}
+\contentsline {subsubsection}{uiautomatorviewer}{33}{section*.44}
+\contentsline {subsubsection}{Monkey}{33}{section*.45}
+\contentsline {subsubsection}{monkeyrunner}{33}{section*.46}
+\contentsline {subsection}{\numberline {3.1.2}Herramientas de testing de terceros}{34}{subsection.3.1.2}
+\contentsline {subsubsection}{EasyMock}{34}{section*.47}
+\contentsline {subsubsection}{Mockito}{34}{section*.48}
+\contentsline {subsubsection}{Robolectric}{35}{section*.49}
+\contentsline {subsubsection}{Robotium}{35}{section*.50}
+\contentsline {subsubsection}{Espresso}{36}{section*.51}
+\contentsline {subsubsection}{Spoon}{36}{section*.52}
+\contentsline {subsubsection}{Remote Test Lab}{37}{section*.53}
+\contentsline {section}{\numberline {3.2}Herramientas de reporte de crashes}{37}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Herramienta de reporte de crashes provista por Android}{37}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Herramientas de reporte de crashes de terceros}{39}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Crittercism}{39}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Bugsense}{41}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Google Analytics}{42}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}ACRA}{43}{subsection.3.2.6}
+\contentsline {chapter}{\numberline {4}An\'alisis Comparativo}{44}{chapter.4}
+\contentsline {chapter}{\numberline {5}Implementaci\'on}{45}{chapter.5}
+\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{46}{chapter.6}
+\contentsline {chapter}{\numberline {A}Ap\'endice A}{47}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Secci\'on Ap\'endice}{47}{section.Alph1.1}
+\contentsline {chapter}{Bibliograf\'ia}{48}{section.Alph1.1}

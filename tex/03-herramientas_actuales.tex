@@ -47,16 +47,16 @@ Android entrega clases para crear objetos llamados \textit{mock objects}, que so
 Por ejemplo se puede usar MockContext en vez de Context. La clase \textit{RenamingDelegatingContext} entrega las llamadas a un contexto dado y ayuda a la base de datos y a las operaciones con archivos agregando un prefijo a todos los nombres de los archivos. De esta forma se pueden testear compontentes sin afectar la base de datos del sistema de archivos de un dispositivo Android.
 
 \subsubsection{uiautomator}
-El SDK de Android contiene la libreria \textit{uiautomator} para testear y ejecutar tests a la interfaz gráfica. Esto fue implementado a partir de la API 16 \cite{19}.
+El SDK de Android contiene la biblioteca \textit{uiautomator} para testear y ejecutar tests a la interfaz gráfica. Esto fue implementado a partir de la API 16 \cite{19}.
 
-Los proyectos de test de \textit{uiautomator} son proyectos en Java, en donde la libreria de JUnit 3, junto con los archivos uiautomator.jar y android.jar son agregados a la compilación. 
+Los proyectos de test de \textit{uiautomator} son proyectos en Java, en donde la biblioteca de JUnit 3, junto con los archivos uiautomator.jar y android.jar son agregados a la compilación. 
 
-Además esta libreria provee la clase UiDevice que permite la comunicación con el dispositivo, la clase UiSelector para buscar elementos en la pantalla y la clase UiObject que presenta los elementos de la interfaz. La clase UiCollection permite seleccionar un número de elementos de la interfaz gráfica al igual que la clase UiScrollable permite hacer scroll en una vista apra encontrar un elemento.
+Además esta biblioteca provee la clase UiDevice que permite la comunicación con el dispositivo, la clase UiSelector para buscar elementos en la pantalla y la clase UiObject que presenta los elementos de la interfaz. La clase UiCollection permite seleccionar un número de elementos de la interfaz gráfica al igual que la clase UiScrollable permite hacer scroll en una vista apra encontrar un elemento.
 
 \subsubsection{uiautomatorviewer}
 Android también provee la herramienta \textit{uiautomatorviewer}, que permite analizar la interfaz gráfica de una aplicación. Esta herramienta puede ser usada apra encontrar los id, texto o atributos de los elementos de la interfaz.
 
-Esta herramienta permite a la gente que no programa, analizar una aplicación y desarrollar test a través de la libreria \textit{uiautomator}. 
+Esta herramienta permite a la gente que no programa, analizar una aplicación y desarrollar test a través de la biblioteca \textit{uiautomator}. 
 [AGREGAR SCREENSHOT]
 
 \subsubsection{Monkey}
@@ -84,7 +84,7 @@ Las siguientes clases son las principales:
 \item MonkeyImage: Permite crear, comparar y guardar screenshots.
 \end{itemize}
 
-\subsection{Herramientas de testing de código abierto}
+\subsection{Herramientas de testing de terceros}
 \subsubsection{EasyMock}
 EasyMock es un framework para mocking \cite{22}, es decir, para crear objeto simulados. Este puede ser usado en conjunto con JUnit. A continuación se muestra como es la instanciación de un objeto basado en una clase.\\
 
@@ -147,23 +147,121 @@ Spoon.screenshot(activity, "after_login");
 \subsubsection{Remote Test Lab}
 Remote Test Lab \cite{28} es un servicio que Samsung ofrece a los desarrolladores para que puedan probar sus aplicaciones en un dispositivo real, pero en remoto. Gracias a él podrán acceder, vía web, a diferentes smartphones y tablets con varias versiones del sistema operativo. En estos dispositivos los desarrolladores podrán instalar y testear sus apps...
 
-\section{Herramientas de Crashes}
-Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+\section{Herramientas de reporte de crashes}
+Una vez publicada una aplicación, comienza el proceso de correcciones de errores y mejoras. Esto se puede realizar gracias a los reportes de crashes que se reciben cuando la aplicación deja de funcionar correctamente. Es muy importante corregir todos estos errores para dar mayor estabilidad a la aplicación y para ofrecer un mejor producto al usuario. Android cuenta con un sistema de reporte de crashes desde el año 2010\cite{18}. A continuación se revisarán las características con las que cuenta:
 
+\subsection{Herramienta de reporte de crashes provista por Android}
+Cuando la aplicación ya esta publicada, es posible acceder a una sección dentro de la \textit{Google Play Developer Console} \cite{29}, titulada \textit{CRASHES \& ANRS}. En este sitio es posible ver los reportes de los últimos 6 meses. Tal como se muestra en la figura \ref{fig:Fig14}, es posible aplicar distintos filtros para obtener información más detallada sobre estos reportes. Por ejemplo, se puede filtrar por versiones de sistema operativo o el número de versión de la aplicación.
+
+\begin{figure}[h!]
+\centering
+      \includegraphics[width=15cm]{Imagenes/crash_report_google}
+\caption{Vista del sistema de reporte de crashes provisto por Android.}
+\label{fig:Fig14}
+\end{figure}
+
+Tal como se mencionó anteriormente, estos reportes son los que envía el usuario cuando la aplicación deja de funcionar correctamente. En ese momento, el sistema le pregunta al usuario si desea enviar el reporte del crash al desarrollador. Además, el usuario tiene la opción de enviar algún mensaje adicional que pueda ser útil para el desarrollador, como por ejemplo, que al momento del crash se estaba usando la cámara. 
+
+Al presionar en el reporte de crash para ver más detalles, se puede ver la hora y el día en el que ocurrió el crash, cuantas veces ha ocurrido y el dispositivo que estaba usando el usuario. También se pueden ver algunas líneas del stack trace del usuario al momento del error. El stack trace es un reporte de todas las acciones que se realizan en cierto punto, durante la ejecución de una aplicación. Esto es muy útil para los desarrolladores ya que la mayoría de las veces se puede ver en que línea del código la aplicación dejó de responder correctamente y que tipo de error ocurrió. Con esta información es posible comenzar a revisar el código y ver que problema existe.
+
+\subsection{Herramientas de reporte de crashes de terceros}
+Existen varias herramientas que entregan reportes de crashes mucho más completos que los que entrega Google de forma nativa. La mayoría de estas entregan una versión gratuita con restricciones y es posible pagar para acceder a la versión premium, la cual cuenta con características más especializadas. Además, todos los reportes de crashes son envíados, ya que al momento de instalar la aplicación se piden los permisos necesarios para ello, por lo que el usuario afectado no debe hacer nada. A continuación se listan las más populares: 
 \subsection{Crittercism}
-Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+Crittercism es un sistema muy completo que cuenta con monitoreo, manejo de excepciones, como también reportes de crashes y performance. Actualmente soporta múltiples plataformas, entre las que se encuentran: Android, Android NDK, iOS, Windows Phone 8 y HTML5.  
+
+La instalación es bastante simple \cite{31}. Se debe descargar el SDK de Crittercism para Android e incluirlo al proyecto. Luego se deben agregar los siguientes permisos en el archivo Android Manifest del proyecto: 
+\begin{lstlisting}
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.READ_LOGS"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+<uses-permission android:name="android.permission.GET_TASKS"/>
+\end{lstlisting}
+El primer permiso es necesario para poder acceder a Internet y poder enviar los reportes. El segundo es necesario para poder obtener la información de los stack trace del usuario, y ahi saber en que línea de código ha ocurrido el error. El tercero es para obtener información sobre el estado de la red, por ejemplo, para saber si el usuario está conectado a Wi-Fi o a través de un carrier. El último permiso sirve para acceder a la información de las últimas dos actividades ejecutadas, lo que permite saber en que actividad ocurrió el crash.
+
+Una vez que los permisos ya están entregados, se debe inicializar Crittercism. Esto se hace únicamente una vez por aplicación, por lo que se debe hacer en la primera actividad que se ejecuta dentro de la aplicación. Para iniciar Crittercism se escribe la siguiente línea en el onCreate:
+\begin{lstlisting}
+Crittercism.initialize(getApplicationContext(), "CRITTERCISM_APP_ID");
+\end{lstlisting}
+
+Ahora ya están implementadas las características básicas, y comenzarán a llegar los reportes al sitio de Crittercism. También es posible recibir cada reporte de crash al correo, configurando esto desde el sitio web.
+
+Como se puede ver en la figura \ref{fig:Fig15}, se tienen opciones parecidas al reporte de crashes de Google. La gran diferencia está en el detalle de la información, ya que al revisar los detalles de un crash, se puede ver información muy específica como: nivel de bateria, espacio en el disco, espacio en la tarjeta SD, uso de RAM, estabilidad de la red, orientación del dispositivo, idioma del dispositivo, actividades que estaban ejecutandose, entre muchos otros puntos.
+\begin{figure}[h!]
+\centering
+      \includegraphics[width=15cm]{Imagenes/crash_report_crittercism}
+\caption{Vista del sistema de reporte de crashes de Crittercism}
+\label{fig:Fig15}
+\end{figure}
 
 \subsection{Bugsense}
-Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+Bugsense también es un sistema bastante completo. Cuenta con monitoreo, reportes de crashes, manejo de excepciones, tendencias de crashes e integración con ACRA. Soporta múltiples plataformas, entre las que se encuentran: Android, iOS, Windows Phone 8 y HTML5.  
 
-\subsection{Crashlytics}
-Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+Para la instalación se descarga la biblioteca desde el sitio de Bugsense \cite{32}. Después de incluirla en el proyecto, se deben pedir los permisos correspondientes en el Android Manifest. Para iniciar Bugsense se escribe la siguiente línea:   
+\begin{lstlisting}
+BugSenseHandler.initAndStartSession(Context, APIKEY);
+\end{lstlisting}
 
-\subsection{ACRA}
-Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+
+Con esto, Bugsense ya se encuentra implementado. Para implementar las otras características sólo hay que seguir el tutorial que se encuentra en el sitio\cite{32}. 
+
+En la figura \ref{fig:Fig16} se puede ver como es el panel con estadísticas que ofrece Bugsense. Similar a lo ofrecido por Crittercism, es posible filtrar los crashes por versión de la aplicación, como también por versión del sistema operativo.
+
+\begin{figure}[h!]
+\centering
+      \includegraphics[width=15cm]{Imagenes/crash_report_bugsense}
+\caption{Vista del sistema de reporte de crashes de Bugsense}
+\label{fig:Fig16}
+\end{figure}
 
 \subsection{Google Analytics}
-Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+Google Analytics es otra herramienta que cuenta con reportes de crashes. Si bien, la especialidad de Google Analytics es ofrecer estadísticas y hacer tracking de distintos eventos, también es posible recibir reportes de crashes y excepciones. El gran problema es que los reportes no llegan en tiempo real, ya que la información se actualiza con un día de retraso.
+
+Para su implementación es necesario descarga desde el sitio de Google Analytics \cite{33} la versión 3 de su SDK. Una vez descargado el SDK, es necesario incluirlo al proyecto y dar los siguientes permisos en el archivo Android Manifest:
+\begin{lstlisting}
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+\end{lstlisting}
+Para implementarlo a través de código es necesario agregar estas líneas en cada una de las Actividades de las cuáles se desee obtener información:
+\begin{lstlisting}
+@Override
+  public void onStart() {
+    super.onStart();
+    ... // El resto del código de onStart()
+    EasyTracker.getInstance(this).activityStart(this);  // Agregar este método
+  }
+
+  @Override
+  public void onStop() {
+    super.onStop();
+    ... // El resto del código de onStop()
+    EasyTracker.getInstance(this).activityStop(this);  // Agregar este método
+  }
+\end{lstlisting}
+Google Analytics ofrece filtrar los reportes de crashes por versión de la aplicación, versión del sistema operativo, marca del dispositivo y tamaños de pantalla.
+
+\subsection{ACRA}
+ACRA es una biblioteca gratuita y de código abierto disponible en Github \cite{35}. Desde la última actualización de Google Forms, el uso de Google Docs como almacenamiento para los reportes que entregaba ACRA está obsoleto. Ahora es necesario implementar una aplicación web para poder ver los reportes, aunque también es posible asociarlo a otras plataformas como Bugsense o HockeyApp. 
+
+Para su implementación es necesario descarga la biblioteca desde el sitio web de ACRA \cite{34}. Una vez que ya se ha añadido al proyecto, es necesario pedir el siguiente permiso en el archivo de Android Manifest:
+\begin{lstlisting}
+<uses-permission android:name="android.permission.INTERNET"/>
+\end{lstlisting}
+En el código del proyecto la implementación es de la siguiente forma:
+\begin{lstlisting}
+import org.acra.*;
+import org.acra.annotation.*;
+
+@ReportsCrashes(formKey = "", formUri = "http://www.aqui_va_la_plataforma_web.com/reportpath")
+public class MyApplication extends Application {
+  @Override
+  public void onCreate() {   
+    super.onCreate();
+    ACRA.init(this);  // Esta es la línea que inicializa ACRA
+  }
+}			
+\end{lstlisting}
+
+
 
 
 
