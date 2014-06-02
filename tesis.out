@@ -59,16 +59,22 @@
 \BOOKMARK [3][-]{section*.51}{Espresso}{subsection.3.1.2}% 59
 \BOOKMARK [3][-]{section*.52}{Spoon}{subsection.3.1.2}% 60
 \BOOKMARK [3][-]{section*.53}{Remote Test Lab}{subsection.3.1.2}% 61
-\BOOKMARK [1][-]{section.3.2}{Herramientas de reporte de crashes}{chapter.3}% 62
-\BOOKMARK [2][-]{subsection.3.2.1}{Herramienta de reporte de crashes provista por Android}{section.3.2}% 63
-\BOOKMARK [2][-]{subsection.3.2.2}{Herramientas de reporte de crashes de terceros}{section.3.2}% 64
-\BOOKMARK [2][-]{subsection.3.2.3}{Crittercism}{section.3.2}% 65
-\BOOKMARK [2][-]{subsection.3.2.4}{Bugsense}{section.3.2}% 66
-\BOOKMARK [2][-]{subsection.3.2.5}{Google Analytics}{section.3.2}% 67
-\BOOKMARK [2][-]{subsection.3.2.6}{ACRA}{section.3.2}% 68
-\BOOKMARK [0][-]{chapter.4}{An\341lisis Comparativo}{}% 69
-\BOOKMARK [0][-]{chapter.5}{Implementaci\363n}{}% 70
-\BOOKMARK [0][-]{chapter.6}{Conclusiones y Trabajo Futuro}{}% 71
-\BOOKMARK [0][-]{appendix.Alph1}{Ap\351ndice A}{}% 72
-\BOOKMARK [1][-]{section.Alph1.1}{Secci\363n Ap\351ndice}{appendix.Alph1}% 73
-\BOOKMARK [0][-]{section.Alph1.1}{Bibliograf\355a}{}% 74
+\BOOKMARK [1][-]{section.3.2}{Herramientas de Distribuci\363n de Versiones}{chapter.3}% 62
+\BOOKMARK [2][-]{subsection.3.2.1}{Herramienta de Distribuci\363n de Versiones provista por Android}{section.3.2}% 63
+\BOOKMARK [2][-]{subsection.3.2.2}{Herramienta de Distribuci\363n de Versiones de terceros}{section.3.2}% 64
+\BOOKMARK [2][-]{subsection.3.2.3}{HockeyApp}{section.3.2}% 65
+\BOOKMARK [2][-]{subsection.3.2.4}{AppBlade}{section.3.2}% 66
+\BOOKMARK [2][-]{subsection.3.2.5}{The Beta Family}{section.3.2}% 67
+\BOOKMARK [1][-]{section.3.3}{Herramientas de Reporte de crashes}{chapter.3}% 68
+\BOOKMARK [2][-]{subsection.3.3.1}{Herramienta de Reporte de Crashes provista por Android}{section.3.3}% 69
+\BOOKMARK [2][-]{subsection.3.3.2}{Herramientas de Reporte de Crashes de terceros}{section.3.3}% 70
+\BOOKMARK [2][-]{subsection.3.3.3}{Crittercism}{section.3.3}% 71
+\BOOKMARK [2][-]{subsection.3.3.4}{Bugsense}{section.3.3}% 72
+\BOOKMARK [2][-]{subsection.3.3.5}{Google Analytics}{section.3.3}% 73
+\BOOKMARK [2][-]{subsection.3.3.6}{ACRA}{section.3.3}% 74
+\BOOKMARK [0][-]{chapter.4}{An\341lisis Comparativo}{}% 75
+\BOOKMARK [0][-]{chapter.5}{Implementaci\363n}{}% 76
+\BOOKMARK [0][-]{chapter.6}{Conclusiones y Trabajo Futuro}{}% 77
+\BOOKMARK [0][-]{appendix.Alph1}{Ap\351ndice A}{}% 78
+\BOOKMARK [1][-]{section.Alph1.1}{Secci\363n Ap\351ndice}{appendix.Alph1}% 79
+\BOOKMARK [0][-]{section.Alph1.1}{Bibliograf\355a}{}% 80

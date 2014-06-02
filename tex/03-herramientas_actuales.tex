@@ -147,10 +147,47 @@ Spoon.screenshot(activity, "after_login");
 \subsubsection{Remote Test Lab}
 Remote Test Lab \cite{28} es un servicio que Samsung ofrece a los desarrolladores para que puedan probar sus aplicaciones en un dispositivo real, pero en remoto. Gracias a él podrán acceder, vía web, a diferentes smartphones y tablets con varias versiones del sistema operativo. En estos dispositivos los desarrolladores podrán instalar y testear sus apps...
 
-\section{Herramientas de reporte de crashes}
+
+\section{Herramientas de Distribución de Versiones}
+Antes de la publicación de una aplicación, es necesario distribuir usuarios para corroborar que no existen problemas de usabilidad, errores de interfaz o que la aplicación deja de responder ante alguna acción del usuario. Para ello existen herramientas que permiten distribuir de manera segura, versiones alpha y beta de la aplicación que se este desarrollando para poder recibir feedback que permita corregir posibles problemas, o simplemente recibir retroalimentación por parte de testers.
+
+\subsection{Herramienta de Distribución de Versiones provista por Android}
+Durante la Conferencia Google I/O de Mayo del año 2013 \cite{37}, se llevó a cabo el anuncio de una actualización a la \textit{Google Play Developer Console} \cite{29}, que corresponde al lugar en donde el desarrollador sube la versión oficial de su aplicación. Las mejoras consistieron en añadir un servicio de traducción para las aplicaciones, gráficas de ganancias, consejos de optimización, seguimiento de referidos y finalmente la opción de subir versiones alphas y betas, ya que antes de este evento, no existía una forma nativa de realizar esta distribución.
+
+Tal como se ve en la figura \ref{fig:Fig18}, además de la versión de producción, que corresponde a la versión oficial de una aplicación, existen dos secciones más, una para versiones alpha y otra para versiones beta. 
+\begin{figure}[h!]
+\centering
+      \includegraphics[width=15cm]{Imagenes/distribution_google}
+\caption{Vista del sistema de versiones alphas y betas provisto por Android}
+\label{fig:Fig18}
+\end{figure}
+El desarrollador tiene la opción de elegir que usuarios quiere que reciban las versiones experimentales de su aplicación. Esto se realiza creando un grupo en \textit{Google Groups} \cite{38} o una comunidad en \textit{Google+ Communities}\cite{39}. Una vez que el grupo ha sido creado, es responsabilidad del desarrollador agregar o quitar usuarios que recibirán las versiones aún experimentales de la aplicación. Es posible dejar opción de unirse a estos grupos de forma abierta, para que cualquier usuario que desee tener versiones alpha y beta, puedan obtener una.
+
+
+\subsection{Herramienta de Distribución de Versiones de terceros}
+Debido a que antes de Mayo del 2013 no existía una forma provista por Google de distribuir aplicaciones de prueba, hay varias herramientas que llenaban esta necesidad y que aún siguen haciéndolo. La gran diferencia con la opción que entrega Google es que todas terminan siendo de pago después de algún tiempo o después de una determinada cantidad de usuarios. Además ofrecen otras herramientas complementarias a la distribución de versiones, para entregar mayor valor y diferenciación a sus productos.
+
+\subsection{HockeyApp}
+HockeyApp \cite{40} es una plataforma que permite la distribución de versiones beta a múltiples plataformas, entre las que se encuentran Android, iOS, Windows Phone y Mac OS. Esto se complementa con la recolección de reportes de crashes, retroalimentación por parte de los usuarios y estadísticas sobre los testers que están usando la aplicación, como el dispositivo e idioma que tienen.
+
+Para la distribución sólamente es necesario subir el APK de la aplicación e invitar a los usuarios a través del correo electrónico del tester. Cada vez que se sube una nueva versión es posible enviar un correo notificando a los testers que existe una actualización. Los testers pueden descargar la aplicación accediendo desde el sitio web de HockeyApp \cite{40}, como también a través de la aplicación oficial, la cual también puede ser descargada desde su sitio web, en la sección de aplicaciones.
+
+Si se desean implementar las otras características que ofrece Hockeyapp, es necesario agregar el SDK de ellos a la aplicación. Esto permitirá tener los reportes de crashes de los testers, y otras estadísticas acerca de ellos.
+
+\subsection{AppBlade}
+AppBlade \cite{41} es una plataforma que soporta la distribución de versiones beta a Android, iOS y BlackBerry. También cuenta con un sistema de reporte de crashes que notifica al desarrollador de estos errores.
+
+Para la distribución también es necesario sólament subir el APK y comenzar a invitar testers.
+
+
+\subsection{The Beta Family}
+
+
+
+\section{Herramientas de Reporte de crashes}
 Una vez publicada una aplicación, comienza el proceso de correcciones de errores y mejoras. Esto se puede realizar gracias a los reportes de crashes que se reciben cuando la aplicación deja de funcionar correctamente. Es muy importante corregir todos estos errores para dar mayor estabilidad a la aplicación y para ofrecer un mejor producto al usuario. Android cuenta con un sistema de reporte de crashes desde el año 2010\cite{18}. A continuación se revisarán las características con las que cuenta:
 
-\subsection{Herramienta de reporte de crashes provista por Android}
+\subsection{Herramienta de Reporte de Crashes provista por Android}
 Cuando la aplicación ya esta publicada, es posible acceder a una sección dentro de la \textit{Google Play Developer Console} \cite{29}, titulada \textit{CRASHES \& ANRS}. En este sitio es posible ver los reportes de los últimos 6 meses. Tal como se muestra en la figura \ref{fig:Fig14}, es posible aplicar distintos filtros para obtener información más detallada sobre estos reportes. Por ejemplo, se puede filtrar por versiones de sistema operativo o el número de versión de la aplicación.
 
 \begin{figure}[h!]
@@ -164,7 +201,7 @@ Tal como se mencionó anteriormente, estos reportes son los que envía el usuario 
 
 Al presionar en el reporte de crash para ver más detalles, se puede ver la hora y el día en el que ocurrió el crash, cuantas veces ha ocurrido y el dispositivo que estaba usando el usuario. También se pueden ver algunas líneas del stack trace del usuario al momento del error. El stack trace es un reporte de todas las acciones que se realizan en cierto punto, durante la ejecución de una aplicación. Esto es muy útil para los desarrolladores ya que la mayoría de las veces se puede ver en que línea del código la aplicación dejó de responder correctamente y que tipo de error ocurrió. Con esta información es posible comenzar a revisar el código y ver que problema existe.
 
-\subsection{Herramientas de reporte de crashes de terceros}
+\subsection{Herramientas de Reporte de Crashes de terceros}
 Existen varias herramientas que entregan reportes de crashes mucho más completos que los que entrega Google de forma nativa. La mayoría de estas entregan una versión gratuita con restricciones y es posible pagar para acceder a la versión premium, la cual cuenta con características más especializadas. Además, todos los reportes de crashes son envíados, ya que al momento de instalar la aplicación se piden los permisos necesarios para ello, por lo que el usuario afectado no debe hacer nada. A continuación se listan las más populares: 
 \subsection{Crittercism}
 Crittercism es un sistema muy completo que cuenta con monitoreo, manejo de excepciones, como también reportes de crashes y performance. Actualmente soporta múltiples plataformas, entre las que se encuentran: Android, Android NDK, iOS, Windows Phone 8 y HTML5.  
@@ -261,6 +298,13 @@ public class MyApplication extends Application {
 }			
 \end{lstlisting}
 
+En la figura \ref{fig:Fig17} se muestra una vista del sistema de reportes integrado con Acralizer \cite{36}, ofreciendo filtrar los reportes por versión de Android y versión de la aplicación:
+\begin{figure}[h!]
+\centering
+      \includegraphics[width=15cm]{Imagenes/crash_report_acra}
+\caption{Vista del sistema de reporte de crashes de ACRA}
+\label{fig:Fig17}
+\end{figure}
 
 
 

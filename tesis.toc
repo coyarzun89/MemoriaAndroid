@@ -60,16 +60,22 @@
 \contentsline {subsubsection}{Espresso}{36}{section*.51}
 \contentsline {subsubsection}{Spoon}{36}{section*.52}
 \contentsline {subsubsection}{Remote Test Lab}{37}{section*.53}
-\contentsline {section}{\numberline {3.2}Herramientas de reporte de crashes}{37}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Herramienta de reporte de crashes provista por Android}{37}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Herramientas de reporte de crashes de terceros}{39}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Crittercism}{39}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Bugsense}{41}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Google Analytics}{42}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}ACRA}{43}{subsection.3.2.6}
-\contentsline {chapter}{\numberline {4}An\'alisis Comparativo}{44}{chapter.4}
-\contentsline {chapter}{\numberline {5}Implementaci\'on}{45}{chapter.5}
-\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{46}{chapter.6}
-\contentsline {chapter}{\numberline {A}Ap\'endice A}{47}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Secci\'on Ap\'endice}{47}{section.Alph1.1}
-\contentsline {chapter}{Bibliograf\'ia}{48}{section.Alph1.1}
+\contentsline {section}{\numberline {3.2}Herramientas de Distribuci\'on de Versiones}{37}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Herramienta de Distribuci\'on de Versiones provista por Android}{37}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Herramienta de Distribuci\'on de Versiones de terceros}{38}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}HockeyApp}{39}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}AppBlade}{39}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}The Beta Family}{39}{subsection.3.2.5}
+\contentsline {section}{\numberline {3.3}Herramientas de Reporte de crashes}{39}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Herramienta de Reporte de Crashes provista por Android}{40}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Herramientas de Reporte de Crashes de terceros}{41}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Crittercism}{41}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Bugsense}{42}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Google Analytics}{43}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.6}ACRA}{45}{subsection.3.3.6}
+\contentsline {chapter}{\numberline {4}An\'alisis Comparativo}{47}{chapter.4}
+\contentsline {chapter}{\numberline {5}Implementaci\'on}{48}{chapter.5}
+\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{49}{chapter.6}
+\contentsline {chapter}{\numberline {A}Ap\'endice A}{50}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Secci\'on Ap\'endice}{50}{section.Alph1.1}
+\contentsline {chapter}{Bibliograf\'ia}{51}{section.Alph1.1}
