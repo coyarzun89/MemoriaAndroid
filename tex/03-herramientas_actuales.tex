@@ -5,8 +5,6 @@
 
 En este capítulo se detallarán las herramientas más utilizadas para combatir los diversos problemas durante el proceso de desarrollo de aplicaciones Android.
 
-
-
 \section{Herramientas de Testing}
 Ahora que ya se conoce lo básico sobre testing y se han visto las herramientas que entrega el framework de testing de Android, se comenzaran a ver el resto de herramientas que se encuentran disponibles. 
 
@@ -18,7 +16,6 @@ Android provee un buen framework de testing \cite{20} para hacer pruebas en vari
 \item Las extensiones de JUnit proveen clases con tests específicos para componentes. Estas clases entregan métodos para crear \textit{mocking objects} (objetos simulados) y métodos que ayudan a controlar el ciclo de vida de los componentes.
 
 \item El SDK (Software Development Kit) de Android también provee herramientas para realizar testing a la UI, como \textit{monkeyrunner}.
-
 \end{itemize}
 
 A continuación se revisará en detalle cada una de las herramientas relacionadas a testing del SDK:
@@ -158,33 +155,57 @@ Tal como se ve en la figura \ref{fig:Fig18}, además de la versión de producción,
 \begin{figure}[h!]
 \centering
       \includegraphics[width=15cm]{Imagenes/distribution_google}
-\caption{Vista del sistema de versiones alphas y betas provisto por Android}
+\caption{Vista del sistema de versiones alphas y betas provisto por Android. Fuente: Elaboración Propia}
 \label{fig:Fig18}
 \end{figure}
-El desarrollador tiene la opción de elegir que usuarios quiere que reciban las versiones experimentales de su aplicación. Esto se realiza creando un grupo en \textit{Google Groups} \cite{38} o una comunidad en \textit{Google+ Communities}\cite{39}. Una vez que el grupo ha sido creado, es responsabilidad del desarrollador agregar o quitar usuarios que recibirán las versiones aún experimentales de la aplicación. Es posible dejar opción de unirse a estos grupos de forma abierta, para que cualquier usuario que desee tener versiones alpha y beta, puedan obtener una.
+El desarrollador tiene la opción de elegir que usuarios quiere que reciban las versiones experimentales de su aplicación. Esto se realiza creando un grupo en \textit{Google Groups} \cite{38} o una comunidad en \textit{Google+ Communities}\cite{39}. Una vez que el grupo ha sido creado, es responsabilidad del desarrollador agregar o quitar usuarios que recibirán las versiones aún experimentales de la aplicación. Es posible dejar la opción de unirse a estos grupos de forma abierta, para que cualquier usuario que desee tener versiones alpha y beta, puedan obtener una.
 
 
 \subsection{Herramienta de Distribución de Versiones de terceros}
 Debido a que antes de Mayo del 2013 no existía una forma provista por Google de distribuir aplicaciones de prueba, hay varias herramientas que llenaban esta necesidad y que aún siguen haciéndolo. La gran diferencia con la opción que entrega Google es que todas terminan siendo de pago después de algún tiempo o después de una determinada cantidad de usuarios. Además ofrecen otras herramientas complementarias a la distribución de versiones, para entregar mayor valor y diferenciación a sus productos.
 
-\subsection{HockeyApp}
+\subsubsection{HockeyApp}
 HockeyApp \cite{40} es una plataforma que permite la distribución de versiones beta a múltiples plataformas, entre las que se encuentran Android, iOS, Windows Phone y Mac OS. Esto se complementa con la recolección de reportes de crashes, retroalimentación por parte de los usuarios y estadísticas sobre los testers que están usando la aplicación, como el dispositivo e idioma que tienen.
 
 Para la distribución sólamente es necesario subir el APK de la aplicación e invitar a los usuarios a través del correo electrónico del tester. Cada vez que se sube una nueva versión es posible enviar un correo notificando a los testers que existe una actualización. Los testers pueden descargar la aplicación accediendo desde el sitio web de HockeyApp \cite{40}, como también a través de la aplicación oficial, la cual también puede ser descargada desde su sitio web, en la sección de aplicaciones.
 
 Si se desean implementar las otras características que ofrece Hockeyapp, es necesario agregar el SDK de ellos a la aplicación. Esto permitirá tener los reportes de crashes de los testers, y otras estadísticas acerca de ellos.
 
-\subsection{AppBlade}
+\subsubsection{AppBlade}
 AppBlade \cite{41} es una plataforma que soporta la distribución de versiones beta a Android, iOS y BlackBerry. También cuenta con un sistema de reporte de crashes que notifica al desarrollador de estos errores.
 
-Para la distribución también es necesario sólament subir el APK y comenzar a invitar testers.
+Para la distribución también es necesario subir el APK y comenzar a invitar testers. Luego, los testers deben hacerse una cuenta y descargar la aplicación desde el sitio web de AppBlade \cite{41}. 
+
+Además existe un SDK para obtener reportes de crashes, obtener feedback por parte de los usuarios y obtener estadísticas.
+
+El servicio permite tener 25 usuarios de forma gratuita. Al sobrepasar este límite existen distintos tipos de planes, cuyos precios varían dependiendo de la calidad del plan, la cantidad de usuarios y la cantidad de meses durante los cuales se tendrá el plan.
+
+Por último AppBlade permite la integración con servicios externos como GitHub \cite{42}, Pivotal Tracker \cite{43}, HipChat \cite{44}, entre otros.
 
 
-\subsection{The Beta Family}
+\subsubsection{The Beta Family}
+The Beta Family es una plataforma que permite la distribución de versiones de aplicaciones Android y iOS a testers. A diferencia de las plataformas anteriores, el desarrollador puede pagar para que un grupo de usuarios de prueba usen su aplicación y reportes los posibles problemas que puedan encontrar.
 
+El servicio también cuenta con una opción gratuita en que 5 testers, de poca reputación dentro de la plataforma, pueden testear una aplicación. Dependiendo de la reputación de los testers, el valor del servicio va variando.
 
+Para el uso de la plataforma es necesario subir el APK y rellenar un par de datos básicos sobre la aplicación.
 
-\section{Herramientas de Reporte de crashes}
+\subsubsection{UserTesting}
+UserTesting es una plataforma que permite distribuir versiones de aplicaciones Android y iOS a testers. Similar a como funciona The Beta Family, el desarrollador compra una cantidad de créditos, y cada uno de estos le permite hacer un test distinto.
+
+La gran ventaja con la que cuenta esta plataforma es que el tester debe grabar la pantalla de la aplicación mientras va desarrollando el test, por lo que se pueden observar directamente las reacciones o los posibles problemas que pueda tener este usuario al usar la aplicación.
+
+Para el uso de esta plataforma es necesario subir el APK y añadir información que detalle lo que el desarrollador desea que el tester realice. También se pueden agregar preguntas tales como:
+\begin{itemize}
+\item ¿Qué fue lo más frustante de la aplicación?
+
+\item ¿Usarías la aplicación?
+
+\item ¿Que nota le pondrías de 1 a 10?
+
+\end{itemize}
+
+\section{Herramientas de Reporte de Crashes}
 Una vez publicada una aplicación, comienza el proceso de correcciones de errores y mejoras. Esto se puede realizar gracias a los reportes de crashes que se reciben cuando la aplicación deja de funcionar correctamente. Es muy importante corregir todos estos errores para dar mayor estabilidad a la aplicación y para ofrecer un mejor producto al usuario. Android cuenta con un sistema de reporte de crashes desde el año 2010\cite{18}. A continuación se revisarán las características con las que cuenta:
 
 \subsection{Herramienta de Reporte de Crashes provista por Android}
@@ -193,7 +214,7 @@ Cuando la aplicación ya esta publicada, es posible acceder a una sección dentro 
 \begin{figure}[h!]
 \centering
       \includegraphics[width=15cm]{Imagenes/crash_report_google}
-\caption{Vista del sistema de reporte de crashes provisto por Android.}
+\caption{Vista del sistema de reporte de crashes provisto por Android. Fuente: Elaboración Propia}
 \label{fig:Fig14}
 \end{figure}
 
@@ -203,7 +224,7 @@ Al presionar en el reporte de crash para ver más detalles, se puede ver la hora 
 
 \subsection{Herramientas de Reporte de Crashes de terceros}
 Existen varias herramientas que entregan reportes de crashes mucho más completos que los que entrega Google de forma nativa. La mayoría de estas entregan una versión gratuita con restricciones y es posible pagar para acceder a la versión premium, la cual cuenta con características más especializadas. Además, todos los reportes de crashes son envíados, ya que al momento de instalar la aplicación se piden los permisos necesarios para ello, por lo que el usuario afectado no debe hacer nada. A continuación se listan las más populares: 
-\subsection{Crittercism}
+\subsubsection{Crittercism}
 Crittercism es un sistema muy completo que cuenta con monitoreo, manejo de excepciones, como también reportes de crashes y performance. Actualmente soporta múltiples plataformas, entre las que se encuentran: Android, Android NDK, iOS, Windows Phone 8 y HTML5.  
 
 La instalación es bastante simple \cite{31}. Se debe descargar el SDK de Crittercism para Android e incluirlo al proyecto. Luego se deben agregar los siguientes permisos en el archivo Android Manifest del proyecto: 
@@ -226,11 +247,11 @@ Como se puede ver en la figura \ref{fig:Fig15}, se tienen opciones parecidas al 
 \begin{figure}[h!]
 \centering
       \includegraphics[width=15cm]{Imagenes/crash_report_crittercism}
-\caption{Vista del sistema de reporte de crashes de Crittercism}
+\caption{Vista del sistema de reporte de crashes de Crittercism. Fuente: Elaboración Propia}
 \label{fig:Fig15}
 \end{figure}
 
-\subsection{Bugsense}
+\subsubsection{Bugsense}
 Bugsense también es un sistema bastante completo. Cuenta con monitoreo, reportes de crashes, manejo de excepciones, tendencias de crashes e integración con ACRA. Soporta múltiples plataformas, entre las que se encuentran: Android, iOS, Windows Phone 8 y HTML5.  
 
 Para la instalación se descarga la biblioteca desde el sitio de Bugsense \cite{32}. Después de incluirla en el proyecto, se deben pedir los permisos correspondientes en el Android Manifest. Para iniciar Bugsense se escribe la siguiente línea:   
@@ -246,11 +267,11 @@ En la figura \ref{fig:Fig16} se puede ver como es el panel con estadísticas que 
 \begin{figure}[h!]
 \centering
       \includegraphics[width=15cm]{Imagenes/crash_report_bugsense}
-\caption{Vista del sistema de reporte de crashes de Bugsense}
+\caption{Vista del sistema de reporte de crashes de Bugsense. Fuente: Elaboración Propia}
 \label{fig:Fig16}
 \end{figure}
 
-\subsection{Google Analytics}
+\subsubsection{Google Analytics}
 Google Analytics es otra herramienta que cuenta con reportes de crashes. Si bien, la especialidad de Google Analytics es ofrecer estadísticas y hacer tracking de distintos eventos, también es posible recibir reportes de crashes y excepciones. El gran problema es que los reportes no llegan en tiempo real, ya que la información se actualiza con un día de retraso.
 
 Para su implementación es necesario descarga desde el sitio de Google Analytics \cite{33} la versión 3 de su SDK. Una vez descargado el SDK, es necesario incluirlo al proyecto y dar los siguientes permisos en el archivo Android Manifest:
@@ -276,7 +297,7 @@ Para implementarlo a través de código es necesario agregar estas líneas en cada 
 \end{lstlisting}
 Google Analytics ofrece filtrar los reportes de crashes por versión de la aplicación, versión del sistema operativo, marca del dispositivo y tamaños de pantalla.
 
-\subsection{ACRA}
+\subsubsection{ACRA}
 ACRA es una biblioteca gratuita y de código abierto disponible en Github \cite{35}. Desde la última actualización de Google Forms, el uso de Google Docs como almacenamiento para los reportes que entregaba ACRA está obsoleto. Ahora es necesario implementar una aplicación web para poder ver los reportes, aunque también es posible asociarlo a otras plataformas como Bugsense o HockeyApp. 
 
 Para su implementación es necesario descarga la biblioteca desde el sitio web de ACRA \cite{34}. Una vez que ya se ha añadido al proyecto, es necesario pedir el siguiente permiso en el archivo de Android Manifest:
@@ -302,7 +323,7 @@ En la figura \ref{fig:Fig17} se muestra una vista del sistema de reportes integr
 \begin{figure}[h!]
 \centering
       \includegraphics[width=15cm]{Imagenes/crash_report_acra}
-\caption{Vista del sistema de reporte de crashes de ACRA}
+\caption{Vista del sistema de reporte de crashes de ACRA. \cite{36}}
 \label{fig:Fig17}
 \end{figure}
 

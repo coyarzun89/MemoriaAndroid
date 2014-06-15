@@ -2,10 +2,341 @@
 % ---------------------------------------------------------------------------------------------------------------
 \chapter{Análisis Comparativo}
 \label{ch:analis}
-Para este análisis comparativo hemos filtrado las aplicaciones que pueden ser más útiles y que pueden ser comparadas, ya que muchas de las herramientas estudiadas son muy distintas una de otra, por lo que es muy complicado realizar una comparación.
+Para este análisis comparativo, se han sub-categorizado las herramientas para que puedan ser comparadas de una forma más justa, ya que algunas son muy distintas una de otra, por lo que en algunos casos una comparación no arrojará información relevante.
 
-Sed iusto nihil populo an, ex pro novum homero cotidieque. Te utamur civibus eleifend qui, nam ei brute doming concludaturque, modo aliquam facilisi nec no. Vidisse maiestatis constituam eu his, esse pertinacia intellegam ius cu. Eos ei odio veniam, eu sumo altera adipisci eam, mea audiam prodesset persequeris ea. Ad vitae dictas vituperata sed, eum posse labore postulant id. Te eligendi principes dignissim sit, te vel dicant officiis repudiandae.
+Para llevar a cabo este análisis, se obtendrán ventajas y desventajas de las herramientas más destacadas. Además se explicará en que casos se recomienda usar cada herramienta.
 
-Id vel sensibus honestatis omittantur, vel cu nobis commune patrioque. In accusata definiebas qui, id tale malorum dolorem sed, solum clita phaedrum ne his. Eos mutat ullum forensibus ex, wisi perfecto urbanitas cu eam, no vis dicunt impetus. Assum novum in pri, vix an suavitate moderatius, id has reformidans referrentur. Elit inciderint omittantur duo ut, dicit democritum signiferumque eu est, ad suscipit delectus mandamus duo. An harum equidem maiestatis nec.
-At has veri feugait placerat, in semper offendit praesent his. Omnium impetus facilis sed at, ex viris tincidunt ius. Unum eirmod dignissim id quo. Sit te atomorum quaerendum neglegentur, his primis tamquam et. Eu quo quot veri alienum, ea eos nullam luptatum accusamus. Ea mel causae phaedrum reprimique, at vidisse dolores ocurreret nam. 
+En el siguiente capítulo se llevará a cabo la implementación de las más destacadas en una aplicación.
+
+\section{Análisis Comparativo entre las Herramientas de Testing}
+...
+
+\section{Análisis Comparativo entre las Herramientas de Distribución de Versiones}
+\subsection{Google Play Console}
+\subsubsection{Ventajas}
+\begin{itemize}
+\item Gratuito.
+
+\item Permite utilizar la misma tienda oficial de aplicaciones de Google para distribuir versiones betas
+
+\item Actualización de versiones automática.
+
+\item Es posible llegar a mucha más gente, ya que se puede dejar abierta la opción de recibir versiones betas.
+
+\end{itemize}
+\subsubsection{Desventajas}
+\begin{itemize}
+\item Los usuarios testers deben ser miembros de un grupo en \textit{Google Groups} \cite{38} o una comunidad en \textit{Google+ Communities}\cite{39}.
+
+\item Al ser una herramienta enfocada sólamente en Android, no es multiplataforma.
+
+\item El feedback de los usuarios es a través del grupo o comunidad a la que se tuvo que unir.
+
+\end{itemize}
+
+\subsubsection{Resumen}
+Esta es una excelente herramienta para cualquier desarrollador. Al utilizar la tienda oficial de Google, genera mucha más confianza a los usuarios testers. Además, al ser gratuita, es una de las mejores opciones con las que se cuenta, ya que es mucho más fácil llegar a más usuarios y tener un costo 0. Si se cuenta con una aplicación que es multiplataforma, tal vez se quiera tener a todos los usuarios de prueba en un mismo servicio por lo que esto podría ser un problema. Por último, la comunicación con los usuarios testers no es tan directa como en otros servicios.
+\subsection{HockeyApp}
+\subsubsection{Ventajas}
+\begin{itemize}
+
+\item Soporte para Android, iOS, Windows Phone y Mac OS.
+
+\item Usuarios pueden enviar feedback sobre la versión.
+
+\item Se puede implementar el SDK para recibir reportes de crashes.
+
+\item Enfocado en grupos pequeños de testers.
+
+\end{itemize}
+\subsubsection{Desventajas}
+\begin{itemize}
+\item De pago, 30 días de prueba.
+
+\item Los usuarios testers deben crearse una cuenta en el sitio de HockeyApp \cite{40}.
+
+\end{itemize}
+
+\subsubsection{Resumen}
+Es una muy buena herramienta para una aplicación que es multiplataforma. De esta forma, es posible tener a todos los usuarios de Android, iOS, Windows Phone y Mac registrados en el mismo servicio. Especial para grupos pequeños de tester, con los cuáles se pueden tener una comunicación directa. Los precios de los planes van desde los 10 dólares mensuales, en que se permite tener hasta 5 aplicaciones, hasta los 120 dólares, en que se permiten 120 aplicaciones.
+\subsection{AppBlade}
+\subsubsection{Ventajas}
+\begin{itemize}
+
+\item Soporte para Android, iOS y Blackberry.
+
+\item Usuarios pueden enviar feedback sobre la versión.
+
+\item Se puede implementar el SDK para recibir reportes de crashes.
+
+\item Enfocado en grupos pequeños de testers.
+
+\item Integración con servicios externos como GitHub \cite{42}, Pivotal Tracker \cite{43}, HipChat \cite{44}, entre otros.
+
+\end{itemize}
+\subsubsection{Desventajas}
+\begin{itemize}
+\item De pago después de incluir a 25 usuarios.
+
+\item Los usuarios testers deben crearse una cuenta en el sitio de AppBlade \cite{41}.
+
+\item Herramienta aún poco madura.
+
+\end{itemize}
+
+\subsubsection{Resumen}
+Si bien, ofrece prácticamente las mismas características que HockeyApp, le falta aún madurez. La interfaz del sitio web no genera la misma confianza y los correos con invitaciones muchas veces llegan con retraso. Las ventajas que tiene es que es multiplataforma, incluyendo a Blackberry entre sus opciones. También está enfocado en grupos pequeños de testers, con los cuales se pueda tener una comunicación más directa, y mientras sean menos de 25 usuarios, el servicio es gratuito. Se ve como una plataforma prometedora.
+
+\subsection{The Beta Family}
+\subsubsection{Ventajas}
+\begin{itemize}
+
+\item Soporte para Android y iOS.
+
+\item Combinan la distribución de versiones beta con test para usuarios.
+
+\item Enfocado en grupos pequeños de testers.
+
+\item Algunos usuarios reciben dinero por los test que realizan, por lo que el feedback que se entrega es más confiable.
+
+\item Cuenta con un SDK sólo para iOS que permite grabar la pantalla del usuario y al usuario.
+
+\end{itemize}
+\subsubsection{Desventajas}
+\begin{itemize}
+\item De pago, se ofrece una opción gratuita, pero es necesario anexar una tarjeta de crédito.
+
+\end{itemize}
+
+\subsubsection{Resumen}
+Esta plataforma no sólo se enfoca en la distribución de versiones beta, sino que también busca realizar tests con los usuarios, incentivándolos con pagos. Estos tests constan de una serie de tareas que debe desarrollar el usuario, para corroborar que la aplicación está funcionando correctamente y que no hay problemas de usabilidad. Una vez desarrolladas estas tareas, el usuario debe responder algunas preguntas. Además, si se implementa su SDK, es posible grabar la pantalla del usuario y al usuario mientras realiza las pruebas, el único problema de esto es que sólo esta disponible para iOS. Por último, los desarrolladores pueden optar por la opción gratuita, en la que pueden crear test, pero estos no tendrán recompensas para los testers, por lo que se deduce que estos no estarán tan interesados en el producto. En la versión de pago, con la que se tiene acceso a testers de más confianza, se pagan 16.15 dólares mensuales, de los cuales 10 dólares van destinados al tester.
+\subsection{UserTesting}
+\subsubsection{Ventajas}
+\begin{itemize}
+
+\item Soporte para Android, iOS y sitios web.
+
+\item Combinan la distribución de versiones beta con test para usuarios.
+
+\item Enfocado en grupos pequeños de testers.
+
+\item Todos los usuarios reciben dinero por los test que realizan, por lo que el feedback es muy confiable.
+
+\item Todos los usuarios que realizan los tests, suben un video en el que graban la pantalla de su dispositivo.
+
+\item Servicio de mucha reputación, grandes empresas como Google, Apple, Microsoft, Facebook, Twitter, Dell, entre otras, lo usan.
+
+\end{itemize}
+\subsubsection{Desventajas}
+\begin{itemize}
+\item De pago, aunque es posible solicitar un free trial.
+
+\end{itemize}
+
+\subsubsection{Resumen}
+Al igual que The Beta Family esta plataforma se enfoca en la distribución de versiones beta y en tests con los usuarios. Estos tests constan de una serie de tareas que debe desarrollar el usuario, mientras graba la pantalla del dispositivo, para corroborar que la aplicación está funcionando correctamente, que no hay problemas de usabilidad y escuchar las distintas reacciones del tester al cumplir con las tareas encomendadas. Al finalizar, el usuario debe responder algunas preguntas realizadas con la experiencia realizada. En esta platafoma todos los tests realizados son grabados por los usuarios y normalmente el tiempo que transcurre entre que el desarrollador crea un nuevo test, y los usuarios lo realizan no superan una hora. Debido a la alta reputación del servicio, el precio es uno de los posibles frenos dependiendo del presupuesto con el que se cuenta, ya que por cada usuario se pagan 50 dólares mensuales, por lo que es necesario enfocar bien los test que se desean realizar, y entender bien lo que se quiere medir con cada proceso.
+
+\subsection{Resumen General}
+Es necesario hacer una distinción clara entre las herramientas que se enfocan en distribución y en las que además ofrecen la opción de realizar tests que no son automatizados, con usuarios reales. El concepto de madurez se refiere al nivel de desarrollo con el que cuenta la plataforma. Esto es muy importante al momento de elegir un servicio, ya que si este no es maduro, robusto y de calidad, es muy probable que generen una frustración entre los usuarios que usarán la aplicación, lo cual puede influir en la percepción que tendrán al momento de entregar feedback o de realizar los testing. A continuación se presentan dos tablas, las cuales intentan sintetizar y presentar de una forma más explicativa las ventajas y desventajas con las que cuenta cada herramienta:
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+\textbf{Herramienta} & \textbf{Gratuita} & \textbf{Madurez} & \textbf{Plataformas} & \textbf{Feedback} & \textbf{Distribución} \\
+\hline
+Google Play Console & Si & Alta & Android & No & Masiva\\
+\hline
+HockeyApp & No  & Alta & Múltiples & Si & Limitada\\
+\hline
+AppBlade & No & Baja & Múltiples & Si &  Limitada\\
+\hline
+\end{tabular}
+\caption{Tabla comparativa entre herramientas que se enfocan en la Distribución de Versiones en Android.}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+\textbf{Herramienta} & \textbf{Gratuita} & \textbf{Precio} & \textbf{Madurez} & \textbf{Plataformas} & \textbf{Testing con Video} \\
+\hline
+The Beta Family & No & Bajo & Baja & Múltiples & No\\
+\hline
+UserTesting & No & Alto & Alta & Múltiples & Si \\
+\hline
+\end{tabular}
+\caption{Tabla comparativa entre herramientas que se enfocan tanto en Distribución, como Testing de Versiones en Android.}
+\end{table}
+
+\newpage
+\section{Análisis Comparativo entre las Herramientas de Reporte de Crashes}
+\subsection{Google Play Console}
+\subsubsection{Ventajas}
+\begin{itemize}
+\item Gratuito.
+
+\item Permite utilizar la misma tienda oficial de aplicaciones de Google para recepción de crashes sin necesidad de implementaciones adicionales.
+
+\item Se reciben los ANRs (\textit{Application Not Responding}).
+
+\item Los reportes de crashes vienen con un mensaje por parte del usuario.
+
+\end{itemize}
+\subsubsection{Desventajas}
+\begin{itemize}
+\item Muy pocos usuarios mandan reportes de crashes.
+
+\item No es posible recibir reportes de las excepciones
+
+\end{itemize}
+
+\subsubsection{Resumen}
+Al utilizar la tienda oficial de Google y no necesitar de implementaciones adicionales, esta herramienta actúa como apoyo a otros servicios, ya que para asegurar la calidad de un producto, es completamente necesario recibir los reportes de crashes de cada uno de los usuarios. Es bastante útil que los usuarios puedan incluir un mensaje en sus reportes, aunque la gran desventaja sigue siendo que depende del usuario si desea enviar el reporte al momento que la aplicación deja de funcionar correctamente. Para ejemplificar esto, es posible que a través de Google Play Console se reciba sólo un reporte de crash de un usuario, pero que a través de otras herramientas se vean más de 100 reportes distintos ya que 99 usuarios no quisieron enviar sus reportes.
+
+\subsection{Crittercism}
+\subsubsection{Ventajas}
+\begin{itemize}
+
+\item Se reciben todos los crashes de los usuarios.
+
+\item Se recibe información muy detallada en cada reporte de crash como: nivel de bateria, espacio en el disco, espacio en la tarjeta SD, uso de RAM, estabilidad de la red, orientación del dispositivo, idioma del dispositivo, entre otros.
+
+\item Es posible recibir las excepciones que el desarrollador desee.
+
+\item Es posible recibir notificaciones al correo sobre los crashes.
+
+\item Se puede integrar con otros servicios como GitHub \cite{42}, Pivotal Tracker \cite{43}, entre otros.
+
+\item Soporte para Android, Android NDK, iOS, Windows Phone 8, HTML5.
+
+\end{itemize}
+\subsubsection{Desventajas}
+\begin{itemize}
+\item De pago.
+
+\end{itemize}
+
+\subsubsection{Resumen}
+Crittercism es una de las plataformas más consolidadas y con mayor reputación, ya que no sólo se enfocan en los reportes de crashes, sino que también funciona como un servicio de monitoreo de distintas métricas que ayudan ha construir una mejor aplicación. La gran ventaja que comparte junto al resto de las plataformas es que la decisión de enviar o no enviar un reporte no dependa del usuario, ya que todos y cada uno de los reportes quedan a disposición del desarrollador. Además permite la integración con otros servicios que permiten asignar estos crashes a un desarrollador para que los resuelva y no vuelvan a ocurrir. El nivel de detalle en cada uno de los reportes de crashes es muy útil para que el desarrollador tenga más indicios que lo ayuden a resolver el problema. Además, es posible recibir correos con los reportes de crashes, siendo estos agrupados de forma inteligente para no generar SPAM en el correo del desarrollador. Por último, no sólo se enfoca en los reportes de crashes, también en la performance general de la aplicación, ya que también se puede medir la latencia y la tasa de error que tiene la aplicación al comunicarse con los servidores que le entregan información.
+
+\subsection{Bugsense}
+\subsubsection{Ventajas}
+\begin{itemize}
+
+\item Se reciben todos los crashes de los usuarios.
+
+\item Se recibe información útil en cada reporte de crash.
+
+\item Es posible recibir las excepciones que el desarrollador desee.
+
+\item Es posible recibir notificaciones al correo sobre los crashes.
+
+\item Se puede integrar con otros servicios como GitHub \cite{42}, Pivotal Tracker \cite{43}, entre otros.
+
+\item Integración con ACRA.
+
+\item Soporte para Android, iOS, Windows Phone 7-8, Windows 8, HTML5.
+
+\end{itemize}
+\subsubsection{Desventajas}
+\begin{itemize}
+\item De pago.
+
+\end{itemize}
+
+\subsubsection{Resumen}
+Bugsense es una plataforma que al igual que Crittercism, cuenta con una buena reputación. La gran diferencia es la cantidad de detalle en cada uno de los reportes. Si bien Bugsense entrega información útil como la versión de la aplicación, modelo del teléfono, versión del sistema operativo, esto no se acerca a lo ofrecido por Crittercism. Cabe mencionar que Bugsense ha presentado en Marzo de este año varias mejoras en su servicio \cite{45}, tales como la tasa de crashes que se han recibido los últimos 7 días y la página que muestra los crashes en tiempo real. Una de las características únicas es que se puede integrar con ACRA, una biblioteca de código abierto que también permite enviar los reportes de crashes de los usuarios. 
+
+\subsection{Google Analytics}
+\subsubsection{Ventajas}
+\begin{itemize}
+\item Gratuito.
+
+\item Se reciben todos los crashes de los usuarios.
+
+\item Se recibe información útil en cada reporte de crash.
+
+\item Es posible recibir las excepciones que el desarrollador desee.
+
+\item Excelente en métricas y estadísticas.
+
+\item Soporte para Android, iOS, Web.
+
+\end{itemize}
+\subsubsection{Desventajas}
+\begin{itemize}
+\item Los reportes de crashes se muestran en la plataforma con un día de retraso.
+
+\end{itemize}
+
+\subsubsection{Resumen}
+Google Analytics es una herramienta gratuita que está más ligada al tracking de eventos, estadísticas y flujos entre las pantallas, pero también cuenta con un sistema de reporte de crashes. Por ejemplo, es posible medir tiempos de respuesta, para saber exactamente cuánto tiempo le toma a la aplicación mostrar una vista en específico. Esto ayuda a encontrar problemas de rendimiento dentro de la aplicación. Además se puede estudiar el comportamiento de los usuarios, analizando cuales son las pantallas que los usuarios más usan dentro de la aplicación. La gran desventaja es que la información relacionada a los reportes de crashes se actualiza en la plataforma con un día de retraso, por lo que muchas veces el desarrollador se puede sentir a ciegas después de lanzar una nueva versión de su aplicación, ya que no sabe lo que está pasando hasta después de un día.
+
+\subsection{ACRA}
+\subsubsection{Ventajas}
+\begin{itemize}
+
+\item Gratuito y de código abierto.
+
+\item Se reciben todos los crashes de los usuarios.
+
+\item El desarrollador decide que información quiere recibir en cada reporte de crash.
+
+\item Es posible recibir las excepciones que el desarrollador desee.
+
+\end{itemize}
+\subsubsection{Desventajas}
+\begin{itemize}
+
+\item Es necesario implementar una aplicación web para poder ver los reportes de crashes.
+
+\end{itemize}
+
+\subsubsection{Resumen}
+La gran ventaja que ofrece ACRA sobre el resto es que es una biblioteca de código abierto, por lo que si no nos gusta algo podemos cambiarlo, o podemos agregar otras funcionalidades. Esto le juega a favor y en contra ya que también es necesario implementar una aplicación web para la visualización de los reportes. Antes, el almacenamiento de los reportes de crashes se realizaba a través de Google Docs, pero desde la última actualización de Google Forms, el uso de Google Docs como almacenamiento para los reportes que entregaba ACRA quedó obsoleto. 
+\newpage
+
+\subsection{Resumen General}
+Google Play Console es una buena herramienta de inicio, pero es absolutamente necesaria la implementación de una herramienta que asegure la recepción de todos los reportes de crashes. Crittercism y Bugsense son dos plataformas excepcionales, que permiten realizar esta tarea y muchas otras. ACRA cuenta con su ventaja de ser de código abierto, pero el simple hecho de que el desarrollador deba implementar el servicio web para la visualización de los crashes es un paso adicional y la descarta como una alternativa de fácil integración. Por otro lado, Google Analytics ofrece variadas estadísticas e información extremadamente útil, que puede servir para mejorar problemas de performance y usabilidad, pero su fuerte no son los reportes de crashes, ya que tener un día de retraso significa estar un día completo sin saber que está pasando con la aplicación.
+A continuación se presenta una tabla que intenta simplificar las ventajas y desventajas que posee cada herramienta:
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+\textbf{Herramienta} & \textbf{Gratuita} & \textbf{Precio} & \textbf{Plataformas} & \textbf{Detalle de reportes} \\
+\hline
+Google Play Console & Si & 0 USD & Android & Medio\\
+\hline
+Crittercism & No  & 0 - 6000 USD & Múltiples & Alto\\
+\hline
+Bugsense & No & 0 - 1110 USD & Múltiples & Medio \\
+\hline
+Google Analytics & Si & 0 USD & Múltiple & Medio\\
+\hline
+ACRA & Si & 0 USD & Android & Alto \\
+\hline
+\end{tabular}
+\caption{a) Tabla comparativa entre herramientas que se enfocan en los Reportes de Crashes.}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+\textbf{Herramienta} & \textbf{Madurez} & \textbf{Integración} \\
+\hline
+Google Play Console & Alta & Ya Implementada\\
+\hline
+Crittercism & Alta & Simple\\
+\hline
+Bugsense & Alta &   Simple\\
+\hline
+Google Analytics & Alta &  Simple\\
+\hline
+ACRA & Media &  Compleja\\
+\hline
+\end{tabular}
+\caption{b) Tabla comparativa entre herramientas que se enfocan en los Reportes de Crashes.}
+\end{table}
 % ---------------------------------------------------------------------------------------------------------------
