@@ -8,7 +8,7 @@ En este capítulo se detallarán las herramientas más utilizadas para combatir los
 \section{Herramientas de Testing}
 Ahora que ya se conoce lo básico sobre testing y se han visto las herramientas que entrega el framework de testing de Android, se comenzaran a ver el resto de herramientas que se encuentran disponibles. 
 
-\subsection{Herramientas de testing provistas por Android}
+\subsection{Herramientas de Testing Unitario provistas por Android}
 Android provee un buen framework de testing \cite{20} para hacer pruebas en varios aspectos de la aplicación. Los elementos claves son:
 \begin{itemize}
 \item Los \textit{test suites} (conjuntos de prueba) de Android están basados en JUnit. Se puede usar JUnit puro para testear una clase que no hace llamadas a la API de Android, o las extensiones de JUnit para Android si se desea testear componentes de Android. 
@@ -29,6 +29,12 @@ Se puede usar la clase \textit{TestCase} de JUnit para hacer testing unitario en
 
 La clase \textit{Assert} de JUnit es usada para mostrar los resultados de los test. Los métodos \textit{assert} comparan los valores que se esperan de un test con los valores reales y se lanza una excepción si la comparación falla. Android también provee una clase para \textit{assertions} que extiende los posibles tipos de comparaciones, y otra clase de \textit{assertions} para testear la UI.
 
+\subsubsection{Simulando objetos (Mock objects) \cite{20}}
+Android entrega clases para crear objetos llamados \textit{mock objects}, que son objetos de sistema simulados como \textit{Context, ContentProvider, ContentResolver} y \textit{Service}. Algunos tests también proveen objetos simulados de Intent. Se pueden usar estos \textit{mocks} para aislar los tests del resto del sistema y facilitar la inyección de dependencias. Estas clases se encuentran en los paquetes \textit{android.test} y \textit{android.test.mock}.\\
+
+Por ejemplo se puede usar \textit{MockContext} en vez de \textit{Context}. La clase \textit{RenamingDelegatingContext} entrega las llamadas a un contexto dado y ayuda a la base de datos y a las operaciones con archivos agregando un prefijo a todos los nombres de los archivos. De esta forma se pueden testear compontentes sin afectar la base de datos del sistema de archivos de un dispositivo Android.
+
+\subsection{Herramientas de Testing de UI provistas por Android}
 \subsubsection{Instrumentation \cite{20}}
 La API de testing de Android provee interacciones entre los componentes de Android y el ciclo de vida de la aplicación. Estas interacciones son realizadas a través de la API Instrumentation, que permite a los tests controlar el ciclo de vida y los eventos de interacción del usuario.\\
 
@@ -37,11 +43,6 @@ Normalmente, un componente de Android se ejecuta en un ciclo de vida determinado
 Únicamente una clase de test basada en \textit{Instrumentation} permite enviar eventos de teclado o toques de pantalla a la aplicación bajo test. Por ejemplo, se puede testear una llamada al método \textit{getActivity()}, el cuál comienza una \textit{Activity} y retorna la \textit{Activity}  que está siendo testeada. Después se puede llamar al método \textit{finish()}, seguido por un método \textit{getActivity()} nuevamente, y así poder testear si la aplicación restaura su estado de forma correcta.\\
 
 El sistema ejecuta todos los componentes de una aplicación en el mismo proceso. Se puede permitir a algunos componentes, tales como \textit{Content Providers}, ejecutarse en un proceso separado, pero no se puede forzar a una aplicación a ejecutarse en el mismo proceso en el que otra aplciación está ejecutándose.\\
-
-\subsubsection{Simulando objetos (Mock objects) \cite{20}}
-Android entrega clases para crear objetos llamados \textit{mock objects}, que son objetos de sistema simulados como \textit{Context, ContentProvider, ContentResolver} y \textit{Service}. Algunos tests también proveen objetos simulados de Intent. Se pueden usar estos \textit{mocks} para aislar los tests del resto del sistema y facilitar la inyección de dependencias. Estas clases se encuentran en los paquetes \textit{android.test} y \textit{android.test.mock}.\\
-
-Por ejemplo se puede usar \textit{MockContext} en vez de \textit{Context}. La clase \textit{RenamingDelegatingContext} entrega las llamadas a un contexto dado y ayuda a la base de datos y a las operaciones con archivos agregando un prefijo a todos los nombres de los archivos. De esta forma se pueden testear compontentes sin afectar la base de datos del sistema de archivos de un dispositivo Android.
 
 \subsubsection{uiautomator \cite{19}}
 El SDK de Android contiene la biblioteca uiautomator para testear y ejecutar tests a la interfaz gráfica. Esto fue implementado a partir de la API 16.
@@ -58,18 +59,12 @@ Esta herramienta permite a la gente que no programa, analizar una aplicación y d
 \subsubsection{Monkey \cite{21}}
 Monkey  es un herramienta de línea de comando que envia eventos aleatorios a un dispositivo. Se puede restringir a Monkey para que se ejecute únicamente en ciertos paquetes, por lo que se le pueden dar instrucciones para testear únicamente una aplicación.
 
-Por ejemplo, el siguiente comando enviará 2000 eventos aleatorios a la aplicación con el nombre de paquete co.seahorse.android:\\
+\subsubsection{Monkeyrunner \cite{48}}
+La herramienta Monkeyrunner provee una API en Python para escribir programas que controlen un dispositivo Android o un emulador, fuera del código fuente que hayamos escrito.
 
-\begin{lstlisting}
-adb shell monkey -p co.seahorse.android -v 2000
-\end{lstlisting}
+A través de Monkeyrunner se puede hacer un script para realizar un test. Este se ejecuta a través del \textit{adb debug bridge} y permite instalar programas, iniciarlos, controlar los flujos y tomar screenshots.
 
-\subsubsection{monkeyrunner \cite{48}}
-La herramienta monkeyrunner provee una API en Python para escribir programas que controlen un dispositivo Android o un emulador, fuera del código fuente que hayamos escrito.
-
-A través de monkeyrunner se puede hacer un script para realizar un test. Este se ejecuta a través del \textit{adb debug bridge} y permite instalar programas, iniciarlos, controlar los flujos y tomar screenshots.
-
-Para usar monkeyrunner se debe tener instalado Python en el computador.
+Para usar Monkeyrunner se debe tener instalado Python en el computador.
 
 Las siguientes clases son las principales:
 \begin{itemize}
@@ -80,7 +75,7 @@ Las siguientes clases son las principales:
 \item MonkeyImage: Permite crear, comparar y guardar screenshots.
 \end{itemize}
 
-\subsection{Herramientas de testing de terceros}
+\subsection{Herramientas de Testing Unitario de terceros}
 \subsubsection{EasyMock \cite{22}}
 EasyMock es un framework para mocking, es decir, para crear objeto simulados. Este puede ser usado en conjunto con JUnit. A continuación se muestra como es la instanciación de un objeto basado en una clase.\\
 
@@ -100,7 +95,6 @@ Mockito es un framework bastante popular que puede ser usado en conjunto con JUn
 
 Mockito soporta la creación de objetos simulados con el método estático \textit{mock()}. Este también soporta la creación de objetos basados en la anotación \textit{@Mock}. Si se usan anotaciones, se debe inicializar el objeto similado con una llamada al método \textit{MockitoAnnotations.initMocks(this)}.
 
-
 \subsubsection{Robolectric \cite{24}}
 Robolectric es un framework que simula parte del framework de Android contenido en el archivo \textit{android.jar}. Esta diseñado para permitir testear aplicaciones de Android en la JVM (Java Virtual Machine). Este permite ejecutar los test de Android en un entorno de integración continua, sin necesidad de configuraciones extras. Está basado en JUnit 4.
 
@@ -108,6 +102,8 @@ Robolectric reemplaza todas las clases de Android por los llamados \textit{shado
 
 Robolectric soporta el manejo de recursos, como inflar vistas. También puede usarse el \textit{findViewById()} para buscar una vista.
 
+
+\subsection{Herramientas de Testing de UI de terceros}
 \subsubsection{Robotium \cite{25}}
 Robotium es una extensión del framework de test de android y fue creado para hacer más fácil los test de interfaz gráfica para las aplicaciones de Android. Robotium hereda de \textit{ActivityInstrumentationTestCase2} y permite definir casos de test a través de las \textit{Activities} de Android.
 

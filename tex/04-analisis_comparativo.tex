@@ -54,45 +54,42 @@ Robolectric es un proyecto de código abierto que unifica la velocidad del testin
 
 \item Testings a través de \textit{mocks objects} (objetos simulados).
 
-\item lalalala
-
+\item Soporte para Android usando dexmaker \cite{54}.
 
 \end{itemize}
 \subsubsection{Desventajas}
 \begin{itemize}
-\item lalalla
+\item .....
 
-\item lalalala
 
 \end{itemize}
 
 \subsubsection{Resumen}
-lalalalala la al al al al al a
+.....
 
 \subsection{Mockito}
 \subsubsection{Ventajas}
 \begin{itemize}
 \item Gratuito y de código abierto.
 
-\item Testings a través de \textit{mocks objects} (objetos simulados).
+\item Testing a través de \textit{mocks objects} (objetos simulados).
 
-\item lalalala
+\item Soporte para Android usando dexmaker \cite{54}.
 
 
 \end{itemize}
 \subsubsection{Desventajas}
 \begin{itemize}
-\item lalalla
 
-\item lalalala
+\item ....
 
 \end{itemize}
 
 \subsubsection{Resumen}
-lalalalala la al al al al al a
+......
 
 
-\section{Análisis Comparativo entre las Herramientas de Testing Funcional}
+\section{Análisis Comparativo entre las Herramientas de Testing de UI}
 \subsection{uiautomator}
 \subsubsection{Ventajas}
 \begin{itemize}
@@ -114,7 +111,7 @@ lalalalala la al al al al al a
 
 \subsubsection{Resumen}
 Una de las principales ventajas con las que cuenta uiautomator, es que los test se ejecutan en un proceso independiente de la aplicación, por lo que se pueden realizar acciones que no son permitidas en otros frameworks, por ejemplo es posible ejecutar iniciar la cámara, o desactivar el WIFI, o activar el GPS. Si bien, esta herramienta fue lanzada el 14 de Noviembre del 2012 \cite{50}, el nivel de documentación con la que cuenta es muy bajo.
-\newpage
+
 \subsection{Robotium}
 \subsubsection{Ventajas}
 \begin{itemize}
@@ -195,77 +192,53 @@ Espresso & Escasa & Si & Si \\
 \subsection{Monkey}
 \subsubsection{Ventajas}
 \begin{itemize}
-\item Gratuito y de código abierto.
-
-\item Permite realizar tests, tanto de caja negra, como blanca.
-
-\item Actualización de versiones automática.
-
-\item Es posible llegar a mucha más gente, ya que se puede dejar abierta la opción de recibir versiones betas.
+\item Excelente herramienta para llevar a cabo tests de estrés.
 
 \end{itemize}
 \subsubsection{Desventajas}
 \begin{itemize}
-\item Los usuarios testers deben ser miembros de un grupo en \textit{Google Groups} \cite{38} o una comunidad en \textit{Google+ Communities}\cite{39}.
-
-\item Al ser una herramienta nativa de Android, no es multiplataforma.
-
-\item El feedback de los usuarios es a través del grupo o comunidad a la que se tuvo que unir.
+\item No se pueden llevar a cabo tests más complejos.
 
 \end{itemize}
 
 \subsubsection{Resumen}
-Esta es una excelente herramienta para cualquier desarrollador.
+Esta herramienta es perfecta para realizar tests de estrés. Estos consisten en envíar una gran cantidad de eventos pseudo-aleatorios a la aplicación, como clicks, toques, entre otras cosas, para verificar que la aplicación responde de forma correcta, sin crashes y sin congelarse.
 
-\subsection{monkeyrunner}
+\subsection{Monkeyrunner}
 \subsubsection{Ventajas}
 \begin{itemize}
-\item Gratuito y de código abierto.
+\item Provee una API en Python para escribir tests, fuera del código fuente de la aplicación.
 
-\item Permite realizar tests, tanto de caja negra, como blanca.
+\item Permite ejecutar los tests en varios dispositivos a la vez, obtener screenshots y compararlos.
 
-\item Actualización de versiones automática.
-
-\item Es posible llegar a mucha más gente, ya que se puede dejar abierta la opción de recibir versiones betas.
-
+\item Bien documentada.
 \end{itemize}
 \subsubsection{Desventajas}
 \begin{itemize}
-\item Los usuarios testers deben ser miembros de un grupo en \textit{Google Groups} \cite{38} o una comunidad en \textit{Google+ Communities}\cite{39}.
-
-\item Al ser una herramienta nativa de Android, no es multiplataforma.
-
-\item El feedback de los usuarios es a través del grupo o comunidad a la que se tuvo que unir.
+\item Se interactúa con el dispositivo y no con la aplicación, por lo que si se desea presionar un boton dentro de la aplicación, se le deben dar las coordenadas precisas (X,Y) para presionarlo, en vez de otras herramientas que permiten obtener la ubicación del botón a través del ID o del texto.
 
 \end{itemize}
 
 \subsubsection{Resumen}
-Esta es una excelente herramienta para cualquier desarrollador.
+Cabe mencionar que Monkeyrunner no está relacionado con la herramienta vista anteriormente Monkey. Con Monkeyrunner es posible escribir un script en Python que instale una aplicación en un dispositivo, presionar los botones físicos del dispositivo, abrir el teclado, tomar screenshots de la interfaz y comparar estos screenshots. Esta principalmente enfocado en el testing de la UI, aunque también puede ser usado para otros propósitos. Por ejemplo, en el desarrollo de una aplicación era necesario que un dispositivo contará con una gran cantidad de contactos, y la creación automatizada de contactos se llevo a cabo a través de un script ejecutado con Monkeyrunner. 
 
 \subsection{Spoon}
 \subsubsection{Ventajas}
 \begin{itemize}
-\item Gratuito y de código abierto.
+\item Puede ser usada en conjunto con otras herramientas de testing de UI como Robotium y Espresso.
 
-\item Permite realizar tests, tanto de caja negra, como blanca.
-
-\item Actualización de versiones automática.
-
-\item Es posible llegar a mucha más gente, ya que se puede dejar abierta la opción de recibir versiones betas.
+\item Permite ejecutar los tests en varios dispositivos a la vez y obtener screenshots.
 
 \end{itemize}
 \subsubsection{Desventajas}
 \begin{itemize}
-\item Los usuarios testers deben ser miembros de un grupo en \textit{Google Groups} \cite{38} o una comunidad en \textit{Google+ Communities}\cite{39}.
-
-\item Al ser una herramienta nativa de Android, no es multiplataforma.
-
-\item El feedback de los usuarios es a través del grupo o comunidad a la que se tuvo que unir.
+\item Podría incluir video.
 
 \end{itemize}
 
 \subsubsection{Resumen}
-Esta es una excelente herramienta para cualquier desarrollador.
+Esta es una herramienta perfecta, que puede ser usada por si sóla, a través de las herramientas de instrumentación que ofrece Android, o en conjunto con otras herramientas como Robotium y Espresso. Spoon ejecuta los tests en todos los dispositivos conectados al computador, incluyendo los emuladores que pueden estar ejecutándose. Al finalizar el test, se obtienen los screenshots de la aplicación durante la ejecución del test, y en cada una de las pantallas. Esto es muy útil al momento de entender por qué pueden haber fallado los test, como también para ver simultáneamente como se ve la aplicación en varios dispositivos.
+
 \newpage
 \section{Análisis Comparativo entre las Herramientas de Distribución de Versiones}
 \subsection{Google Play Console}

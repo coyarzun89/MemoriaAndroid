@@ -8,8 +8,15 @@ En este capítulo se llevará a cabo la implementación de las herramientas más des
 
 
 \section{Implementación de Herramientas de Testing}
+\subsection{Robolectric}
+.....
+\subsection{Espresso}
+.....
+\subsection{Spoon}
+....
+\subsection{uiautomatorviewer}
+Esta es una herramienta de apoyo, que puede servir para personas que están involucradas en el desarrollo de un proyecto móbil, pero que no son desarrolladores. Se puede obtener información muy detallada sobre el árbol jerárquico de vistas y de cada uno de sus elementos. A través de esta información es posible planear diferentes tipos de tests.\\
 
-\section{uiautomatorviewer}
 En la figura \ref{fig:Fig19} se puede apreciar que a la izquierda se tiene una screenshot de la aplicación, y al lado derecho se muestra el árbol jerárquico de vistas de la aplicación. Además el desarrollador puede presionar sobre los elementos del screenshot y obtener información sobre esa vista, tales como la clase, si la vista tiene habilitado el scroll, si la vista se le puede hacer click, entre otras cosas.
 
 \begin{figure}[h!]
@@ -19,14 +26,25 @@ En la figura \ref{fig:Fig19} se puede apreciar que a la izquierda se tiene una s
 \label{fig:Fig19}
 \end{figure}
 
+\subsection{Monkey}
+Esta herramienta es principalmente usada para realizar casos de testing de estrés. Esto quiere decir que la aplicación es deliberadamente sometida a una gran cantidad de eventos para determinar la estabilidad y el manejo de errores. Los eventos generados consistirán en acciones que podría realizar un usuario normal, como clicks, toques, o gestos, pero un una cantidad muy elevada.\\
+
+Por ejemplo, el siguiente comando enviará 2000 eventos aleatorios a la aplicación con el nombre de paquete co.seahorse.android:\\
+
+\begin{lstlisting}
+adb shell monkey -p co.seahorse.android -v 2000
+\end{lstlisting}
+
+
 \section{Implementación de Herramientas de Distribución}
 \subsection{HockeyApp}
 Antes de HockeyApp, dentro de la empresa se usaba TestFlight (colocar cita), pero ésta dejó de dar soporte a Android en Marzo de este año (colocar cita), por lo que fue necesario migrar a otro servicio. HockeyApp cumplía con prácticamente todas las necesidades que suplía TestFlight, siendo multiplataforma, por lo que se podía tener la aplicación de Android y iOS en la misma plataforma. Se paga XXX por el servicio, de forma mensual.
 
-Para su implementación es necesario crearse una cuenta dentro del sitio ....crear la app, subir apk, invitar gente al apk, dps de cada actualizacion aparece la lista de personas para notificarla, en la misma plataforma se puede ver el feedback que dan los usuarios.
+......
+%Para su implementación es necesario crearse una cuenta dentro del sitio ....crear la app, subir apk, invitar gente al apk, dps de cada actualizacion aparece la lista de personas para notificarla, en la misma plataforma se puede ver el feedback que dan los usuarios.
 
 \subsection{UserTesting}
-\subsection{The Beta Family}
+.....
 
 \section{Implementación de Herramientas de Reportes de Crashes}
 \subsection{Crittercism}

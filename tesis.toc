@@ -22,7 +22,7 @@
 \contentsline {paragraph}{Testing unitario}{14}{section*.12}
 \contentsline {paragraph}{Testing de User Interface (UI)}{14}{section*.13}
 \contentsline {paragraph}{Testing de integraci\'on}{15}{section*.14}
-\contentsline {paragraph}{Testing funcional o de aceptaci\'on}{15}{section*.15}
+\contentsline {paragraph}{Testing de aceptaci\'on}{15}{section*.15}
 \contentsline {paragraph}{Testing de sistema}{15}{section*.16}
 \contentsline {paragraph}{Cambios de orientaci\'on}{16}{section*.17}
 \contentsline {paragraph}{Cambios de configuraci\'on}{16}{section*.18}
@@ -42,35 +42,37 @@
 \contentsline {subsection}{\numberline {2.5.3}Crashes}{27}{subsection.2.5.3}
 \contentsline {chapter}{\numberline {3}Herramientas Actuales}{29}{chapter.3}
 \contentsline {section}{\numberline {3.1}Herramientas de Testing}{29}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Herramientas de testing provistas por Android}{29}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.1}Herramientas de Testing Unitario provistas por Android}{29}{subsection.3.1.1}
 \contentsline {subsubsection}{JUnit \cite {49}}{30}{section*.38}
-\contentsline {subsubsection}{Instrumentation \cite {20}}{31}{section*.39}
-\contentsline {subsubsection}{Simulando objetos (Mock objects) \cite {20}}{32}{section*.40}
+\contentsline {subsubsection}{Simulando objetos (Mock objects) \cite {20}}{31}{section*.39}
+\contentsline {subsection}{\numberline {3.1.2}Herramientas de Testing de UI provistas por Android}{31}{subsection.3.1.2}
+\contentsline {subsubsection}{Instrumentation \cite {20}}{31}{section*.40}
 \contentsline {subsubsection}{uiautomator \cite {19}}{32}{section*.41}
 \contentsline {subsubsection}{uiautomatorviewer \cite {19}}{33}{section*.42}
 \contentsline {subsubsection}{Monkey \cite {21}}{33}{section*.43}
-\contentsline {subsubsection}{monkeyrunner \cite {48}}{33}{section*.44}
-\contentsline {subsection}{\numberline {3.1.2}Herramientas de testing de terceros}{34}{subsection.3.1.2}
+\contentsline {subsubsection}{Monkeyrunner \cite {48}}{33}{section*.44}
+\contentsline {subsection}{\numberline {3.1.3}Herramientas de Testing Unitario de terceros}{34}{subsection.3.1.3}
 \contentsline {subsubsection}{EasyMock \cite {22}}{34}{section*.45}
 \contentsline {subsubsection}{Mockito \cite {23}}{34}{section*.46}
-\contentsline {subsubsection}{Robolectric \cite {24}}{35}{section*.47}
+\contentsline {subsubsection}{Robolectric \cite {24}}{34}{section*.47}
+\contentsline {subsection}{\numberline {3.1.4}Herramientas de Testing de UI de terceros}{35}{subsection.3.1.4}
 \contentsline {subsubsection}{Robotium \cite {25}}{35}{section*.48}
-\contentsline {subsubsection}{Espresso \cite {26}}{36}{section*.49}
+\contentsline {subsubsection}{Espresso \cite {26}}{35}{section*.49}
 \contentsline {subsubsection}{Spoon \cite {27}}{36}{section*.50}
 \contentsline {section}{\numberline {3.2}Herramientas de Distribuci\'on de Versiones}{37}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Herramienta de Distribuci\'on de Versiones provista por Android}{37}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Herramienta de Distribuci\'on de Versiones de terceros}{38}{subsection.3.2.2}
 \contentsline {subsubsection}{HockeyApp \cite {40}}{38}{section*.52}
 \contentsline {subsubsection}{AppBlade \cite {41}}{39}{section*.53}
-\contentsline {subsubsection}{The Beta Family \cite {46}}{40}{section*.54}
+\contentsline {subsubsection}{The Beta Family \cite {46}}{39}{section*.54}
 \contentsline {subsubsection}{UserTesting \cite {47}}{40}{section*.55}
-\contentsline {section}{\numberline {3.3}Herramientas de Reporte de Crashes}{41}{section.3.3}
+\contentsline {section}{\numberline {3.3}Herramientas de Reporte de Crashes}{40}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Herramienta de Reporte de Crashes provista por Android}{41}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Herramientas de Reporte de Crashes de terceros}{42}{subsection.3.3.2}
-\contentsline {subsubsection}{Crittercism \cite {30}}{43}{section*.57}
-\contentsline {subsubsection}{Bugsense \cite {32}}{44}{section*.59}
+\contentsline {subsubsection}{Crittercism \cite {30}}{42}{section*.57}
+\contentsline {subsubsection}{Bugsense \cite {32}}{43}{section*.59}
 \contentsline {subsubsection}{Google Analytics \cite {33}}{44}{section*.61}
-\contentsline {subsubsection}{ACRA \cite {34}}{45}{section*.62}
+\contentsline {subsubsection}{ACRA \cite {34}}{44}{section*.62}
 \contentsline {chapter}{\numberline {4}An\'alisis Comparativo}{46}{chapter.4}
 \contentsline {section}{\numberline {4.1}An\'alisis Comparativo entre las Herramientas de Testing Unitario}{46}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Framework de Testing de Android}{46}{subsection.4.1.1}
@@ -87,90 +89,94 @@
 \contentsline {subsubsection}{Resumen}{48}{section*.72}
 \contentsline {subsection}{\numberline {4.1.4}Mockito}{48}{subsection.4.1.4}
 \contentsline {subsubsection}{Ventajas}{48}{section*.73}
-\contentsline {subsubsection}{Desventajas}{49}{section*.74}
+\contentsline {subsubsection}{Desventajas}{48}{section*.74}
 \contentsline {subsubsection}{Resumen}{49}{section*.75}
-\contentsline {section}{\numberline {4.2}An\'alisis Comparativo entre las Herramientas de Testing Funcional}{49}{section.4.2}
+\contentsline {section}{\numberline {4.2}An\'alisis Comparativo entre las Herramientas de Testing de UI}{49}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}uiautomator}{49}{subsection.4.2.1}
 \contentsline {subsubsection}{Ventajas}{49}{section*.76}
 \contentsline {subsubsection}{Desventajas}{49}{section*.77}
-\contentsline {subsubsection}{Resumen}{50}{section*.78}
-\contentsline {subsection}{\numberline {4.2.2}Robotium}{51}{subsection.4.2.2}
-\contentsline {subsubsection}{Ventajas}{51}{section*.79}
-\contentsline {subsubsection}{Desventajas}{51}{section*.80}
-\contentsline {subsubsection}{Resumen}{51}{section*.81}
-\contentsline {subsection}{\numberline {4.2.3}Espresso}{52}{subsection.4.2.3}
-\contentsline {subsubsection}{Ventajas}{52}{section*.82}
-\contentsline {subsubsection}{Desventajas}{52}{section*.83}
-\contentsline {subsubsection}{Resumen}{52}{section*.84}
-\contentsline {subsection}{\numberline {4.2.4}Resumen General}{53}{subsection.4.2.4}
-\contentsline {section}{\numberline {4.3}Otras Herramientas de Testing}{54}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Monkey}{54}{subsection.4.3.1}
-\contentsline {subsubsection}{Ventajas}{54}{section*.87}
-\contentsline {subsubsection}{Desventajas}{54}{section*.88}
-\contentsline {subsubsection}{Resumen}{54}{section*.89}
-\contentsline {subsection}{\numberline {4.3.2}monkeyrunner}{54}{subsection.4.3.2}
-\contentsline {subsubsection}{Ventajas}{54}{section*.90}
-\contentsline {subsubsection}{Desventajas}{55}{section*.91}
-\contentsline {subsubsection}{Resumen}{55}{section*.92}
-\contentsline {subsection}{\numberline {4.3.3}Spoon}{55}{subsection.4.3.3}
-\contentsline {subsubsection}{Ventajas}{55}{section*.93}
-\contentsline {subsubsection}{Desventajas}{55}{section*.94}
-\contentsline {subsubsection}{Resumen}{56}{section*.95}
-\contentsline {section}{\numberline {4.4}An\'alisis Comparativo entre las Herramientas de Distribuci\'on de Versiones}{57}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Google Play Console}{57}{subsection.4.4.1}
-\contentsline {subsubsection}{Ventajas}{57}{section*.96}
-\contentsline {subsubsection}{Desventajas}{57}{section*.97}
-\contentsline {subsubsection}{Resumen}{57}{section*.98}
-\contentsline {subsection}{\numberline {4.4.2}HockeyApp}{58}{subsection.4.4.2}
-\contentsline {subsubsection}{Ventajas}{58}{section*.99}
-\contentsline {subsubsection}{Desventajas}{58}{section*.100}
-\contentsline {subsubsection}{Resumen}{58}{section*.101}
-\contentsline {subsection}{\numberline {4.4.3}AppBlade}{58}{subsection.4.4.3}
-\contentsline {subsubsection}{Ventajas}{58}{section*.102}
-\contentsline {subsubsection}{Desventajas}{59}{section*.103}
-\contentsline {subsubsection}{Resumen}{59}{section*.104}
-\contentsline {subsection}{\numberline {4.4.4}The Beta Family}{59}{subsection.4.4.4}
-\contentsline {subsubsection}{Ventajas}{59}{section*.105}
-\contentsline {subsubsection}{Desventajas}{60}{section*.106}
-\contentsline {subsubsection}{Resumen}{60}{section*.107}
-\contentsline {subsection}{\numberline {4.4.5}UserTesting}{60}{subsection.4.4.5}
-\contentsline {subsubsection}{Ventajas}{60}{section*.108}
-\contentsline {subsubsection}{Desventajas}{61}{section*.109}
-\contentsline {subsubsection}{Resumen}{61}{section*.110}
-\contentsline {subsection}{\numberline {4.4.6}Resumen General}{62}{subsection.4.4.6}
-\contentsline {section}{\numberline {4.5}An\'alisis Comparativo entre las Herramientas de Reporte de Crashes}{64}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Google Play Console}{64}{subsection.4.5.1}
-\contentsline {subsubsection}{Ventajas}{64}{section*.115}
-\contentsline {subsubsection}{Desventajas}{64}{section*.116}
-\contentsline {subsubsection}{Resumen}{64}{section*.117}
-\contentsline {subsection}{\numberline {4.5.2}Crittercism}{65}{subsection.4.5.2}
-\contentsline {subsubsection}{Ventajas}{65}{section*.118}
-\contentsline {subsubsection}{Desventajas}{65}{section*.119}
-\contentsline {subsubsection}{Resumen}{65}{section*.120}
-\contentsline {subsection}{\numberline {4.5.3}Bugsense}{66}{subsection.4.5.3}
-\contentsline {subsubsection}{Ventajas}{66}{section*.121}
-\contentsline {subsubsection}{Desventajas}{66}{section*.122}
-\contentsline {subsubsection}{Resumen}{66}{section*.123}
-\contentsline {subsection}{\numberline {4.5.4}Google Analytics}{67}{subsection.4.5.4}
-\contentsline {subsubsection}{Ventajas}{67}{section*.124}
-\contentsline {subsubsection}{Desventajas}{67}{section*.125}
-\contentsline {subsubsection}{Resumen}{67}{section*.126}
-\contentsline {subsection}{\numberline {4.5.5}ACRA}{68}{subsection.4.5.5}
-\contentsline {subsubsection}{Ventajas}{68}{section*.127}
-\contentsline {subsubsection}{Desventajas}{68}{section*.128}
-\contentsline {subsubsection}{Resumen}{68}{section*.129}
-\contentsline {subsection}{\numberline {4.5.6}Resumen General}{69}{subsection.4.5.6}
-\contentsline {chapter}{\numberline {5}Implementaci\'on}{71}{chapter.5}
-\contentsline {section}{\numberline {5.1}Implementaci\'on de Herramientas de Testing}{71}{section.5.1}
-\contentsline {section}{\numberline {5.2}uiautomatorviewer}{71}{section.5.2}
-\contentsline {section}{\numberline {5.3}Implementaci\'on de Herramientas de Distribuci\'on}{72}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}HockeyApp}{72}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}UserTesting}{73}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}The Beta Family}{73}{subsection.5.3.3}
-\contentsline {section}{\numberline {5.4}Implementaci\'on de Herramientas de Reportes de Crashes}{73}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Crittercism}{73}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Google Analytics}{74}{subsection.5.4.2}
-\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{76}{chapter.6}
-\contentsline {chapter}{\numberline {A}Ap\'endice A}{77}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Secci\'on Ap\'endice}{77}{section.Alph1.1}
-\contentsline {chapter}{Bibliograf\'ia}{78}{section.Alph1.1}
+\contentsline {subsubsection}{Resumen}{49}{section*.78}
+\contentsline {subsection}{\numberline {4.2.2}Robotium}{50}{subsection.4.2.2}
+\contentsline {subsubsection}{Ventajas}{50}{section*.79}
+\contentsline {subsubsection}{Desventajas}{50}{section*.80}
+\contentsline {subsubsection}{Resumen}{50}{section*.81}
+\contentsline {subsection}{\numberline {4.2.3}Espresso}{51}{subsection.4.2.3}
+\contentsline {subsubsection}{Ventajas}{51}{section*.82}
+\contentsline {subsubsection}{Desventajas}{51}{section*.83}
+\contentsline {subsubsection}{Resumen}{51}{section*.84}
+\contentsline {subsection}{\numberline {4.2.4}Resumen General}{52}{subsection.4.2.4}
+\contentsline {section}{\numberline {4.3}Otras Herramientas de Testing}{53}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Monkey}{53}{subsection.4.3.1}
+\contentsline {subsubsection}{Ventajas}{53}{section*.87}
+\contentsline {subsubsection}{Desventajas}{53}{section*.88}
+\contentsline {subsubsection}{Resumen}{53}{section*.89}
+\contentsline {subsection}{\numberline {4.3.2}Monkeyrunner}{53}{subsection.4.3.2}
+\contentsline {subsubsection}{Ventajas}{53}{section*.90}
+\contentsline {subsubsection}{Desventajas}{53}{section*.91}
+\contentsline {subsubsection}{Resumen}{54}{section*.92}
+\contentsline {subsection}{\numberline {4.3.3}Spoon}{54}{subsection.4.3.3}
+\contentsline {subsubsection}{Ventajas}{54}{section*.93}
+\contentsline {subsubsection}{Desventajas}{54}{section*.94}
+\contentsline {subsubsection}{Resumen}{54}{section*.95}
+\contentsline {section}{\numberline {4.4}An\'alisis Comparativo entre las Herramientas de Distribuci\'on de Versiones}{56}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Google Play Console}{56}{subsection.4.4.1}
+\contentsline {subsubsection}{Ventajas}{56}{section*.96}
+\contentsline {subsubsection}{Desventajas}{56}{section*.97}
+\contentsline {subsubsection}{Resumen}{56}{section*.98}
+\contentsline {subsection}{\numberline {4.4.2}HockeyApp}{57}{subsection.4.4.2}
+\contentsline {subsubsection}{Ventajas}{57}{section*.99}
+\contentsline {subsubsection}{Desventajas}{57}{section*.100}
+\contentsline {subsubsection}{Resumen}{57}{section*.101}
+\contentsline {subsection}{\numberline {4.4.3}AppBlade}{57}{subsection.4.4.3}
+\contentsline {subsubsection}{Ventajas}{57}{section*.102}
+\contentsline {subsubsection}{Desventajas}{58}{section*.103}
+\contentsline {subsubsection}{Resumen}{58}{section*.104}
+\contentsline {subsection}{\numberline {4.4.4}The Beta Family}{58}{subsection.4.4.4}
+\contentsline {subsubsection}{Ventajas}{58}{section*.105}
+\contentsline {subsubsection}{Desventajas}{59}{section*.106}
+\contentsline {subsubsection}{Resumen}{59}{section*.107}
+\contentsline {subsection}{\numberline {4.4.5}UserTesting}{59}{subsection.4.4.5}
+\contentsline {subsubsection}{Ventajas}{59}{section*.108}
+\contentsline {subsubsection}{Desventajas}{60}{section*.109}
+\contentsline {subsubsection}{Resumen}{60}{section*.110}
+\contentsline {subsection}{\numberline {4.4.6}Resumen General}{61}{subsection.4.4.6}
+\contentsline {section}{\numberline {4.5}An\'alisis Comparativo entre las Herramientas de Reporte de Crashes}{63}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Google Play Console}{63}{subsection.4.5.1}
+\contentsline {subsubsection}{Ventajas}{63}{section*.115}
+\contentsline {subsubsection}{Desventajas}{63}{section*.116}
+\contentsline {subsubsection}{Resumen}{63}{section*.117}
+\contentsline {subsection}{\numberline {4.5.2}Crittercism}{64}{subsection.4.5.2}
+\contentsline {subsubsection}{Ventajas}{64}{section*.118}
+\contentsline {subsubsection}{Desventajas}{64}{section*.119}
+\contentsline {subsubsection}{Resumen}{64}{section*.120}
+\contentsline {subsection}{\numberline {4.5.3}Bugsense}{65}{subsection.4.5.3}
+\contentsline {subsubsection}{Ventajas}{65}{section*.121}
+\contentsline {subsubsection}{Desventajas}{65}{section*.122}
+\contentsline {subsubsection}{Resumen}{65}{section*.123}
+\contentsline {subsection}{\numberline {4.5.4}Google Analytics}{66}{subsection.4.5.4}
+\contentsline {subsubsection}{Ventajas}{66}{section*.124}
+\contentsline {subsubsection}{Desventajas}{66}{section*.125}
+\contentsline {subsubsection}{Resumen}{66}{section*.126}
+\contentsline {subsection}{\numberline {4.5.5}ACRA}{67}{subsection.4.5.5}
+\contentsline {subsubsection}{Ventajas}{67}{section*.127}
+\contentsline {subsubsection}{Desventajas}{67}{section*.128}
+\contentsline {subsubsection}{Resumen}{67}{section*.129}
+\contentsline {subsection}{\numberline {4.5.6}Resumen General}{68}{subsection.4.5.6}
+\contentsline {chapter}{\numberline {5}Implementaci\'on}{70}{chapter.5}
+\contentsline {section}{\numberline {5.1}Implementaci\'on de Herramientas de Testing}{70}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Robolectric}{70}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Espresso}{70}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Spoon}{70}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}uiautomatorviewer}{71}{subsection.5.1.4}
+\contentsline {subsection}{\numberline {5.1.5}Monkey}{71}{subsection.5.1.5}
+\contentsline {section}{\numberline {5.2}Implementaci\'on de Herramientas de Distribuci\'on}{72}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}HockeyApp}{72}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}UserTesting}{73}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}Implementaci\'on de Herramientas de Reportes de Crashes}{73}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Crittercism}{73}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Google Analytics}{74}{subsection.5.3.2}
+\contentsline {chapter}{\numberline {6}Conclusiones}{76}{chapter.6}
+\contentsline {section}{\numberline {6.1}Trabajo Futuro}{77}{section.6.1}
+\contentsline {chapter}{\numberline {A}Ap\'endice A}{78}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Secci\'on Ap\'endice}{78}{section.Alph1.1}
+\contentsline {chapter}{Bibliograf\'ia}{79}{section.Alph1.1}
