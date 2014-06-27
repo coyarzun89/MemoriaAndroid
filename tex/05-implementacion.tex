@@ -3,8 +3,74 @@
 \chapter{Implementación}
 \label{ch:implem}
 
-Sed iusto nihil populo an, ex pro novum homero cotidieque. Te utamur civibus eleifend qui, nam ei brute doming concludaturque, modo aliquam facilisi nec no. Vidisse maiestatis constituam eu his, esse pertinacia intellegam ius cu. Eos ei odio veniam, eu sumo altera adipisci eam, mea audiam prodesset persequeris ea. Ad vitae dictas vituperata sed, eum posse labore postulant id. Te eligendi principes dignissim sit, te vel dicant officiis repudiandae.
+En este capítulo se llevará a cabo la implementación de las herramientas más destacadas en base a los análisis previos. La integración de estas herramientas se llevarán a cabo en un entorno real de desarrollo, específicamente en la aplicación Seahorse. Esta aplicación está enfocada en la creación colaborativa y privada de albumes de fotos y vídeos. Puede ser descargada a través de la tienda oficial de Google, en el siguiente enlace:\\
+\url{https://play.google.com/store/apps/details?id=co.seahorse.android&hl=es}\\
 
-Id vel sensibus honestatis omittantur, vel cu nobis commune patrioque. In accusata definiebas qui, id tale malorum dolorem sed, solum clita phaedrum ne his. Eos mutat ullum forensibus ex, wisi perfecto urbanitas cu eam, no vis dicunt impetus. Assum novum in pri, vix an suavitate moderatius, id has reformidans referrentur. Elit inciderint omittantur duo ut, dicit democritum signiferumque eu est, ad suscipit delectus mandamus duo. An harum equidem maiestatis nec.
-At has veri feugait placerat, in semper offendit praesent his. Omnium impetus facilis sed at, ex viris tincidunt ius. Unum eirmod dignissim id quo. Sit te atomorum quaerendum neglegentur, his primis tamquam et. Eu quo quot veri alienum, ea eos nullam luptatum accusamus. Ea mel causae phaedrum reprimique, at vidisse dolores ocurreret nam. 
+
+\section{Implementación de Herramientas de Testing}
+
+\section{uiautomatorviewer}
+En la figura \ref{fig:Fig19} se puede apreciar que a la izquierda se tiene una screenshot de la aplicación, y al lado derecho se muestra el árbol jerárquico de vistas de la aplicación. Además el desarrollador puede presionar sobre los elementos del screenshot y obtener información sobre esa vista, tales como la clase, si la vista tiene habilitado el scroll, si la vista se le puede hacer click, entre otras cosas.
+
+\begin{figure}[h!]
+\centering
+      \includegraphics[width=15cm]{Imagenes/testing_uiautomatorview}
+\caption{Vista de la herramienta uiautomatorviewer en una aplicación. Fuente: Elaboración Propia}
+\label{fig:Fig19}
+\end{figure}
+
+\section{Implementación de Herramientas de Distribución}
+\subsection{HockeyApp}
+Antes de HockeyApp, dentro de la empresa se usaba TestFlight (colocar cita), pero ésta dejó de dar soporte a Android en Marzo de este año (colocar cita), por lo que fue necesario migrar a otro servicio. HockeyApp cumplía con prácticamente todas las necesidades que suplía TestFlight, siendo multiplataforma, por lo que se podía tener la aplicación de Android y iOS en la misma plataforma. Se paga XXX por el servicio, de forma mensual.
+
+Para su implementación es necesario crearse una cuenta dentro del sitio ....crear la app, subir apk, invitar gente al apk, dps de cada actualizacion aparece la lista de personas para notificarla, en la misma plataforma se puede ver el feedback que dan los usuarios.
+
+\subsection{UserTesting}
+\subsection{The Beta Family}
+
+\section{Implementación de Herramientas de Reportes de Crashes}
+\subsection{Crittercism}
+Crittercism a sido la plataforma escogida para la recepción de crashes, principalmente por el nivel de detalle presente en sus reportes. Además el valor que se paga mensualmente es bastante accesible para cualquier empresa del rubro. Actualemnte dentro de Seahorse, se pagan 24 dólares por este servicio, lo que da acceso a ...... 
+
+Crittercism ha permitido disminuir la tasa de crashes de X\% a Y\%. Aunque después del lanzamiento de cada actualización aparecen nuevos crashes, lo cuál es inherente al proceso de desarrollo de software, con esta herramienta es posible contar con información muy detallada, facilitando en gran medida la tarea de los desarrolladores.\\
+
+La instalación es bastante simple \cite{31}. Se debe descargar el SDK de Crittercism para Android e incluirlo al proyecto. Luego se deben agregar los siguientes permisos en el archivo Android Manifest del proyecto: 
+\begin{lstlisting}
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.READ_LOGS"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+<uses-permission android:name="android.permission.GET_TASKS"/>
+\end{lstlisting}
+El primer permiso es necesario para poder acceder a Internet y poder enviar los reportes. El segundo es necesario para poder obtener la información de los stack trace del usuario, y ahi saber en que línea de código ha ocurrido el error. El tercero es para obtener información sobre el estado de la red, por ejemplo, para saber si el usuario está conectado a Wi-Fi o a través de un carrier. El último permiso sirve para acceder a la información de las últimas dos \textit{Activities} ejecutadas, lo que permite saber en que pantalla ocurrió el crash.
+
+Una vez que los permisos ya están entregados, se debe inicializar Crittercism. Esto se hace únicamente una vez por aplicación, por lo que se debe hacer en la primera \textit{Activity} que se ejecuta dentro de la aplicación. Para iniciar Crittercism se escribe la siguiente línea en el onCreate:
+\begin{lstlisting}
+Crittercism.initialize(getApplicationContext(), "CRITTERCISM_APP_ID");
+\end{lstlisting}
+
+Ahora ya están implementadas las características básicas, y comenzarán a llegar los reportes al sitio de Crittercism. También es posible agregar a otros desarrolladores al servicio, para que tengan acceso a la misma información y que todo el equipo reciba los reportes de crashes al correo.
+
+\subsection{Google Analytics}
+Google Analytics ha sido implementada, aunque no por sus reportes de crashes, sino que para el tracking de eventos y performance.
+Para su implementación es necesario descarga desde el sitio de Google Analytics \cite{33} la versión 3 de su SDK. Una vez descargado el SDK, es necesario incluirlo al proyecto y dar los siguientes permisos en el archivo Android Manifest:
+\begin{lstlisting}
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+\end{lstlisting}
+Para implementarlo a través de código es necesario agregar estas líneas en cada una de las \textit{Activities} de las cuáles se desee obtener información:
+\begin{lstlisting}
+@Override
+  public void onStart() {
+    super.onStart();
+    ... // El resto del código de onStart()
+    EasyTracker.getInstance(this).activityStart(this);  // Agregar este método
+  }
+
+  @Override
+  public void onStop() {
+    super.onStop();
+    ... // El resto del código de onStop()
+    EasyTracker.getInstance(this).activityStop(this);  // Agregar este método
+  }
+\end{lstlisting}
 % ---------------------------------------------------------------------------------------------------------------

@@ -2,15 +2,271 @@
 % ---------------------------------------------------------------------------------------------------------------
 \chapter{Análisis Comparativo}
 \label{ch:analis}
-Para este análisis comparativo, se han sub-categorizado las herramientas para que puedan ser comparadas de una forma más justa, ya que algunas son muy distintas una de otra, por lo que en algunos casos una comparación no arrojará información relevante.
+Para llevar a cabo estos análisis comparativos, las herramientas se han subdividido en más categorias. De esta forma es posible realizar comparaciones que arrojen resultados más relevantes y útiles. Las ventajas y desventajas de cada herramienta ayudarán a determinar cuál se ajusta más a las necesidades del desarrollador.
 
-Para llevar a cabo este análisis, se obtendrán ventajas y desventajas de las herramientas más destacadas. Además se explicará en que casos se recomienda usar cada herramienta.
+En cada sección se agregará un resumen general, el cuál incluirá una tabla comparativa y conclusiones que actuarán como guía para los desarrolladores.
 
-En el siguiente capítulo se llevará a cabo la implementación de las más destacadas en una aplicación.
+En el siguiente capítulo se llevará a cabo la implementación de las herramientas más destacadas en una aplicación que se encuentra disponible en la tienda oficial de Google.
 
-\section{Análisis Comparativo entre las Herramientas de Testing}
-...
+\section{Análisis Comparativo entre las Herramientas de Testing Unitario}
+\subsection{Framework de Testing de Android}
+\subsubsection{Ventajas}
+\begin{itemize}
+\item Acceso al Framework de Android.
 
+\end{itemize}
+\subsubsection{Desventajas}
+\begin{itemize}
+\item Los test son lentos ya que se ejecuten en un dispositivo real o un emulador con la máquina virtual Dalvik.
+
+\item Usa JUnit 3, en vez del más reciente JUnit 4.
+
+\end{itemize}
+
+\subsubsection{Resumen}
+El Framework de testing de Android es el método oficial que ofrece Google para realizar testing unitario. Primero se carga la aplicación en un dispositivo, y luego los tests basados en JUnit se ejecutan. Debido a que se ejecutan en un dispositivo que cuenta con el sistema operativo Android, se pueden usar todos los métodos que ofrece el framework de Android, por lo que los test son lo más cercano a la realidad. Aunque esto también le juega en contra, ya que compilar la aplicación, subir la aplicación a un dispositivo o emulador, y luego ejecutar los test es un proceso muy lento.
+
+\subsection{Robolectric}
+\subsubsection{Ventajas}
+\begin{itemize}
+\item Gratuito y de código abierto.
+
+\item Los test son rápidos ya que se ejecutan en la máquina virtual de Java, por lo que no se necesita tener un dispositivo conectado.
+
+\item Comunidad que realiza mejoras de forma activa, con más de 4 años de desarrollo.
+
+\end{itemize}
+\subsubsection{Desventajas}
+\begin{itemize}
+\item Existe documentación, pero falta actualizarla.
+
+\item No todo puede realizarse con los \textit{mocks} ofrecidos en Robolectric.
+
+\end{itemize}
+
+\subsubsection{Resumen}
+Robolectric es un proyecto de código abierto que unifica la velocidad del testing unitario con la posibilidad de acceder el framework de Android. Esto se hace implementando todos los \textit{stubs} con \textit{mocks} clases. Es extremadamente rápido en comparación con lo que ofrece Android de forma nativa, ya que los test se ejecutan en una máquina virtual de Java, no siendo necesario compilar todo el proyecto y cargar la aplicación en un dispositivo. Sin embargo, debido al rápido y constante desarrollo que ha tenido Robolectric, en las últimas versiones ha cambiado bastante, dejando obsoleta mucha de la documentación existente.
+
+\subsection{EasyMock}
+\subsubsection{Ventajas}
+\begin{itemize}
+\item Gratuito y de código abierto.
+
+\item Testings a través de \textit{mocks objects} (objetos simulados).
+
+\item lalalala
+
+
+\end{itemize}
+\subsubsection{Desventajas}
+\begin{itemize}
+\item lalalla
+
+\item lalalala
+
+\end{itemize}
+
+\subsubsection{Resumen}
+lalalalala la al al al al al a
+
+\subsection{Mockito}
+\subsubsection{Ventajas}
+\begin{itemize}
+\item Gratuito y de código abierto.
+
+\item Testings a través de \textit{mocks objects} (objetos simulados).
+
+\item lalalala
+
+
+\end{itemize}
+\subsubsection{Desventajas}
+\begin{itemize}
+\item lalalla
+
+\item lalalala
+
+\end{itemize}
+
+\subsubsection{Resumen}
+lalalalala la al al al al al a
+
+
+\section{Análisis Comparativo entre las Herramientas de Testing Funcional}
+\subsection{uiautomator}
+\subsubsection{Ventajas}
+\begin{itemize}
+\item Gratuito y desarrollado por Google.
+
+\item Los test son independientes del proceso en el que la aplicación testeada funciona. Esto permite que realizar tests en que se llamen otras \textit{Activities}, como por ejemplo la cámara.
+
+\end{itemize}
+\subsubsection{Desventajas}
+\begin{itemize}
+\item No tiene compatibilidad con las versiones más antiguas, ya que funciona desde la API 16 en adelante (Jelly Bean).
+
+\item Las instancias de los objetos de la UI se pueden obtener a través de los ID's sólamente desde la API 18 en adelante. En el resto de los casos, se obtienen a través del texto que poseen, por lo que si estos textos cambian, los test necesitarán una refactorización.
+
+\item No se puede obtener la \textit{Activity} actual.
+
+\item Falta de documentación.
+\end{itemize}
+
+\subsubsection{Resumen}
+Una de las principales ventajas con las que cuenta uiautomator, es que los test se ejecutan en un proceso independiente de la aplicación, por lo que se pueden realizar acciones que no son permitidas en otros frameworks, por ejemplo es posible ejecutar iniciar la cámara, o desactivar el WIFI, o activar el GPS. Si bien, esta herramienta fue lanzada el 14 de Noviembre del 2012 \cite{50}, el nivel de documentación con la que cuenta es muy bajo.
+\newpage
+\subsection{Robotium}
+\subsubsection{Ventajas}
+\begin{itemize}
+\item Gratuito y de código abierto.
+
+\item Fácil uso.
+
+\item Más de 4 años de desarrollo, por lo que es una biblioteca estable que cuenta con una comunidad activa.
+
+\item Cuenta con Robotium Recorder, para capturar videos de los test.
+\end{itemize}
+\subsubsection{Desventajas}
+\begin{itemize}
+\item No se sincroniza con el \textit{thread} de la UI, por lo que en algunos casos es necesario agregar mecanismos para esperar a este \textit{thread}, por ejemplo un sleep de 100 milisegundos.
+
+\end{itemize}
+
+\subsubsection{Resumen}
+Robotium ha sido la herramienta más popular de testing funcional en Android, ya que lleva más de 4 años de desarrollo, con actualizaciones prácticamente de forma mensual. Existe una gran comunidad y variados ejemplos \cite{51} que facilitan la tarea a los desarrolladores que se están iniciando en el testing, lo cual no ocurre con otras herramientas.Por último, en Enero de este año \cite{52}, el fundador de Robotium lanzó una herramienta complementaria llamada Robotium Recorder, la cual permite grabar los tests que se realizan, aunque esta tiene un costo de 295 dólares por una licencia anual.  
+\newpage
+\subsection{Espresso}
+\subsubsection{Ventajas}
+\begin{itemize}
+\item Creado por Google basándose en Robotium.
+
+\item Fácil uso.
+
+\item Se sincroniza con el \textit{thread} de la UI.
+
+\item Los tests corren más rápido que en otras herramientas.
+\end{itemize}
+\subsubsection{Desventajas}
+\begin{itemize}
+\item Falta más documentación debido a que lleva sólo un año desde que se presentó en la conferencia Google I/O del 2013.
+\end{itemize}
+
+\subsubsection{Resumen}
+Es la última herramienta de testing que ha lanzado Google. Surgió por una necesidad dentro del equipo de Google de mejorar la forma en que se realizaba el testing funcional, ya que hasta ese momento ellos usaban Robotium. El desarrollo de Espresso fue influenciado en gran medida por Robotium, con la diferencia fundamental de que los tests se ejecutan sincronizados con el \textit{thread} de la UI, lo que le da una mayor estabilidad. Además, basándonos en los \textit{benchmarks} que lo comparan con Robotium \cite{53}, Espresso es tres veces más rápido.
+\newpage
+\subsection{Resumen General}
+Las tres herramientas mencionadas anteriormente son excelentes y cada una de ellas cuenta con ventajas sobre el resto. Por un lado está uiautomator, que es la única que permite interactuar con otras aplicaciones ya que los tests no están ligados a una \textit{Activity}. Mientras que Robotium y Espresso opacan a uiautomator en prácticamente todo el resto de características, en especial, en el fácil uso. Aunque todo depende de para que se deseen usar estas herramientas ya que todas son excelentes para realizar tests de caja negra, en donde no se tiene acceso o simplemente no se revisa el código fuente de la aplicación a la cuál se quieren realizar las pruebas. Por último cabe mencionar que Espresso es la más rápida de la tres, y que Robotium cuenta con la mejor documentación.  A continuación se presenta una tabla que muestra más claramente las ventajas y desventajas de cada una:
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+\textbf{Herramienta} & \textbf{Gratuito} & \textbf{Código Abierto} & \textbf{Madurez} & \textbf{Rápidez}\\
+\hline
+uiautomator & Si & No & Media & Baja \\
+\hline
+Robotium & Si & Si & Alta & Media \\
+\hline
+Espresso & Si & Si & Media & Alta \\
+\hline
+\end{tabular}
+\caption{a) Tabla comparativa entre herramientas que se enfocan en el testing funcional en Android.}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+\textbf{Herramienta} & \textbf{Documentación} & \textbf{Fácil Uso} & \textbf{Sincronizado con \textit{UI thread}}  \\
+\hline
+uiautomator & Escasa & No & No \\
+\hline
+Robotium & Abundante & Si & No \\
+\hline
+Espresso & Escasa & Si & Si \\
+\hline
+\end{tabular}
+\caption{b) Tabla comparativa entre herramientas que se enfocan en el testing funcional en Android.}
+\end{table}
+\newpage
+
+
+
+\section{Otras Herramientas de Testing}
+\subsection{Monkey}
+\subsubsection{Ventajas}
+\begin{itemize}
+\item Gratuito y de código abierto.
+
+\item Permite realizar tests, tanto de caja negra, como blanca.
+
+\item Actualización de versiones automática.
+
+\item Es posible llegar a mucha más gente, ya que se puede dejar abierta la opción de recibir versiones betas.
+
+\end{itemize}
+\subsubsection{Desventajas}
+\begin{itemize}
+\item Los usuarios testers deben ser miembros de un grupo en \textit{Google Groups} \cite{38} o una comunidad en \textit{Google+ Communities}\cite{39}.
+
+\item Al ser una herramienta nativa de Android, no es multiplataforma.
+
+\item El feedback de los usuarios es a través del grupo o comunidad a la que se tuvo que unir.
+
+\end{itemize}
+
+\subsubsection{Resumen}
+Esta es una excelente herramienta para cualquier desarrollador.
+
+\subsection{monkeyrunner}
+\subsubsection{Ventajas}
+\begin{itemize}
+\item Gratuito y de código abierto.
+
+\item Permite realizar tests, tanto de caja negra, como blanca.
+
+\item Actualización de versiones automática.
+
+\item Es posible llegar a mucha más gente, ya que se puede dejar abierta la opción de recibir versiones betas.
+
+\end{itemize}
+\subsubsection{Desventajas}
+\begin{itemize}
+\item Los usuarios testers deben ser miembros de un grupo en \textit{Google Groups} \cite{38} o una comunidad en \textit{Google+ Communities}\cite{39}.
+
+\item Al ser una herramienta nativa de Android, no es multiplataforma.
+
+\item El feedback de los usuarios es a través del grupo o comunidad a la que se tuvo que unir.
+
+\end{itemize}
+
+\subsubsection{Resumen}
+Esta es una excelente herramienta para cualquier desarrollador.
+
+\subsection{Spoon}
+\subsubsection{Ventajas}
+\begin{itemize}
+\item Gratuito y de código abierto.
+
+\item Permite realizar tests, tanto de caja negra, como blanca.
+
+\item Actualización de versiones automática.
+
+\item Es posible llegar a mucha más gente, ya que se puede dejar abierta la opción de recibir versiones betas.
+
+\end{itemize}
+\subsubsection{Desventajas}
+\begin{itemize}
+\item Los usuarios testers deben ser miembros de un grupo en \textit{Google Groups} \cite{38} o una comunidad en \textit{Google+ Communities}\cite{39}.
+
+\item Al ser una herramienta nativa de Android, no es multiplataforma.
+
+\item El feedback de los usuarios es a través del grupo o comunidad a la que se tuvo que unir.
+
+\end{itemize}
+
+\subsubsection{Resumen}
+Esta es una excelente herramienta para cualquier desarrollador.
+\newpage
 \section{Análisis Comparativo entre las Herramientas de Distribución de Versiones}
 \subsection{Google Play Console}
 \subsubsection{Ventajas}
@@ -28,21 +284,21 @@ En el siguiente capítulo se llevará a cabo la implementación de las más destacad
 \begin{itemize}
 \item Los usuarios testers deben ser miembros de un grupo en \textit{Google Groups} \cite{38} o una comunidad en \textit{Google+ Communities}\cite{39}.
 
-\item Al ser una herramienta enfocada sólamente en Android, no es multiplataforma.
+\item Al ser una herramienta nativa de Android, no es multiplataforma.
 
 \item El feedback de los usuarios es a través del grupo o comunidad a la que se tuvo que unir.
 
 \end{itemize}
 
 \subsubsection{Resumen}
-Esta es una excelente herramienta para cualquier desarrollador. Al utilizar la tienda oficial de Google, genera mucha más confianza a los usuarios testers. Además, al ser gratuita, es una de las mejores opciones con las que se cuenta, ya que es mucho más fácil llegar a más usuarios y tener un costo 0. Si se cuenta con una aplicación que es multiplataforma, tal vez se quiera tener a todos los usuarios de prueba en un mismo servicio por lo que esto podría ser un problema. Por último, la comunicación con los usuarios testers no es tan directa como en otros servicios.
+Esta es una excelente herramienta para cualquier desarrollador. Al utilizar la tienda oficial de Google, genera mucha más confianza a los usuarios testers. Además, al ser gratuita, es una de las mejores opciones con las que se cuenta, ya que es mucho más fácil llegar a más usuarios y tener un costo 0. Si se cuenta con una aplicación que es multiplataforma, tal vez se quiera tener a todos los usuarios de prueba en un mismo servicio por lo que eso podría ser un problema. Por último, la comunicación con los usuarios testers no es tan directa como en otros servicios ya que deben hacer llegar sus inquietudes a través del grupo o comunidad a la que tuvieron que unirse. 
 \subsection{HockeyApp}
 \subsubsection{Ventajas}
 \begin{itemize}
 
 \item Soporte para Android, iOS, Windows Phone y Mac OS.
 
-\item Usuarios pueden enviar feedback sobre la versión.
+\item Usuarios pueden enviar feedback sobre la versión de forma más directa.
 
 \item Se puede implementar el SDK para recibir reportes de crashes.
 
@@ -58,7 +314,7 @@ Esta es una excelente herramienta para cualquier desarrollador. Al utilizar la t
 \end{itemize}
 
 \subsubsection{Resumen}
-Es una muy buena herramienta para una aplicación que es multiplataforma. De esta forma, es posible tener a todos los usuarios de Android, iOS, Windows Phone y Mac registrados en el mismo servicio. Especial para grupos pequeños de tester, con los cuáles se pueden tener una comunicación directa. Los precios de los planes van desde los 10 dólares mensuales, en que se permite tener hasta 5 aplicaciones, hasta los 120 dólares, en que se permiten 120 aplicaciones.
+Es una muy buena herramienta para una aplicación que es multiplataforma. De esta forma, es posible tener a todos los usuarios de Android, iOS, Windows Phone y Mac registrados en el mismo servicio. Especial para grupos pequeños de testers, con los cuáles se pueden tener una comunicación directa a través de la plataforma. Los precios de los planes van desde los 10 dólares mensuales, en que se permite tener hasta 5 aplicaciones, hasta los 120 dólares, en que se permiten 120 aplicaciones. Además cuenta con un SDK que incluye un servicio para la recepción de crashes, aunque a este le falta madurez en comparación con las herramientas especializadas en ello.
 \subsection{AppBlade}
 \subsubsection{Ventajas}
 \begin{itemize}
@@ -99,17 +355,17 @@ Si bien, ofrece prácticamente las mismas características que HockeyApp, le falta
 
 \item Algunos usuarios reciben dinero por los test que realizan, por lo que el feedback que se entrega es más confiable.
 
-\item Cuenta con un SDK sólo para iOS que permite grabar la pantalla del usuario y al usuario.
-
 \end{itemize}
 \subsubsection{Desventajas}
 \begin{itemize}
-\item De pago, se ofrece una opción gratuita, pero es necesario anexar una tarjeta de crédito.
+\item De pago, se ofrece una opción gratuita, pero es necesario anexar una tarjeta de crédito y los testers son usuarios de poca o nula reputación.
+
+\item Cuenta con un SDK sólo para iOS que permite grabar la pantalla del usuario y al usuario.
 
 \end{itemize}
 
 \subsubsection{Resumen}
-Esta plataforma no sólo se enfoca en la distribución de versiones beta, sino que también busca realizar tests con los usuarios, incentivándolos con pagos. Estos tests constan de una serie de tareas que debe desarrollar el usuario, para corroborar que la aplicación está funcionando correctamente y que no hay problemas de usabilidad. Una vez desarrolladas estas tareas, el usuario debe responder algunas preguntas. Además, si se implementa su SDK, es posible grabar la pantalla del usuario y al usuario mientras realiza las pruebas, el único problema de esto es que sólo esta disponible para iOS. Por último, los desarrolladores pueden optar por la opción gratuita, en la que pueden crear test, pero estos no tendrán recompensas para los testers, por lo que se deduce que estos no estarán tan interesados en el producto. En la versión de pago, con la que se tiene acceso a testers de más confianza, se pagan 16.15 dólares mensuales, de los cuales 10 dólares van destinados al tester.
+Esta plataforma no sólo se enfoca en la distribución de versiones beta, sino que también busca realizar tests con los usuarios, incentivándolos con pagos. Estos tests constan de una serie de tareas que debe desarrollar el usuario, para corroborar que la aplicación está funcionando correctamente y que no hay problemas de usabilidad. Una vez desarrolladas estas tareas, el usuario debe responder algunas preguntas. Además, si se implementa su SDK, es posible grabar la pantalla del usuario y al usuario mientras realiza las pruebas, el problema de esta característica es que sólo esta disponible para iOS. Por último, los desarrolladores pueden optar por la opción gratuita, en la que pueden crear test, pero estos no tendrán recompensas en dinero para los testers, por lo que se deduce que estos no estarán tan interesados en el producto. En la versión de pago, con la que se tiene acceso a testers de más confianza, se pagan 16.15 dólares mensuales, de los cuales 10 dólares van destinados al tester.
 \subsection{UserTesting}
 \subsubsection{Ventajas}
 \begin{itemize}
@@ -137,37 +393,79 @@ Esta plataforma no sólo se enfoca en la distribución de versiones beta, sino que
 Al igual que The Beta Family esta plataforma se enfoca en la distribución de versiones beta y en tests con los usuarios. Estos tests constan de una serie de tareas que debe desarrollar el usuario, mientras graba la pantalla del dispositivo, para corroborar que la aplicación está funcionando correctamente, que no hay problemas de usabilidad y escuchar las distintas reacciones del tester al cumplir con las tareas encomendadas. Al finalizar, el usuario debe responder algunas preguntas realizadas con la experiencia realizada. En esta platafoma todos los tests realizados son grabados por los usuarios y normalmente el tiempo que transcurre entre que el desarrollador crea un nuevo test, y los usuarios lo realizan no superan una hora. Debido a la alta reputación del servicio, el precio es uno de los posibles frenos dependiendo del presupuesto con el que se cuenta, ya que por cada usuario se pagan 50 dólares mensuales, por lo que es necesario enfocar bien los test que se desean realizar, y entender bien lo que se quiere medir con cada proceso.
 
 \subsection{Resumen General}
-Es necesario hacer una distinción clara entre las herramientas que se enfocan en distribución y en las que además ofrecen la opción de realizar tests que no son automatizados, con usuarios reales. El concepto de madurez se refiere al nivel de desarrollo con el que cuenta la plataforma. Esto es muy importante al momento de elegir un servicio, ya que si este no es maduro, robusto y de calidad, es muy probable que generen una frustración entre los usuarios que usarán la aplicación, lo cual puede influir en la percepción que tendrán al momento de entregar feedback o de realizar los testing. A continuación se presentan dos tablas, las cuales intentan sintetizar y presentar de una forma más explicativa las ventajas y desventajas con las que cuenta cada herramienta:
+Es necesario hacer una distinción clara entre las herramientas que se enfocan en distribución y en las que además ofrecen la opción de realizar tests no automatizados, con usuarios reales, es por ello que la comparación se divide en dos tablas distintas. El concepto de madurez se refiere al nivel de desarrollo con el que cuenta la plataforma. Esto es muy importante al momento de elegir un servicio, ya que si este no es maduro, robusto y de calidad, es muy probable que genere una frustración entre los usuarios, antes que estos puedan usar la aplicación, lo cual puede influenciar la percepción que tendrán al momento de entregar feedback o de realizar los testing. A continuación se presenta la tabla de las herramientas que se enfocan en distribución, la cual intenta sintetizar y presentar de forma más clara las ventajas y desventajas de cada una:
 \begin{table}[h!]
 \centering
 \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
-\textbf{Herramienta} & \textbf{Gratuita} & \textbf{Madurez} & \textbf{Plataformas} & \textbf{Feedback} & \textbf{Distribución} \\
+\textbf{Herramienta} & \textbf{Precio} & \textbf{Madurez} & \textbf{Multiplataforma} \\
 \hline
-Google Play Console & Si & Alta & Android & No & Masiva\\
+Google Play Console & 0 USD & Alta & No \\
 \hline
-HockeyApp & No  & Alta & Múltiples & Si & Limitada\\
+HockeyApp & 10 USD $\ast$  & Alta & Si \\
 \hline
-AppBlade & No & Baja & Múltiples & Si &  Limitada\\
+AppBlade & 1 USD por usuario $\ast \ast$ & Baja & Si \\
 \hline
 \end{tabular}
-\caption{Tabla comparativa entre herramientas que se enfocan en la Distribución de Versiones en Android.}
+\caption{a) Tabla comparativa entre herramientas que se enfocan en la Distribución de Versiones en Android.}
 \end{table}
 
 \begin{table}[h!]
 \centering
 \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
-\textbf{Herramienta} & \textbf{Gratuita} & \textbf{Precio} & \textbf{Madurez} & \textbf{Plataformas} & \textbf{Testing con Video} \\
+\textbf{Herramienta} & \textbf{Feedback} & \textbf{Distribución}  \\
 \hline
-The Beta Family & No & Bajo & Baja & Múltiples & No\\
+Google Play Console &  No & Masiva\\
 \hline
-UserTesting & No & Alto & Alta & Múltiples & Si \\
+HockeyApp & Si & Limitada\\
+\hline
+AppBlade & Si &  Limitada\\
 \hline
 \end{tabular}
-\caption{Tabla comparativa entre herramientas que se enfocan tanto en Distribución, como Testing de Versiones en Android.}
+\caption{b) Tabla comparativa entre herramientas que se enfocan en la Distribución de Versiones en Android.}
 \end{table}
 
+\noindent $\ast$ 
+\begin{footnotesize}Este es el plan más barato que ofrece HockeyApp. El pago de 10 USD es mensual y permite tener infinitos usuarios invitados, en hasta 5 aplicaciones.
+\end{footnotesize}\cite{40}\\
+\noindent$\ast \ast$
+\begin{footnotesize}Este es el plan más barato que ofrece AppBlade. Si el desarrollador tiene menos de 25 usuarios, el valor es gratuito. Después de pasar los 25 usuarios se debe pagar 1 USD por usuario, de forma mensual.
+\end{footnotesize} \cite{41}
+\newpage
+La inclusión de un video en el proceso de testing es muy útil para poder ver las reacciones del usuario y la interacción que tienen con la aplicación. Además, como en Android existen muchos dispositivos, lo que el usuario ve puede variar dependiendo del tamaño de la pantalla, el sistema operativo que tiene y el fabricante del dispositivo, por lo que visualizar la aplicación en otros dispositivos es fundamental para entregar una buena experiencia a la mayor cantidad de usuarios posibles. A continuación se presenta la tabla correspondiente a las herramientas que combinan la distribución y el testing:
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+\textbf{Herramienta} & \textbf{Precio} & \textbf{Madurez} & \textbf{Multiplataforma} \\
+\hline
+The Beta Family & 16.15 USD $\ast$ & Baja & Si\\
+\hline
+UserTesting & 50 USD $\ast \ast$ & Alta & Si \\
+\hline
+\end{tabular}
+\caption{a) Tabla comparativa entre herramientas que se enfocan tanto en Distribución, como Testing de Versiones en Android.}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+\textbf{Herramienta} & \textbf{Testing incluye video} & \textbf{Distribución}  \\
+\hline
+The Beta Family & No & Limitada \\
+\hline
+UserTesting & Si & Limitada  \\
+\hline
+\end{tabular}
+\caption{b) Tabla comparativa entre herramientas que se enfocan tanto en Distribución, como Testing de Versiones en Android.}
+\end{table}
+
+\noindent $\ast$
+\begin{footnotesize}The Beta Family también ofrece un plan gratuito, aunque la reputación que tienen esos usuarios en la plataforma es muy baja. El plan que sigue ofrece usuarios con una reputación alta y el pago por usuario es de 16.15 USD, de forma mensual.\end{footnotesize}\cite{46}\\
+\noindent$\ast \ast$
+\begin{footnotesize}UserTesting ofrece la venta de créditos. Un crédito tiene un costo de 20 USD y permite realizar un testing con un usuario.\end{footnotesize} \cite{47}
 \newpage
 \section{Análisis Comparativo entre las Herramientas de Reporte de Crashes}
 \subsection{Google Play Console}
@@ -293,28 +591,28 @@ Google Analytics es una herramienta gratuita que está más ligada al tracking de 
 \end{itemize}
 
 \subsubsection{Resumen}
-La gran ventaja que ofrece ACRA sobre el resto es que es una biblioteca de código abierto, por lo que si no nos gusta algo podemos cambiarlo, o podemos agregar otras funcionalidades. Esto le juega a favor y en contra ya que también es necesario implementar una aplicación web para la visualización de los reportes. Antes, el almacenamiento de los reportes de crashes se realizaba a través de Google Docs, pero desde la última actualización de Google Forms, el uso de Google Docs como almacenamiento para los reportes que entregaba ACRA quedó obsoleto. 
+La gran ventaja que ofrece ACRA sobre el resto es que es una biblioteca de código abierto, por lo que si no nos gusta algo podemos cambiarlo, o podemos agregar otras funcionalidades. Esto le juega a favor y en contra ya que también es necesario que el desarrollador implemente una aplicación web para la visualización de los reportes. Antes, el almacenamiento de los reportes de crashes se realizaba a través de Google Docs, pero desde la última actualización de Google Forms, el uso de Google Docs como almacenamiento para los reportes que entregaba ACRA quedó obsoleto. 
 \newpage
 
 \subsection{Resumen General}
-Google Play Console es una buena herramienta de inicio, pero es absolutamente necesaria la implementación de una herramienta que asegure la recepción de todos los reportes de crashes. Crittercism y Bugsense son dos plataformas excepcionales, que permiten realizar esta tarea y muchas otras. ACRA cuenta con su ventaja de ser de código abierto, pero el simple hecho de que el desarrollador deba implementar el servicio web para la visualización de los crashes es un paso adicional y la descarta como una alternativa de fácil integración. Por otro lado, Google Analytics ofrece variadas estadísticas e información extremadamente útil, que puede servir para mejorar problemas de performance y usabilidad, pero su fuerte no son los reportes de crashes, ya que tener un día de retraso significa estar un día completo sin saber que está pasando con la aplicación.
+Google Play Console es una buena herramienta de inicio, pero es absolutamente necesaria la implementación de una herramienta que asegure la recepción de todos los reportes de crashes. Crittercism y Bugsense son dos plataformas excepcionales, que permiten realizar esta tarea, aunque son de pago. ACRA cuenta con la ventaja de ser de código abierto, pero el simple hecho de que el desarrollador deba implementar el servicio web para la visualización de los crashes es un paso adicional y la descarta como una alternativa de fácil integración. Por otro lado, Google Analytics ofrece variadas estadísticas e información extremadamente útil, que puede servir para mejorar problemas de performance y usabilidad, pero su fuerte no son los reportes de crashes, ya que tener un día de retraso significa estar un día completo sin saber que está pasando con la aplicación.
 A continuación se presenta una tabla que intenta simplificar las ventajas y desventajas que posee cada herramienta:
 
 \begin{table}[h!]
 \centering
 \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
-\textbf{Herramienta} & \textbf{Gratuita} & \textbf{Precio} & \textbf{Plataformas} & \textbf{Detalle de reportes} \\
+\textbf{Herramienta} & \textbf{Gratuita} & \textbf{Precio} & \textbf{Multiplataforma} \\
 \hline
-Google Play Console & Si & 0 USD & Android & Medio\\
+Google Play Console & Si & 0 USD & No\\
 \hline
-Crittercism & No  & 0 - 6000 USD & Múltiples & Alto\\
+Crittercism & No  & 24 USD $\ast$ & Si\\
 \hline
-Bugsense & No & 0 - 1110 USD & Múltiples & Medio \\
+Bugsense & No & 19 USD $\ast \ast$ & Si \\
 \hline
-Google Analytics & Si & 0 USD & Múltiple & Medio\\
+Google Analytics & Si & 0 USD & Si\\
 \hline
-ACRA & Si & 0 USD & Android & Alto \\
+ACRA & Si & 0 USD & No \\
 \hline
 \end{tabular}
 \caption{a) Tabla comparativa entre herramientas que se enfocan en los Reportes de Crashes.}
@@ -324,19 +622,26 @@ ACRA & Si & 0 USD & Android & Alto \\
 \centering
 \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
-\textbf{Herramienta} & \textbf{Madurez} & \textbf{Integración} \\
+\textbf{Herramienta} & \textbf{Madurez} & \textbf{Integración} & \textbf{Detalle de reportes}\\
 \hline
-Google Play Console & Alta & Ya Implementada\\
+Google Play Console & Alta & Ya Implementada & Medio\\
 \hline
-Crittercism & Alta & Simple\\
+Crittercism & Alta & Simple & Alto\\
 \hline
-Bugsense & Alta &   Simple\\
+Bugsense & Alta &   Simple & Medio\\
 \hline
-Google Analytics & Alta &  Simple\\
+Google Analytics & Alta &  Simple & Medio\\
 \hline
-ACRA & Media &  Compleja\\
+ACRA & Media &  Compleja & Medio\\
 \hline
 \end{tabular}
 \caption{b) Tabla comparativa entre herramientas que se enfocan en los Reportes de Crashes.}
 \end{table}
+
+\noindent $\ast$ 
+\begin{footnotesize} Crittercism ofrece un plan gratuito, aunque con algunas limitaciones. Si se quieren tener algunas de las características más avanzadas se deben pagar 24 USD de forma mensual para tener el plan básico.
+\end{footnotesize}\cite{30}\\
+\noindent$\ast \ast$
+\begin{footnotesize}Bugsense ofrece un plan gratuito, aunque con algunas limitaciones. Si se quieren tener algunas de las características más avanzadas se deben pagar 19 USD de forma mensual para tener el plan básico.
+\end{footnotesize} \cite{32}
 % ---------------------------------------------------------------------------------------------------------------

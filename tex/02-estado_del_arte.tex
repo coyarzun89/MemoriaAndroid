@@ -53,9 +53,9 @@ El entorno de ejecución de Android también está compuesto por bibliotecas, por l
 
 \item \textbf{Marco o Framework de Aplicaciones:} La tercera capa está compuesta por todas las clases y servicios que se utilizan al momento de programar aplicaciones. Los compontentes que posee son:
 \begin{itemize}
-\item \textbf{Administrado de actividades (Activity Manager):} Gestiona la pila de actividades de la aplicación, como también su ciclo de vida.
+\item \textbf{Administrado de \textit{Activities} (Activity Manager):} Gestiona la pila de \textit{Activities} de la aplicación, como también su ciclo de vida. En el desarrollo en Android, se llama \textit{Activity} a cada una de las pantallas con las que el usuario interactúa. Por lo que se puede asumir que una aplicación en la mayoría de los casos va a tener varias \textit{Activities}. Estas son uno de los componentes más importantes dentro de una aplicación.
 
-\item \textbf{Administrador de ventanas (Windows Manager):} Organiza lo que se mostrará en pantalla. Crea las superficies en la pantalla, que posteriormente estarán ocupadas por las actividades.
+\item \textbf{Administrador de ventanas (Windows Manager):} Organiza lo que se mostrará en pantalla. Crea las superficies en la pantalla, que posteriormente estarán ocupadas por las \textit{Activities}.
 
 \item \textbf{Proveedor de contenidos (Content Provider):} Encapsula los datos que pueden ser compartidos por las aplicaciones, facilitando la comunicación entre éstas.
 
@@ -150,7 +150,7 @@ Con tantos dispositivos y sistemas operativos vigentes, asegurar la calidad de l
 Los test unitarios aseguran que el código funcione como se espera. También son muy útiles para asegurar que el código sigue funcionando correctamente después de hacer cambios en otras partes del proyecto, al momento de arreglar bugs o añadir nuevas funcionalidades.
 
 \paragraph{Testing de User Interface (UI)}
-\par Además de testear los componentes individuales que permiten el funcionamiento de la aplicación, como actividades y servicios, es muy importante testear el comportamiento de la interfaz de la aplicación cuando está en funcionamiento en un dispositivo. El testing de UI asegura que la aplicación se comportará de forma correcta en respuesta de acciones que realice el usuario en un dispositivo, tales como escribir en el teclado, presionar botones o imágenes, entre otros controles. Se debe tener consideración especial con los test que involucran elementos de UI, ya que únicamente la hebra principal tiene permisos para alterar la UI en Android.\\
+\par Además de testear los componentes individuales que permiten el funcionamiento de la aplicación, como \textit{Activities} y servicios, es muy importante testear el comportamiento de la interfaz de la aplicación cuando está en funcionamiento en un dispositivo. El testing de UI asegura que la aplicación se comportará de forma correcta en respuesta de acciones que realice el usuario en un dispositivo, tales como escribir en el teclado, presionar botones o imágenes, entre otros controles. Se debe tener consideración especial con los test que involucran elementos de UI, ya que únicamente la hebra principal tiene permisos para alterar la UI en Android.\\
 
 Un estrategia común es testear de forma manual la UI, verificando que la aplicación se comporta como se espera al realizar una serie de acciones. Sin embargo, este enfoque puede consumir mucho tiempo y ser bastante tedioso, como también, se pueden pasar por alto algunos errores. Un método más eficiente y confiable sería automatizar el testing de la interfaz con algun framework que facilite esta tarea.
 
@@ -173,21 +173,21 @@ La lista anterior describe los posibles tests que hoy en día existen para asegur
 \paragraph{Cambios de orientación}
 Para dispositivos que soportan múltiples orientaciones, Android detecta los cambios de orientación cuando el usuario rota el dispositivo, dejándolo en \textit{landscape} (posición horizontal) en vez de \textit{portrait} (posición vertical).\\
 
-Cuando ocurre esto, el comportamiento por defecto es destruir y recomenzar la Activity. Se deberían tener en cuenta las siguientes preguntas:
+Cuando ocurre esto, el comportamiento por defecto es destruir y recomenzar la \textit{Activity}. Se deberían tener en cuenta las siguientes preguntas:
 \begin{itemize}
 \item ¿Se dibuja de forma correcta la pantalla?
 
-\item ¿La aplicación mantiene el estado? La Activity no debería perder nada que el usuario haya ingresado en la UI.
+\item ¿La aplicación mantiene el estado? La \textit{Activity} no debería perder nada que el usuario haya ingresado en la UI.
 \end{itemize}
 
 \paragraph{Cambios de configuración}
-También pueden ocurrir otros cambios más generales en el sistema, como un cambio de idioma. Este tipo de cambios desencadena el comportamiento por defecto de destruir y recomenzar la Activity. 
+También pueden ocurrir otros cambios más generales en el sistema, como un cambio de idioma. Este tipo de cambios desencadena el comportamiento por defecto de destruir y recomenzar la \textit{Activity}. 
 
 \paragraph{Dependencias de fuentes externas}
 Si la aplicación depende de acceso a internet, o usa GPS, entonces se debería testear qué pasa cuando estos recursos no están disponibles.
 
 \paragraph{Cambios en segundo plano}
-Si la aplicación está inactiva y ya ha pasado a segundo plano, lo más probable es que el sistema destruya la o las Activities de la aplicación para dar memoria a otras aplicaciones que esten corriendo actualmente. Es por ello que es necesario testear el ciclo de vida de la Activity para corroborar si se destruye y recomienza de forma exitosa, sin pérdida del estado actual.
+Si la aplicación está inactiva y ya ha pasado a segundo plano, lo más probable es que el sistema destruya la o las \textit{Activities} de la aplicación para dar memoria a otras aplicaciones que esten corriendo actualmente. Es por ello que es necesario testear el ciclo de vida de la \textit{Activity} para corroborar si se destruye y recomienza de forma exitosa, sin pérdida del estado actual.
 
 Para el caso de testing de clases en aplicaciones Android, es posible que ocurran dos casos: que las clases realicen llamadas a la API de Android o que sólamente usen código Java.
 
@@ -321,7 +321,7 @@ Los crashes se entienden como la condición en la que una aplicación deja de func
 
 \begin{figure}[h!]
 \centering
-      \includegraphics[width=10cm]{Imagenes/crash_report}
+      \includegraphics[width=9cm]{Imagenes/crash_report}
 \caption{Concepto de Google sobre como el proceso de reportar crashes hacen al usuario feliz. \cite{18}}
 \label{fig:Fig13}
 \end{figure}

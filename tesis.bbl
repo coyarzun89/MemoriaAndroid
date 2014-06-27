@@ -39,6 +39,14 @@ Android.
 \newblock $<$\url{http://developer.android.com/about/dashboards}$>$.
 \newblock [Consulta: 20 de Abril].
 
+\bibitem{50}
+Android.
+\newblock Android developers blog: Android sdk tools, revision 21.[en l\'inea].
+\newblock
+  $<$\url{http://android-developers.blogspot.com.es/2012/11/android-sdk-tools-revision-21.html
+  /}$>$.
+\newblock [Consulta: 23 de Junio].
+
 \bibitem{11}
 Android.
 \newblock Check system version at runtime [en l\'inea].
@@ -51,6 +59,14 @@ Android.
 \newblock Great devices with the best of android [en l\'inea].
 \newblock $<$\url{http://www.android.com/phones-and-tablets}$>$.
 \newblock [Consulta: 20 de Abril].
+
+\bibitem{48}
+Android.
+\newblock monkeyrunner [en l\'inea].
+\newblock
+  $<$\url{http://developer.android.com/tools/help/monkeyrunner_concepts.html
+  /}$>$.
+\newblock [Consulta: 21 de Junio].
 
 \bibitem{17}
 Android.
@@ -110,10 +126,24 @@ Bugsense.
 \newblock $<$\url{https://www.bugsense.com/docs/android /}$>$.
 \newblock [Consulta: 11 de Mayo].
 
+\bibitem{45}
+Bugsense.
+\newblock Bugsense: New insight boxes \& real time goodness [en l\'inea].
+\newblock
+  $<$\url{http://blog.bugsense.com/post/79366063424/new-insight-boxes-real-time-goodness
+  /}$>$.
+\newblock [Consulta: 14 de Junio].
+
 \bibitem{31}
 Crittercism.
 \newblock Crittercism - android sdk documentation[en l\'inea].
 \newblock $<$\url{http://docs.crittercism.com/android/android.html /}$>$.
+\newblock [Consulta: 11 de Mayo].
+
+\bibitem{30}
+Crittercism.
+\newblock Crittercism [en l\'inea].
+\newblock $<$\url{http://www.crittercism.com/ /}$>$.
 \newblock [Consulta: 11 de Mayo].
 
 \bibitem{36}
@@ -139,6 +169,20 @@ Erikrespo.
 \newblock
   $<$\url{http://en.wikipedia.org/wiki/File:Android_historical_version_distribution_-_vector.svg}$>$.
 \newblock [Consulta: 4 de Mayo.
+
+\bibitem{46}
+The~Beta Family.
+\newblock The beta family [en l\'inea].
+\newblock $<$\url{https://thebetafamily.com/ /}$>$.
+\newblock [Consulta: 21 de Junio].
+
+\bibitem{53}
+Steven~Mark Ford.
+\newblock Android espresso vs robotium - benchmarks.[en l\'inea].
+\newblock
+  $<$\url{http://www.stevenmarkford.com/android-espresso-vs-robotium-benchmarks/
+  /}$>$.
+\newblock [Consulta: 23 de Junio].
 
 \bibitem{42}
 GitHub.
@@ -192,6 +236,13 @@ HockeyApp.
 \newblock $<$\url{http://hockeyapp.net/ /}$>$.
 \newblock [Consulta: 01 de Junio].
 
+\bibitem{49}
+JUnit.
+\newblock Junit, a programmer\-oriented testing framework for java.[en
+  l\'inea].
+\newblock $<$\url{http://junit.org/ /}$>$.
+\newblock [Consulta: 21 de Junio].
+
 \bibitem{37}
 Scott Knaster.
 \newblock Google i/o 2013: For the developers [en l\'inea].
@@ -223,12 +274,20 @@ OpenSignal.
 \newblock $<$\url{http://opensignal.com/reports/fragmentation.php}$>$.
 \newblock [Consulta: 25 de Abril].
 
-\bibitem{28}
-Samsung.
-\newblock Remote test lab: la herramienta que todo desarrollador necesita [en
+\bibitem{51}
+Robotium.
+\newblock Robotium, the world's leading android test automation framework.[en
   l\'inea].
-\newblock $<$\url{http://www.europe-samsung.com/smsdev/Home/Articulo/66 /}$>$.
-\newblock [Consulta: 4 de Mayo].
+\newblock $<$\url{https://code.google.com/p/robotium/ /}$>$.
+\newblock [Consulta: 23 de Junio].
+
+\bibitem{52}
+SDTimes.
+\newblock Robotium tech launches test-case recorder integrated with android
+  framework .[en l\'inea].
+\newblock $<$\url{http://sdt.bz/content/article.aspx?ArticleID=67598&page=1
+  /}$>$.
+\newblock [Consulta: 23 de Junio].
 
 \bibitem{27}
 Square.
@@ -243,6 +302,12 @@ staffcreativa.
   l\'inea].
 \newblock $<$\url{http://blog.staffcreativa.pe/android-google/}$>$.
 \newblock [Consulta: 4 de Mayo].
+
+\bibitem{47}
+UserTesting.
+\newblock Usertesting [en l\'inea].
+\newblock $<$\url{https://www.usertesting.com/ /}$>$.
+\newblock [Consulta: 21 de Junio].
 
 \bibitem{15}
 \'Angel~J. Vico.

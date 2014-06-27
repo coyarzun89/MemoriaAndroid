@@ -11,17 +11,17 @@ Ahora que ya se conoce lo básico sobre testing y se han visto las herramientas q
 \subsection{Herramientas de testing provistas por Android}
 Android provee un buen framework de testing \cite{20} para hacer pruebas en varios aspectos de la aplicación. Los elementos claves son:
 \begin{itemize}
-\item Los Test suites (conjuntos de prueba) de Android están basados en JUnit. Se puede usar JUnit puro para testear una clase que no hace llamadas a la API de Android, o las extensiones de JUnit para Android si se desea testear componentes de Android. 
+\item Los \textit{test suites} (conjuntos de prueba) de Android están basados en JUnit. Se puede usar JUnit puro para testear una clase que no hace llamadas a la API de Android, o las extensiones de JUnit para Android si se desea testear componentes de Android. 
 
 \item Las extensiones de JUnit proveen clases con tests específicos para componentes. Estas clases entregan métodos para crear \textit{mocking objects} (objetos simulados) y métodos que ayudan a controlar el ciclo de vida de los componentes.
 
-\item El SDK (Software Development Kit) de Android también provee herramientas para realizar testing a la UI, como \textit{monkeyrunner}.
+\item El SDK (Software Development Kit) de Android también provee herramientas para realizar testing a la UI, como monkeyrunner.
 \end{itemize}
 
 A continuación se revisará en detalle cada una de las herramientas relacionadas a testing del SDK:
 
-\subsubsection{JUnit}
-El testing de Android se basa en JUnit. Actualmente la API de testing soporta JUnit 3. Este requiere que las clases de test hereden de la clase \textit{junit.framework.TestCase}. Además, en JUnit 3 los métodos de testing deben comenzar con el prefijo \textit{test}. También se debe llamar al método \textit{setUp()} para configurar el test y al método \textit{tearDown()} para finalizar el test.\\
+\subsubsection{JUnit \cite{49}}
+El testing en Android se basa en JUnit. Actualmente la API de testing soporta JUnit 3. Este requiere que las clases de test hereden de la clase \textit{junit.framework.TestCase}. Además, en JUnit 3 los métodos de testing deben comenzar con el prefijo \textit{test}. También se debe llamar al método \textit{setUp()} para configurar el test y al método \textit{tearDown()} para finalizar el test.\\
 
 Es una buena práctica, al realizar testing en Android, tener un método llamado \textit{testPreconditions()} que se encargue de corroborar las precondiciones para cada uno de los test. Si este método falla, se sabe inmediatamente que las suposiciones para los otros test no se han cumplido.\\
 
@@ -29,35 +29,34 @@ Se puede usar la clase \textit{TestCase} de JUnit para hacer testing unitario en
 
 La clase \textit{Assert} de JUnit es usada para mostrar los resultados de los test. Los métodos \textit{assert} comparan los valores que se esperan de un test con los valores reales y se lanza una excepción si la comparación falla. Android también provee una clase para \textit{assertions} que extiende los posibles tipos de comparaciones, y otra clase de \textit{assertions} para testear la UI.
 
-\subsubsection{Instrumentation}
+\subsubsection{Instrumentation \cite{20}}
 La API de testing de Android provee interacciones entre los componentes de Android y el ciclo de vida de la aplicación. Estas interacciones son realizadas a través de la API Instrumentation, que permite a los tests controlar el ciclo de vida y los eventos de interacción del usuario.\\
 
-Normalmente, un componente de Android se ejecuta en un ciclo de vida determinado por el sistema. Por ejemplo, el ciclo de vida de un objeto \textit{Activity} comienza cuando este es activado por un \textit{Intent}. El método \textit{onCreate()} es llamado, seguido del método \textit{onResume()}. Cuando el usuario abre otra aplicación, el método \textit{onPause()} es llamado. Si la Actividad llama al método \textit{finish()}, entonces el método \textit{onDestroy()} también es llamado. La API de Android no provee un forma de llamar estos métodos directamente, pero se puede hacer a través de \textit{Instrumentation}.\\
+Normalmente, un componente de Android se ejecuta en un ciclo de vida determinado por el sistema. Por ejemplo, el ciclo de vida de un objeto \textit{Activity} comienza cuando este es iniciado por un \textit{Intent}. El método \textit{onCreate()} es llamado, seguido del método \textit{onResume()}. Cuando el usuario abre otra aplicación, el método \textit{onPause()} es llamado. Si la \textit{Activity} llama al método \textit{finish()}, entonces el método \textit{onDestroy()} también es llamado. La API de Android no provee un forma de llamar estos métodos directamente, pero se puede hacer a través de Instrumentation.\\
 
-Únicamente una clase de test basada en \textit{Instrumentation} permite enviar eventos de teclado o toques de pantalla a la aplicación bajo test. Por ejemplo, se puede testear una llamada al método \textit{getActivity()}, el cuál comienza una actividad y retorna la actividad que está siendo testeada. Después se puede llamar al método \textit{finish()}, seguido por un método \textit{getActivity()} nuevamente, y así poder testear si la aplicación restaura su estado de forma correcta.\\
+Únicamente una clase de test basada en \textit{Instrumentation} permite enviar eventos de teclado o toques de pantalla a la aplicación bajo test. Por ejemplo, se puede testear una llamada al método \textit{getActivity()}, el cuál comienza una \textit{Activity} y retorna la \textit{Activity}  que está siendo testeada. Después se puede llamar al método \textit{finish()}, seguido por un método \textit{getActivity()} nuevamente, y así poder testear si la aplicación restaura su estado de forma correcta.\\
 
-El sistema ejecuta todos los componentes de una aplicación en el mismo proceso. Se puede permitir a algunos componentes, tales como \textit{Content Providers}, ejecutarse en un proceso separado, pero no se puede forzar a una aplicación a ejecutarse en el mismo proceso en el que otra aplciación esta ejecutándose.\\
+El sistema ejecuta todos los componentes de una aplicación en el mismo proceso. Se puede permitir a algunos componentes, tales como \textit{Content Providers}, ejecutarse en un proceso separado, pero no se puede forzar a una aplicación a ejecutarse en el mismo proceso en el que otra aplciación está ejecutándose.\\
 
-\subsubsection{Simulando objetos (Mock objects)}
-Android entrega clases para crear objetos llamados \textit{mock objects}, que son objetos de sistema simulados como Context, ContentProvider, ContentResolver y Service. Algunos tests también proveen objetos simulados de Intent. Se pueden usar estos \textit{mocks} para aislar los tests del resto del sistema y facilitar la inyección de dependencias. Estas clases se encuentran en los paquetes \textit{android.test} y \textit{android.test.mock}.\\
+\subsubsection{Simulando objetos (Mock objects) \cite{20}}
+Android entrega clases para crear objetos llamados \textit{mock objects}, que son objetos de sistema simulados como \textit{Context, ContentProvider, ContentResolver} y \textit{Service}. Algunos tests también proveen objetos simulados de Intent. Se pueden usar estos \textit{mocks} para aislar los tests del resto del sistema y facilitar la inyección de dependencias. Estas clases se encuentran en los paquetes \textit{android.test} y \textit{android.test.mock}.\\
 
-Por ejemplo se puede usar MockContext en vez de Context. La clase \textit{RenamingDelegatingContext} entrega las llamadas a un contexto dado y ayuda a la base de datos y a las operaciones con archivos agregando un prefijo a todos los nombres de los archivos. De esta forma se pueden testear compontentes sin afectar la base de datos del sistema de archivos de un dispositivo Android.
+Por ejemplo se puede usar \textit{MockContext} en vez de \textit{Context}. La clase \textit{RenamingDelegatingContext} entrega las llamadas a un contexto dado y ayuda a la base de datos y a las operaciones con archivos agregando un prefijo a todos los nombres de los archivos. De esta forma se pueden testear compontentes sin afectar la base de datos del sistema de archivos de un dispositivo Android.
 
-\subsubsection{uiautomator}
-El SDK de Android contiene la biblioteca \textit{uiautomator} para testear y ejecutar tests a la interfaz gráfica. Esto fue implementado a partir de la API 16 \cite{19}.
+\subsubsection{uiautomator \cite{19}}
+El SDK de Android contiene la biblioteca uiautomator para testear y ejecutar tests a la interfaz gráfica. Esto fue implementado a partir de la API 16.
 
-Los proyectos de test de \textit{uiautomator} son proyectos en Java, en donde la biblioteca de JUnit 3, junto con los archivos uiautomator.jar y android.jar son agregados a la compilación. 
+Los proyectos de test de uiautomator son proyectos en Java, en donde la biblioteca de JUnit 3, junto con los archivos \textit{uiautomator.jar} y \textit{android.jar} son agregados a la compilación. 
 
-Además esta biblioteca provee la clase UiDevice que permite la comunicación con el dispositivo, la clase UiSelector para buscar elementos en la pantalla y la clase UiObject que presenta los elementos de la interfaz. La clase UiCollection permite seleccionar un número de elementos de la interfaz gráfica al igual que la clase UiScrollable permite hacer scroll en una vista apra encontrar un elemento.
+Además esta biblioteca provee la clase \textit{UiDevice} que permite la comunicación con el dispositivo, la clase \textit{UiSelector} para buscar elementos en la pantalla y la clase \textit{UiObject} que presenta los elementos de la interfaz. La clase \textit{UiCollection} permite seleccionar un número de elementos de la interfaz gráfica al igual que la clase \textit{UiScrollable} permite hacer scroll en una vista para encontrar un elemento.
 
-\subsubsection{uiautomatorviewer}
-Android también provee la herramienta \textit{uiautomatorviewer}, que permite analizar la interfaz gráfica de una aplicación. Esta herramienta puede ser usada apra encontrar los id, texto o atributos de los elementos de la interfaz.
+\subsubsection{uiautomatorviewer \cite{19}}
+Android también provee la herramienta uiautomatorviewer, que permite analizar la interfaz gráfica de una aplicación. Esta herramienta puede ser usada para encontrar los id, texto o atributos de los elementos de la interfaz.
 
-Esta herramienta permite a la gente que no programa, analizar una aplicación y desarrollar test a través de la biblioteca \textit{uiautomator}. 
-[AGREGAR SCREENSHOT]
+Esta herramienta permite a la gente que no programa, analizar una aplicación y desarrollar test a través de la biblioteca uiautomator. 
 
-\subsubsection{Monkey}
-\textit{Monkey} \cite{21}  es un herramienta de línea de comando que envia eventos aleatorios a un dispositivo. Se puede restringir a \textit{Monkey} para que se ejecute únicamente en ciertos paquetes, por lo que se le pueden dar instrucciones para testear únicamente una aplicación.
+\subsubsection{Monkey \cite{21}}
+Monkey  es un herramienta de línea de comando que envia eventos aleatorios a un dispositivo. Se puede restringir a Monkey para que se ejecute únicamente en ciertos paquetes, por lo que se le pueden dar instrucciones para testear únicamente una aplicación.
 
 Por ejemplo, el siguiente comando enviará 2000 eventos aleatorios a la aplicación con el nombre de paquete co.seahorse.android:\\
 
@@ -65,12 +64,12 @@ Por ejemplo, el siguiente comando enviará 2000 eventos aleatorios a la aplicació
 adb shell monkey -p co.seahorse.android -v 2000
 \end{lstlisting}
 
-\subsubsection{monkeyrunner}
+\subsubsection{monkeyrunner \cite{48}}
 La herramienta monkeyrunner provee una API en Python para escribir programas que controlen un dispositivo Android o un emulador, fuera del código fuente que hayamos escrito.
 
-A través de \textit{monkeyrunner} se puede hacer un script para realizar un test. Este se ejecuta através del adb debug bridge y permite instalar programas, iniciarlos, controlar los flujos y tomar screenshots.
+A través de monkeyrunner se puede hacer un script para realizar un test. Este se ejecuta a través del \textit{adb debug bridge} y permite instalar programas, iniciarlos, controlar los flujos y tomar screenshots.
 
-Para usar \textit{monkeyrunner} se debe tener instalado Python en el computador.
+Para usar monkeyrunner se debe tener instalado Python en el computador.
 
 Las siguientes clases son las principales:
 \begin{itemize}
@@ -82,8 +81,8 @@ Las siguientes clases son las principales:
 \end{itemize}
 
 \subsection{Herramientas de testing de terceros}
-\subsubsection{EasyMock}
-EasyMock es un framework para mocking \cite{22}, es decir, para crear objeto simulados. Este puede ser usado en conjunto con JUnit. A continuación se muestra como es la instanciación de un objeto basado en una clase.\\
+\subsubsection{EasyMock \cite{22}}
+EasyMock es un framework para mocking, es decir, para crear objeto simulados. Este puede ser usado en conjunto con JUnit. A continuación se muestra como es la instanciación de un objeto basado en una clase.\\
 
 \begin{lstlisting}
 import static org.easymock.EasyMock.createNiceMock;
@@ -93,29 +92,29 @@ import static org.easymock.EasyMock.createNiceMock;
 ICalcMethod calcMethod = createNiceMock(ICalcMethod.class); 
 \end{lstlisting}
 
-El método createNiceMock() crea un mock que retorna los valores por defecto para métodos que no están sobreescritos. Además tiene varios métodos que pueden ser usados para configurar el objeto mock. El método expect() le dice a Easymock que simule un método con ciertos argumentos. El método andReturn() define lo que va a retornar este método. El método times() define que tan seguido el objeto va a ser llamado.
+El método \textit{createNiceMock()} crea un mock que retorna los valores por defecto para métodos que no están sobreescritos. Además tiene varios métodos que pueden ser usados para configurar el objeto mock. El método \textit{expect()} le dice a Easymock que simule un método con ciertos argumentos. El método \textit{andReturn()} define lo que va a retornar este método. El método \textit{times()} define que tan seguido el objeto va a ser llamado.
 
 
-\subsubsection{Mockito}
-Mockito \cite{23} es un framework bastante popular que puede ser usado en conjunto con JUnit. Este permite crear y configurar objetos simulados. Además, desde la versión 1.9.5 puede ser usado directamente con los test de Android.
+\subsubsection{Mockito \cite{23}}
+Mockito es un framework bastante popular que puede ser usado en conjunto con JUnit. Este permite crear y configurar objetos simulados. Además, desde la versión 1.9.5 puede ser usado directamente con los test de Android.
 
 Mockito soporta la creación de objetos simulados con el método estático \textit{mock()}. Este también soporta la creación de objetos basados en la anotación \textit{@Mock}. Si se usan anotaciones, se debe inicializar el objeto similado con una llamada al método \textit{MockitoAnnotations.initMocks(this)}.
 
 
-\subsubsection{Robolectric}
-Robolectric \cite{24} es un framework que simula parte del framework de Android contenido en el archivo \textit{android.jar}. Esta diseñado para permitir testear aplicaciones de Android en la JVM (Java Virtual Machine). Este permite ejecutar los test de Android en un entorno de integración continua, sin necesidad de configuraciones extras. Está basado en JUnit 4.
+\subsubsection{Robolectric \cite{24}}
+Robolectric es un framework que simula parte del framework de Android contenido en el archivo \textit{android.jar}. Esta diseñado para permitir testear aplicaciones de Android en la JVM (Java Virtual Machine). Este permite ejecutar los test de Android en un entorno de integración continua, sin necesidad de configuraciones extras. Está basado en JUnit 4.
 
-Robolectric reemplaza todas las clases de Android por los llamados shadow objects. Si un método es implementado por Robolectric, este dirige estas llamadas al shadow object, que se comporta de forma similar a los objetos del SDK de Android. Si un método no es implementado por el shadow object, este simplemente retorna un valor por defecto, como null o 0.
+Robolectric reemplaza todas las clases de Android por los llamados \textit{shadow objects}. Si un método es implementado por Robolectric, este dirige estas llamadas al \textit{shadow object}, que se comporta de forma similar a los objetos del SDK de Android. Si un método no es implementado por el \textit{shadow object}, este simplemente retorna un valor por defecto, como null o 0.
 
-Robolectric soporta el manejo de recursos, como inflar vistas. También puede usarse el findViewById() para buscar una vista.
+Robolectric soporta el manejo de recursos, como inflar vistas. También puede usarse el \textit{findViewById()} para buscar una vista.
 
-\subsubsection{Robotium}
-Robotium \cite{25} es una extensión del framework de test de android y fue creado para hacer más fácil los test de interfaz gráfica para las aplicaciones de Android. Robotium hereda de ActivityInstrumentationTestCase2 y permite definir casos de test a través de las actividades de Android.
+\subsubsection{Robotium \cite{25}}
+Robotium es una extensión del framework de test de android y fue creado para hacer más fácil los test de interfaz gráfica para las aplicaciones de Android. Robotium hereda de \textit{ActivityInstrumentationTestCase2} y permite definir casos de test a través de las \textit{Activities} de Android.
 
-Los test con Robotium interactuan con la aplicación como test de caja negra, esto quiere decir que únicamente se interactua con la interfaz y no a través del código interno de la aplicación. La clase principal para testear con Robotium se llama Solo. Esta es inicializada en la primera actividad que se desea testear.
+Los test con Robotium interactuan con la aplicación como test de caja negra, esto quiere decir que únicamente se interactua con la interfaz y no a través del código interno de la aplicación. La clase principal para testear con Robotium se llama \textit{Solo}. Esta es inicializada en la primera \textit{Activity} que se desea testear.
 
-\subsubsection{Espresso}
-Google lanzó el framework Espresso \cite{26} para testing en Octubre del 2013.  Esta es una API para realizar tests de interfaz gráfica, localizando elementos de la UI e interactuando con ellos. A continuación se presentan los componentes principales de Espresso:\\
+\subsubsection{Espresso \cite{26}}
+Google lanzó el framework Espresso para testing en Octubre del 2013.  Esta es una API para realizar tests de interfaz gráfica, localizando elementos de la UI e interactuando con ellos. A continuación se presentan los componentes principales de Espresso:\\
 
 \begin{itemize}
 \item Espresso: Punto de entrada para interactuar con las vistas, a través de los métodos \textit{onView()} y \textit{onData()}. También permite la interacción con métodos que no necesariamente estan atados a una vista, como por ejemplo el método \textit{pressBack()}.
@@ -124,12 +123,12 @@ Google lanzó el framework Espresso \cite{26} para testing en Octubre del 2013.  
 
 \item ViewActions: Una colección de \textit{ViewActions} que pueden pasarse al método \textit{ViewInteraction.perform}, por ejemplo un click.
 
-\item ViewAssertions: Una colección de ViewAssertions que pueden pasarse al método  \textit{ViewInteraction.perform}. 
+\item ViewAssertions: Una colección de \textit{ViewAssertions} que pueden pasarse al método  \textit{ViewInteraction.perform}. 
 \end{itemize}
 
 
-\subsubsection{Spoon}
-Spoon es una herramienta de código abierto para test automatizados que permite ejecutar los test escritos en java en varios dispositivos al mismo tiempo. Este fue desarrollado por la compañía Square \cite{27}.
+\subsubsection{Spoon \cite{27}}
+Spoon es una herramienta de código abierto para test automatizados que permite ejecutar los test escritos en java en varios dispositivos al mismo tiempo. Este fue desarrollado por la compañía Square.
 
 La aplicación se ejecuta en base a los test que hayamos definido en las pruebas de instrumentación. Spoon genera un informe con los resultados a través de un HTML. Cada dispositivo testeado tiene una ficha con los resultados de cada uno de los test.
 
@@ -141,15 +140,11 @@ Spoon.screenshot(activity, "initial_state");
 Spoon.screenshot(activity, "after_login");
 \end{lstlisting}
 
-\subsubsection{Remote Test Lab}
-Remote Test Lab \cite{28} es un servicio que Samsung ofrece a los desarrolladores para que puedan probar sus aplicaciones en un dispositivo real, pero en remoto. Gracias a él podrán acceder, vía web, a diferentes smartphones y tablets con varias versiones del sistema operativo. En estos dispositivos los desarrolladores podrán instalar y testear sus apps...
-
-
 \section{Herramientas de Distribución de Versiones}
-Antes de la publicación de una aplicación, es necesario distribuir usuarios para corroborar que no existen problemas de usabilidad, errores de interfaz o que la aplicación deja de responder ante alguna acción del usuario. Para ello existen herramientas que permiten distribuir de manera segura, versiones alpha y beta de la aplicación que se este desarrollando para poder recibir feedback que permita corregir posibles problemas, o simplemente recibir retroalimentación por parte de testers.
+Antes de la publicación de una aplicación, es necesario distribuir usuarios para corroborar que no existen problemas de usabilidad, errores de interfaz o que la aplicación deja de responder ante alguna acción del usuario. Para ello existen herramientas que permiten distribuir de manera segura versiones alpha y beta, para posteriormente poder recibir feedback que permita corregir posibles problemas, o simplemente recibir retroalimentación por parte de testers.
 
 \subsection{Herramienta de Distribución de Versiones provista por Android}
-Durante la Conferencia Google I/O de Mayo del año 2013 \cite{37}, se llevó a cabo el anuncio de una actualización a la \textit{Google Play Developer Console} \cite{29}, que corresponde al lugar en donde el desarrollador sube la versión oficial de su aplicación. Las mejoras consistieron en añadir un servicio de traducción para las aplicaciones, gráficas de ganancias, consejos de optimización, seguimiento de referidos y finalmente la opción de subir versiones alphas y betas, ya que antes de este evento, no existía una forma nativa de realizar esta distribución.
+Durante la Conferencia Google I/O de Mayo del año 2013 \cite{37}, se llevó a cabo el anuncio de una actualización a la \textit{Google Play Developer Console} \cite{29}, que corresponde al lugar en donde el desarrollador sube y administra la versión oficial de su aplicación. Las mejoras consistieron en añadir un servicio de traducción para las aplicaciones, estadísticas relacionadas con ganancias, consejos de optimización, seguimiento de referidos y finalmente la opción de subir versiones alphas y betas, ya que antes de este evento, no existía una forma nativa de realizar esta distribución.
 
 Tal como se ve en la figura \ref{fig:Fig18}, además de la versión de producción, que corresponde a la versión oficial de una aplicación, existen dos secciones más, una para versiones alpha y otra para versiones beta. 
 \begin{figure}[h!]
@@ -162,17 +157,17 @@ El desarrollador tiene la opción de elegir que usuarios quiere que reciban las v
 
 
 \subsection{Herramienta de Distribución de Versiones de terceros}
-Debido a que antes de Mayo del 2013 no existía una forma provista por Google de distribuir aplicaciones de prueba, hay varias herramientas que llenaban esta necesidad y que aún siguen haciéndolo. La gran diferencia con la opción que entrega Google es que todas terminan siendo de pago después de algún tiempo o después de una determinada cantidad de usuarios. Además ofrecen otras herramientas complementarias a la distribución de versiones, para entregar mayor valor y diferenciación a sus productos.
+Debido a que antes de Mayo del 2013 no existía una forma provista por Google de distribuir aplicaciones de prueba, hay varias herramientas que suplían esta necesidad y que aún siguen haciéndolo. La gran diferencia con la opción que entrega Google es que todas terminan siendo de pago después de algún tiempo o después de una determinada cantidad de usuarios. Además ofrecen otras herramientas complementarias a la distribución de versiones, para entregar mayor valor y diferenciación a sus productos.
 
-\subsubsection{HockeyApp}
-HockeyApp \cite{40} es una plataforma que permite la distribución de versiones beta a múltiples plataformas, entre las que se encuentran Android, iOS, Windows Phone y Mac OS. Esto se complementa con la recolección de reportes de crashes, retroalimentación por parte de los usuarios y estadísticas sobre los testers que están usando la aplicación, como el dispositivo e idioma que tienen.
+\subsubsection{HockeyApp \cite{40}}
+HockeyApp es una plataforma que permite la distribución de versiones beta a múltiples plataformas, entre las que se encuentran Android, iOS, Windows Phone y Mac OS. Esto se complementa con la recolección de reportes de crashes, retroalimentación por parte de los usuarios y estadísticas sobre los testers que están usando la aplicación, como el dispositivo e idioma que tienen.
 
 Para la distribución sólamente es necesario subir el APK de la aplicación e invitar a los usuarios a través del correo electrónico del tester. Cada vez que se sube una nueva versión es posible enviar un correo notificando a los testers que existe una actualización. Los testers pueden descargar la aplicación accediendo desde el sitio web de HockeyApp \cite{40}, como también a través de la aplicación oficial, la cual también puede ser descargada desde su sitio web, en la sección de aplicaciones.
 
 Si se desean implementar las otras características que ofrece Hockeyapp, es necesario agregar el SDK de ellos a la aplicación. Esto permitirá tener los reportes de crashes de los testers, y otras estadísticas acerca de ellos.
 
-\subsubsection{AppBlade}
-AppBlade \cite{41} es una plataforma que soporta la distribución de versiones beta a Android, iOS y BlackBerry. También cuenta con un sistema de reporte de crashes que notifica al desarrollador de estos errores.
+\subsubsection{AppBlade \cite{41}}
+AppBlade es una plataforma que soporta la distribución de versiones beta a Android, iOS y BlackBerry. También cuenta con un sistema de reporte de crashes que notifica al desarrollador de estos errores.
 
 Para la distribución también es necesario subir el APK y comenzar a invitar testers. Luego, los testers deben hacerse una cuenta y descargar la aplicación desde el sitio web de AppBlade \cite{41}. 
 
@@ -183,17 +178,17 @@ El servicio permite tener 25 usuarios de forma gratuita. Al sobrepasar este lími
 Por último AppBlade permite la integración con servicios externos como GitHub \cite{42}, Pivotal Tracker \cite{43}, HipChat \cite{44}, entre otros.
 
 
-\subsubsection{The Beta Family}
+\subsubsection{The Beta Family \cite{46}}
 The Beta Family es una plataforma que permite la distribución de versiones de aplicaciones Android y iOS a testers. A diferencia de las plataformas anteriores, el desarrollador puede pagar para que un grupo de usuarios de prueba usen su aplicación y reportes los posibles problemas que puedan encontrar.
 
 El servicio también cuenta con una opción gratuita en que 5 testers, de poca reputación dentro de la plataforma, pueden testear una aplicación. Dependiendo de la reputación de los testers, el valor del servicio va variando.
 
-Para el uso de la plataforma es necesario subir el APK y rellenar un par de datos básicos sobre la aplicación.
+Para el uso de la plataforma es necesario subir el APK y rellenar un par de datos básicos sobre la aplicación, así como también preguntas básicas enfocadas en lo que el desarrollador desee.
 
-\subsubsection{UserTesting}
+\subsubsection{UserTesting \cite{47}}
 UserTesting es una plataforma que permite distribuir versiones de aplicaciones Android y iOS a testers. Similar a como funciona The Beta Family, el desarrollador compra una cantidad de créditos, y cada uno de estos le permite hacer un test distinto.
 
-La gran ventaja con la que cuenta esta plataforma es que el tester debe grabar la pantalla de la aplicación mientras va desarrollando el test, por lo que se pueden observar directamente las reacciones o los posibles problemas que pueda tener este usuario al usar la aplicación.
+La gran ventaja con la que cuenta esta plataforma es que el tester debe grabar la pantalla de la aplicación mientras va desarrollando el test, por lo que se pueden observar directamente las reacciones o los posibles problemas que pueda tener el tester al usar la aplicación.
 
 Para el uso de esta plataforma es necesario subir el APK y añadir información que detalle lo que el desarrollador desea que el tester realice. También se pueden agregar preguntas tales como:
 \begin{itemize}
@@ -224,26 +219,10 @@ Al presionar en el reporte de crash para ver más detalles, se puede ver la hora 
 
 \subsection{Herramientas de Reporte de Crashes de terceros}
 Existen varias herramientas que entregan reportes de crashes mucho más completos que los que entrega Google de forma nativa. La mayoría de estas entregan una versión gratuita con restricciones y es posible pagar para acceder a la versión premium, la cual cuenta con características más especializadas. Además, todos los reportes de crashes son envíados, ya que al momento de instalar la aplicación se piden los permisos necesarios para ello, por lo que el usuario afectado no debe hacer nada. A continuación se listan las más populares: 
-\subsubsection{Crittercism}
+\subsubsection{Crittercism \cite{30}}
 Crittercism es un sistema muy completo que cuenta con monitoreo, manejo de excepciones, como también reportes de crashes y performance. Actualmente soporta múltiples plataformas, entre las que se encuentran: Android, Android NDK, iOS, Windows Phone 8 y HTML5.  
 
-La instalación es bastante simple \cite{31}. Se debe descargar el SDK de Crittercism para Android e incluirlo al proyecto. Luego se deben agregar los siguientes permisos en el archivo Android Manifest del proyecto: 
-\begin{lstlisting}
-<uses-permission android:name="android.permission.INTERNET"/>
-<uses-permission android:name="android.permission.READ_LOGS"/>
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-<uses-permission android:name="android.permission.GET_TASKS"/>
-\end{lstlisting}
-El primer permiso es necesario para poder acceder a Internet y poder enviar los reportes. El segundo es necesario para poder obtener la información de los stack trace del usuario, y ahi saber en que línea de código ha ocurrido el error. El tercero es para obtener información sobre el estado de la red, por ejemplo, para saber si el usuario está conectado a Wi-Fi o a través de un carrier. El último permiso sirve para acceder a la información de las últimas dos actividades ejecutadas, lo que permite saber en que actividad ocurrió el crash.
-
-Una vez que los permisos ya están entregados, se debe inicializar Crittercism. Esto se hace únicamente una vez por aplicación, por lo que se debe hacer en la primera actividad que se ejecuta dentro de la aplicación. Para iniciar Crittercism se escribe la siguiente línea en el onCreate:
-\begin{lstlisting}
-Crittercism.initialize(getApplicationContext(), "CRITTERCISM_APP_ID");
-\end{lstlisting}
-
-Ahora ya están implementadas las características básicas, y comenzarán a llegar los reportes al sitio de Crittercism. También es posible recibir cada reporte de crash al correo, configurando esto desde el sitio web.
-
-Como se puede ver en la figura \ref{fig:Fig15}, se tienen opciones parecidas al reporte de crashes de Google. La gran diferencia está en el detalle de la información, ya que al revisar los detalles de un crash, se puede ver información muy específica como: nivel de bateria, espacio en el disco, espacio en la tarjeta SD, uso de RAM, estabilidad de la red, orientación del dispositivo, idioma del dispositivo, actividades que estaban ejecutandose, entre muchos otros puntos.
+Como se puede ver en la figura \ref{fig:Fig15}, se tienen opciones parecidas al reporte de crashes de Google. La gran diferencia está en el detalle de la información, ya que al revisar un crash, se puede ver información muy específica como: nivel de bateria, espacio en el disco, espacio en la tarjeta SD, uso de RAM, estabilidad de la red, orientación del dispositivo, idioma del dispositivo, \textit{Activities} que estaban ejecutandose, entre muchos otros puntos.
 \begin{figure}[h!]
 \centering
       \includegraphics[width=15cm]{Imagenes/crash_report_crittercism}
@@ -251,16 +230,8 @@ Como se puede ver en la figura \ref{fig:Fig15}, se tienen opciones parecidas al 
 \label{fig:Fig15}
 \end{figure}
 
-\subsubsection{Bugsense}
+\subsubsection{Bugsense \cite{32}}
 Bugsense también es un sistema bastante completo. Cuenta con monitoreo, reportes de crashes, manejo de excepciones, tendencias de crashes e integración con ACRA. Soporta múltiples plataformas, entre las que se encuentran: Android, iOS, Windows Phone 8 y HTML5.  
-
-Para la instalación se descarga la biblioteca desde el sitio de Bugsense \cite{32}. Después de incluirla en el proyecto, se deben pedir los permisos correspondientes en el Android Manifest. Para iniciar Bugsense se escribe la siguiente línea:   
-\begin{lstlisting}
-BugSenseHandler.initAndStartSession(Context, APIKEY);
-\end{lstlisting}
-
-
-Con esto, Bugsense ya se encuentra implementado. Para implementar las otras características sólo hay que seguir el tutorial que se encuentra en el sitio\cite{32}. 
 
 En la figura \ref{fig:Fig16} se puede ver como es el panel con estadísticas que ofrece Bugsense. Similar a lo ofrecido por Crittercism, es posible filtrar los crashes por versión de la aplicación, como también por versión del sistema operativo.
 
@@ -271,53 +242,13 @@ En la figura \ref{fig:Fig16} se puede ver como es el panel con estadísticas que 
 \label{fig:Fig16}
 \end{figure}
 
-\subsubsection{Google Analytics}
+\subsubsection{Google Analytics \cite{33}}
 Google Analytics es otra herramienta que cuenta con reportes de crashes. Si bien, la especialidad de Google Analytics es ofrecer estadísticas y hacer tracking de distintos eventos, también es posible recibir reportes de crashes y excepciones. El gran problema es que los reportes no llegan en tiempo real, ya que la información se actualiza con un día de retraso.
 
-Para su implementación es necesario descarga desde el sitio de Google Analytics \cite{33} la versión 3 de su SDK. Una vez descargado el SDK, es necesario incluirlo al proyecto y dar los siguientes permisos en el archivo Android Manifest:
-\begin{lstlisting}
-<uses-permission android:name="android.permission.INTERNET"/>
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-\end{lstlisting}
-Para implementarlo a través de código es necesario agregar estas líneas en cada una de las Actividades de las cuáles se desee obtener información:
-\begin{lstlisting}
-@Override
-  public void onStart() {
-    super.onStart();
-    ... // El resto del código de onStart()
-    EasyTracker.getInstance(this).activityStart(this);  // Agregar este método
-  }
-
-  @Override
-  public void onStop() {
-    super.onStop();
-    ... // El resto del código de onStop()
-    EasyTracker.getInstance(this).activityStop(this);  // Agregar este método
-  }
-\end{lstlisting}
 Google Analytics ofrece filtrar los reportes de crashes por versión de la aplicación, versión del sistema operativo, marca del dispositivo y tamaños de pantalla.
 
-\subsubsection{ACRA}
+\subsubsection{ACRA \cite{34}}
 ACRA es una biblioteca gratuita y de código abierto disponible en Github \cite{35}. Desde la última actualización de Google Forms, el uso de Google Docs como almacenamiento para los reportes que entregaba ACRA está obsoleto. Ahora es necesario implementar una aplicación web para poder ver los reportes, aunque también es posible asociarlo a otras plataformas como Bugsense o HockeyApp. 
-
-Para su implementación es necesario descarga la biblioteca desde el sitio web de ACRA \cite{34}. Una vez que ya se ha añadido al proyecto, es necesario pedir el siguiente permiso en el archivo de Android Manifest:
-\begin{lstlisting}
-<uses-permission android:name="android.permission.INTERNET"/>
-\end{lstlisting}
-En el código del proyecto la implementación es de la siguiente forma:
-\begin{lstlisting}
-import org.acra.*;
-import org.acra.annotation.*;
-
-@ReportsCrashes(formKey = "", formUri = "http://www.aqui_va_la_plataforma_web.com/reportpath")
-public class MyApplication extends Application {
-  @Override
-  public void onCreate() {   
-    super.onCreate();
-    ACRA.init(this);  // Esta es la línea que inicializa ACRA
-  }
-}			
-\end{lstlisting}
 
 En la figura \ref{fig:Fig17} se muestra una vista del sistema de reportes integrado con Acralizer \cite{36}, ofreciendo filtrar los reportes por versión de Android y versión de la aplicación:
 \begin{figure}[h!]
