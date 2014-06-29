@@ -151,7 +151,7 @@
 \BOOKMARK [0][-]{chapter.5}{Implementaci\363n}{}% 151
 \BOOKMARK [1][-]{section.5.1}{Implementaci\363n de Herramientas de Testing}{chapter.5}% 152
 \BOOKMARK [2][-]{subsection.5.1.1}{Robolectric}{section.5.1}% 153
-\BOOKMARK [2][-]{subsection.5.1.2}{Espresso}{section.5.1}% 154
+\BOOKMARK [2][-]{subsection.5.1.2}{Robotium}{section.5.1}% 154
 \BOOKMARK [2][-]{subsection.5.1.3}{Spoon}{section.5.1}% 155
 \BOOKMARK [2][-]{subsection.5.1.4}{uiautomatorviewer}{section.5.1}% 156
 \BOOKMARK [2][-]{subsection.5.1.5}{Monkey}{section.5.1}% 157

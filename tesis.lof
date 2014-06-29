@@ -22,6 +22,10 @@
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Vista del sistema de reporte de crashes de ACRA. \cite {36}\relax }}{45}{figure.caption.63}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Vista de la herramienta uiautomatorviewer en una aplicaci\'on. Fuente: Elaboraci\'on Propia\relax }}{72}{figure.caption.132}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Vistas de la aplicaci\'on Seahorse. Fuente: Elaboraci\'on Propia\relax }}{70}{figure.caption.132}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Flujo para acceder a la pantalla de Login en la aplicaci\'on Seahorse. En la primera imagen se presiona el bot\'on \textit {Log In}, lo cual abre el menu de la segunda imagen, y se presiona el bot\'on \textit {Sign in with email}, lo cual abre la vista de Login de la \'ultima imagen. Fuente: Elaboraci\'on Propia\relax }}{72}{figure.caption.133}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Vista de la herramienta uiautomatorviewer en una aplicaci\'on. Fuente: Elaboraci\'on Propia\relax }}{76}{figure.caption.134}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Vista de una aplicaci\'on beta de Seahorse en HockeyApp. Fuente: Elaboraci\'on Propia\relax }}{78}{figure.caption.135}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Gr\'aficos que entrega Crittercism sobre cantidad de crashes y usuarios afectados en un periodo de un mes. Fuente: Elaboraci\'on Propia\relax }}{83}{figure.caption.136}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

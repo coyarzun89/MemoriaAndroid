@@ -184,6 +184,13 @@ Steven~Mark Ford.
   /}$>$.
 \newblock [Consulta: 23 de Junio].
 
+\bibitem{57}
+Peter Friese.
+\newblock Android testing with robolectric [en l\'inea].
+\newblock $<$\url{http://www.peterfriese.de/android-testing-with-robolectric/
+  /}$>$.
+\newblock [Consulta: 27 de Junio].
+
 \bibitem{42}
 GitHub.
 \newblock Github [en l\'inea].
@@ -242,6 +249,14 @@ HockeyApp.
 \newblock $<$\url{http://hockeyapp.net/ /}$>$.
 \newblock [Consulta: 01 de Junio].
 
+\bibitem{55}
+Seahorse Inc.
+\newblock Googleplay: Seahorse. [en l\'inea].
+\newblock
+  $<$\url{https://play.google.com/store/apps/details?id=co.seahorse.android&hl=es
+  /}$>$.
+\newblock [Consulta: 25 de Junio].
+
 \bibitem{49}
 JUnit.
 \newblock Junit, a programmer\-oriented testing framework for java.[en
@@ -280,6 +295,12 @@ OpenSignal.
 \newblock $<$\url{http://opensignal.com/reports/fragmentation.php}$>$.
 \newblock [Consulta: 25 de Abril].
 
+\bibitem{56}
+Robolectric.
+\newblock Robolectric, getting started [en l\'inea].
+\newblock $<$\url{http://robolectric.org/installation/ /}$>$.
+\newblock [Consulta: 25 de Junio].
+
 \bibitem{51}
 Robotium.
 \newblock Robotium, the world's leading android test automation framework.[en
@@ -308,6 +329,19 @@ staffcreativa.
   l\'inea].
 \newblock $<$\url{http://blog.staffcreativa.pe/android-google/}$>$.
 \newblock [Consulta: 4 de Mayo].
+
+\bibitem{60}
+TestFlight.
+\newblock Android end of life [en l\'inea].
+\newblock
+  $<$\url{http://help.testflightapp.com/customer/portal/articles/1450414 /}$>$.
+\newblock [Consulta: 27 de Junio].
+
+\bibitem{59}
+TestFlight.
+\newblock Testflight, beta testing on the fly [en l\'inea].
+\newblock $<$\url{https://www.testflightapp.com/ /}$>$.
+\newblock [Consulta: 27 de Junio].
 
 \bibitem{47}
 UserTesting.
