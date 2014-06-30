@@ -233,13 +233,13 @@ Si se desea usar el mismo layout para todas las pantallas simplemente se deben i
 
 \begin{figure}[h!]
 \centering
-      \includegraphics[width=8cm]{Imagenes/chart_screen_sizes}
-\caption{Gráfico con la distribución de tamaños de pantalla durante el mes de Abril del 2014. \cite{1}, }
+      \includegraphics[width=15cm]{Imagenes/chart_screen_sizes}
+\caption{Gráfico con la distribución de tamaños de pantalla y sus densidades durante el mes de Junio del 2014. \cite{2}, }
 \label{fig:Fig6}
 \end{figure}
 Por ejemplo, si se quisiera agregar un layout distinto para pantallas grandes (large), se debe añadir un archivo de layout a la carpeta \textit{res/layout-large}, por lo que existirán dos versiones de este archivo, uno en la carpeta antes señalada, mientras que el otro estará en la carpeta general de layouts, \textit{res/layout}.\\
 
-En el sitio web de Android \cite{1}, se entregan estadísticas mensuales sobre el porcentaje de dispositivos que tiene cada tamaño de pantalla. En el gráfico de la figura \ref{fig:Fig6} se muestra la distribución de tamaños de pantalla durante el mes de Abril del 2014.
+En el sitio web de Android \cite{1}, se entregan estadísticas mensuales sobre el porcentaje de dispositivos que tiene cada tamaño de pantalla. En el gráfico de la figura \ref{fig:Fig6} se muestra la distribución de tamaños de pantalla durante el mes de Junio del 2014.
 
 \paragraph{Fragmentación en las resoluciones de pantalla}
 Android categoriza las resoluciones de cada pantalla en base a la densidad de pixeles que poseen. Existen cinco tipos de densidades \cite{2}: baja (ldpi), media (mdpi), alta (hdpi), extra-alta (xhdpi) y extra-extra-alta (xxhdpi). Además existe otro tipo de densidad, la cual es usada principalmente para televisores (tvdpi).\\
@@ -258,14 +258,8 @@ Al agregar elementos de UI como botones, textos, tablas, entre otros, también se
 
 Aún con estas precauciones, es muy difícil saber cuáles son los valores de alto y ancho adecuados que deben ser asignados. Esto se debe a que existe una gran diferencia entre cada tipo de resolución, ya que si por ejemplo se asignara a un elemento un ancho de 350dp, no existirán problemas en una pantalla con una resolución alta como un Nexus 4 (xhdpi), pues el elemento tomaría un espacio de 700px, pero para un dispositivo con resolución más baja como un Samsung Galaxy Young (ldpi) si existirían, ya que el elemento tomaría 262.5px y el ancho de la pantalla de este dispositivo es de 240px. A través del siguiente sitio \cite{3}, se puede saber cúal es la densidad de pixeles de prácticamente todos los dispositivos más populares de Android.
 
-En el gráfico de la figura \ref{fig:Fig8} se puede apreciar la información que entrega Google sobre la distribución de densidad existente durante el mes de Abril del 2014 \cite{1}.
-\par
-\begin{figure}[h!]
-\centering
-      \includegraphics[width=8cm]{Imagenes/chart_density_pixels}
-\caption{Gráfico con la distribución de densidades de pantalla durante el mes de Abril del 2014.\cite{13}}
-\label{fig:Fig8}
-\end{figure}
+En el gráfico de la figura  \ref{fig:Fig6} se puede apreciar la información que entrega Google sobre la distribución de densidad existente durante el mes de Junio del 2014 \cite{2}.
+
 \subsubsection{Fragmentación en otras características}
 Además de los tamaños de pantalla y sus resoluciones, existen otras características muy importantes que los desarrolladores deben tener en cuenta. Una de las principales es la RAM con la que cuenta el dispositivo, ya que es allí donde se cargan las instrucciones que ejecuta el procesador. También es muy importante el procesador y la cantidad de núcleos con los que cuenta. Aunque la mayoría de los dispositivos tiene cámara, también se debe tener en cuenta que algunos no la tiene. Por último, muchas veces los fabricantes como Samsung, hacen cambios en el sistema operativo, cambiando cosas nativas, lo cual produce diferentes experiencias en cada dispositivo, y muchas veces genera errores que el desarrollador no se espera.
 

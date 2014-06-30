@@ -15,7 +15,7 @@ Las herramientas implementadas son las que más se ajustaban a las necesidades y 
 
 \section{Implementación de Herramientas de Testing}
 \subsection{Robolectric}
-Para la implementación de Robolectric es necesario seguir los pasos de instalación que se detallan en su sitio oficial \cite{56}. En Seahorse se usa Gradle para manejar las dependencias, por lo que es necesario agregar esta línea a \textit{build.gradle}:
+Para la implementación de Robolectric es necesario seguir los pasos de instalación que se detallan en su sitio oficial \cite{56}. En Seahorse se usa Gradle \cite{61} para manejar las dependencias, por lo que es necesario agregar esta línea al archivo \textit{build.gradle} del proyecto:
 \begin{lstlisting}
 dependencies {
   ...
@@ -86,7 +86,7 @@ Al ejecutar los tests, se genera un reporte en HTML, que se ubica en la raiz del
 \subsection{Robotium}
 Se implementó Robotium, en vez de Espresso, principalmente porque existe mayor documentación y porque cuenta con soporte para gradle de forma oficial, por lo que la integración con Android Studio es menos compleja. Además lleva más tiempo de desarrollo y es una herramienta bastante madura.
 
-Para la implementación es necesario agregar la siguiente dependencia al archivo gradle del proyecto:
+Para la implementación es necesario agregar la siguiente dependencia al archivo \textit{build.gradle} del proyecto:
 \begin{lstlisting}
 dependencies {
   ...
@@ -132,7 +132,38 @@ En el método \textit{testRobotium()} es donde se lleva a cabo el test. Como se p
 %\end{lstlisting}
 %A diferencia de Robolectric, Espresso se especializa en los test relacionados con la interfaz de la aplicación. 
 \subsection{Spoon}
-....
+Spoon es una herramienta que intenta simplificar la tarea de realizar tests de forma distribuida. Es posible ejecutar los mismos tests escritos con Robotium en múltiples dispositivos de forma simultánea. Una vez que todos los tests se han completado, un resymen es presentado con información detalla sobre cada dispositivo y cada test en un archivo HTML.
+
+Es necesario agregar dos archivos al proyecto, uno es \textit{spoon-runner} que permite la ejecución simultánea, y el otro es \textit{spoon-client} que se encarga de obtener screenshots de cada uno de los dispositivos, para luego presentarlos en el resumen general.
+
+Para realizar el testing de forma distribuida fue usado un dispositivo Samsung Galaxy S4, y dos emuladores. Debido a que los emuladores provistos por Android son demasiados lentos se usaron los de Genymotion. Ellos ofrecen cerca de 20 emuladores con las simulaciones de distintos dispositivos de forma gratuita. En este caso se usaron los emuladores de un Nexus 4 con Android 4.2.2 y un HTC One con 4.2.2.
+
+El test que se realizó consistía en corroborar que en la pantalla de registro, al completar los datos y dejar uno en blanco, si se presiona el botón ``SIGN UP'', debe aparecer un icono en el campo vacío, indicando que se necesita completar toda la información. Para ello se utilizó Robotium junto con Spoon, el primero para poder interactuar con la UI, mientras que Spoon se utilizó para obtener los screenshots de los tres dispositivos durante todo el proceso. El código a continuación muestra el uso de Spoon, a través del método \textit{Spoon.screenshot}:
+\begin{lstlisting}
+    Spoon.screenshot(getActivity(), "RegisterActivity");
+    solo.assertCurrentActivity("SeahorseStartActivity Never Loaded", RegisterActivity.class);
+    solo.enterText((EditText) solo.getView(R.id.editLastNameRegister), "Oyarzun");
+    solo.enterText((EditText) solo.getView(R.id.editEmailRegister), "c.oyarzun@gmail.com");
+    solo.enterText((EditText) solo.getView(R.id.editPasswordRegister), "123456");
+    Spoon.screenshot(getActivity(), "RegisterActivityWithInfo");
+    solo.clickOnText(getActivity().getString(R.string.SIGN_UP).toUpperCase());
+    Spoon.screenshot(getActivity(), "ShowMissingField");
+\end{lstlisting}
+Una vez que el test ya está listo, es necesario ejecutar por línea de comandos lo siguiente:
+\begin{lstlisting}
+   cristopher$ java -jar spoon-runner-1.1.1-jar-with-dependencies.jar --apk ../PhotoApp/build/outputs/apk/PhotoApp-debug.apk --test-apk ../PhotoApp/build/outputs/apk/PhotoApp-debug-test-unaligned.apk --sdk ../../../Downloads/adt-bundle-mac-x86_64/sdk/
+\end{lstlisting}
+Los parámetros que se agregan son: el APK, el APK del test y la ruta del SDK. Después de unos segundos se genera una carpeta con el nombre \textit{spoon-out} que contiene los resultados de los tests en cada uno de los dispositivos. 
+
+En la figura \ref{fig:Fig24} se pueden ver los resultados obtenidos en el emulador de Genymotion Nexus 4, en el dispositivo Samsung S4 y en el emulador Genymorion HTC One. Todos los test funcionaron de forma correcta, aunque en la última pantalla, si bien se muestra el icono indicando que el campo está vacío, este debería estar acompañado de un dialogo con un texto con el mensaje ``This field is required'', por lo que se puede ver que Spoon no es capaz de capturar los dialogos que se muestran sobre la \textit{Activity} testeada.
+
+\begin{figure}
+\centering
+      \includegraphics[width=16cm]{Imagenes/testing_spoon}
+\caption{Resultados del test ejecutado a través de Spoon. Fuente: Elaboración Propia}
+\label{fig:Fig24}
+\end{figure}
+\newpage
 \subsection{uiautomatorviewer}
 Esta es una herramienta de apoyo, que puede servir para personas que están involucradas en el desarrollo de un proyecto móbil, pero que no son desarrolladores. Se puede obtener información muy detallada sobre el árbol jerárquico de vistas y de cada uno de sus elementos. A través de esta información es posible planear diferentes tipos de tests.\\
 
@@ -202,7 +233,7 @@ Crittercism a sido la plataforma escogida para la recepción de crashes, principa
 
 Crittercism ha permitido disminuir la tasa de crashes y ofrece variadas estadísticas para ver información como los dispositivos en los que existen más crashes, el sistema operaritivo en que ocurren más crashes o la versión en la que ocurrieron más crashes. Después del lanzamiento de cada actualización se reparan una gran cantidad de bugs, pero aparecen nuevos crashes, lo que es inherente al proceso de desarrollo de software, ya que se incluye nuevo código, pero con esta herramienta es posible contar con información muy detallada, facilitando en gran medida la tarea de los desarrolladores.
 
-La instalación es bastante simple \cite{31}. Existen dos formas en que se puede incluir el SDK de Crittercism, la primera es descargándolo desde el sitio web e incluyendolo al proyecto, la segunda es agregando la dependencia al archivo gradle del proyecto de la siguiente forma:
+La instalación es bastante simple \cite{31}. Existen dos formas en que se puede incluir el SDK de Crittercism, la primera es descargándolo desde el sitio web e incluyendolo al proyecto, la segunda es agregando la dependencia al archivo \textit{build.gradle} del proyecto de la siguiente forma:
 \begin{lstlisting}
 compile 'com.crittercism:crittercism-android-agent:+'
 \end{lstlisting}
@@ -240,27 +271,27 @@ A través de los gráficos de la figura \ref{fig:Fig23} es posible dimensionar la 
 \label{fig:Fig23}
 \end{figure}
 
-\subsection{Google Analytics}
-Google Analytics ha sido implementada, aunque no por sus reportes de crashes, sino que para el tracking de eventos y performance.
-Para su implementación es necesario descarga desde el sitio de Google Analytics \cite{33} la versión 3 de su SDK. Una vez descargado el SDK, es necesario incluirlo al proyecto y dar los siguientes permisos en el archivo Android Manifest:
-\begin{lstlisting}
-<uses-permission android:name="android.permission.INTERNET"/>
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-\end{lstlisting}
-Para implementarlo a través de código es necesario agregar estas líneas en cada una de las \textit{Activities} de las cuáles se desee obtener información:
-\begin{lstlisting}
-@Override
-  public void onStart() {
-    super.onStart();
-    ... // El resto del código de onStart()
-    EasyTracker.getInstance(this).activityStart(this);  // Agregar este método
-  }
+%\subsection{Google Analytics}
+%Google Analytics ha sido implementada, aunque no por sus reportes de crashes, sino que para el tracking de eventos y performance.
+%Para su implementación es necesario descarga desde el sitio de Google Analytics \cite{33} la versión 3 de su SDK. Una vez descargado el SDK, es necesario incluirlo al proyecto y dar los siguientes permisos en el archivo Android Manifest:
+%\begin{lstlisting}
+%<uses-permission android:name="android.permission.INTERNET"/>
+%<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+%\end{lstlisting}
+%Para implementarlo a través de código es necesario agregar estas líneas en cada una de las \textit{Activities} de las cuáles se desee obtener información:
+%\begin{lstlisting}
+%@Override
+%  public void onStart() {
+%    super.onStart();
+%    ... // El resto del código de onStart()
+%    EasyTracker.getInstance(this).activityStart(this);  // Agregar este método
+%  }
 
-  @Override
-  public void onStop() {
-    super.onStop();
-    ... // El resto del código de onStop()
-    EasyTracker.getInstance(this).activityStop(this);  // Agregar este método
-  }
-\end{lstlisting}
+%  @Override
+%  public void onStop() {
+%    super.onStop();
+%    ... // El resto del código de onStop()
+%    EasyTracker.getInstance(this).activityStop(this);  // Agregar este método
+%  }
+%\end{lstlisting}
 % ---------------------------------------------------------------------------------------------------------------

@@ -2,19 +2,31 @@
 % ---------------------------------------------------------------------------------------------------------------
 \chapter{Conclusiones}
 \label{ch:conc}
-A través de este trabajo, se han estudiado y comparado diversas herramientas que ayudan a mejorar la calidad de las aplicaciones desarrolladas para Android. Esto se ha llevado a cabo clasificando las distintas herramientas en tres categorias principales: Testing, Distribución de versiones y Reportes de Crashes.  
 
-En cada una de las categorías se ha realizado un análisis comparativo, a través del cual se han obtenido las ventajas y desventajas de cada una de las herramientas. En algunos casos ha sido necesario subdividir las categorías para que las comparaciones arrojen resultados más útiles. Esto permite que los desarrolladores cuenten con información relevante que les ayude a tomar mejores decisiones al momento de tener que implementar una de estas herramientas. 
+A través de este trabajo, se han estudiado y comparado diversas herramientas que ayudan a mejorar la calidad de las aplicaciones desarrolladas para Android. 
 
-En base a las características de cada herramienta, se han implementado algunas de estas en una aplicación que está disponible en la tienda oficial de Google. Cabe mencionar que las herramientas implemetadas se ajustaban más a las necesidades de Seahorse, ya que es posible que otros desarrolladores, en base a las ventajas y desventajas presentadas, implementen otro conjunto de herramientas, que se ajuste más al contexto en que trabajan.
+Esto se ha llevado a cabo identificando los problemas existentes durante el desarrollo de aplicaciones móviles, dejando en evidencia que el elemento que más afecta al sistema operativo Android es la fragmentación en dos niveles: software y hardware. De esta última se desglosan la mayoría de los problema inherentes a la inmensa cantidad de dispositivos que existen, como por ejemplo los tamaños de pantallas, las distintas resoluciones de pantalla. También existen diferencias de RAM, espacio, núcleos y procesador entre dispositivos. Por otro lado, existen problemas que están más relacionados con el proceso de desarrollo de software. Entre estos se encuentran la distribución de versiones betas que permitan probar con usuarios reales una aplicación antes de que esta se encuentre disponible para descargar. El último problema se enfrenta cuando la aplicación ya se encuentra en la tienda oficial de Google, y no se sabe realmente si la aplicación está respondiendo como se espera o está presentando errores.
 
-Documentacion Obsoleta
-eclipse a android studio
+Para atacar cada uno de estos problemas es necesario contar con herramientas que permitan darle un grado de seguridad al desarrollador de que todo va a funcionar de forma correcta y que en cierto modo aseguren la calidad dentro de la aplicación desarrollada. Es por ello que se recurrió a buscar herramientas que solucionen los problemas presentados anteriormente, para luego clasificarlas en tres categorias: Testing, Distribución de versiones y Reportes de Crashes.  
 
-...
+En cada una de las categorías se realizó un análisis comparativo, a través del cual se han obtenido las ventajas y desventajas de cada una de las herramientas. En algunos casos ha sido necesario subdividir las categorías para que las comparaciones arrojen resultados más valiosos. Esto permite que los desarrolladores cuenten con información relevante que les ayude a tomar mejores decisiones al momento de tener que implementar una de estas herramientas. 
 
+En base a las características de cada herramienta, se han implementado algunas de estas en una aplicación que está disponible en la tienda oficial de Google. Cabe mencionar que las herramientas implementadas se ajustaban más a las necesidades de Seahorse, ya que es posible que otros desarrolladores, en base a las ventajas y desventajas presentadas, implementen otro conjunto de herramientas que se ajuste más a su contexto.
 
-
+Entre las cosas que se evidenciaron durante este trabajo esta la gran cantidad de documentación obsoleta encontrada, esto se debe principalmente al rápido desarrollo que ha tenido el sistema operativo Android, por lo que algunas bibliotecas que llevan años de desarrollo simplemente no actualizan su documentación. Otro de los puntos importantes es que hoy en día los desarrolladores están divididos entre el uso de Eclipse como IDE, y el uso de Android Studio. Poco a poco los desarrolladores deberían ir inclinandose más por este último, pero este hecho genera que la documentación se encuentre aún más obsoleta.
+\newpage
 \section{Trabajo Futuro}
+Si bien se tomaron como punto de referencia las herramientas más importantes en cada una de las categorías, existen más herramientas que podrían mejorar la calidad de las aplicaciones, y que están esperando a ser analizadas y popularizadas por los desarrolladores. Además, las comunidades de algunas herramientas son muy activas y se encargan de mantenerlas actualizadas, mejorándolas de forma períodica.
+
+Existen otro conjunto de herramientas que quedaron pendientes a ser analizadas, y que son de gran importancia para asegurar productos de calidad, entre estas se encuentran:
+\begin{itemize}
+\item Herramientas de debugging y análisis de performance como Traceview, Systrace, Monitor, DDMS, todas excelentes herramientas ofrecidas por Android de forma nativa.
+
+\item Herramientas de análsis de datos y tracking de eventos como Mixpanel, Flurry, Google Analytics, etc.
+
+\item Herramientas de apoyo a bases de datos como ORMLite, GreenDAO, etc.
+
+\item Bibliotecas útiles para el desarrollo en Android como Picasso, Universal Image Loader, Volley, GSON, Jackson, entre otras.
+\end{itemize}
 
 % ---------------------------------------------------------------------------------------------------------------
