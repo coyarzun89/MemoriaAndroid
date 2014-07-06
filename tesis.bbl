@@ -24,7 +24,7 @@ Android.
 \newblock Android 2.3 platform and updated sdk tools [en l\'inea].
 \newblock
   $<$\url{http://android-developers.blogspot.com/2010/12/android-23-platform-and-updated-sdk.html}$>$.
-\newblock [Consulta: 4 de Mayo.
+\newblock [Consulta: 4 de Mayo].
 
 \bibitem{18}
 Android.
@@ -37,7 +37,7 @@ Android.
 Android.
 \newblock Android dashboards [en l\'inea].
 \newblock $<$\url{http://developer.android.com/about/dashboards}$>$.
-\newblock [Consulta: 20 de Abril].
+\newblock [Consulta: 29 de Junio].
 
 \bibitem{50}
 Android.
@@ -52,7 +52,7 @@ Android.
 \newblock Check system version at runtime [en l\'inea].
 \newblock
   $<$\url{https://developer.android.com/training/basics/supporting-devices/platforms.html}$>$.
-\newblock [Consulta: 4 de Mayo.
+\newblock [Consulta: 4 de Mayo].
 
 \bibitem{1}
 Android.
@@ -105,7 +105,7 @@ AppBlade.
 AppBrain.
 \newblock Ratings of apps on google play [en l\'inea].
 \newblock $<$\url{http://www.appbrain.com/stats/android-app-ratings}$>$.
-\newblock [Consulta: 3 de Mayo.
+\newblock [Consulta: 3 de Mayo].
 
 \bibitem{7}
 The Atlantic.
@@ -168,7 +168,7 @@ Erikrespo.
   market$/$play store usage. from december 2009 to february 2014. [en l\'inea].
 \newblock
   $<$\url{http://en.wikipedia.org/wiki/File:Android_historical_version_distribution_-_vector.svg}$>$.
-\newblock [Consulta: 4 de Mayo.
+\newblock [Consulta: 4 de Mayo].
 
 \bibitem{46}
 The~Beta Family.
@@ -236,6 +236,12 @@ Google.
 \newblock Google plus communities [en l\'inea].
 \newblock $<$\url{https://plus.google.com/communities /}$>$.
 \newblock [Consulta: 01 de Junio].
+
+\bibitem{61}
+Gradle.
+\newblock Gradle [en l\'inea].
+\newblock $<$\url{http://www.gradle.org/ /}$>$.
+\newblock [Consulta: 27 de Junio].
 
 \bibitem{3}
 Emir Hasanbegovic.

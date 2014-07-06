@@ -15,16 +15,16 @@
 \contentsline {figure}{\numberline {2.12}{\ignorespaces Concepto de Google sobre como el proceso de reportar crashes hacen al usuario feliz. \cite {18}\relax }}{28}{figure.caption.36}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Vista del sistema de versiones alphas y betas provisto por Android. Fuente: Elaboraci\'on Propia\relax }}{38}{figure.caption.50}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Vista del sistema de reporte de crashes provisto por Android. Fuente: Elaboraci\'on Propia\relax }}{41}{figure.caption.55}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Vista del sistema de reporte de crashes provisto por Android. Fuente: Elaboraci\'on Propia\relax }}{42}{figure.caption.55}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Vista del sistema de reporte de crashes de Crittercism. Fuente: Elaboraci\'on Propia\relax }}{43}{figure.caption.57}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Vista del sistema de reporte de crashes de Bugsense. Fuente: Elaboraci\'on Propia\relax }}{44}{figure.caption.59}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Vista del sistema de reporte de crashes de ACRA. \cite {36}\relax }}{45}{figure.caption.62}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Vistas de la aplicaci\'on Seahorse. Fuente: Elaboraci\'on Propia\relax }}{72}{figure.caption.133}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Flujo para acceder a la pantalla de Login en la aplicaci\'on Seahorse. En la primera imagen se presiona el bot\'on \textit {Log In}, lo cual abre el menu de la segunda imagen, y se presiona el bot\'on \textit {Sign in with email}, lo cual abre la vista de Login de la \'ultima imagen. Fuente: Elaboraci\'on Propia\relax }}{74}{figure.caption.134}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Resultados del test ejecutado a trav\'es de Spoon. Fuente: Elaboraci\'on Propia\relax }}{79}{figure.caption.135}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Vista de la herramienta uiautomatorviewer en una aplicaci\'on. Fuente: Elaboraci\'on Propia\relax }}{81}{figure.caption.136}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Vista de una aplicaci\'on beta de Seahorse en HockeyApp. Fuente: Elaboraci\'on Propia\relax }}{83}{figure.caption.137}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Gr\'aficos que entrega Crittercism sobre cantidad de crashes y usuarios afectados en un periodo de un mes. Fuente: Elaboraci\'on Propia\relax }}{88}{figure.caption.138}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Vistas de la aplicaci\'on Seahorse. Fuente: Elaboraci\'on Propia\relax }}{73}{figure.caption.133}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Flujo para acceder a la pantalla de Login en la aplicaci\'on Seahorse. En la primera imagen se presiona el bot\'on \textit {Log In}, lo cual abre el menu de la segunda imagen, y se presiona el bot\'on \textit {Sign in with email}, lo que abre la vista de Login de la \'ultima imagen. Fuente: Elaboraci\'on Propia\relax }}{75}{figure.caption.134}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Resultados del test ejecutado a trav\'es de Spoon. Fuente: Elaboraci\'on Propia\relax }}{81}{figure.caption.135}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Vista de la herramienta uiautomatorviewer en una aplicaci\'on. Fuente: Elaboraci\'on Propia\relax }}{83}{figure.caption.136}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Vista de una aplicaci\'on beta de Seahorse en HockeyApp. Fuente: Elaboraci\'on Propia\relax }}{85}{figure.caption.137}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Gr\'aficos que entrega Crittercism sobre cantidad de crashes y usuarios afectados en un periodo de un mes. Fuente: Elaboraci\'on Propia\relax }}{90}{figure.caption.138}
 \addvspace {10\p@ }
