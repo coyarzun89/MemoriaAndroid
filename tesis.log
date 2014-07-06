@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  5 JUL 2014 22:29
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  6 JUL 2014 13:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -761,31 +761,6 @@ Package babel Info: Redefining spanish shorthand "?
 
 
 ]
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 155.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 155.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 155.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 155.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 155.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 155.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 155.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 155.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 155.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 155.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 155.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 155.
- [6]
 Abstract
 \openout2 = `tex/00.2-abstract.aux'.
 
@@ -827,7 +802,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 155.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 155.
- [7
+ [6
 
 
 
@@ -901,7 +876,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 42.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 42.
-[8
+[7
 
 
 ]
@@ -929,33 +904,33 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 81.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 81.
+ [8]
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 122.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 122.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 122.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 122.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 122.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 122.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 122.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 122.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 122.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 122.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 122.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 122.
  [9]
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 122.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 122.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 122.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 122.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 122.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 122.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 122.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 122.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 122.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 122.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 122.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 122.
- [10]
-Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 163.
 Package babel Info: Redefining spanish shorthand >>
 (babel)             in language  on input line 163.
@@ -979,7 +954,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 163.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 163.
- [11])
+ [10])
 \tf@toc=\write5
 \openout5 = `tesis.toc'.
 
@@ -1007,7 +982,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 155.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 155.
- [12]
+ [11]
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 155.
 Package babel Info: Redefining spanish shorthand >>
@@ -1051,7 +1026,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 155.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 155.
- [13
+ [12
 
 ]
 Package babel Info: Redefining spanish shorthand <<
@@ -1093,7 +1068,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 18.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 18.
- [14
+ [13
 
 ])
 \tf@lof=\write7
@@ -1123,7 +1098,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 155.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 155.
- [15]
+ [14]
 Abreviaciones
 \openout2 = `tex/00.3-glosario.aux'.
 
@@ -1166,7 +1141,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 155.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 155.
- [16
+ [15
 
 
 ]
@@ -1484,7 +1459,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 44.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 44.
-[6] <Imagenes/arquitectura_android.png, id=1132, 541.5432pt x 609.477pt>
+[6] <Imagenes/arquitectura_android.png, id=1127, 541.5432pt x 609.477pt>
 File: Imagenes/arquitectura_android.png Graphic file (type png)
 
 <use Imagenes/arquitectura_android.png>
@@ -1619,7 +1594,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 96.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 96.
-<Imagenes/dispositivos_android.png, id=1157, 698.61pt x 270.00874pt>
+<Imagenes/dispositivos_android.png, id=1152, 698.61pt x 270.00874pt>
 File: Imagenes/dispositivos_android.png Graphic file (type png)
 
 <use Imagenes/dispositivos_android.png>
@@ -1672,7 +1647,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
-<Imagenes/versiones_android.jpg, id=1167, 2244.385pt x 1122.1925pt>
+<Imagenes/versiones_android.jpg, id=1163, 2244.385pt x 1122.1925pt>
 File: Imagenes/versiones_android.jpg Graphic file (type jpg)
 
 <use Imagenes/versiones_android.jpg>
@@ -1708,7 +1683,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
  []
 
-<Imagenes/dashboard_android.png, id=1177, 747.79375pt x 298.11375pt>
+<Imagenes/dashboard_android.png, id=1173, 747.79375pt x 298.11375pt>
 File: Imagenes/dashboard_android.png Graphic file (type png)
 
 <use Imagenes/dashboard_android.png>
@@ -1966,7 +1941,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 216.
 [18]
-<Imagenes/historical_progress_android.png, id=1235, 1284.8pt x 758.33313pt>
+<Imagenes/historical_progress_android.png, id=1231, 1284.8pt x 758.33313pt>
 File: Imagenes/historical_progress_android.png Graphic file (type png)
 
 <use Imagenes/historical_progress_android.png>
@@ -2048,7 +2023,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 233.
 [20 <./Imagenes/historical_progress_android.png>]
-<Imagenes/chart_screen_sizes.png, id=1250, 744.7825pt x 425.59pt>
+<Imagenes/chart_screen_sizes.png, id=1246, 744.7825pt x 425.59pt>
 File: Imagenes/chart_screen_sizes.png Graphic file (type png)
 
 <use Imagenes/chart_screen_sizes.png>
@@ -2094,7 +2069,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 247--248
 
  []
 
-<Imagenes/density_test_bad.png, id=1264, 568.83484pt x 136.68457pt>
+<Imagenes/density_test_bad.png, id=1258, 568.83484pt x 136.68457pt>
 File: Imagenes/density_test_bad.png Graphic file (type png)
 
 <use Imagenes/density_test_bad.png>
@@ -2175,7 +2150,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 271.
 
 [23]
-<Imagenes/open_signal_dispositivos.png, id=1285, 901.86937pt x 528.47438pt>
+<Imagenes/open_signal_dispositivos.png, id=1281, 901.86937pt x 528.47438pt>
 File: Imagenes/open_signal_dispositivos.png Graphic file (type png)
 
 <use Imagenes/open_signal_dispositivos.png>
@@ -2183,7 +2158,7 @@ Package pdftex.def Info: Imagenes/open_signal_dispositivos.png used on input li
 ne 276.
 (pdftex.def)             Requested size: 341.43306pt x 200.0724pt.
 
-<Imagenes/open_signal_branding.png, id=1289, 905.3825pt x 526.96875pt>
+<Imagenes/open_signal_branding.png, id=1285, 905.3825pt x 526.96875pt>
 File: Imagenes/open_signal_branding.png Graphic file (type png)
 
 <use Imagenes/open_signal_branding.png>
@@ -2195,7 +2170,7 @@ Package pdftex.def Info: Imagenes/open_signal_branding.png used on input line 2
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<Imagenes/open_signal_tamanos_pantalla_android.png, id=1294, 767.86874pt x 584.
+<Imagenes/open_signal_tamanos_pantalla_android.png, id=1290, 767.86874pt x 584.
 1825pt>
 File: Imagenes/open_signal_tamanos_pantalla_android.png Graphic file (type png)
 
@@ -2232,7 +2207,7 @@ Package babel Info: Redefining spanish shorthand "?
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<Imagenes/open_signal_tamanos_pantalla_ios.png, id=1301, 767.86874pt x 584.1825
+<Imagenes/open_signal_tamanos_pantalla_ios.png, id=1297, 767.86874pt x 584.1825
 pt>
 File: Imagenes/open_signal_tamanos_pantalla_ios.png Graphic file (type png)
  <use Imagenes/open_signal_tamanos_pantalla_ios.png>
@@ -2344,7 +2319,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 314--315
 
  []
 
-<Imagenes/crash_report.png, id=1315, 401.5pt x 398.48875pt>
+<Imagenes/crash_report.png, id=1311, 401.5pt x 398.48875pt>
 File: Imagenes/crash_report.png Graphic file (type png)
 
 <use Imagenes/crash_report.png>
@@ -2968,7 +2943,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 140.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 140.
- <Imagenes/distribution_google.png, id=1390, 1431.84938pt x 670.00313pt>
+ <Imagenes/distribution_google.png, id=1386, 1431.84938pt x 670.00313pt>
 File: Imagenes/distribution_google.png Graphic file (type png)
 
 <use Imagenes/distribution_google.png>
@@ -3182,7 +3157,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 200.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 200.
- <Imagenes/crash_report_google.jpg, id=1429, 2567.5925pt x 1314.9125pt>
+ <Imagenes/crash_report_google.jpg, id=1425, 2567.5925pt x 1314.9125pt>
 File: Imagenes/crash_report_google.jpg Graphic file (type jpg)
 
 <use Imagenes/crash_report_google.jpg>
@@ -3272,7 +3247,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 219.
 [42 <./Imagenes/crash_report_google.jpg>]
-<Imagenes/crash_report_crittercism.jpg, id=1440, 2622.79875pt x 1544.77126pt>
+<Imagenes/crash_report_crittercism.jpg, id=1436, 2622.79875pt x 1544.77126pt>
 File: Imagenes/crash_report_crittercism.jpg Graphic file (type jpg)
 
 <use Imagenes/crash_report_crittercism.jpg>
@@ -3321,7 +3296,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 231.
 [43 <./Imagenes/crash_report_crittercism.jpg>]
-<Imagenes/crash_report_bugsense.jpg, id=1447, 1445.4pt x 829.59938pt>
+<Imagenes/crash_report_bugsense.jpg, id=1443, 1445.4pt x 829.59938pt>
 File: Imagenes/crash_report_bugsense.jpg Graphic file (type jpg)
 
 <use Imagenes/crash_report_bugsense.jpg>
@@ -3386,7 +3361,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 246.
 [44 <./Imagenes/crash_report_bugsense.jpg>]
-<Imagenes/crash_report_acra.png, id=1459, 1443.14156pt x 658.71094pt>
+<Imagenes/crash_report_acra.png, id=1455, 1443.14156pt x 658.71094pt>
 File: Imagenes/crash_report_acra.png Graphic file (type png)
 
 <use Imagenes/crash_report_acra.png>
@@ -5236,7 +5211,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 3.
-<Imagenes/seahorse_screenshots.png, id=1609, 1897.0875pt x 1084.05pt>
+<Imagenes/seahorse_screenshots.png, id=1605, 1897.0875pt x 1084.05pt>
 File: Imagenes/seahorse_screenshots.png Graphic file (type png)
 
 <use Imagenes/seahorse_screenshots.png>
@@ -5303,7 +5278,7 @@ LaTeX Warning: Citation `62' on page 74 undefined on input line 18.
 
 LaTeX Warning: Citation `63' on page 74 undefined on input line 18.
 
-<Imagenes/seahorse_testing_flujo_login.png, id=1619, 1897.0875pt x 963.6pt>
+<Imagenes/seahorse_testing_flujo_login.png, id=1615, 1897.0875pt x 963.6pt>
 File: Imagenes/seahorse_testing_flujo_login.png Graphic file (type png)
 
 <use Imagenes/seahorse_testing_flujo_login.png>
@@ -5510,7 +5485,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 159.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 159.
-[79] <Imagenes/testing_spoon.png, id=1725, 654.445pt x 838.13126pt>
+[79] <Imagenes/testing_spoon.png, id=1720, 654.445pt x 838.13126pt>
 File: Imagenes/testing_spoon.png Graphic file (type png)
 
 <use Imagenes/testing_spoon.png>
@@ -5588,7 +5563,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 168--169
 
  []
 
-<Imagenes/testing_uiautomatorview.png, id=1736, 801.49437pt x 574.145pt>
+<Imagenes/testing_uiautomatorview.png, id=1731, 801.49437pt x 574.145pt>
 File: Imagenes/testing_uiautomatorview.png Graphic file (type png)
 
 <use Imagenes/testing_uiautomatorview.png>
@@ -5695,7 +5670,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 196.
  [83 <./Imagenes/testing_uiautomatorview.png>]
-<Imagenes/distribution_hockeyapp.png, id=1753, 1284.8pt x 707.14188pt>
+<Imagenes/distribution_hockeyapp.png, id=1749, 1284.8pt x 707.14188pt>
 File: Imagenes/distribution_hockeyapp.png Graphic file (type png)
 
 <use Imagenes/distribution_hockeyapp.png>
@@ -5863,7 +5838,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 248.
  [88]
-<Imagenes/crash_report_crittercism_graphs.jpg, id=1786, 1061.46562pt x 403.5075
+<Imagenes/crash_report_crittercism_graphs.jpg, id=1782, 1061.46562pt x 403.5075
 pt>
 File: Imagenes/crash_report_crittercism_graphs.jpg Graphic file (type jpg)
  <use Imagenes/crash_report_crittercism_graphs.jpg>
@@ -6393,8 +6368,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 172.
  )
 (\end occurred when \iftrue on line 155 was incomplete) 
 Here is how much of TeX's memory you used:
- 12032 strings out of 493315
- 172231 string characters out of 6137904
+ 12031 strings out of 493315
+ 172223 string characters out of 6137904
  296207 words of memory out of 5000000
  14676 multiletter control sequences out of 15000+600000
  14530 words of font info for 55 fonts, out of 8000000 for 9000
@@ -6415,10 +6390,10 @@ t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist
 fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2013/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2013/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on tesis.pdf (116 pages, 6983024 bytes).
+Output written on tesis.pdf (115 pages, 6983222 bytes).
 PDF statistics:
- 2108 PDF objects out of 2487 (max. 8388607)
- 1902 compressed objects within 20 object streams
- 496 named destinations out of 1000 (max. 500000)
+ 2103 PDF objects out of 2487 (max. 8388607)
+ 1899 compressed objects within 19 object streams
+ 495 named destinations out of 1000 (max. 500000)
  1470 words of extra memory for PDF output out of 10000 (max. 10000000)
 
