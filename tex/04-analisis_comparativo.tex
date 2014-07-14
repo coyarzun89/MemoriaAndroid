@@ -6,13 +6,13 @@ En la clasificación inicial se tenian herramientas de testing, distribución de v
 
 En cada sección se agregará un resumen general, el cual incluirá una tabla comparativa y conclusiones que actuarán como guía para los desarrolladores.
 
-En el siguiente capítulo se llevará a cabo la implementación de las herramientas más destacadas en una aplicación que se encuentra disponible en la tienda oficial de Google.
+En el siguiente capítulo se llevará a cabo la implementación de las herramientas más destacadas en una aplicación que se encuentra disponible en la tienda oficial de Google, Seahorse.
 
 \section{Análisis Comparativo entre las Herramientas de Testing Unitario}
-\subsection{Framework de Testing de Android}
+\subsection{Framework de Testing de Android: JUnit, Assertions y Mocks.}
 \subsubsection{Ventajas}
 \begin{itemize}
-\item Acceso al Framework de Android.
+\item Acceso al Framework de Android, por lo que los tests son lo más realista posible.
 
 \end{itemize}
 \subsubsection{Desventajas}
@@ -24,7 +24,7 @@ En el siguiente capítulo se llevará a cabo la implementación de las herramientas
 \end{itemize}
 
 \subsubsection{Resumen}
-El Framework de testing de Android es el método oficial que ofrece Google para realizar testing unitario. Primero se carga la aplicación en un dispositivo, y luego los tests basados en JUnit se ejecutan. Debido a que se ejecutan en un dispositivo que cuenta con el sistema operativo Android, se pueden usar todos los métodos que ofrece el framework de Android, por lo que los test son lo más cercano a la realidad. Aunque esto también le juega en contra, ya que compilar la aplicación, subir la aplicación a un dispositivo o emulador, y luego ejecutar los test, es un proceso muy lento.
+El Framework de Testing de Android es el método oficial que ofrece Google para realizar testing unitario y entre sus herramientas se encuentran utilidades para trabajar con Mocks, Assertions que permiten realizar comprobaciones de vistas y otras extensiones basadas en JUnit. Primero se carga la aplicación en un dispositivo, y luego los tests se ejecutan. Debido a que se ejecutan en un dispositivo que cuenta con el sistema operativo Android, se pueden usar todos los métodos que ofrece el framework de Android, por lo que los test son lo más cercano a la realidad. Aunque esto también le juega en contra, ya que compilar la aplicación, subir la aplicación a un dispositivo o emulador, y luego ejecutar los test, es un proceso muy lento.
 
 \subsection{Robolectric}
 \subsubsection{Ventajas}
@@ -94,17 +94,17 @@ Mockito en un comienzo estaba basado en EasyMock, por lo que se puede apreciar q
 Las dos grandes herramientas de testing unitario son Robolectric y el Framework de testing de Android. Hay que mencionar que tanto EasyMock como Mockito son sólo herramientas de apoyo que están más ligadas a Java que a Android, por lo que la decisión de usar alguna de estas herramienta u otro framework de mocking dependerá del grado de afinidad que tenga el desarrollador con este tipo herramientas, ya que son absolutamente prescindibles en la mayoría de los casos.
 La ventaja que ofrece Robolectric sobre el Framework de testing de Android es clara, ya que sin la necesidad de ejecutar los tests en un dispositivo o emulador, hace que estos sean mucho más rápidos. A continuación se presentan los parámetros de comparación que se considerarán:
 \begin{itemize}
-\item Gratuito: No se debe pagar nada para acceder a todas sus características.
+\item Gratuito: No se debe pagar nada para acceder a todas sus características. [Si, No]
 
-\item Código abierto: Se tiene acceso al código fuente.
+\item Código abierto: Se tiene acceso al código fuente. [Si, No]
 
-\item Madurez: Tiempo de desarrollo y estabilidad que tiene la herramienta.
+\item Madurez: Tiempo de desarrollo y estabilidad que tiene la herramienta. [Alta, Media, Baja]
 
-\item Duración: Cantidad de tiempo que se demoran en ejecutar los tests.
+\item Duración: Cantidad de tiempo que se demoran en ejecutar los tests. [Alta, Media, Baja]
 
-\item Documentación: Calidad de la documentación relacionada con la herramienta.
+\item Documentación: Calidad de la documentación relacionada con la herramienta. [Buena, Media, Mala]
 
-\item Usabilidad: Nivel de complejidad en integrar y usar la herramienta en una aplicación.
+\item Usabilidad: Nivel de complejidad en integrar y usar la herramienta en una aplicación. [Fácil, Medio, Difícil]
 \end{itemize}
 
 En la siguientes tablas se evalúa el comportamiento de cada herramienta con respecto a los parámetros recién definidos.
@@ -143,7 +143,7 @@ Robolectric & Media & Fácil \\
 \begin{itemize}
 \item Gratuito y desarrollado por Google.
 
-\item Los test son independientes del proceso en el que la aplicación testeada funciona. Esto permite realizar tests en que se llamen otras \textit{Activities}, como por ejemplo la cámara.
+\item Los test son independientes del proceso en el que la aplicación testeada funciona. Esto permite realizar tests en que se puede interactuar con otras aplicaciones, como por ejemplo, con la aplicación de la cámara.
 
 \end{itemize}
 \subsubsection{Desventajas}
@@ -158,7 +158,7 @@ Robolectric & Media & Fácil \\
 \end{itemize}
 
 \subsubsection{Resumen}
-Una de las principales ventajas con las que cuenta uiautomator, es que los test se ejecutan en un proceso independiente de la aplicación, por lo que se pueden realizar acciones que no son permitidas en otros frameworks, por ejemplo es posible ejecutar iniciar la cámara, o desactivar el WIFI, o activar el GPS. Si bien, esta herramienta fue lanzada el 14 de Noviembre del 2012 \cite{50}, el nivel de documentación con la que cuenta es muy bajo.
+Una de las principales ventajas con las que cuenta uiautomator, es que los test se ejecutan en un proceso independiente de la aplicación, por lo que se pueden realizar acciones que no son permitidas en otros frameworks, por ejemplo es posible ejecutar iniciar la aplicación de la cámara, o desactivar el WIFI, o activar el GPS. Si bien, esta herramienta fue lanzada el 14 de Noviembre del 2012 \cite{50}, el nivel de documentación con la que cuenta es muy bajo.
 
 \subsection{Robotium}
 \subsubsection{Ventajas}
@@ -179,7 +179,6 @@ Una de las principales ventajas con las que cuenta uiautomator, es que los test 
 
 \subsubsection{Resumen}
 Robotium ha sido la herramienta más popular de testing funcional en Android, ya que lleva más de 4 años de desarrollo, con actualizaciones prácticamente de forma mensual. Existe una gran comunidad y variados ejemplos \cite{51} que facilitan la tarea a los desarrolladores que se están iniciando en el testing, lo cual no ocurre con otras herramientas. Por último, en Enero de este año \cite{52}, el fundador de Robotium lanzó una herramienta complementaria llamada Robotium Recorder, la cual permite grabar los tests que se realizan, aunque ésta tiene un costo de 295 dólares por una licencia anual.  
-\newpage
 \subsection{Espresso}
 \subsubsection{Ventajas}
 \begin{itemize}
@@ -202,19 +201,19 @@ Es la última herramienta de testing que ha lanzado Google. Surgió por una necesi
 \subsection{Resumen General}
 Las tres herramientas mencionadas anteriormente son excelentes y cada una de ellas cuenta con ventajas sobre el resto. Por un lado está uiautomator, que es la única que permite interactuar con otras aplicaciones ya que los tests no están ligados a una \textit{Activity}. Mientras que Robotium y Espresso opacan a uiautomator en prácticamente todo el resto de características, en especial, en el fácil uso. Todo depende de para qué se deseen usar estas herramientas, pues todas son excelentes para realizar tests de caja negra, en donde no se tiene acceso o simplemente no se revisa el código fuente de la aplicación a la cual se quieren realizar las pruebas. Por último cabe mencionar que Espresso es la más rápida de la tres, y que Robotium cuenta con la mejor documentación. A continuación se presentan los parámetros de comparación que se considerarán:
 \begin{itemize}
-\item Gratuito: No se debe pagar nada para acceder a todas sus características.
+\item Gratuito: No se debe pagar nada para acceder a todas sus características. [Si, No]
 
-\item Código abierto: Se tiene acceso al código fuente.
+\item Código abierto: Se tiene acceso al código fuente. [Si, No]
 
-\item Madurez: Tiempo de desarrollo y estabilidad que tiene la herramienta.
+\item Madurez: Tiempo de desarrollo y estabilidad que tiene la herramienta. [Alta, Media, Baja]
 
-\item Duración: Cantidad de tiempo que se demoran en ejecutar los tests.
+\item Duración: Cantidad de tiempo que se demoran en ejecutar los tests. [Alta, Media, Baja]
 
-\item Documentación: Calidad de la documentación relacionada con la herramienta.
+\item Documentación: Calidad de la documentación relacionada con la herramienta. [Buena, Media, Mala]
 
-\item Usabilidad: Nivel de complejidad en integrar y usar la herramienta en la aplicación.
+\item Usabilidad: Nivel de complejidad en integrar y usar la herramienta en la aplicación. [Fácil, Medio, Difícil]
 
-\item Sincronizado con \textit{UI thread}: Los test se sincronizan con el \textit{UI thread}.
+\item Sincronizado con \textit{UI thread}: Los test se sincronizan con el \textit{UI thread}. [Si, No]
 \end{itemize}
 
 En la siguientes tablas se evalúa el comportamiento de cada herramienta con respecto a los parámetros recién definidos.
@@ -241,11 +240,11 @@ Espresso & Si & Si & Media & Baja \\
 \hline
 \textbf{Herramienta} & \textbf{Documentación} & \textbf{Usabilidad} & \textbf{Sincronizado con \textit{UI thread}}  \\
 \hline
-uiautomator & Media & Media & No \\
+uiautomator & Media & Medio & No \\
 \hline
 Robotium & Buena & Fácil & No \\
 \hline
-Espresso & Media & Media & Si \\
+Espresso & Media & Medio & Si \\
 \hline
 \end{tabular}
 \caption{b) Tabla comparativa entre herramientas que se enfocan en el testing funcional en Android.}
@@ -253,6 +252,7 @@ Espresso & Media & Media & Si \\
 
 \newpage
 \section{Otras Herramientas de Testing}
+Si bien, las principales herramientas de testing unitario y de interfaz gráfica ya se analizaron, existen otras herramientas que son muy difíciles de clasificar en alguna categoría, y que no son comparables entre sí, pero que si merecen ser mencionadas.  
 \subsection{Monkey}
 \subsubsection{Ventajas}
 \begin{itemize}
@@ -296,12 +296,12 @@ Cabe mencionar que Monkeyrunner no está relacionado con la herramienta vista ant
 \end{itemize}
 \subsubsection{Desventajas}
 \begin{itemize}
-\item Podría incluir video.
+\item Podría incluir un video del test, en vez de sólo los screenshots.
 
 \end{itemize}
 
 \subsubsection{Resumen}
-Esta es una herramienta perfecta, que puede ser usada por si sóla, a través de las herramientas de instrumentación que ofrece Android, o en conjunto con otras herramientas como Robotium y Espresso. Spoon ejecuta los tests en todos los dispositivos conectados al computador, incluyendo los emuladores que pueden estar ejecutándose. Al finalizar el test, se obtienen los screenshots de la aplicación durante la ejecución del test, y en cada una de las pantallas. Esto es muy útil al momento de entender por qué pueden haber fallado los test, cómo también para ver simultáneamente como se ve la aplicación en varios dispositivos.
+Esta es una herramienta de apoyo perfecta, que puede ser usada en conjunto con otras herramientas como Robotium y Espresso. Spoon ejecuta los tests en todos los dispositivos conectados al computador, incluyendo los emuladores que pueden estar ejecutándose. Al finalizar el test, se obtienen los screenshots de la aplicación durante la ejecución del test en cada una de los dispositivos conectados. Esto es muy útil al momento de entender por qué pueden haber fallado los test, cómo también para ver simultáneamente como se ve la aplicación en varios dispositivos.
 
 \newpage
 \section{Análisis Comparativo entre las Herramientas de Distribución de Versiones}
@@ -432,19 +432,19 @@ Al igual que The Beta Family esta plataforma se enfoca en la distribución de ver
 \subsection{Resumen General}
 Es necesario hacer una distinción entre las herramientas que se enfocan en distribución y en las que además ofrecen la opción de realizar tests no automatizados, con usuarios reales, es por ello que la comparación se divide en dos tablas distintas. El concepto de madurez se refiere al nivel de desarrollo con el que cuenta la plataforma. Esto es muy importante al momento de elegir un servicio, ya que si no es maduro, robusto y de calidad, es muy probable que genere una frustración entre los usuarios, antes que éstos puedan usar la aplicación, lo cual puede influenciar la percepción que tendrán al momento de entregar feedback o de realizar los testing. A continuación se presentan los parámetros de comparación que se considerarán:
 \begin{itemize}
-\item Gratuito: No se debe pagar nada para acceder a todas sus características.
+\item Gratuito: No se debe pagar nada para acceder a todas sus características. [Si, No]
 
-\item Precio: Valor del plan más económico ofrecido por la herramienta de forma mensual.
+\item Precio: Valor del plan más económico ofrecido por la herramienta de forma mensual. [Valor en dólares]
 
-\item Madurez: Tiempo de desarrollo y estabilidad que tiene la herramienta.
+\item Madurez: Tiempo de desarrollo y estabilidad que tiene la herramienta. [Alta, Media, Baja]
 
-\item Multiplataforma: Soporte para más de una plataforma, no sólo Android.
+\item Multiplataforma: Soporte para más de una plataforma, no sólo Android. [Si, No]
 
-\item Feedback: Los usuarios de prueba pueden enviar retroalimentación al desarrollador.
+\item Feedback: Los usuarios de prueba pueden enviar retroalimentación al desarrollador. [Si, No]
 
-\item Distribución: Es masiva si los usuarios pueden acceder por su cuenta, sin invitaciones del desarrollador. Es limitada si el desarrollador es el que tiene que invitar a los usuarios.
+\item Distribución: Es masiva si los usuarios pueden acceder por su cuenta, sin invitaciones del desarrollador. Es limitada si el desarrollador es el que tiene que invitar a los usuarios. [Masiva, Limitada]
 
-\item Testing incluye video: Además de realizar las tareas y responder las preguntas solicitadas por el desarrollador, el usuario adjunta un video de todo el proceso.
+\item Testing incluye video: Además de realizar las tareas y responder las preguntas solicitadas por el desarrollador, el usuario adjunta un video de todo el proceso. [Si, No]
 \end{itemize}
 
 En la siguientes tablas se evalúa el comportamiento de cada herramienta con respecto a los parámetros recién definidos.
@@ -473,15 +473,14 @@ AppBlade & No & 1 USD por cada usuario & Baja  \\
 \hline
 Google Play Console & No & No & Masiva\\
 \hline
-HockeyApp & Si & Si & Masiva\\
+HockeyApp & Si & Si & Limitada\\
 \hline
-AppBlade & Si &  Si & Masiva\\
+AppBlade & Si &  Si & Limitada\\
 \hline
 \end{tabular}
 \caption{b) Tabla comparativa entre herramientas que se enfocan en la Distribución de Versiones en Android.}
 \end{table}
 
-\newpage
 La inclusión de un video en el proceso de testing es muy útil para poder ver las reacciones del usuario y la interacción que tienen con la aplicación. Además, como en Android existen muchos dispositivos, lo que el usuario ve puede variar dependiendo del tamaño de la pantalla, el sistema operativo que tiene y el fabricante del dispositivo, por lo que visualizar la aplicación en otros dispositivos es fundamental para entregar una buena experiencia a la mayor cantidad de usuarios posibles. A continuación se presenta la tabla correspondiente a las herramientas que combinan la distribución y el testing:
 \begin{table}[h!]
 \centering
@@ -587,7 +586,7 @@ Crittercism es una de las plataformas más consolidadas y con mayor reputación, y
 \end{itemize}
 
 \subsubsection{Resumen}
-Bugsense es una plataforma que al igual que Crittercism, cuenta con una buena reputación. La gran diferencia es la cantidad de detalle en cada uno de los reportes. Si bien Bugsense entrega información útil como la versión de la aplicación, modelo del teléfono, versión del sistema operativo, esto no se acerca a lo ofrecido por Crittercism. Cabe mencionar que Bugsense ha presentado en Marzo de este año varias mejoras en su servicio \cite{45}, tales como la tasa de crashes que se han recibido los últimos 7 días y la página que muestra los crashes en tiempo real. Una de las características únicas es que se puede integrar con ACRA, una biblioteca de código abierto que también permite enviar los reportes de crashes de los usuarios. 
+Bugsense es una plataforma que al igual que Crittercism, cuenta con una buena reputación. La gran diferencia es la cantidad de detalle en cada uno de los reportes. Si bien Bugsense entrega información útil como la versión de la aplicación, modelo del teléfono, versión del sistema operativo, esto no se acerca a lo ofrecido por Crittercism. Cabe mencionar que Bugsense ha presentado en Marzo de este año varias mejoras en su servicio \cite{45}, tales como la tasa de crashes que se han recibido en los últimos 7 días y la página que muestra los crashes en tiempo real. Una de las características únicas es que se puede integrar con ACRA, una biblioteca de código abierto que también permite enviar los reportes de crashes de los usuarios. 
 
 \subsection{Google Analytics}
 \subsubsection{Ventajas}
@@ -636,23 +635,22 @@ Google Analytics es una herramienta gratuita que está más ligada al tracking de 
 
 \subsubsection{Resumen}
 La gran ventaja que ofrece ACRA sobre el resto es que es una biblioteca de código abierto, por lo que si no nos gusta algo podemos cambiarlo, o podemos agregar otras funcionalidades. Esto le juega a favor y en contra ya que también es necesario que el desarrollador implemente una aplicación web para la visualización de los reportes. Antes, el almacenamiento de los reportes de crashes se realizaba a través de Google Docs, pero desde la última actualización de Google Forms, el uso de Google Docs como almacenamiento para los reportes que entregaba ACRA quedó obsoleto. 
-\newpage
 
 \subsection{Resumen General}
 Google Play Console es una buena herramienta de inicio, pero es absolutamente necesaria la implementación de una herramienta que asegure la recepción de todos los reportes de crashes. Crittercism y Bugsense son dos plataformas excepcionales, que permiten realizar esta tarea, aunque son de pago. ACRA cuenta con la ventaja de ser de código abierto, pero el simple hecho que el desarrollador deba implementar el servicio web para la visualización de los crashes es un paso adicional y la descarta como una alternativa de fácil integración. Por otro lado, Google Analytics ofrece variadas estadísticas e información extremadamente útil, que puede servir para mejorar problemas de performance y usabilidad, pero su punto fuerte no son los reportes de crashes, ya que tener un día de retraso significa estar un día completo sin saber que está pasando con la aplicación.
 A continuación se presenta una tabla que intenta simplificar las ventajas y desventajas que posee cada herramienta:
 \begin{itemize}
-\item Gratuito: No se debe pagar nada para acceder a todas sus características.
+\item Gratuito: No se debe pagar nada para acceder a todas sus características. [Si, No]
 
-\item Precio: Valor del plan más económico ofrecido por la herramienta de forma mensual.
+\item Precio: Valor del plan más económico ofrecido por la herramienta de forma mensual. [Valor en dólares]
 
-\item Madurez: Tiempo de desarrollo y estabilidad que tiene la herramienta.
+\item Madurez: Tiempo de desarrollo y estabilidad que tiene la herramienta. [Alta, Media, Baja]
 
-\item Multiplataforma: Soporte para más de una plataforma, no sólo Android.
+\item Multiplataforma: Soporte para más de una plataforma, no sólo Android. [Si, No]
 
-\item Usabilidad: Nivel de complejidad en integrar y usar la herramienta con la aplicación.
+\item Usabilidad: Nivel de complejidad en integrar y usar la herramienta con la aplicación. [Fácil, Media, Difícil]
 
-\item Calidad del reporte: Nivel de detalle en cada reporte de crash.
+\item Calidad del reporte: Nivel de detalle en cada reporte de crash. [Baja, Media, Alta]
 
 \end{itemize}
 
@@ -684,7 +682,7 @@ ACRA & Si & 0 USD & No \\
 \hline
 \textbf{Herramienta} & \textbf{Madurez} & \textbf{Usabilidad} & \textbf{Calidad del reporte}\\
 \hline
-Google Play Console & Alta & Fácil & Media\\
+Google Play Console & Alta & Fácil & Baja\\
 \hline
 Crittercism & Alta & Fácil & Alta\\
 \hline

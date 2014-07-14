@@ -2,29 +2,31 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Arquitectura de Android, compuesta por cuatro capas. \cite {15}\relax }}{8}{figure.caption.8}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces \'Ultimos smartphones y tablets destacadas en el sitio de Android. \cite {1}\relax }}{11}{figure.caption.9}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Versiones de Android. \cite {16}\relax }}{12}{figure.caption.10}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Estad\IeC {\'\i }sticas relativas al n\'umero de dispositivos que tiene cada versi\'on de Android en Abril del 2014. \cite {2}\relax }}{13}{figure.caption.11}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Distribuci\'on hist\'orica de versiones de Android.\cite {13}\relax }}{20}{figure.caption.24}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Gr\'afico con la distribuci\'on de tama\~nos de pantalla y sus densidades durante el mes de Junio del 2014. \cite {2}, \relax }}{21}{figure.caption.27}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Consecuencias de asignar alto y ancho en pixeles en vez de en densidad de pixeles.\cite {17} \relax }}{22}{figure.caption.29}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Fragmentaci\'on de dispositivos entregado por OpenSignal el 2013. \cite {4}\relax }}{24}{figure.caption.32}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Fragmentaci\'on a nivel de fabricantes de dispositivos Android entregado por OpenSignal el 2013. \cite {4}\relax }}{25}{figure.caption.33}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Fragmentaci\'on de pantallas en dispositivos Android entregado por OpenSignal en Julio del 2013. \cite {4}\relax }}{26}{figure.caption.34}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Fragmentaci\'on de pantallas en dispositivos iOS entregado por OpenSignal en Julio del 2013. \cite {4}\relax }}{26}{figure.caption.35}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Concepto de Google sobre como el proceso de reportar crashes hacen al usuario feliz. \cite {18}\relax }}{28}{figure.caption.36}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Proceso de compilaci\'on de aplicaciones Android. Fuente: Elaboraci\'on Propia basada en \cite {10}\relax }}{10}{figure.caption.9}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces \'Ultimos smartphones y tablets destacadas en el sitio de Android. \cite {1}\relax }}{11}{figure.caption.10}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Versiones de Android. \cite {16}\relax }}{12}{figure.caption.11}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Estad\IeC {\'\i }sticas relativas al n\'umero de dispositivos que tiene cada versi\'on de Android en Abril del 2014. \cite {2}\relax }}{14}{figure.caption.12}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Distribuci\'on hist\'orica de versiones de Android.\cite {13}\relax }}{20}{figure.caption.25}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Gr\'afico con la distribuci\'on de tama\~nos de pantalla y sus densidades durante el mes de Junio del 2014. \cite {2} \relax }}{22}{figure.caption.28}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Consecuencias de asignar alto y ancho en pixeles en vez de en densidad de pixeles.\cite {17} \relax }}{23}{figure.caption.30}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Fragmentaci\'on de dispositivos entregado por OpenSignal el 2013. \cite {4}\relax }}{25}{figure.caption.33}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Fragmentaci\'on a nivel de fabricantes de dispositivos Android entregado por OpenSignal el 2013. \cite {4}\relax }}{25}{figure.caption.34}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Fragmentaci\'on de pantallas en dispositivos Android entregado por OpenSignal en Julio del 2013. \cite {4}\relax }}{26}{figure.caption.35}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Fragmentaci\'on de pantallas en dispositivos iOS entregado por OpenSignal en Julio del 2013. \cite {4}\relax }}{27}{figure.caption.36}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Concepto de Google sobre como el proceso de reportar crashes hacen al usuario feliz. \cite {18}\relax }}{29}{figure.caption.37}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Vista del sistema de versiones alphas y betas provisto por Android. Fuente: Elaboraci\'on Propia\relax }}{38}{figure.caption.50}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Vista del sistema de reporte de crashes provisto por Android. Fuente: Elaboraci\'on Propia\relax }}{42}{figure.caption.55}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Vista del sistema de reporte de crashes de Crittercism. Fuente: Elaboraci\'on Propia\relax }}{43}{figure.caption.57}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Vista del sistema de reporte de crashes de Bugsense. Fuente: Elaboraci\'on Propia\relax }}{44}{figure.caption.59}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Vista del sistema de reporte de crashes de ACRA. \cite {36}\relax }}{45}{figure.caption.62}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Ciclo de vida del componente \textit {Activity}. \cite {65} \relax }}{33}{figure.caption.41}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Vista del sistema de versiones alphas y betas provisto por Android. Fuente: Elaboraci\'on Propia\relax }}{40}{figure.caption.52}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Vista del sistema de reporte de crashes provisto por Android. Fuente: Elaboraci\'on Propia\relax }}{44}{figure.caption.57}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Vista del sistema de reporte de crashes de Crittercism. Fuente: Elaboraci\'on Propia\relax }}{45}{figure.caption.59}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Vista del sistema de reporte de crashes de Bugsense. Fuente: Elaboraci\'on Propia\relax }}{46}{figure.caption.61}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Vista del sistema de reporte de crashes de ACRA. \cite {36}\relax }}{47}{figure.caption.64}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Vistas de la aplicaci\'on Seahorse. Fuente: Elaboraci\'on Propia\relax }}{73}{figure.caption.133}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Flujo para acceder a la pantalla de Login en la aplicaci\'on Seahorse. En la primera imagen se presiona el bot\'on \textit {Log In}, lo cual abre el menu de la segunda imagen, y se presiona el bot\'on \textit {Sign in with email}, lo que abre la vista de Login de la \'ultima imagen. Fuente: Elaboraci\'on Propia\relax }}{75}{figure.caption.134}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Resultados del test ejecutado a trav\'es de Spoon. Fuente: Elaboraci\'on Propia\relax }}{81}{figure.caption.135}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Vista de la herramienta uiautomatorviewer en una aplicaci\'on. Fuente: Elaboraci\'on Propia\relax }}{83}{figure.caption.136}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Vista de una aplicaci\'on beta de Seahorse en HockeyApp. Fuente: Elaboraci\'on Propia\relax }}{85}{figure.caption.137}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Gr\'aficos que entrega Crittercism sobre cantidad de crashes y usuarios afectados en un periodo de un mes. Fuente: Elaboraci\'on Propia\relax }}{90}{figure.caption.138}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Vistas de la aplicaci\'on Seahorse. Fuente: Elaboraci\'on Propia\relax }}{74}{figure.caption.135}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Flujo para acceder a la pantalla de Login en la aplicaci\'on Seahorse. En la primera imagen se presiona el bot\'on \textit {Log In}, lo cual abre el menu de la segunda imagen, y se presiona el bot\'on \textit {Sign in with email}, lo que abre la vista de Login de la \'ultima imagen. Fuente: Elaboraci\'on Propia\relax }}{76}{figure.caption.136}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Resultados del test ejecutado a trav\'es de Spoon. Fuente: Elaboraci\'on Propia\relax }}{82}{figure.caption.137}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Vista de la herramienta uiautomatorviewer en una aplicaci\'on. Fuente: Elaboraci\'on Propia\relax }}{83}{figure.caption.138}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Vista de una aplicaci\'on beta de Seahorse en HockeyApp. Fuente: Elaboraci\'on Propia\relax }}{85}{figure.caption.139}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Gr\'aficos que entrega Crittercism sobre cantidad de crashes y usuarios afectados en un periodo de un mes. Fuente: Elaboraci\'on Propia\relax }}{89}{figure.caption.140}
 \addvspace {10\p@ }

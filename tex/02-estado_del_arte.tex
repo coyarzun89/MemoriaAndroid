@@ -28,7 +28,7 @@ En este capítulo se dará a conocer una breve descripción del sistema operativo A
 \section{Introducción a Android}
 Android es un sistema operativo basado en Linux, diseñado principalmente para dispositivos móviles táctiles, tales como smartphones y tablets.
 \subsection{Inicios de Android}
-Android, Inc. fue fundada en Palo Alto, California en Octubre del 2003 por Andy Rubin, Rich Miner, Nick Sears and Chris White. Su objetivo era desarrollar dispositivos móviles más inteligentes, con un mayor foco en la localización del dueño y en su personalización .\\
+Android, Inc. fue fundada en Palo Alto, California en Octubre del 2003 por Andy Rubin, Rich Miner, Nick Sears y Chris White. Su objetivo era desarrollar dispositivos móviles más inteligentes, con un mayor foco en la localización del dueño y en su personalización.\\
 
 Google compró a Android Inc. el 17 de Agosto del 2005 \cite{6}. Poco se sabía sobre esta compañía para ese entonces ya que estuvo funcionando de forma secreta, sin dar a conocer detalles sobre lo que desarrollaban. Muchos asumían que Google estaba planeando entrar al mercado de dispositivos móviles. De ahi en adelante los esfuerzos de Google se enfocaron en conversaciones con fabricantes y carriers, con la promesa de proveer un sistema flexible y actualizable.\\
 
@@ -38,9 +38,9 @@ El 6 de Noviembre del 2007 \cite{8} fue fundada la Open Handset Alliance, una al
 \subsection{Arquitectura}
 La arquitectura del sistema Android \cite{9}, también llamado stack, se puede apreciar en la figura ~\ref{fig:Fig1} y está compuesta por cuatro capas:
 \begin{itemize}
-\item \textbf{Kernel de Linux:} La capa más profunda es su núcleo en Linux, un sistema operativo abierto, portable y seguro. Para cada pieza de hardware, como la cámara o el bluetooth, existe un driver dentro del kernel, que permite a la capa superior hacer uso de ella, por lo que funciona como una capa de abstracción. El kernel además se encarga de la gestión de los diversos recursos del dispositivo, como la energía o la memoria, elementos de comunicación, procesos, etc.
+\item \textbf{Kernel Linux:} La capa más profunda es su núcleo Linux, un sistema operativo abierto, portable y seguro. Para cada pieza de hardware, como la cámara o el bluetooth, existe un driver dentro del kernel, que permite a la capa superior hacer uso de ella, por lo que funciona como una capa de abstracción. El kernel además se encarga de la gestión de los diversos recursos del dispositivo, como la energía o la memoria, elementos de comunicación, procesos, etc.
 
-\item \textbf{Bibliotecas:} La segunda capa en el stack contiene bibliotecas nativas, las cuales están escritas en C o C++, y son compiladas para la arquitectura específica del dispositivo. En la mayoría de los casos el fabricantes es quien se encarga de instalarla en su dispositivo. Las bibliotecas incluidas en esta capa son: el motor gráfico OpenGL, el sistema de gestión de base de datos SQLite, cifrado de comunicaciones SSL, motor de manejo de tipos de letra FreeType, entre otras.
+\item \textbf{Bibliotecas:} La segunda capa en el stack contiene bibliotecas nativas, las cuales están escritas en C o C++, y son compiladas para la arquitectura específica del dispositivo. En la mayoría de los casos el fabricantes es quien se encarga de instalarla en su dispositivo. Las bibliotecas incluidas en esta capa son: motor gráfico OpenGL, sistema de gestión de base de datos SQLite, cifrado de comunicaciones SSL, motor de manejo de tipos de letra FreeType, entre otras.
 
 El entorno de ejecución de Android también está compuesto por bibliotecas, por lo que no se considera una capa. Debido a las limitaciones de los dispositivos en los que debe funcionar, Google decidió crear la máquina virtual Dalvik, que funciona de forma similar a la máquina virtual de Java. Esta permite crear aplicaciones con un mejor rendimiento y menor consumo de energía, lo que es muy importante en dispositivos móviles. Además en el entorno de ejecución se incluyen la mayoría de las bibliotecas básicas de Java.
 
@@ -53,7 +53,7 @@ El entorno de ejecución de Android también está compuesto por bibliotecas, por l
 
 \item \textbf{Marco o Framework de Aplicaciones:} La tercera capa está compuesta por todas las clases y servicios que se utilizan al momento de programar aplicaciones. Los compontentes que posee son:
 \begin{itemize}
-\item \textbf{Administrado de \textit{Activities} (Activity Manager):} Gestiona la pila de \textit{Activities} de la aplicación, como también su ciclo de vida. En el desarrollo en Android, se llama \textit{Activity} a cada una de las pantallas con las que el usuario interactúa. Por lo que se puede asumir que una aplicación en la mayoría de los casos va a tener varias \textit{Activities}. Estas son uno de los componentes más importantes dentro de una aplicación.
+\item \textbf{Administrador de Actividades (Activity Manager):} Gestiona la pila de \textit{Activities} de la aplicación, como también su ciclo de vida. En el desarrollo en Android, se llama \textit{Activity} a cada una de las pantallas con las que el usuario interactúa. Por lo que se puede asumir que una aplicación en la mayoría de los casos va a tener varias \textit{Activities}. Estas son uno de los componentes más importantes dentro de una aplicación.
 
 \item \textbf{Administrador de ventanas (Windows Manager):} Organiza lo que se mostrará en pantalla. Crea las superficies en la pantalla, que posteriormente estarán ocupadas por las \textit{Activities}.
 
@@ -67,11 +67,11 @@ El entorno de ejecución de Android también está compuesto por bibliotecas, por l
 
 \item \textbf{Administrador de telefonía (Telephony Manager):} Permite realizar llamadas, como también el envío y recepción de SMS.
 
-\item \textbf{Administrado de recursos (Resource Manager):} A través de este administrador se podrá acceder a los elementos que no forman parte del código, como imágenes, sonidos, layouts, etc. 
+\item \textbf{Administrador de recursos (Resource Manager):} A través de este administrador se podrá acceder a los elementos que no forman parte del código, como imágenes, sonidos, layouts, etc. 
 
-\item \textbf{Administrado de ubicaciones (Location Manager):} Permite obtener la posición geográfica actual del dispositivo a través de GPS o redes.
+\item \textbf{Administrador de ubicaciones (Location Manager):} Permite obtener la posición geográfica actual del dispositivo a través de GPS o redes.
 
-\item \textbf{Administrado de sensores (Sensor Manager):} Permite la manipulación de distintos sensores del dispositivo, como el acelerómetro, giroscopio, brújula, sensor de proximidad, etc.
+\item \textbf{Administrador de sensores (Sensor Manager):} Permite la manipulación de distintos sensores del dispositivo, como el acelerómetro, giroscopio, brújula, sensor de proximidad, etc.
 
 \item \textbf{Cámara:} Permite el uso de la cámara del dispositivo para la obtención de fotografías o vídeos.
 
@@ -83,15 +83,23 @@ El entorno de ejecución de Android también está compuesto por bibliotecas, por l
 \end{itemize}
 
 \subsection{¿Cómo las aplicaciones son compiladas?}
-Al comenzar a desarrollar una aplicación de Android, generalmente se crea un proyecto usando un IDE (Integrated Development Environment) como Eclipse o Android Studio. El proyecto contendrá código fuente en Java y recursos. Cuando se compila el proyecto \cite[p.~14]{10} lo que ocurre es que se generan los Bytecode Java (archivos .class) en base al código fuente Java (archivos .java). Luego se compilan estos archivos .class generándose archivos ejecutables Dalvik (archivos .dex), los cuales pueden ser ejectuados por la máquina virtual Dalvik que está disponible en todos los dispositivos Android.\\
+Al comenzar a desarrollar una aplicación de Android, generalmente se crea un proyecto usando un IDE (Integrated Development Environment) como Eclipse o IntelliJ. El proyecto contendrá código fuente en Java y recursos, que pueden consistir en imágenes, sonidos, videos, archivos XML, entre otros. 
 
-Al compilar un proyecto se colocan los archivos .dex y el resto de los archivos del proyecto en uno solo llamado APK (Android Package). Este contiene todos los archivos necesarios para ejecutar la aplicación, incluyendo los .dex, recursos compilados, recursos sin compilar, y una versión binaria del Android Manifest.\\
 
-El \textit{Android Manifest} es un archivo que especifica información esencial que el sistema debe tener antes de ejecutar la aplicación. Toda aplicación debe tener este archivo de forma no binaria en su proyecto.\\
+\begin{figure}[h!]
+\centering
+      \includegraphics[width=16cm]{Imagenes/proceso_compilacion}
+\caption{Proceso de compilación de aplicaciones Android. Fuente: Elaboración Propia basada en \cite{10}}
+\label{fig:Fig69}
+\end{figure}
 
-Por razones de seguridad todas las aplicaciones de Android deben ser firmadas digitalmente con un certificado.\\
+Cuando se genera un proyecto \cite[p.~14]{10} lo que ocurre es que se generan archivos .class en base al código fuente Java. Luego se compilan estos archivos .class generándose archivos ejecutables Dalvik (archivos .dex), los cuales pueden ser ejectuados por la máquina virtual Dalvik que está disponible en todos los dispositivos Android.\\
 
-Finalmente el ADB (Android Debug Bridge) permiten que el IDE se comunique con un dispositivo físico de Android o un emulador.
+Tal como se puede ver en la figura \ref{fig:Fig69}, al compilar un proyecto se colocan los archivos .dex y el resto de los archivos del proyecto en uno llamado Android Package (archivo .apk). Este contiene todos los archivos necesarios para ejecutar la aplicación, incluyendo los .dex, recursos compilados, recursos sin compilar, y una versión binaria del Android Manifest.\\
+
+El \textit{Android Manifest} es un archivo que especifica información esencial, que el sistema debe tener antes de ejecutar la aplicación. Además, por razones de seguridad todas las aplicaciones de Android deben ser firmadas digitalmente con un certificado.\\
+
+Finalmente, el ADB (Android Debug Bridge) permite que el IDE se comunique con un dispositivo físico de Android o un emulador para poder ejectuar la aplicación.
 
 \section{Tipos de dispositivos}
 En el sitio web de Android \cite{1}, se pueden apreciar los dos tipos de dispositivos más populares de la plataforma, los smartphones y las tablets (Figura \ref{fig:Fig2}). Sin embargo, debido a que el código de Android es de código abierto, éste puede ser personalizado para que funcione con otros tipos de dispositivos electrónicos.
@@ -131,9 +139,9 @@ Desde Abril del 2009, los nombres de las versiones de Android han estado relacio
 \label{fig:Fig3}
 \end{figure}
 
-Al comenzar el desarrollo de una aplicación Android, se debe decidir cuál va a ser la API mínima a la que se dará soporte. Esto tendrá repercusiones al momento de que un usuario desee instalar la aplicación, ya que si su dispositivo cuenta con una versión como Froyo o Eclair, lo más probable es que no pueda instalar prácticamente ninguna de las aplicaciones disponibles en Google Play, la tienda en que se encuentran todas las aplicaciones que suben los desarrolladores.\\
+Al comenzar el desarrollo de una aplicación Android, se debe decidir cuál va a ser la API mínima a la que se dará soporte. Esto significa que el desarrollador deberá usar métodos mayoritariamente de esa API de Android, ya que si desea usar métodos de una API superior, debe específicar que esa porción de código se ejecutará sólo para dispositivos que tengan esa versión de la API de Android o una superior, y no para el resto, lo cual dificulta la legibilidad del código. Esto también tendrá repercusiones al momento de que un usuario desee instalar la aplicación, ya que si su dispositivo cuenta con una versión como Froyo o Eclair, lo más probable es que no pueda instalar prácticamente ninguna de las aplicaciones disponibles en Google Play, la tienda en que se encuentran todas las aplicaciones que suben los desarrolladores.\\
 
-Android actualiza mes a mes las estadísticas relativas al número de dispositivos que tiene cada versión del sistema operativo \cite{2}. Esto ayuda a tener una guía sobre cuál va a ser la API mínima soportada. En la figura \ref{fig:Fig4} se muestran las estadísticas correspondientes al mes de Abril del 2014. Esta información es recolectada durante los últimos 7 días de cada mes. Además se ignoran las versiones que tienen menos de un 0.1\%. Se puede apreciar que el sistema operativo que hoy en día es dominante corresponde a Jelly Bean con más de un 60\%. El nuevo sistema operativo KitKat tiene sólo un 5.3\% debido principalmente a que los operadores y fabricantes aún no tienen listas sus versiones personalizadas de KitKat, en las que pueden incluir nuevas funcionalidades o quitar lo que estimen conveniente.\\
+Android actualiza mes a mes las estadísticas relativas al número de dispositivos que tiene cada versión del sistema operativo \cite{2}. Esto ayuda a tener una guía sobre cuál va a ser la API mínima soportada. En la figura \ref{fig:Fig4} se muestran las estadísticas correspondientes al mes de Abril del 2014. Esta información es recolectada durante los últimos 7 días de cada mes. Además se ignoran las versiones que tienen menos de un 0.1\%. Se puede apreciar que la versión que hoy en día es dominante, corresponde a Jelly Bean con más de un 60\%. La versión más reciente del sistema operativo, KitKat, tiene sólo un 5.3\% debido principalmente a que los operadores y fabricantes aún no tienen listas sus versiones personalizadas de KitKat, en las que pueden incluir nuevas funcionalidades o quitar lo que estimen conveniente.\\
 \begin{figure}[h!]
 \centering
 	    \includegraphics[width=14cm]{Imagenes/dashboard_android}
@@ -150,7 +158,7 @@ Con tantos dispositivos y sistemas operativos vigentes, asegurar la calidad de l
 Los test unitarios aseguran que el código funcione como se espera. También son muy útiles para asegurar que el código sigue funcionando correctamente después de hacer cambios en otras partes del proyecto, al momento de arreglar bugs o añadir nuevas funcionalidades.
 
 \paragraph{Testing de User Interface (UI)}
-\par Además de testear los componentes individuales que permiten el funcionamiento de la aplicación, como \textit{Activities} y servicios, es muy importante testear el comportamiento de la interfaz de la aplicación cuando está en funcionamiento en un dispositivo. El testing de UI asegura que la aplicación se comportará de forma correcta en respuesta de acciones que realice el usuario en un dispositivo, tales como escribir en el teclado, presionar botones o imágenes, entre otros controles. Se debe tener consideración especial con los test que involucran elementos de UI, ya que únicamente la hebra principal tiene permisos para alterar la UI en Android.\\
+\par Además de testear los componentes individuales que permiten el funcionamiento de la aplicación, como \textit{Activities} y servicios, es muy importante testear el comportamiento de la interfaz de la aplicación cuando está en funcionamiento en un dispositivo. El testing de UI asegura que la aplicación se comportará de forma correcta en respuesta de acciones que realice el usuario en un dispositivo, tales como escribir en el teclado, presionar botones o imágenes, entre otros controles. Se debe tener consideración especial con los test que involucran elementos de UI, ya que únicamente el \textit{thread} principal tiene permisos para alterar la UI en Android.\\
 
 Un estrategia común es testear de forma manual la UI, verificando que la aplicación se comporta como se espera al realizar una serie de acciones. Sin embargo, este enfoque puede consumir mucho tiempo y ser bastante tedioso, como también, se pueden pasar por alto algunos errores. Un método más eficiente y confiable sería automatizar el testing de la interfaz con algun framework que facilite esta tarea.
 
@@ -173,31 +181,31 @@ La lista anterior describe los posibles tests que hoy en día existen para asegur
 \paragraph{Cambios de orientación}
 Para dispositivos que soportan múltiples orientaciones, Android detecta los cambios de orientación cuando el usuario rota el dispositivo, dejándolo en \textit{landscape} (posición horizontal) en vez de \textit{portrait} (posición vertical).\\
 
-Cuando ocurre esto, el comportamiento por defecto es destruir y recomenzar la \textit{Activity}. Se deberían tener en cuenta las siguientes preguntas:
+Cuando ocurre esto, el comportamiento por defecto es destruir y volver a iniciar la \textit{Activity}. Se deberían tener en cuenta las siguientes preguntas:
 \begin{itemize}
-\item ¿Se dibuja de forma correcta la pantalla?
+\item ¿Se dibuja de forma correcta todos los elementos en la pantalla?
 
-\item ¿La aplicación mantiene el estado? La \textit{Activity} no debería perder nada que el usuario haya ingresado en la UI.
+\item ¿La aplicación mantiene el estado original? La \textit{Activity} no debería perder nada que el usuario haya ingresado en la UI.
 \end{itemize}
 
 \paragraph{Cambios de configuración}
-También pueden ocurrir otros cambios más generales en el sistema, como un cambio de idioma. Este tipo de cambios desencadena el comportamiento por defecto de destruir y recomenzar la \textit{Activity}. 
+También pueden ocurrir otros cambios más generales en el sistema, como un cambio de idioma. Este tipo de cambios desencadena el comportamiento por defecto de destruir y volver a iniciar la \textit{Activity}. 
 
-\paragraph{Dependencias de fuentes externas}
+\paragraph{Factores externos}
 Si la aplicación depende de acceso a internet, o usa GPS, entonces se debería testear qué pasa cuando estos recursos no están disponibles.
 
 \paragraph{Cambios en segundo plano}
-Si la aplicación está inactiva y ya ha pasado a segundo plano, lo más probable es que el sistema destruya la o las \textit{Activities} de la aplicación para dar memoria a otras aplicaciones que estén ejecutándose actualmente. Es por ello que es necesario testear el ciclo de vida de la \textit{Activity} para corroborar si se destruye y recomienza de forma exitosa, sin pérdida del estado actual.
+Si la aplicación está inactiva y ya ha pasado a segundo plano, lo más probable es que el sistema destruya la o las \textit{Activities} de la aplicación para liberar recursos como memoria. Es por ello que es necesario testear el ciclo de vida de la \textit{Activity} para corroborar si se destruye y se vuelva a comenzar de forma exitosa, sin pérdida del estado anterior.
 
-Para el caso de testing de clases en aplicaciones Android, es posible que ocurran dos casos: que las clases realicen llamadas a la API de Android o que sólamente usen código Java.
+Para el caso de testing de clases en aplicaciones Android, es posible que ocurran dos casos: que las clases realicen llamadas a la API de Android o que sólamente usen bibliotecas nativas de Java.
 
 \paragraph{Testing de clases en Java \cite{19}}
-\par Si las clases que se tienen no hacen llamadas a la API de Android, se puede usar el framework de JUnit sin ningúna restricción.
+\par Si las clases que se tienen no hacen llamadas a la API de Android, se puede usar el framework de JUnit \cite{49} sin ninguna restricción.
 
 La ventaja de este método es que se puede usar cualquier framework de testing que sea para Java y la velocidad con que se ejecutan los tests debería ser mucha más rápida comparada con los tests que requieren de un sistema con Android.
 
 \paragraph{Testing de clases en Java que usan la API de Android \cite{19}}
-\par Si se quieren hacer tests que usen la API de Android, éstos necesitan llevarse a cabo en un dispositivo con Android. Esto hace que la ejecución de los tests tome más tiempo, principalmente porque el archivo \textit{android.jar} no contiene el código del framework de Android. Este archivo es únicamente usado al momento de compilar una aplicación. Una vez que la aplicación está instalada, se utilizará el \textit{android.jar} que está en el dispositivo.
+\par Si se quieren hacer tests que usen la API de Android, éstos necesitan llevarse a cabo en un dispositivo con Android. Esto hace que la ejecución de los tests tome más tiempo, principalmente porque la biblioteca \textit{android.jar} no contiene el código del framework de Android. Este archivo es únicamente usado al momento de compilar una aplicación. Una vez que la aplicación está instalada, se utilizará la biblioteca \textit{android.jar} que está en el dispositivo.
 
 
 
@@ -206,10 +214,10 @@ Ahora que ya se han dado a conocer aspectos básicos sobre Android, se puede prof
 \subsection{Fragmentación}
 La Fragmentación es el elemento que más afecta a Android. Debido a los más de 11.000 diferentes tipos de dispositivos \cite{4}, como también a las ocho versiones vigentes del sistema operativo \cite{2}, es mucho más difícil desarrollar una aplicación robusta y estable, ya que es prácticamente imposible poder probar la aplicación en todas las combinaciones de dispositivos y software existentes. Es posible clasificar la fragmentación en dos categorías, a través de las cuales desembocan la mayoría de los problemas que un desarrollador debe enfrentar: software y hardware.
 \subsubsection{Fragmentación a nivel de software}
-Como ya se mencionó anteriormente, existen muchas versiones del sistema operativo Android vigentes hoy en día. Esto priva al desarrollador de métodos útiles al momento de programar su aplicación, ya que se debe establecer una API mínima. En base a las estadísticas que provee Android, la mayoría de los desarrolladores decide dar soporte desde Gingerbread en adelante. Si el desarrollador desea utilizar métodos de una API superior a la de Gingerbread, debe especificar en el código fuente que esa parte sólo tiene que ser ejecutada si el dispositivo del usuario es mayor o igual a la API 11. La siguiente porción de código \cite{11} es un ejemplo de lo que los desarrolladores deben hacer: \\
+Como ya se mencionó anteriormente, existen muchas versiones del sistema operativo Android vigentes hoy en día. Esto priva al desarrollador de métodos útiles al momento de programar su aplicación, ya que se debe establecer una API mínima. En base a las estadísticas que provee Android, la mayoría de los desarrolladores decide dar soporte desde Gingerbread en adelante. Si por ejemplo, el desarrollador desea usar como API mínima Ice Cream Sandwich y quiere usar métodos de Jelly Bean, deberá especificar en el código fuente que esa parte sólo tiene que ser ejecutada si el dispositivo del usuario es mayor o igual a la API 16. La siguiente porción de código \cite{11} es un ejemplo de lo que los desarrolladores deben hacer: \\
 \begin{lstlisting}
-if (Build.VERSION.SDK_INT > Build.VERSION_CODES.GINGERBREAD_MR1) {
-    // Aquí va código superior a la API 10 de Gingerbread
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+    // Aquí va código superior o igual a la API 16
 }
 \end{lstlisting}
 Esto provoca muchas veces que el desarrollador deba programar una funcionalidad más de una vez. Actualmente varios desarrolladores están optando por dar soporte a sus aplicaciones desde Ice Cream Sandwich en adelante, debido principalmente a la gran recepción que ha tenido Jelly Bean y a la caída constante que está teniendo Gingerbread. Si se toma en cuenta que este último sistema operativo fue lanzado el año 2010 \cite{12} y aún cuenta con cerca de un 20\%, se puede apreciar claramente el nivel de fragmentación que existe, principalmente por la rápidez con la que Android ha estado mejorando su sistema operativo, lanzando aproximadamente una nueva versión cada año.\\
@@ -222,29 +230,29 @@ A continuación, en el gráfico de la figura \ref{fig:Fig5} se puede ver la distri
 \label{fig:Fig5}
 \end{figure}
 \par
-Muchas veces los crashes y errores en los que la aplicación deja de funcionar correctamente, ocurren en un sistema operativo más antiguo y ya fueron arreglados en los sistemas operativos más nuevos. Esto ocasiona que al probar la aplicación en un smartphone como un Nexus 4 o como un Samsung S3, no ocurran problemas que si podrían verse en dispositivos más antiguos.  Además, debido a que a veces los operadores o fabricantes no ofrecen actualizaciones al sistema actual, el dispositivo no es actualizado, por lo que estos errores persistirán.
+Muchas veces los crashes y errores en los que la aplicación deja de funcionar correctamente, ocurren en un sistema operativo más antiguo y ya fueron arreglados en los sistemas operativos más nuevos. Esto ocasiona que al probar la aplicación en un smartphone como un Nexus 4 o como un Samsung S3, no ocurran problemas que podrían verse en dispositivos más antiguos.  Además, debido a que a veces los operadores o fabricantes no ofrecen actualizaciones al sistema actual, el dispositivo no es actualizado, por lo que estos errores persistirán.
 
 \subsubsection{Fragmentación a nivel de hardware}
-Este tipo de fragmentación es la que más afecta a los desarrolladores. Por un lado, la gran cantidad de dispositivos es la que ha permitido la rápida evolución de Android, ya que cualquier fabricante puede adaptar el sistema operativo a sus necesidades e incluirlo en su hardware. Para los desarrolladores, este tipo de fragmentación es la que genera más pesadillas, pues cada dispositivo con Android cuenta con diferentes características. A continuación se detallan los problemas derivados por la fragmentación de hardware.
+Este tipo de fragmentación es la que más afecta a los desarrolladores. Por un lado, la gran cantidad de dispositivos es la que ha permitido la rápida evolución de Android, ya que cualquier fabricante puede adaptar el sistema operativo a sus necesidades. Para los desarrolladores, este tipo de fragmentación es la que genera más pesadillas, pues cada dispositivo con Android cuenta con diferentes características. A continuación se detallan los problemas derivados por la fragmentación de hardware.
 \paragraph{Fragmentación en los tamaños de pantalla}
-Existen cuatro tamaños generales de pantallas \cite{2}: pequeña (small), normal, grande (large) y extra grande (xlarge). Para optimizar la experiencia del usuario, muchas veces se debe implementar una interfaz distinta para un tipo específico de pantalla. Esto se lleva a cabo a través de un archivo llamado layout, escrito en XML que define los elementos presentes en la interfaz.\\
+Existen cuatro tamaños generales de pantalla \cite{2}: pequeña (small), normal, grande (large) y extra grande (xlarge). Para optimizar la experiencia del usuario, muchas veces se debe implementar una interfaz distinta para un tipo específico de pantalla. Esto se lleva a cabo a través de un archivo escrito en XML que define los elementos presentes en la interfaz gráfica.\\
 
-Si se desea usar el mismo layout para todas las pantallas simplemente se deben ir guardando estos archivos en la carpeta de recursos del proyecto, \textit{res/layout}. En caso que se quiera agregar un layout distinto para un tipo de pantalla, además de tener un archivo en la ruta antes mencionada, se debe crear una nueva carpeta de layouts, añadiendo el sufijo que corresponda a cada tamaño de pantalla. \\
+Si se desea usar el mismo archivo para todas las pantallas simplemente se deben ir guardando estos archivos en el directorio de recursos del proyecto, \textit{res/layout}. En caso que se quiera agregar un archivo distinto para un tipo de pantalla, además de tener un archivo en la ruta antes mencionada, se debe crear una nueva carpeta, añadiendo el sufijo que corresponda a cada tamaño de pantalla. \\
 
 \begin{figure}[h!]
 \centering
       \includegraphics[width=15cm]{Imagenes/chart_screen_sizes}
-\caption{Gráfico con la distribución de tamaños de pantalla y sus densidades durante el mes de Junio del 2014. \cite{2}, }
+\caption{Gráfico con la distribución de tamaños de pantalla y sus densidades durante el mes de Junio del 2014. \cite{2} }
 \label{fig:Fig6}
 \end{figure}
-Por ejemplo, si se quisiera agregar un layout distinto para pantallas grandes (large), se debe añadir un archivo de layout a la carpeta \textit{res/layout-large}, por lo que existirán dos versiones de este archivo, uno en la carpeta antes señalada, mientras que el otro estará en la carpeta general de layouts, \textit{res/layout}.\\
+Por ejemplo, si se quisiera agregar una interfaz distinta para pantallas más grandes (large), se debe crear el directorio \textit{res/layout-large} y añadir el archivo que define la interfaz, por lo que existirán dos versiones de este archivo, uno en el directorio antes señalado, mientras que el otro estará en el directorio general, \textit{res/layout}, que será para todo el resto de las pantallas.\\
 
 En el sitio web de Android \cite{1}, se entregan estadísticas mensuales sobre el porcentaje de dispositivos que tiene cada tamaño de pantalla. En el gráfico de la figura \ref{fig:Fig6} se muestra la distribución de tamaños de pantalla durante el mes de Junio del 2014.
 
 \paragraph{Fragmentación en las resoluciones de pantalla}
-Android categoriza las resoluciones de cada pantalla en base a la densidad de pixeles que poseen. Existen cinco tipos de densidades \cite{2}: baja (ldpi), media (mdpi), alta (hdpi), extra-alta (xhdpi) y extra-extra-alta (xxhdpi). Además existe otro tipo de densidad, la cual es usada principalmente para televisores (tvdpi).\\
+Android categoriza las resoluciones de cada pantalla en base a la densidad de pixeles que poseen. Esta medida es la cantidad de píxeles que hay por pulgada. Existen cinco tipos de densidades \cite{2}: baja (ldpi), media (mdpi), alta (hdpi), extra-alta (xhdpi) y extra-extra-alta (xxhdpi). Además existe otro tipo de densidad, la cual es usada principalmente para televisores (tvdpi).\\
 
-Muchas veces es necesario agregar diferentes versiones del mismo recurso gráfico. Por ejemplo, si sólo se agrega un recurso gráfico en la resolución más alta (xxhdpi), este probablemente se verá bien en resoluciones altas como xxhdpi y xhdpi, pero para las más bajas, como hdpi o mdpi, la imagen será redimensionada y se perderá mucha calidad.\\
+Muchas veces es necesario agregar diferentes versiones del mismo recurso gráfico. Por ejemplo, si sólo se agrega un recurso gráfico en la resolución mdpi, este probablemente se verá bien en resoluciones bajas como ldpi y mdpi, pero para las más altas, como xxhdpi o xhdpi, la imagen será redimensionada y se perderá mucha calidad.\\
 
 Al agregar elementos de UI como botones, textos, tablas, entre otros, también se debe considerar la densidad de pixeles, ya que si el ancho y alto se asignan en pixeles, va a ocurrir lo que se muestra en la figura \ref{fig:Fig7}. Por ello, es muy importante asignar valores que estén en la escala de densidad de pixeles. 
 
@@ -261,7 +269,7 @@ Aún con estas precauciones, es muy difícil saber cuáles son los valores de alto 
 En el gráfico de la figura  \ref{fig:Fig6} se puede apreciar la información que entrega Google sobre la distribución de densidad existente durante el mes de Junio del 2014 \cite{2}.
 
 \subsubsection{Fragmentación en otras características}
-Además de los tamaños de pantalla y sus resoluciones, existen otras características muy importantes que los desarrolladores deben tener en cuenta. Una de las principales es la RAM con la que cuenta el dispositivo, ya que es allí donde se cargan las instrucciones que ejecuta el procesador. También es muy importante el procesador y la cantidad de núcleos con los que cuenta. Aunque la mayoría de los dispositivos tiene cámara, también se debe tener en cuenta que algunos no la tiene. Por último, muchas veces los fabricantes como Samsung, hacen cambios en el sistema operativo, cambiando cosas nativas, lo cual produce diferentes experiencias en cada dispositivo, y muchas veces genera errores que el desarrollador no se espera.
+Además de los tamaños de pantalla y sus resoluciones, existen otras características muy importantes que los desarrolladores deben tener en cuenta. Una de las principales es la RAM con la que cuenta el dispositivo, ya que es allí donde se cargan las instrucciones que ejecuta el procesador. También es muy importante el procesador y la cantidad de núcleos con los que cuenta. Aunque la mayoría de los dispositivos tiene cámara, también se debe tener en cuenta que algunos no la tienen. Por último, muchas veces los fabricantes como Samsung, hacen cambios en el sistema operativo, cambiando cosas como por ejemplo, la interfaz del sistema, lo cual produce diferentes experiencias en cada dispositivo, y muchas veces genera errores que el desarrollador no se espera.
 
 \subsubsection{Reporte sobre Fragmentación}
 La compañía \textit{OpenSignal} ha entregado dos reportes sobre la fragmentación en Android en los años 2012 \cite{14} y 2013 \cite{4}. 
@@ -285,7 +293,7 @@ Similar a las estadísticas de dispositivos, la gráfica de la figura \ref{fig:Fig
 \label{fig:Fig12}
 \end{figure}
 \par
-Con respecto a los tamaños de pantallas, se menciona que la clave del éxito para cualquier aplicación es tener una buena interfaz, y en este aspecto Android presenta dos desafios para los desarrolladores. Primero, los fabricantes tienden a producir sus propias variantes en la interfaz del usuario, cambiando el aspecto de varios elementos nativos de Android, como botones, switchs, listas, entre otros, por lo que no se puede entregar la misma experiencia a todos los usuarios a menos que se hagan cambios profundos para personalizar la interfaz. El otro desafío tiene relación con los tamaños de pantalla, ningún otro sistema operativo móvil tiene tanta diversidad. En las figuras (\ref{fig:Fig10} y \ref{fig:Fig11}) se incluye una comparación entre los tamaños de pantalla de los dispositivos Android en contraste con los de iOS. Las líneas más oscuras representan la frecuencia de estas pantallas. Se hace énfasis en que en la gráfica lo que se muestra son los tamaños de pantalla física, no los tamaños en pixeles.
+Con respecto a los tamaños de pantallas, se menciona que la clave del éxito para cualquier aplicación es tener una buena interfaz, y en este aspecto Android presenta dos desafíos para los desarrolladores. Primero, los fabricantes tienden a producir sus propias variantes en la interfaz del usuario, cambiando el aspecto de varios elementos nativos de Android, como botones, switchs, listas, entre otros, por lo que no se puede entregar la misma experiencia a todos los usuarios a menos que se hagan cambios profundos para personalizar la interfaz. El otro desafío tiene relación con los tamaños de pantalla, ningún otro sistema operativo móvil tiene tanta diversidad. En las figuras (\ref{fig:Fig10} y \ref{fig:Fig11}) se incluye una comparación entre los tamaños de pantalla de los dispositivos Android en contraste con los de iOS. Las líneas más oscuras representan la frecuencia de estas pantallas. Se hace énfasis en que en la gráfica lo que se muestra son los tamaños de pantalla física, no los tamaños en pixeles.
 \begin{figure}[h!]
 \centering
       \includegraphics[width=12cm]{Imagenes/open_signal_tamanos_pantalla_android}
@@ -308,6 +316,8 @@ Generalmente, la distribución se realiza con un reducido grupo de usuarios de pr
 Al ser un proceso cíclico, normalmente los usuarios de prueba tienen que recibir versiones semanales de la aplicación, por lo que es importante mantener el contacto con ellos y contar con vías de comunicación siempre disponibles. \\
 
 Por otro lado, también existen desarrolladores que quieren dejar disponibles sus versiones Alphas y Betas a todo el mundo, ya que mientras más usuarios las usen, más posible es que se encuentren errores que se puedan haber pasado por alto.
+
+Google se dió cuenta de que esto se estaba convirtiendo en un problema, ya que faltaban herramientas que permitieran a los desarrolladores llevar sus versiones betas a los usuarios antes de que se publiquen de forma oficial, por lo que el año 2013 presentaron en la Conferencia Google I/O \cite{37} una actualización en su sistema de subida de versiones para dar soporte a versiones beta, aunque aún le falta mayor interacción con los usuarios.
 
 
 \subsection{Crashes}

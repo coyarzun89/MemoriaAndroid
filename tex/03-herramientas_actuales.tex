@@ -13,49 +13,63 @@ Android provee un buen framework de testing \cite{20} para hacer pruebas en vari
 
 \item Las extensiones de JUnit proveen clases con tests específicos para componentes. Estas clases entregan métodos para crear \textit{mocking objects} (objetos simulados) y métodos que ayudan a controlar el ciclo de vida de los componentes.
 
-\item El SDK (Software Development Kit) de Android también provee herramientas para realizar testing a la UI, como monkeyrunner.
 \end{itemize}
 
-A continuación se revisará en detalle cada una de las herramientas relacionadas a testing del SDK:
+A continuación se revisará en detalle cada una de las herramientas de testing unitario incluídas en el SDK:
 
-\subsubsection{JUnit \cite{49}}
+\subsubsection{Android JUnit \cite{49}}
 El testing en Android se basa en JUnit. Actualmente la API de testing soporta JUnit 3. Este requiere que las clases de test hereden de la clase \textit{junit.framework.TestCase}. Además, en JUnit 3 los métodos de testing deben comenzar con el prefijo \textit{test}. También se debe llamar al método \textit{setUp()} para configurar el test y al método \textit{tearDown()} para finalizar el test.\\
 
-Es una buena práctica, al realizar testing en Android, tener un método llamado \textit{testPreconditions()} que se encargue de corroborar las precondiciones para cada uno de los test. Si este método falla, se sabe inmediatamente que las suposiciones para los otros test no se han cumplido.\\
+Al realizar testing en Android, una buena práctica es tener un método llamado \textit{testPreconditions()} que se encargue de corroborar las precondiciones para cada uno de los test. Si este método falla, se sabe inmediatamente que las suposiciones para los otros test no se han cumplido.\\
 
 Se puede usar la clase \textit{TestCase} de JUnit para hacer testing unitario en una clase que no haga llamadas a la API de Android. \textit{TestCase} es también la clase base para \textit{AndroidTestCase}, que puede ser usada para testear objetos que dependen de Android.\\
 
-La clase \textit{Assert} de JUnit es usada para mostrar los resultados de los test. Los métodos \textit{assert} comparan los valores que se esperan de un test con los valores reales y se lanza una excepción si la comparación falla. Android también provee una clase para \textit{assertions} que extiende los posibles tipos de comparaciones, y otra clase de \textit{assertions} para testear la UI.
+La clase \textit{Assert} de JUnit es usada para mostrar los resultados de los test. Los métodos \textit{assert} comparan los valores que se esperan de un test con los valores reales y se lanza una excepción si la comparación falla. Android también proporciona un conjunto propio de \textit{asserts} que extienden los posibles tipos de comparaciones con las clases \textit{MoreAsserts} y \textit{ViewAsserts}. La primera de estas incluye asserts que permiten trabajar con colecciones como listas y expresiones regulares. La segunda clase permite comprobar que elementos se encuentran visibles para testear la UI.
 
-\subsubsection{Simulando objetos (Mock objects) \cite{20}}
-Android entrega clases para crear objetos llamados \textit{mock objects}, que son objetos de sistema simulados como \textit{Context, ContentProvider, ContentResolver} y \textit{Service}. Algunos tests también proveen objetos simulados de Intent. Se pueden usar estos \textit{mocks} para aislar los tests del resto del sistema y facilitar la inyección de dependencias. Estas clases se encuentran en los paquetes \textit{android.test} y \textit{android.test.mock}.\\
+\subsubsection{Objetos simulados (Mock objects) \cite{20}}
+Android entrega clases para crear objetos llamados \textit{mock objects}, que son objetos de sistema simulados como \textit{Context, ContentProvider, PackageManager} o \textit{Resources}. Se pueden usar estos \textit{mocks} para aislar los tests del resto del sistema y facilitar la inyección de dependencias. Estas clases se encuentran en los paquetes \textit{android.test} y \textit{android.test.mock}.\\
 
 Por ejemplo se puede usar \textit{MockContext} en vez de \textit{Context}. La clase \textit{RenamingDelegatingContext} entrega las llamadas a un contexto dado y ayuda a la base de datos y a las operaciones con archivos agregando un prefijo a todos los nombres de los archivos. De esta forma se pueden testear compontentes sin afectar la base de datos del sistema de archivos de un dispositivo Android.
 
-\subsection{Herramientas de Testing de UI provistas por Android}
-\subsubsection{Instrumentación \cite{20}}
-La API de testing de Android provee interacciones entre los componentes de Android y el ciclo de vida de la aplicación. Estas interacciones son realizadas a través de la API de Instrumentación, que permite a los tests controlar el ciclo de vida de las \textit{Activities}  y los eventos de interacción del usuario.\\
-
-Normalmente, un componente de Android se ejecuta en un ciclo de vida determinado por el sistema. Por ejemplo, el ciclo de vida de un objeto \textit{Activity} comienza cuando este es iniciado por un \textit{Intent}. El método \textit{onCreate()} es llamado, seguido del método \textit{onResume()}. Cuando el usuario abre otra aplicación, el método \textit{onPause()} es llamado. Si la \textit{Activity} llama al método \textit{finish()}, entonces el método \textit{onDestroy()} también es llamado. La API de Android no provee un forma de llamar estos métodos directamente, pero se puede hacer a través de Instrumentation.\\
+\subsubsection{Instrumentation \cite{20}}
+La API de testing de Android provee interacciones entre los componentes de Android y el ciclo de vida de la aplicación. Estas interacciones son realizadas a través de la API Instrumentation, que permite a los tests controlar el ciclo de vida de las \textit{Activities} y los eventos de interacción del usuario.\\
+\begin{figure}[h!]
+\centering
+      \includegraphics[width=13cm]{Imagenes/ciclo_vida_activity}
+\caption{Ciclo de vida del componente \textit{Activity}. \cite{65} }
+\label{fig:Fig40}
+\end{figure}
+Normalmente, un componente de Android se ejecuta en un ciclo de vida determinado por el sistema. Por ejemplo, el ciclo de vida de un objeto \textit{Activity} que se ve en la figura \ref{fig:Fig40}, comienza cuando este es iniciado por un \textit{Intent}. El método \textit{onCreate()} es llamado, seguido del método \textit{onStart()} y \textit{onResume()}. Cuando el usuario abre otra aplicación, el método \textit{onPause()} es llamado. Si la \textit{Activity} llama al método \textit{finish()}, entonces el método \textit{onDestroy()} también es llamado. La API de Android no provee un forma de llamar estos métodos directamente, pero se puede hacer a través de Instrumentation.\\
 
 Únicamente una clase de test basada en \textit{Instrumentation} permite enviar eventos de teclado o toques de pantalla a la aplicación bajo test. Por ejemplo, se puede testear una llamada al método \textit{getActivity()}, el cual comienza una \textit{Activity} y retorna la \textit{Activity}  que está siendo testeada. Después se puede llamar al método \textit{finish()}, seguido por un método \textit{getActivity()} nuevamente, y así se puede testear si la aplicación restaura su estado de forma correcta.\\
 
-El sistema ejecuta todos los componentes de una aplicación en el mismo proceso. Se puede permitir a algunos componentes, tales como \textit{Content Providers}, ejecutarse en un proceso separado, pero no se puede forzar a una aplicación a ejecutarse en el mismo proceso en el que otra aplciación está ejecutándose.\\
+El sistema ejecuta todos los componentes de una aplicación en el mismo proceso. Se puede permitir a algunos componentes, tales como \textit{Content Providers}, ejecutarse en un proceso separado, pero no se puede forzar a una aplicación a ejecutarse en el mismo proceso en el que otra aplicación está ejecutándose.\\
+
+
+\subsection{Herramientas de Testing de UI provistas por Android}
+ El SDK (Software Development Kit) de Android provee herramientas para realizar testing automatizado a la interfaz gráfica. Para usar las siguientes herramientas es necesario tener instalado:
+ \begin{itemize}
+\item Android SDK Tools, Revision 21 o mayor.
+
+\item Android SDK Platform, API 16 o mayor.
+
+\end{itemize}
+
+ \subsubsection{uiautomatorviewer \cite{19}}
+Android provee la herramienta uiautomatorviewer, que permite analizar la interfaz gráfica de una aplicación. Esta herramienta puede ser usada para encontrar los id, texto o atributos de los elementos de la interfaz.
+
+Esta herramienta permite a la gente que no programa, analizar una aplicación y desarrollar test a través de la biblioteca uiautomator. 
 
 \subsubsection{uiautomator \cite{19}}
-El SDK de Android contiene la biblioteca uiautomator para testear y ejecutar tests a la interfaz gráfica. Esto fue implementado a partir de la API 16.
+El SDK de Android contiene la biblioteca uiautomator para ejecutar tests a la interfaz gráfica. Esto fue implementado a partir de la API 16.
 
 Los proyectos de test de uiautomator son proyectos en Java, en donde la biblioteca de JUnit 3, junto con los archivos \textit{uiautomator.jar} y \textit{android.jar} son agregados a la compilación. 
 
 Además esta biblioteca provee la clase \textit{UiDevice} que permite la comunicación con el dispositivo, la clase \textit{UiSelector} para buscar elementos en la pantalla y la clase \textit{UiObject} que presenta los elementos de la interfaz. La clase \textit{UiCollection} permite seleccionar un número de elementos de la interfaz gráfica al igual que la clase \textit{UiScrollable} permite hacer scroll en una vista para encontrar un elemento.
 
-\subsubsection{uiautomatorviewer \cite{19}}
-Android también provee la herramienta uiautomatorviewer, que permite analizar la interfaz gráfica de una aplicación. Esta herramienta puede ser usada para encontrar los id, texto o atributos de los elementos de la interfaz.
-
-Esta herramienta permite a la gente que no programa, analizar una aplicación y desarrollar test a través de la biblioteca uiautomator. 
-
+\subsection{Otras Herramientas de Testing provistas por Android}
 \subsubsection{Monkey \cite{21}}
-Monkey  es un herramienta de línea de comando que enviá eventos aleatorios a un dispositivo. Se puede restringir a Monkey para que se ejecute sólo en ciertos paquetes, por lo que se le pueden dar instrucciones para testear únicamente una aplicación.
+Monkey es un herramienta de línea de comando que envía eventos aleatorios a un dispositivo. Se puede restringir a Monkey para que se ejecute sólo en ciertos paquetes, por lo que se le pueden dar instrucciones para testear únicamente una aplicación.
 
 \subsubsection{Monkeyrunner \cite{48}}
 La herramienta Monkeyrunner provee una API en Python para escribir programas que controlen un dispositivo Android o un emulador, fuera del código fuente escrito.
@@ -113,20 +127,21 @@ Google lanzó el framework Espresso para testing en Octubre del 2013.  Esta es un
 \begin{itemize}
 \item Espresso: Punto de entrada para interactuar con las vistas, a través de los métodos \textit{onView()} y \textit{onData()}. También permite la interacción con métodos que no necesariamente están atados a una vista, como por ejemplo el método \textit{pressBack()}.
 
-\item ViewMatchers: Una colección de objetos que implementan la interfaz \textit{Matcher<? super View>}. Se puede pasar uno o más de estos objetos al método \textit{onView()} para localizar una vista que actualmente esté dentro de la jerarquía de vistas.
+\item ViewMatchers: Una colección de objetos que implementan la interfaz\\ \textit{Matcher$<? super View>$}. Se puede pasar uno o más de estos objetos al método \textit{onView()} para localizar una vista que actualmente esté dentro de la jerarquía de vistas.
 
-\item ViewActions: Una colección de \textit{ViewActions} que pueden pasarse al método \textit{ViewInteraction.perform}, por ejemplo un click.
+\item ViewActions: Una colección de \textit{ViewActions} que pueden pasarse al método\\ \textit{ViewInteraction.perform}, por ejemplo un click.
 
 \item ViewAssertions: Una colección de \textit{ViewAssertions} que pueden pasarse al método  \textit{ViewInteraction.perform}. 
 \end{itemize}
 
 
+\subsection{Otras Herramientas de Testing de Terceros}
 \subsubsection{Spoon \cite{27}}
 Spoon es una herramienta de código abierto para test automatizados que permite ejecutar los test escritos en Java en varios dispositivos al mismo tiempo. Este fue desarrollado por la compañía Square.
 
-La aplicación se ejecuta en base a los test definido en las pruebas de instrumentación. Spoon genera un informe con los resultados a través de un HTML. Cada dispositivo testeado tiene una ficha con los resultados de cada uno de los test.
+La aplicación se ejecuta en base a los test definidos en las pruebas de instrumentación. Spoon genera un informe con los resultados a través de un HTML. Cada dispositivo testeado tiene una ficha con los resultados de cada uno de los test.
 
-Además, Spoon permite obtener screenshot de cada estado que se haya definido en la ejecución de los test, los cuales pueden verse en las distintas resoluciones de cada dispositivo en los que se realizaron las pruebas. En el siguiente código se obtienen dos screenshots, uno al inicio y otro después de realizar los respectivos test:
+Además, Spoon permite obtener screenshot de cada estado que se haya definido en la ejecución de los test, los cuales pueden verse en las distintas resoluciones de cada dispositivo en los que se realizaron las pruebas. En el siguiente código se obtienen dos screenshots, uno al inicio y otro después de realizar los respectivos test:\\
 
 \begin{lstlisting}
 Spoon.screenshot(activity, "initial_state");
@@ -135,7 +150,7 @@ Spoon.screenshot(activity, "after_login");
 \end{lstlisting}
 
 \section{Herramientas de Distribución de Versiones}
-Antes de la publicación de una aplicación, es necesario distribuir usuarios para corroborar que no existen problemas de usabilidad, errores de interfaz o que la aplicación deja de responder ante alguna acción del usuario. Para ello existen herramientas que permiten distribuir de manera segura versiones alpha y beta, para posteriormente poder recibir feedback que permita corregir posibles problemas, o simplemente recibir retroalimentación por parte de testers.
+Antes de la publicación de una aplicación, es necesario distribuir versiones beta a usuarios para corroborar que no existen problemas de usabilidad, errores de interfaz o que la aplicación deja de responder ante alguna acción. Para ello existen herramientas que permiten distribuir de manera segura versiones alpha y beta, para posteriormente poder recibir feedback que permita corregir posibles problemas, o simplemente recibir retroalimentación por parte de testers.
 
 \subsection{Herramienta de Distribución de Versiones provista por Android}
 Durante la Conferencia Google I/O de Mayo del año 2013 \cite{37}, se llevó a cabo el anuncio de una actualización a la \textit{Google Play Developer Console} \cite{29}, que corresponde al lugar en donde el desarrollador sube y administra la versión oficial de su aplicación. Las mejoras consistieron en añadir un servicio de traducción para las aplicaciones, estadísticas relacionadas con ganancias, consejos de optimización, seguimiento de referidos y finalmente la opción de subir versiones alphas y betas, ya que antes de este evento, no existía una forma nativa de realizar esta distribución.
@@ -188,16 +203,20 @@ Para el uso de esta plataforma es necesario subir el APK y añadir información qu
 \begin{itemize}
 \item ¿Qué fue lo más frustante de la aplicación?
 
+\item ¿Qué fue lo que más te gustó de la aplicación?
+
 \item ¿Usarías la aplicación?
+
+\item ¿Usas alguna aplicación similar a esta?
 
 \item ¿Qué nota le pondrías de 1 a 10?
 
 \end{itemize}
 
 \section{Herramientas de Reporte de Crashes}
-Una vez publicada una aplicación, comienza el proceso de correcciones de errores y mejoras. Esto se puede realizar gracias a los reportes de crashes que se reciben cuando la aplicación deja de funcionar correctamente. Es muy importante corregir todos estos errores para dar mayor estabilidad a la aplicación y para ofrecer un mejor producto al usuario. Android cuenta con un sistema de reporte de crashes desde el año 2010\cite{18}. A continuación se revisarán las características con las que cuenta:
+Una vez publicada una aplicación, comienza el proceso de correcciones de errores y mejoras. Esto se puede realizar gracias a los reportes de crashes que se reciben cuando la aplicación deja de funcionar correctamente. Es muy importante corregir todos estos errores para dar mayor estabilidad a la aplicación y para ofrecer un mejor producto al usuario. Google cuenta con un sistema de reporte de crashes desde el año 2010\cite{18}. A continuación se revisarán las características con las que cuenta:
 
-\subsection{Herramienta de Reporte de Crashes provista por Android}
+\subsection{Herramienta de Reporte de Crashes provista por \\Android}
 Cuando la aplicación ya está publicada, es posible acceder a una sección dentro de la \textit{Google Play Developer Console} \cite{29}, titulada \textit{CRASHES \& ANRS}. En este sitio se pueden ver los reportes de los últimos 6 meses, y como se muestra en la figura \ref{fig:Fig14}, es posible aplicar distintos filtros para obtener información más detallada sobre estos reportes. Por ejemplo, se puede filtrar por versiones de sistema operativo o el número de versión de la aplicación.
 
 \begin{figure}[h!]

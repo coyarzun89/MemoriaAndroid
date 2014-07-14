@@ -15,7 +15,7 @@ Las herramientas implementadas son las que más se ajustaban a las necesidades y 
 
 \section{Implementación de Herramientas de Testing}
 \subsection{Robolectric}
-Para la implementación de Robolectric es necesario seguir los pasos de instalación que se detallan en su sitio oficial \cite{56}. En Seahorse se usa Gradle \cite{61} para automatizar la construcción y compilación el proyecto, aunque también es posible usar Ant\cite{62} o Maven \cite{63}. Para agregar Robolectric a un proyecto configurado con Gradle es necesario agregar esta línea al archivo \textit{build.gradle} del proyecto:
+Para la implementación de Robolectric es necesario seguir los pasos de instalación que se detallan en su sitio oficial \cite{56}. En Seahorse se usa Gradle \cite{61} para automatizar la construcción y compilación el proyecto, aunque también es posible usar Ant \cite{62} o Maven \cite{63}. Para agregar Robolectric a un proyecto configurado con Gradle es necesario agregar esta línea al archivo \textit{build.gradle} del proyecto:
 \begin{lstlisting}
 dependencies {
   ...
@@ -50,7 +50,8 @@ public class SeahorseStartActivityTest {
     private Button buttonSign;
     @Before
     public void setup() throws Exception {
-        activity = Robolectric.buildActivity(SeahorseStartActivity.class).create().start().get();
+        activity = Robolectric.buildActivity(SeahorseStartActivity.class).create().
+            start().get();
         buttonLogin = (Button) activity.findViewById(R.id.buttonLogInAccount);
         buttonRegister = (Button) activity.findViewById(R.id.buttonRegisterAccount);
         buttonSign = (Button) activity.findViewById(R.id.buttonSignIn);
@@ -79,7 +80,7 @@ Por último se realiza el test del flujo que lleva a la pantalla de Login:
         assertEquals(LoginActivity.class.getCanonicalName(), intent.getComponent().getClassName());
     }
     \end{lstlisting}
-A través del método \textit{performClick()} es posible simular la lógica del botón, tal como si un usuario real lo hubiese presionado. Esto se realiza dos veces, ya que se tienen que simular dos clicks a dos botones distintos. El último de los click es el que abre la pantalla de Login por lo que se verifica que la \textit{Activity} que se inició corresponda a \textit{LoginActivity}.
+A través del método \textit{performClick()} es posible simular la lógica del botón, tal como si un usuario real lo hubiese presionado. Esto se realiza dos veces, ya que se tienen que simular dos clicks a dos botones distintos. El último de los click es el que se encarga de abrir la pantalla de Login, por lo que se obtiene el Intent creado por este click a través del método \textit{peekNextStartedActivity()}, para luego verifica a través del método \textit{assertEquals} que la \textit{Activity} que se inició corresponda a \textit{LoginActivity}.
 
 Al ejecutar los tests, se genera un reporte en HTML, que se ubica en la raíz del proyecto, en \textit{./build/test-report/index.html}. En este reporte se detalla la cantidad total de test ejecutados y el tiempo que se demoraron, como también los test que fallaron y la razón.
 
@@ -89,7 +90,6 @@ Se implementó Robotium, en vez de Espresso, principalmente porque existe mayor d
 Para agregar Robotium a un proyecto configurado con Gradle es necesario agregar esta línea al archivo \textit{build.gradle} del proyecto:
 \begin{lstlisting}
 dependencies {
-  ...
   androidTestCompile 'com.jayway.android.robotium:robotium-solo:4.3'
 }
 \end{lstlisting}
@@ -97,7 +97,6 @@ El test que se realizó es similar al realizado a través de Robolectric, aunque a
 \begin{lstlisting}
 public class RobotiumTest extends ActivityInstrumentationTestCase2 {
     private Solo solo;
-
     public RobotiumTest() {
         super(SeahorseStartActivity.class);
     }
@@ -136,7 +135,7 @@ Spoon es una herramienta que intenta simplificar la tarea de realizar tests de f
 
 Es necesario agregar dos archivos al proyecto, uno es \textit{spoon-runner} que permite la ejecución simultánea, y el otro es \textit{spoon-client} que se encarga de obtener screenshots de cada uno de los dispositivos, para luego presentarlos en el resumen general.
 
-Para realizar el testing de forma distribuida fue usado un dispositivo Samsung Galaxy S4 y dos emuladores. Debido a que los emuladores provistos por Android son demasiados lentos se usaron los de Genymotion. Ellos ofrecen cerca de 20 emuladores con las simulaciones de distintos dispositivos de forma gratuita. En este caso se usaron los emuladores de un Nexus 4 con Android 4.2.2 y un HTC One con 4.2.2.
+Para realizar el testing de forma distribuida fue usado un dispositivo Samsung Galaxy S4 y dos emuladores. Debido a que los emuladores provistos por Android son demasiados lentos se usaron los de Genymotion \cite{64}. Ellos ofrecen cerca de 20 emuladores con las simulaciones de distintos dispositivos de forma gratuita. En este caso se usaron los emuladores de un Nexus 4 con Android 4.2.2 y un HTC One con 4.2.2.
 
 El test que se realizó consistía en corroborar que en la pantalla de registro, al completar los datos y dejar uno en blanco, si se presiona el botón ``SIGN UP'', debe aparecer un ícono en el campo vacío, indicando que se necesita completar toda la información. Para ello se utilizó Robotium junto con Spoon, el primero para poder interactuar con la UI, mientras que Spoon se utilizó para obtener los screenshots de los tres dispositivos durante todo el proceso. El código a continuación muestra el uso de Spoon, a través del método \textit{Spoon.screenshot}:
 \begin{lstlisting}
@@ -155,7 +154,7 @@ Una vez que el test ya está listo, es necesario ejecutar por línea de comandos l
 \end{lstlisting}
 Los parámetros que se agregan son: el APK, el APK del test y la ruta del SDK. Después de unos segundos se genera una carpeta con el nombre \textit{spoon-out} que contiene los resultados de los tests en cada uno de los dispositivos. 
 
-En la figura \ref{fig:Fig24} se pueden ver los resultados obtenidos en el emulador de Genymotion Nexus 4, en el dispositivo Samsung S4 y en el emulador Genymorion HTC One. Todos los test funcionaron de forma correcta, aunque en la última pantalla, si bien se muestra el ícono indicando que el campo está vacío, éste debería estar acompañado de un diálogo con un texto con el mensaje ``This field is required'', por lo que se puede ver que Spoon no es capaz de capturar los diálogos que se muestran sobre la \textit{Activity} testeada.
+En la figura \ref{fig:Fig24} se pueden ver los resultados obtenidos en el emulador de Genymotion Nexus 4, en el dispositivo Samsung S4 y en el emulador Genymotion HTC One. Todos los test funcionaron de forma correcta, aunque en la última pantalla, si bien se muestra el ícono indicando que el campo está vacío, éste debería estar acompañado de un diálogo con un texto con el mensaje ``This field is required'', por lo que se puede ver que Spoon no es capaz de capturar los diálogos que se muestran sobre la \textit{Activity} testeada.
 
 \begin{figure}
 \centering
@@ -163,7 +162,6 @@ En la figura \ref{fig:Fig24} se pueden ver los resultados obtenidos en el emulad
 \caption{Resultados del test ejecutado a través de Spoon. Fuente: Elaboración Propia}
 \label{fig:Fig24}
 \end{figure}
-\newpage
 \subsection{uiautomatorviewer}
 Esta es una herramienta de apoyo, que puede servir para personas que están involucradas en el desarrollo de un proyecto móvil, pero que no son desarrolladores. Se puede obtener información muy detallada sobre el árbol jerárquico de vistas y de cada uno de sus elementos. A través de esta información es posible planear diferentes tipos de tests.\\
 
@@ -185,18 +183,17 @@ Por ejemplo, el siguiente comando enviará 2000 eventos aleatorios a la aplicació
 adb shell monkey -p co.seahorse.android -v 2000
 \end{lstlisting}
 
-\newpage
 \section{Implementación de Herramientas de Distribución}
 \subsection{HockeyApp}
 Antes de HockeyApp, en Seahorse se usaba TestFlight \cite{59}, pero ellos dejaron de dar soporte a Android en Marzo de este año \cite{60} ya que fueron comprados por Apple, por lo que fue necesario migrar a otro servicio. HockeyApp cumplía con prácticamente todas las necesidades que entregaba TestFlight, siendo una de ellas el soporte para  aplicaciones tanto Android como iOS. 
 
 Actualmente se pagan 10 dólares por el servicio, de forma mensual, lo que corresponde al plan más económico ofrecido por HockeyApp, que permite tener hasta 5 aplicaciones distintas en la plataforma con una cantidad ilimitada de usuarios.
 
-Para distribuir las versiones, la primera vez es necesario agregar información básica como el nombre de la aplicación y el nombre del paquete. Luego se sube el APK de la aplicación y se invita a las personas que se deseen a esta versión. Cada vez que se sube una versión nueva, es posible notificar a los usuarios que ya cuentan con una versión anterior para que la actualicen. Además, es posible invitar a nuevas personas en cualquier momento. 
+Para distribuir las versiones, la primera vez es necesario agregar información básica como el nombre de la aplicación y el nombre del paquete. Luego se sube el APK de la aplicación y se invita a las personas que el desarrollador quiere que se conviertan en usuarios de prueba de esta versión. Cada vez que se sube una versión nueva, es posible notificar a los usuarios que ya cuentan con una versión anterior para que la actualicen. Además, es posible invitar a nuevas personas en cualquier momento. 
 
 El desarrollador cuenta con información básica de los testers, como el modelo y dispositivo con el que cuenta, y también es posible saber si es que ya tienen la última versión.
 
-En la figura \ref{fig:Fig22} se puede ver la vista que tiene el desarrollador sobre una versión beta de Seahorse. La acciones más frecuente están en la parte superior, teniendo opciones para subir una nueva versión de la misma aplicación, invitar más usuarios o cambiar información básica de la aplicación. En la parte inferior es posible ver la lista de todas las últimas versiones que se han enviado de esa aplicación, con información como el peso de la aplicación, cuándo fue subida esa actualización y la cantidad de descargas que se han tenido. En Seahorse no está implementado el SDK que entrega reporte de crashes, ya que se usa otra herramienta más avanzada para ello. Por último, sobre las acciones más frecuente hay un menú que ofrece la opción de ver todas las versiones que ha tenido la beta, la lista de usuarios que tienen acceso a la beta y el posible feedback que han entregado cada uno de ellos.
+En la figura \ref{fig:Fig22} se puede ver la vista que tiene el desarrollador sobre una versión beta de Seahorse. La acciones más frecuente están en la parte superior, teniendo opciones para subir una nueva versión de la misma aplicación, invitar más usuarios o cambiar información básica de la aplicación. En la parte inferior es posible ver la lista de todas las últimas versiones que se han enviado de esa aplicación, con información como el peso de la aplicación, cuándo fue subida esa actualización y la cantidad de descargas que se han tenido. En Seahorse no está implementado el SDK de HockeyApp para la recepción de reporte de crashes, ya que se usa Crittercism, que entrega información más avanzada. Por último, sobre las acciones más frecuente hay un menú que ofrece la opción de ver todas las versiones que ha tenido la beta, la lista de usuarios que tienen acceso a la beta y el posible feedback que han entregado cada uno de ellos.
 \begin{figure}
 \centering
       \includegraphics[width=15cm]{Imagenes/distribution_hockeyapp}
@@ -208,7 +205,7 @@ En la figura \ref{fig:Fig22} se puede ver la vista que tiene el desarrollador so
 \subsection{UserTesting}
 UserTesting es la plataforma usada en Seahorse para lanzar versiones beta y recibir feedback de usuarios de prueba a través de videos. Esta herramienta es usada por grandes empresas como Google, Apple, Microsoft, Twitter, Facebook y  Yahoo, para la distribución y testing de versiones de prueba de sitios web, aplicaciones de escritorios y aplicaciones móviles. El servicio funciona a través de la compra de créditos, en donde por ejemplo, 1000 dólares otorgan al desarrollador 20 créditos. Cada uno de estos créditos sirve para realizar un test con un usuario, aunque también es posible realizar un mismo test a más de un usuario, pero en definitiva, por cada usuario que realice un test, un crédito es consumido. Debido al elevado valor de cada crédito, el desarrollador debe tener claro qué es lo que quiere testear dentro de la aplicación y cuáles son los resultados que espera.
 
-En Seahorse se usa UserTesting al momento de implementar nuevas características en la aplicación, para ver temas de usabilidad y para corroborar que el usuario entiende de forma intuitiva lo implementado. Además sirve para encontrar posibles errores en otros dispositivos, ya que debido a la fragmentación existente en Android es prácticamente imposible saber como una aplicación se ve en cada uno de los dispositivos existentes.
+En Seahorse se usa UserTesting al momento de implementar nuevas características en la aplicación, para ver temas de usabilidad y para corroborar que el usuario entiende de forma intuitiva lo implementado. Además sirve para encontrar posibles errores en otros dispositivos, ya que debido a la fragmentación existente en Android es prácticamente imposible saber cómo una aplicación se ve en cada uno de los dispositivos existentes.
 
 Para la creación de un test los pasos son los siguientes:
 \begin{itemize}
@@ -225,11 +222,11 @@ Para la creación de un test los pasos son los siguientes:
 
 Cuando en Seahorse se agregó el registro de usuarios a través de Facebook y de Google+, se llevó a cabo la distribución y testing a través de esta plataforma. Esto permitió corroborar que esta nueva característica, al igual que otras, funcionaban correctamente. Fue necesario hacer en total unos 8 tests, ya que en cada iteración se usaban 4 créditos, 2 para comprobar que el registro a través de Facebook funcionaba bien, y otros 2 para comprobar lo mismo, pero a través de Google+. Los tests a través de Facebook funcionaron correctamente, pero con Google+ existieron dificultades, ya que uno de los usuarios no pudo realizar el registro. Debido a esto, después de realizar algunas correcciones se llevaron a cabo nuevos tests, con los que se obtuvieron resultados positivos. Tal como se mencionó antes, es necesario aprovechar cada uno de los tests, por lo que además de testear el registro de los usuarios, también se solicitaron otras tareas, como importar albums de otras plataformas, sincronizar la cámara del dispositivo con Seahorse, invitar a otros usuarios a la aplicación, entre otras cosas.
 
-Cada uno de los videos entregó información valiosa sobre la usabilidad dentro de la aplicación, y permitió verificar la UI en 8 dispositivos distintos, algunos con una pantalla muy pequeña. Los videos duran entre 15 y 20 minutos, y el usuario va relatando todo el proceso, desde la instalación de la aplicación, hasta el cuestionario final.
-\newpage
+Cada uno de los videos entregó información valiosa sobre la usabilidad dentro de la aplicación, y permitió verificar la UI en 8 dispositivos distintos, algunos con una pantalla muy pequeña. Si bien, la cantidad de tareas que se pueden solicitar a los usuarios no tiene límite, los tests deberían durar alrededor de 15 minutos, ya que el sitio les paga a los usuarios por 15 minutos de video. Esto no quiere decir que si el test dura más de ese tiempo, no va a hacer válido, pero va a depender más de la voluntad del tester si desea seguir grabando 20 o 25 minutos. El usuario va relatando todo el proceso, desde la instalación de la aplicación, hasta el cuestionario final.
+
 \section{Implementación de Herramientas de Reportes de Crashes}
 \subsection{Crittercism}
-Crittercism ha sido la plataforma escogida para la recepción de crashes, principalmente por el nivel de detalle presente en sus reportes. Además el valor que se paga mensualmente es bastante accesible para cualquier empresa del rubro. Actualmente dentro de Seahorse, se pagan 24 dólares por este servicio, lo que da acceso a reportes muy detallados que permiten reparar de forma rápida cada crash. 
+Crittercism ha sido la plataforma escogida para la recepción de crashes, principalmente por el nivel de detalle presente en sus reportes. Además el valor que se paga mensualmente es bastante accesible para cualquier empresa del rubro. Actualmente dentro de Seahorse, se pagan 24 dólares mensuales por este servicio, lo que da acceso a reportes muy detallados que permiten reparar de forma rápida cada crash. 
 
 Crittercism ha permitido disminuir la tasa de crashes y ofrece variadas estadísticas para ver información sobre los dispositivos en los que existen más crashes, el sistema operativo en que ocurren más crashes o la versión en la que ocurrieron más crashes. Después del lanzamiento de cada actualización se reparan una gran cantidad de bugs, pero aparecen nuevos crashes, lo que es inherente al proceso de desarrollo de software, ya que se incluye nuevo código, pero con esta herramienta es posible contar con información muy detallada, facilitando en gran medida la tarea de los desarrolladores.
 
@@ -237,7 +234,7 @@ La instalación es bastante simple \cite{31}. Para agregar Crittercism a un proye
 \begin{lstlisting}
 compile 'com.crittercism:crittercism-android-agent:+'
 \end{lstlisting}
-Luego se deben agregar los siguientes permisos en el archivo Android Manifest del proyecto: 
+Luego se deben agregar estos permisos en el Android Manifest del proyecto: 
 \begin{lstlisting}
 <uses-permission android:name="android.permission.INTERNET"/>
 <uses-permission android:name="android.permission.READ_LOGS"/>
@@ -258,15 +255,14 @@ La documentación con la que cuenta es excelente para entender los alcances y tod
 try {
     throw new Exception("Aquí ocurre una excepción");
 } catch (Exception exception) {
-    //De esta forma se captura y se envía a Crittercism
     Crittercism.logHandledException(exception);
 }
 \end{lstlisting}
 
-A través de los gráficos de la figura \ref{fig:Fig23} es posible dimensionar la utilidad de contar con una herramienta como Crittercism. El gráfico de la izquierda indica la cantidad de reportes de crashes recibidos por distintas versiones de la aplicación durante el mes de Enero. El gráfico de la derecha indica la cantidad de usuarios que han sido afectados por al menos un crash durante ese mismo período. A través de estos gráficos es posible ver que la versión 0.8.8 de color amarillo, fue lanzada el día 9 de Enero y rápidamente comenzaron a llegar una gran cantidad de reportes de crashes, alcanzando la cifra de 173 crashes y afectando a más de 100 usuarios. Debido a ello, al día siguiente se lanzó la versión 0.8.8.1 de color verde, la cual se encargó de arreglar el error introducido en la versión previa y reduciendo este número en gran medida, con sólo 35 crashes y afectando a 20 usuarios. Si no se hubiera contado con una herramienta que entregue los reportes de crashes en tiempo real, probablemente habrían transcurrido más días con el mismo problema, afectando a muchos más usuarios. 
+A través de los gráficos de la figura \ref{fig:Fig23} es posible dimensionar la utilidad de contar con una herramienta como Crittercism. El gráfico de la izquierda indica la cantidad de reportes de crashes recibidos por distintas versiones de la aplicación durante el mes de Enero. El gráfico de la derecha indica la cantidad de usuarios que han sido afectados por al menos un crash durante ese mismo período. A través de estos gráficos es posible ver que la versión 0.8.8 de color amarillo, fue lanzada el día 9 de Enero y rápidamente comenzaron a llegar una gran cantidad de reportes de crashes, alcanzando la cifra de 173 crashes y afectando a más de 100 usuarios. Debido a ello, al día siguiente se lanzó la versión 0.8.8.1 de color verde, la cual se encargó de arreglar el error introducido en la versión previa y reduciendo este número en gran medida, con sólo 35 crashes y afectando a 20 usuarios. Si esta herramienta, probablemente habrían transcurrido más días con el mismo problema, afectando a muchos más usuarios. 
 \begin{figure}
 \centering
-      \includegraphics[width=16cm]{Imagenes/crash_report_crittercism_graphs}
+      \includegraphics[width=14cm]{Imagenes/crash_report_crittercism_graphs}
 \caption{Gráficos que entrega Crittercism sobre cantidad de crashes y usuarios afectados en un periodo de un mes. Fuente: Elaboración Propia}
 \label{fig:Fig23}
 \end{figure}

@@ -323,47 +323,39 @@ con el estilo de documento `report'}{Usted debería leer la documentación de UTFS
 % Portada de la Tesis, incluyendo el formato apropiado.
 \def\titlep{
     \thispagestyle{empty}
-    \hspace{-0.5cm}
-    \begin{tabular}{c >{\centering\vspace{-1.7cm}}p{9.5cm} c}
-        \epsfig{file=logo_inf,width=65pt} &
-        \textsc{\expandafter{\@university} \\
+    \begin{center}
+        \large\textsc{\expandafter{\@university} \\
         Departamento de \expandafter{\@dept} \\
-        Valparaíso -- Chile} &
-        \epsfig{file=logo_usm,width=70pt}
-    \end{tabular}
-    \ifdraft@mode
-      \vskip0.4in
-      \begin{center} \Large \textbf{COPIA BORRADOR} -- Impreso el \today \end{center}
-      \vskip0.5in
-    \else
-      \null\vskip1.2in
-    \fi
-    \begin{center}
-        \hyphenpenalty=10000\Large \textbf{\uppercase\expandafter{\@title}}
+        Valparaíso -- Chile}
+      \vskip0.1in  
+        \epsfig{file=logo_usm_big,width=140pt}
     \end{center}
-      \vskip0.1in
+      \vskip0.3in  
     \begin{center}
-        \large\rm Memoria presentada como requerimiento parcial\\
-        \large\rm para optar al t\'itulo profesional de    
+        \hyphenpenalty=10000\large \textbf{\uppercase\expandafter{\@title}}
+    \end{center}
+      \vskip0.2in
+    \begin{center}
+        \large \uppercase\expandafter{\@author}
         \vskip0.2in
-        \Large \uppercase{Ingeniero Civil en Inform\'atica} \\
-        \ifmenti@n
-             \Large \uppercase{menci\'on en}
-             \Large \uppercase\expandafter{\themention@text} \\
-        \fi
-        \Large\rm por\\
-        \Large\textbf{\expandafter{\@author}} \\
-        \vskip 0.7in
-        \large\rm Comisión Evaluadora:\\
-        \large\expandafter{\@profguia} (Guía, UTFSM)\\
-        \large\expandafter{\@profcorr} (Correferente, PUCV)\\
-        \vskip 0.5in
+        \large\rm \textsc{MEMORIA PARA OPTAR AL T\'ITULO DE}  \\
+        \large \textsc{INGENIERO CIVIL INFORMÁTICO}
+    \end{center}
+    \begin{center}
+        \vskip 0.6in
+        \normalsize{PROFESORA GUÍA:}\\
+        \textsc\expandafter{\@profguia}\\
+      \vskip0.1in
+        \normalsize{PROFESOR CORREFERENTE:}\\
+        \textsc\expandafter{\@profcorr}\\
+        \vskip 0.6in
         \normalsize\uppercase\expandafter{\@convocationmonth}
-        \normalsize\uppercase\expandafter{\@convocationyear}
+        \normalsize\textsc\expandafter{\@convocationyear}
     \end{center}
     \vfill
+    \setcounter{page}{1}
     % Página en blanco.
-	\newpage \thispagestyle{empty}\begin{flushright}\vfill\end{flushright}
+	%\newpage \thispagestyle{empty}\begin{flushright}\vfill\end{flushright}
     % Comienza el contador numérico romano.
 	%\newpage \setcounter{page}{2}\begin{flushright}\vfill\end{flushright}
 }
@@ -382,14 +374,14 @@ con el estilo de documento `report'}{Usted debería leer la documentación de UTFS
     \iffront@pages
         %\addtocounter{page}{1}
         \iffront@pages\ifdedic@tion
-            \typeout{Agradecimientos}
-            \include{\@ack}
-            \newpage
             \begin{flushright}
             \ \vskip5in
             \Large\em\null\vskip1in
             \dedication@text
             \end{flushright}
+            \newpage
+            \typeout{Agradecimientos}
+            \include{\@ack}
         \fi
     \fi
     {
